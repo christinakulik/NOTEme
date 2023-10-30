@@ -13,8 +13,6 @@ extension UIImage {
        
         static let logo: UIImage = .init(named: "logo")!
         
-        
-        
     }
     
     

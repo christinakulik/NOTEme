@@ -67,8 +67,8 @@
 			isa = PBXGroup;
 			children = (
 				CFD583C72AF01A60000949A6 /* App */,
-				CFD583BF2AF01A0A000949A6 /* Resource */,
 				CFD583B82AF019C6000949A6 /* Modules */,
+				CFD583BF2AF01A0A000949A6 /* Resource */,
 			);
 			path = NOTEme;
 			sourceTree = "<group>";
