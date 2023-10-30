@@ -21,9 +21,7 @@ final class LoginVC: UIViewController {
     
     private lazy var authTitleLabel: UILabel = {
         let label = UILabel()
-        label.font = .appTitleLabelBoldFont
-        label.text = "Welcome back!"
-        label.textColor = .black
+        label.setAuthLabelStyle("Welcome back!")
         return label
     }()
     
@@ -36,29 +34,19 @@ final class LoginVC: UIViewController {
     
     private lazy var passwordButton: UIButton = {
        let button = UIButton()
-        button.setTitle("Forgot Password", for: .normal)
-        button.setTitleColor(.lightGray, for: .normal)
-        button.titleLabel?.font = .appButtonBoldFont
-        button.addUnderline()
+        button.setUnderlineButtonStyle()
         return button
     }()
         
     private lazy var loginButton: UIButton = {
        let button = UIButton()
-        button.setTitle("Login", for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        button.titleLabel?.font = .appBoldFont
-        button.setYellowButtonStyle()
-        button.backgroundColor = .appYellow
+        button.setYellowButtonStyle("Login")
         return button
     }()
     
     private lazy var registerButton: UIButton = {
        let button = UIButton()
-        button.setTitle("New Account", for: .normal)
-        button.setTitleColor(.appYellow, for: .normal)
-        button.titleLabel?.font = .appBoldFont
-        button.addUnderline()
+        button.setUnderScopeButtonStyle("New Account")
         return button
     }()
     
@@ -111,14 +99,14 @@ final class LoginVC: UIViewController {
         }
         
         passwordButton.snp.makeConstraints { make in
-            make.leading.equalToSuperview().inset(16)
             make.bottom.equalToSuperview().inset(16)
+            make.horizontalEdges.equalToSuperview().inset(16)
         }
         
         registerButton.snp.makeConstraints { make in
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
             make.centerX.equalToSuperview()
-            make.width.equalTo(108.0)
+            make.horizontalEdges.equalToSuperview().inset(20)
             make.height.equalTo(20.0)
         }
         
