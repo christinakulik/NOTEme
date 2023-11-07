@@ -7,13 +7,15 @@
 
 import UIKit
 
-
 extension UILabel {
     
-    func setAuthLabelStyle(_ title: String) {
-        let label = self
+    static func titleLabel(_ title: String?) -> UILabel {
+        let label = UILabel()
+        
         label.text = title
         label.font = .appBoldFont.withSize(25.0)
-        label.textColor = .black
+        label.textColor = .appText
+
+        return label
     }
 }

@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  NOTEme
+
+  Created by Christina on 5.11.23.
+  
+*/
+
+//MARK: - LoginVC
+"welcome_button" =  "Welcome Back!";
+"titleEmail_button" =  "E-mail";
+"placeholderEmail_button" =  "Enter E-mail";
+"titlePassword_button" =  "Password";
+"placeholderPassword_button" =  "Enter Password";
+"forgotPassword_button" =  "Forgot Password";
+"login_button" =  "Login";
+"newAccount_button" =  "New Account";
+
+
+

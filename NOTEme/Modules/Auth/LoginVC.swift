@@ -17,37 +17,31 @@ final class LoginVC: UIViewController {
     }()
     
     private lazy var logoImageView: UIImageView =
-        UIImageView(image: .General.logo)
+    UIImageView(image: .General.logo)
     
-    private lazy var authTitleLabel: UILabel = {
-        let label = UILabel()
-        label.setAuthLabelStyle("Welcome back!")
-        return label
+    private lazy var authTitleLabel: UILabel = 
+        .titleLabel("welcome_button".localized)
+    
+    private lazy var infoView: UIView = .plainView()
+
+    private lazy var loginButton: UIButton = 
+        .yellowRoundedButton("login_button".localized)
+    private lazy var cancelButton: UIButton = .cancelButton()
+    private lazy var newAccountButton: UIButton = .underlineYellowButton("newAccount_button".localized)
+    private lazy var forgotPasswordButton: UIButton = .underlineGrayButton("forgotPassword_button".localized)
+    
+    private lazy var emailTextField: LineTextField = {
+        let textField = LineTextField()
+        textField.title = "titleEmail_button".localized
+        textField.placeholder = "placeholderEmail_button".localized
+        return textField
     }()
     
-    private lazy var infoView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .white
-        view.addShadow()
-        return view
-    }()
-    
-    private lazy var passwordButton: UIButton = {
-       let button = UIButton()
-        button.setUnderlineButtonStyle()
-        return button
-    }()
-        
-    private lazy var loginButton: UIButton = {
-       let button = UIButton()
-        button.setYellowButtonStyle("Login")
-        return button
-    }()
-    
-    private lazy var registerButton: UIButton = {
-       let button = UIButton()
-        button.setUnderScopeButtonStyle("New Account")
-        return button
+    private lazy var passwordTextField: LineTextField = {
+        let textField = LineTextField()
+        textField.title = "titlePassword_button".localized
+        textField.placeholder = "placeholderPassword_button".localized
+        return textField
     }()
     
     override func viewDidLoad() {
@@ -63,14 +57,16 @@ final class LoginVC: UIViewController {
         view.backgroundColor = .appBlack
         
         view.addSubview(contentView)
-        view.addSubview(registerButton)
+        view.addSubview(newAccountButton)
        
         contentView.addSubview(logoImageView)
         contentView.addSubview(authTitleLabel)
         contentView.addSubview(infoView)
         contentView.addSubview(loginButton)
         
-        infoView.addSubview(passwordButton)
+        infoView.addSubview(forgotPasswordButton)
+        infoView.addSubview(emailTextField)
+        infoView.addSubview(passwordTextField)
         
     }
     
@@ -88,32 +84,42 @@ final class LoginVC: UIViewController {
         }
         
         authTitleLabel.snp.makeConstraints { make in
-            make.top.equalTo(logoImageView.snp.bottom).inset(-72.0)
+            make.bottom.equalTo(infoView.snp.top).inset(-8.0)
             make.centerX.equalToSuperview()
         }
         
         infoView.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview().inset(16.0)
-            make.top.equalTo(authTitleLabel.snp.bottom).inset(-8.0)
-            make.height.equalTo(165.0)
+            make.centerY.equalToSuperview()
+           
         }
         
-        passwordButton.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().inset(16)
-            make.horizontalEdges.equalToSuperview().inset(16)
+        forgotPasswordButton.snp.makeConstraints { make in
+            make.bottom.left.equalToSuperview().inset(16.0)
+            make.height.equalTo(17.0)
         }
         
-        registerButton.snp.makeConstraints { make in
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
-            make.centerX.equalToSuperview()
-            make.horizontalEdges.equalToSuperview().inset(20)
+        newAccountButton.snp.makeConstraints { make in
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(8.0)
+            make.horizontalEdges.equalToSuperview().inset(20.0)
             make.height.equalTo(20.0)
         }
         
         loginButton.snp.makeConstraints { make in
-            make.bottom.equalTo(registerButton.snp.top).inset(-8)
-            make.horizontalEdges.equalToSuperview().inset(20)
-            make.height.equalTo(45)
+            make.bottom.equalTo(newAccountButton.snp.top).inset(-8.0)
+            make.horizontalEdges.equalToSuperview().inset(20.0)
+            make.height.equalTo(45.0)
+        }
+        
+        emailTextField.snp.makeConstraints { make in
+            make.horizontalEdges.top.equalToSuperview().inset(16.0)
+            make.bottom.equalTo(passwordTextField.snp.top).inset(-16.0)
+        }
+        
+        passwordTextField.snp.makeConstraints { make in
+            make.top.equalTo(emailTextField.snp.bottom).inset(16.0)
+            make.horizontalEdges.equalToSuperview().inset(16.0)
+            make.bottom.equalTo(forgotPasswordButton.snp.top).inset(-20)
         }
         
     }

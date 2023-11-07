@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  NOTEme
+
+  Created by Christina on 5.11.23.
+  
+*/
+
+"welcome_button" =  "С Возвращением!";
+"titleEmail_button" =  "Почта";
+"placeholderEmail_button" =  "Введите электронную почту";
+"titlePassword_button" =  "Пароль";
+"placeholderPassword_button" =  "Введите пароль";
+"forgotPassword_button" =  "Забыли пароль";
+"login_button" =  "Логин";
+"newAccount_button" =  "Новый аккаунт";
