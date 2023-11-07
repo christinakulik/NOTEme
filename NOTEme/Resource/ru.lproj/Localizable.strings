@@ -6,11 +6,20 @@
   
 */
 
-"welcome_button" =  "С Возвращением!";
-"titleEmail_button" =  "Почта";
-"placeholderEmail_button" =  "Введите электронную почту";
-"titlePassword_button" =  "Пароль";
-"placeholderPassword_button" =  "Введите пароль";
+
+//MARK: - LoginVC
+"welcome_label" = "С Возвращением!";
+"titleEmail_label" =  "Почта";
+"email_placeholder" =  "Введите электронную почту";
+"titlePassword_label" =  "Пароль";
+"password_placeholder" =  "Введите пароль";
 "forgotPassword_button" =  "Забыли пароль";
 "login_button" =  "Логин";
 "newAccount_button" =  "Новый аккаунт";
+
+//MARK: - RegisterVC
+"niceToMeet_label" =  "Приятно познакомиться!";
+"register_button" =  "Зарегистрироваться";
+"haveAnAccount_button" =  "У меня есть аккаунт";
+"repeatPassword_label" =  "Повторите пароль";
+"repeatPassword_placeholder" =  "Повторно введите пароль";

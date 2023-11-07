@@ -23,6 +23,8 @@
 		CFD583D42AF16EC4000949A6 /* LineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD583D32AF16EC4000949A6 /* LineTextField.swift */; };
 		CFD583D72AF6FB78000949A6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CFD583D92AF6FB78000949A6 /* Localizable.strings */; };
 		CFD583DD2AF6FEA2000949A6 /* String+Locale.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD583DC2AF6FEA2000949A6 /* String+Locale.swift */; };
+		CFD583E32AFAA0D5000949A6 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD583E22AFAA0D5000949A6 /* RegisterVC.swift */; };
+		CFD583E52AFAA0E5000949A6 /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD583E42AFAA0E5000949A6 /* ResetPasswordVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,8 @@
 		CFD583DA2AF6FC27000949A6 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		CFD583DB2AF6FC27000949A6 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CFD583DC2AF6FEA2000949A6 /* String+Locale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Locale.swift"; sourceTree = "<group>"; };
+		CFD583E22AFAA0D5000949A6 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		CFD583E42AFAA0E5000949A6 /* ResetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				CFD583BA2AF019D9000949A6 /* LoginVC.swift */,
+				CFD583E22AFAA0D5000949A6 /* RegisterVC.swift */,
+				CFD583E42AFAA0E5000949A6 /* ResetPasswordVC.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -251,7 +257,9 @@
 				CFD583DD2AF6FEA2000949A6 /* String+Locale.swift in Sources */,
 				CFD583BB2AF019D9000949A6 /* LoginVC.swift in Sources */,
 				CFD583CB2AF01A8A000949A6 /* UIView+Styles.swift in Sources */,
+				CFD583E52AFAA0E5000949A6 /* ResetPasswordVC.swift in Sources */,
 				CFD583C92AF01A7C000949A6 /* UIView+Layer.swift in Sources */,
+				CFD583E32AFAA0D5000949A6 /* RegisterVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

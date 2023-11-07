@@ -7,14 +7,20 @@
 */
 
 //MARK: - LoginVC
-"welcome_button" =  "Welcome Back!";
-"titleEmail_button" =  "E-mail";
-"placeholderEmail_button" =  "Enter E-mail";
-"titlePassword_button" =  "Password";
-"placeholderPassword_button" =  "Enter Password";
+"welcome_label" =  "Welcome Back!";
+"titleEmail_label" =  "E-mail";
+"email_placeholder" =  "Enter E-mail";
+"titlePassword_label" =  "Password";
+"password_placeholder" =  "Enter Password";
 "forgotPassword_button" =  "Forgot Password";
 "login_button" =  "Login";
 "newAccount_button" =  "New Account";
 
+//MARK: - RegisterVC
+"niceToMeet_label" =  "Nice to meet you!";
+"register_button" =  "Register";
+"haveAnAccount_button" =  "I have an account";
+"repeatPassword_label" =  "Repeat Password";
+"repeatPassword_placeholder" =  "Enter Password";
 
-
+//MARK: - ResetPasswordVC
