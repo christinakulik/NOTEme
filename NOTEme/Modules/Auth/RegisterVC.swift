@@ -100,18 +100,6 @@ final class RegisterVC: UIViewController {
            
         }
         
-        accountButton.snp.makeConstraints { make in
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(8.0)
-            make.horizontalEdges.equalToSuperview().inset(20.0)
-            make.height.equalTo(20.0)
-        }
-        
-        registerButton.snp.makeConstraints { make in
-            make.bottom.equalTo(accountButton.snp.top).inset(-8.0)
-            make.horizontalEdges.equalToSuperview().inset(20.0)
-            make.height.equalTo(45.0)
-        }
-        
         emailTextField.snp.makeConstraints { make in
             make.horizontalEdges.top.equalToSuperview().inset(16.0)
             make.bottom.equalTo(passwordTextField.snp.top).inset(-16.0)
@@ -124,8 +112,21 @@ final class RegisterVC: UIViewController {
         }
         
         repeatPasswordTextField.snp.makeConstraints { make in
-            make.bottom.left.equalToSuperview().inset(16.0)
+            make.bottom.left.equalToSuperview().inset(20.0)
             make.horizontalEdges.equalToSuperview().inset(16.0)
         }
+        
+        accountButton.snp.makeConstraints { make in
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(8.0)
+            make.horizontalEdges.equalToSuperview().inset(20.0)
+            make.height.equalTo(20.0)
+        }
+        
+        registerButton.snp.makeConstraints { make in
+            make.bottom.equalTo(accountButton.snp.top).inset(-8.0)
+            make.horizontalEdges.equalToSuperview().inset(20.0)
+            make.height.equalTo(45.0)
+        }
+        
     }
 }

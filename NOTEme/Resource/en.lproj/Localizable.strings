@@ -24,3 +24,7 @@
 "repeatPassword_placeholder" =  "Enter Password";
 
 //MARK: - ResetPasswordVC
+"resetPassword_label" =  "Reset Password";
+"infoResetPassword_label" = "Enter your email address and we will share a link to create a new password.";
+"reset_button" = "Reset";
+"cancel_button" = "Cancel";

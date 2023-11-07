@@ -23,3 +23,9 @@
 "haveAnAccount_button" =  "У меня есть аккаунт";
 "repeatPassword_label" =  "Повторите пароль";
 "repeatPassword_placeholder" =  "Повторно введите пароль";
+
+//MARK: - ResetPasswordVC
+"resetPassword_label" =  "Восстановление пароля";
+"infoResetPassword_label" = "Введите свой адрес электронной почты, и мы отправим вам ссылку для создания нового пароля.";
+"reset_button" = "Восстановить";
+"cancel_button" = "Отмена";

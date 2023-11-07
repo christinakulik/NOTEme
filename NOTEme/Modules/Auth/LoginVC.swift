@@ -98,6 +98,17 @@ final class LoginVC: UIViewController {
             make.height.equalTo(17.0)
         }
         
+        emailTextField.snp.makeConstraints { make in
+            make.horizontalEdges.top.equalToSuperview().inset(16.0)
+            make.bottom.equalTo(passwordTextField.snp.top).inset(-16.0)
+        }
+        
+        passwordTextField.snp.makeConstraints { make in
+            make.top.equalTo(emailTextField.snp.bottom).inset(16.0)
+            make.horizontalEdges.equalToSuperview().inset(16.0)
+            make.bottom.equalTo(forgotPasswordButton.snp.top).inset(-20)
+        }
+        
         newAccountButton.snp.makeConstraints { make in
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(8.0)
             make.horizontalEdges.equalToSuperview().inset(20.0)
@@ -108,17 +119,6 @@ final class LoginVC: UIViewController {
             make.bottom.equalTo(newAccountButton.snp.top).inset(-8.0)
             make.horizontalEdges.equalToSuperview().inset(20.0)
             make.height.equalTo(45.0)
-        }
-        
-        emailTextField.snp.makeConstraints { make in
-            make.horizontalEdges.top.equalToSuperview().inset(16.0)
-            make.bottom.equalTo(passwordTextField.snp.top).inset(-16.0)
-        }
-        
-        passwordTextField.snp.makeConstraints { make in
-            make.top.equalTo(emailTextField.snp.bottom).inset(16.0)
-            make.horizontalEdges.equalToSuperview().inset(16.0)
-            make.bottom.equalTo(forgotPasswordButton.snp.top).inset(-20)
         }
         
     }
