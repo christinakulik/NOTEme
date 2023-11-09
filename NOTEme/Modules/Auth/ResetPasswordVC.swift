@@ -10,11 +10,7 @@ import SnapKit
 
 final class ResetPasswordVC: UIViewController {
     
-    private lazy var contentView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .appGray
-        return view
-    }()
+    private lazy var contentView: UIView = .basicView()
     
     private lazy var logoImageView: UIImageView =
     UIImageView(image: .General.logo)
