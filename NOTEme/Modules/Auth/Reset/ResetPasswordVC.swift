@@ -12,23 +12,26 @@ final class ResetPasswordVC: UIViewController {
     
     private lazy var contentView: UIView = .basicView()
     
+    private lazy var logoContainer: UIView = UIView()
+    
     private lazy var logoImageView: UIImageView =
     UIImageView(image: .General.logo)
     
-    private lazy var titleLabel: UILabel =
-        .titleLabel("resetPassword_label".localized)
+    private lazy var resetTitleLabel: UILabel =
+        .titleLabel("reset_screen_resetPassword_label".localized)
     
-    private lazy var infoView: UIView = .plainView()
+    private lazy var infoView: UIView = .plainViewWithShadow()
 
     private lazy var resetButton: UIButton =
-        .yellowRoundedButton("reset_button".localized)
+        .yellowRoundedButton("reset_screen_reset_button".localized)
     private lazy var cancelButton: UIButton = .cancelButton()
 
-    private lazy var infoResetPasswordLabel: UILabel = .infoLabel("infoResetPassword_label".localized)
+    private lazy var infoResetPasswordLabel: UILabel = 
+        .infoLabel("reset_screen_infoReset_label".localized)
     
     private lazy var emailTextField: LineTextField = {
         let textField = LineTextField()
-        textField.placeholder = "email_placeholder".localized
+        textField.placeholder = "reset_screen_email_placeholder".localized
         return textField
     }()
     
@@ -43,15 +46,15 @@ final class ResetPasswordVC: UIViewController {
     private func setupUI() {
     
         view.backgroundColor = .appBlack
-        
         view.addSubview(contentView)
         view.addSubview(cancelButton)
        
-        contentView.addSubview(logoImageView)
-        contentView.addSubview(titleLabel)
+        contentView.addSubview(resetTitleLabel)
         contentView.addSubview(infoView)
         contentView.addSubview(resetButton)
+        contentView.addSubview(logoContainer)
         
+        logoContainer.addSubview(logoImageView)
        
         infoView.addSubview(emailTextField)
         infoView.addSubview(infoResetPasswordLabel)
@@ -65,13 +68,17 @@ final class ResetPasswordVC: UIViewController {
             make.bottom.equalTo(resetButton.snp.centerY)
         }
         
+        logoContainer.snp.makeConstraints { make in
+            make.top.horizontalEdges.equalToSuperview()
+            make.bottom.equalTo(resetTitleLabel.snp.top)
+        }
+        
         logoImageView.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(72.0)
-            make.centerX.equalToSuperview()
+            make.center.equalToSuperview()
             make.size.equalTo(96.0)
         }
         
-        titleLabel.snp.makeConstraints { make in
+        resetTitleLabel.snp.makeConstraints { make in
             make.bottom.equalTo(infoView.snp.top).inset(-8.0)
             make.centerX.equalToSuperview()
         }

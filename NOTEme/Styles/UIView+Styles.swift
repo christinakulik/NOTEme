@@ -9,7 +9,7 @@ import UIKit
 
 extension UIView {
     
-    static func plainView() -> UIView {
+    static func plainViewWithShadow() -> UIView {
       let view = UIView()
         
         view.backgroundColor = .white

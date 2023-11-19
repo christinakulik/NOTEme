@@ -7,24 +7,35 @@
 */
 
 //MARK: - LoginVC
-"welcome_label" =  "Welcome Back!";
-"titleEmail_label" =  "E-mail";
-"email_placeholder" =  "Enter E-mail";
-"titlePassword_label" =  "Password";
-"password_placeholder" =  "Enter Password";
-"forgotPassword_button" =  "Forgot Password";
-"login_button" =  "Login";
-"newAccount_button" =  "New Account";
+"login_screen_welcome_label" =  "Welcome Back!";
+"login_screen_titleEmail_label" =  "E-mail";
+"login_screen_email_placeholder" =  "Enter E-mail";
+"login_screen_titlePassword_label" =  "Password";
+"login_screen_password_placeholder" =  "Enter Password";
+"login_screen_email_errorText" =  "Wrong e-mail";
+"login_screen_password_errorText" =  "Non-valid password";
+"login_screen_forgotPassword_button" =  "Forgot Password";
+"login_screen_login_button" =  "Login";
+"login_screen_newAccount_button" =  "New Account";
 
 //MARK: - RegisterVC
-"niceToMeet_label" =  "Nice to meet you!";
-"register_button" =  "Register";
-"haveAnAccount_button" =  "I have an account";
-"repeatPassword_label" =  "Repeat Password";
-"repeatPassword_placeholder" =  "Enter Password";
+"register_screen_register_label" =  "Nice to meet you!";
+"register_screen_register_button" =  "Register";
+"register_screen_email_label" =  "E-mail";
+"register_screen_email_placeholder" =  "Enter E-mail";
+"register_screen_password_label" =  "Password";
+"register_screen_password_placeholder" =  "Enter Password";
+"register_screen_haveAccount_button" =  "I have an account";
+"register_screen_repeatPassword_label" =  "Repeat Password";
+"register_screen_repeatPassword_placeholder" =  "Enter Password";
+"register_screen_email_errorText" =  "Wrong e-mail";
+"register_screen_password_errorText" =  "Non-valid password";
+"register_screen_repeatPassword_errorText" =  "Passwords don't match";
 
 //MARK: - ResetPasswordVC
-"resetPassword_label" =  "Reset Password";
-"infoResetPassword_label" = "Enter your email address and we will share a link to create a new password.";
-"reset_button" = "Reset";
-"cancel_button" = "Cancel";
+"reset_screen_resetPassword_label" =  "Reset Password";
+"reset_screen_email_placeholder" =  "Enter E-mail";
+"reset_screen_infoReset_label" = "Enter your email address and we will share a link to create a new password.";
+"reset_screen_reset_button" = "Reset";
+"reset_screen_cancel_button" = "Cancel";
+"reset_screen_email_errorText" =  "Wrong e-mail";
