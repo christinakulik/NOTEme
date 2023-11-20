@@ -184,10 +184,12 @@ extension RegisterVC: RegisterPresenterDelegate {
         
         if maxY > keyboardY {
             let diff = maxY - keyboardY
-                infoView.snp.updateConstraints { make in
-                    make.centerY.equalToSuperview().offset(-diff)
-                }
-                self.view.layoutIfNeeded()
+            infoView.snp.updateConstraints { make in
+                make.centerY.equalToSuperview().offset(-diff)
+            }
+            self.view.layoutIfNeeded()
         }
     }
 }
+
+

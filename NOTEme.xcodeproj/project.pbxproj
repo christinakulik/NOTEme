@@ -24,7 +24,7 @@
 		CFD583D72AF6FB78000949A6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CFD583D92AF6FB78000949A6 /* Localizable.strings */; };
 		CFD583DD2AF6FEA2000949A6 /* String+Locale.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD583DC2AF6FEA2000949A6 /* String+Locale.swift */; };
 		CFD583E32AFAA0D5000949A6 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD583E22AFAA0D5000949A6 /* RegisterVC.swift */; };
-		CFD583E52AFAA0E5000949A6 /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD583E42AFAA0E5000949A6 /* ResetPasswordVC.swift */; };
+		CFD583E52AFAA0E5000949A6 /* ResetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD583E42AFAA0E5000949A6 /* ResetVC.swift */; };
 		CFD583EA2AFE942D000949A6 /* UIButton+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD583E92AFE942D000949A6 /* UIButton+Actions.swift */; };
 		CFD583EC2AFE977E000949A6 /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD583EB2AFE977E000949A6 /* LoginVM.swift */; };
 		CFD583EE2AFE97ED000949A6 /* LoginAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD583ED2AFE97ED000949A6 /* LoginAssembler.swift */; };
@@ -33,10 +33,11 @@
 		CFD583F72B03DB85000949A6 /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD583F62B03DB85000949A6 /* RegisterPresenter.swift */; };
 		CFD583F92B03E119000949A6 /* RegisterAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD583F82B03E119000949A6 /* RegisterAssembler.swift */; };
 		CFD583FC2B03E535000949A6 /* KeyboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD583FB2B03E535000949A6 /* KeyboardHelper.swift */; };
-		CFD583FF2B08377C000949A6 /* ResetPasswordVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD583FE2B08377C000949A6 /* ResetPasswordVM.swift */; };
-		CFD584012B083791000949A6 /* ResetPasswordAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD584002B083791000949A6 /* ResetPasswordAssembler.swift */; };
+		CFD583FF2B08377C000949A6 /* ResetVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD583FE2B08377C000949A6 /* ResetVM.swift */; };
+		CFD584012B083791000949A6 /* ResetAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD584002B083791000949A6 /* ResetAssembler.swift */; };
 		CFD584032B094BE0000949A6 /* InputValidator+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD584022B094BE0000949A6 /* InputValidator+Register.swift */; };
 		CFD584052B09FEE2000949A6 /* KeyboardHelper+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD584042B09FEE2000949A6 /* KeyboardHelper+Register.swift */; };
+		CFD584082B0A77DA000949A6 /* InputValidator+Reset.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD584072B0A77DA000949A6 /* InputValidator+Reset.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,7 +61,7 @@
 		CFD583DB2AF6FC27000949A6 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CFD583DC2AF6FEA2000949A6 /* String+Locale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Locale.swift"; sourceTree = "<group>"; };
 		CFD583E22AFAA0D5000949A6 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
-		CFD583E42AFAA0E5000949A6 /* ResetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVC.swift; sourceTree = "<group>"; };
+		CFD583E42AFAA0E5000949A6 /* ResetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetVC.swift; sourceTree = "<group>"; };
 		CFD583E92AFE942D000949A6 /* UIButton+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Actions.swift"; sourceTree = "<group>"; };
 		CFD583EB2AFE977E000949A6 /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
 		CFD583ED2AFE97ED000949A6 /* LoginAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssembler.swift; sourceTree = "<group>"; };
@@ -69,10 +70,11 @@
 		CFD583F62B03DB85000949A6 /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
 		CFD583F82B03E119000949A6 /* RegisterAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAssembler.swift; sourceTree = "<group>"; };
 		CFD583FB2B03E535000949A6 /* KeyboardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHelper.swift; sourceTree = "<group>"; };
-		CFD583FE2B08377C000949A6 /* ResetPasswordVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVM.swift; sourceTree = "<group>"; };
-		CFD584002B083791000949A6 /* ResetPasswordAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordAssembler.swift; sourceTree = "<group>"; };
+		CFD583FE2B08377C000949A6 /* ResetVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetVM.swift; sourceTree = "<group>"; };
+		CFD584002B083791000949A6 /* ResetAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetAssembler.swift; sourceTree = "<group>"; };
 		CFD584022B094BE0000949A6 /* InputValidator+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputValidator+Register.swift"; sourceTree = "<group>"; };
 		CFD584042B09FEE2000949A6 /* KeyboardHelper+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardHelper+Register.swift"; sourceTree = "<group>"; };
+		CFD584072B0A77DA000949A6 /* InputValidator+Reset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputValidator+Reset.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,9 +221,10 @@
 		CFD583E82AFE901C000949A6 /* Reset */ = {
 			isa = PBXGroup;
 			children = (
-				CFD583E42AFAA0E5000949A6 /* ResetPasswordVC.swift */,
-				CFD583FE2B08377C000949A6 /* ResetPasswordVM.swift */,
-				CFD584002B083791000949A6 /* ResetPasswordAssembler.swift */,
+				CFD584062B0A77BD000949A6 /* UseCases */,
+				CFD583E42AFAA0E5000949A6 /* ResetVC.swift */,
+				CFD583FE2B08377C000949A6 /* ResetVM.swift */,
+				CFD584002B083791000949A6 /* ResetAssembler.swift */,
 			);
 			path = Reset;
 			sourceTree = "<group>";
@@ -264,6 +267,14 @@
 			children = (
 				CFD584022B094BE0000949A6 /* InputValidator+Register.swift */,
 				CFD584042B09FEE2000949A6 /* KeyboardHelper+Register.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		CFD584062B0A77BD000949A6 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				CFD584072B0A77DA000949A6 /* InputValidator+Reset.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -357,7 +368,7 @@
 				CFD583EE2AFE97ED000949A6 /* LoginAssembler.swift in Sources */,
 				CFD583D42AF16EC4000949A6 /* LineTextField.swift in Sources */,
 				CFD583A72AF0195D000949A6 /* SceneDelegate.swift in Sources */,
-				CFD584012B083791000949A6 /* ResetPasswordAssembler.swift in Sources */,
+				CFD584012B083791000949A6 /* ResetAssembler.swift in Sources */,
 				CFD583EA2AFE942D000949A6 /* UIButton+Actions.swift in Sources */,
 				CFD584052B09FEE2000949A6 /* KeyboardHelper+Register.swift in Sources */,
 				CFD583D02AF06CB0000949A6 /* UILabel+Styles.swift in Sources */,
@@ -368,8 +379,9 @@
 				CFD583FC2B03E535000949A6 /* KeyboardHelper.swift in Sources */,
 				CFD583F72B03DB85000949A6 /* RegisterPresenter.swift in Sources */,
 				CFD583CB2AF01A8A000949A6 /* UIView+Styles.swift in Sources */,
-				CFD583FF2B08377C000949A6 /* ResetPasswordVM.swift in Sources */,
-				CFD583E52AFAA0E5000949A6 /* ResetPasswordVC.swift in Sources */,
+				CFD583FF2B08377C000949A6 /* ResetVM.swift in Sources */,
+				CFD583E52AFAA0E5000949A6 /* ResetVC.swift in Sources */,
+				CFD584082B0A77DA000949A6 /* InputValidator+Reset.swift in Sources */,
 				CFD583C92AF01A7C000949A6 /* UIView+Layer.swift in Sources */,
 				CFD583E32AFAA0D5000949A6 /* RegisterVC.swift in Sources */,
 			);

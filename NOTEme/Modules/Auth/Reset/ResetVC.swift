@@ -8,7 +8,14 @@
 import UIKit
 import SnapKit
 
-final class ResetPasswordVC: UIViewController {
+@objc protocol ResetViewModelProtocol: AnyObject {
+    var catchEmailError: ((String?) -> Void)? { get set }
+    
+    func resetDidTap(email: String?)
+    @objc func cancelDidTap()
+}
+
+final class ResetVC: UIViewController {
     
     private lazy var contentView: UIView = .basicView()
     
@@ -24,9 +31,11 @@ final class ResetPasswordVC: UIViewController {
 
     private lazy var resetButton: UIButton =
         .yellowRoundedButton("reset_screen_reset_button".localized)
+        .withAction(self, #selector(resetDidTap))
     private lazy var cancelButton: UIButton = .cancelButton()
-
-    private lazy var infoResetPasswordLabel: UILabel = 
+        .withAction(viewModel, 
+                    #selector(ResetViewModelProtocol.cancelDidTap))
+    private lazy var infoResetPasswordLabel: UILabel =
         .infoLabel("reset_screen_infoReset_label".localized)
     
     private lazy var emailTextField: LineTextField = {
@@ -34,6 +43,26 @@ final class ResetPasswordVC: UIViewController {
         textField.placeholder = "reset_screen_email_placeholder".localized
         return textField
     }()
+    
+    private var viewModel: ResetViewModelProtocol
+    
+    init(viewModel: ResetViewModelProtocol) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+        
+        bind()
+    }
+    
+    
+    private func bind() {
+        viewModel.catchEmailError = { errorText in
+            self.emailTextField.errorText = errorText
+        }
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,6 +140,10 @@ final class ResetPasswordVC: UIViewController {
             make.height.equalTo(45.0)
         }
         
+    }
+    
+    @objc private func resetDidTap() {
+        viewModel.resetDidTap(email: emailTextField.text)
     }
 }
 

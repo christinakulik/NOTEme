@@ -7,16 +7,24 @@
 
 import UIKit
 
+protocol RegisterInputValidatorUseCase {
+    func validate(email: String?) -> Bool
+    func validate(password: String?) -> Bool
+}
+
 protocol RegisterKeyboardHelperUseCase {
+    typealias KeyboardFrameHandler = (CGRect) -> Void
+   
     @discardableResult
     func onWillShow(_ handler: @escaping KeyboardFrameHandler) -> Self
     @discardableResult
     func onWillHide(_ handler: @escaping KeyboardFrameHandler) -> Self
 }
 
-protocol RegisterInputValidatorUseCase {
-    func validate(email: String?) -> Bool
-    func validate(password: String?) -> Bool
+protocol RegisterAuthServiceUseCase {
+    func register(email: String,
+               password: String,
+               completion: @escaping (Bool) -> Void)
 }
 
 protocol RegisterPresenterDelegate: AnyObject {
@@ -26,12 +34,6 @@ protocol RegisterPresenterDelegate: AnyObject {
     
     func keyboardFrameChanged(_ frame: CGRect)
     
-}
-
-protocol RegisterAuthServiceUseCase {
-    func register(email: String,
-               password: String,
-               completion: @escaping (Bool) -> Void)
 }
 
 final class RegisterPresenter: RegisterPresenterProtocol {
@@ -56,8 +58,8 @@ final class RegisterPresenter: RegisterPresenterProtocol {
     private func bind() {
         keyboardHelper.onWillShow { [weak self] frame in
             self?.delegate?.keyboardFrameChanged(frame)
-        }.onWillHide { frame in
-            self.delegate?.keyboardFrameChanged(frame)
+        }.onWillHide { [weak self] frame in
+            self?.delegate?.keyboardFrameChanged(frame)
         }
     }
     
@@ -76,9 +78,7 @@ final class RegisterPresenter: RegisterPresenterProtocol {
         }
     }
     
-    func haveAccountDidTap() {
-        
-    }
+    func haveAccountDidTap() { }
     
     private func checkValidation(email: String?,
                                  password: String?,

@@ -12,7 +12,7 @@ final class RegisterAssembler {
     
     static func make() -> UIViewController {
         let presenter = RegisterPresenter(keyboardHelper: KeyboardHelper(),
-                                          authService: TESTRegisterService(),
+                                          authService: TESTAuthService(),
                                           inputValidator: InputValidator())
         let vc = RegisterVC(presenter: presenter)
         
@@ -20,11 +20,10 @@ final class RegisterAssembler {
         
         return vc
     }
-   
 }
 
-private class TESTRegisterService: RegisterAuthServiceUseCase {
-    func register(email: String, 
+private class TESTAuthService: RegisterAuthServiceUseCase {
+    func register(email: String,
                   password: String,
                   completion: @escaping (Bool) -> Void) {
         completion(true)

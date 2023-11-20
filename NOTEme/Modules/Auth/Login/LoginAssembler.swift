@@ -16,8 +16,6 @@ final class LoginAssembler {
         
         return LoginVC(viewModel: vm)
     }
-    
-    
 }
 
 private class TESTAuthService: LoginAuthServiceUseCase {
@@ -26,6 +24,5 @@ private class TESTAuthService: LoginAuthServiceUseCase {
                completion: @escaping (Bool) -> Void) {
         completion(true)
     }
-    
     
 }
