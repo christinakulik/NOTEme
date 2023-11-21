@@ -15,6 +15,12 @@ import SnapKit
     @objc  func haveAccountDidTap()
 }
 
+protocol RegisterKeyboardAnimatorUseCase {
+    func move (for vc: UIViewController, view: UIView,
+        frame: CGRect,
+        with padding: CGFloat)
+}
+
 final class RegisterVC: UIViewController {
     
     private lazy var contentView: UIView = .basicView()
@@ -62,8 +68,12 @@ final class RegisterVC: UIViewController {
     
     private var presenter: RegisterPresenterProtocol
     
-    init (presenter: RegisterPresenterProtocol) {
+    private var animate: RegisterKeyboardAnimatorUseCase
+    
+    init (presenter: RegisterPresenterProtocol,
+          animate: RegisterKeyboardAnimatorUseCase) {
         self.presenter = presenter
+        self.animate = animate
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -179,17 +189,7 @@ extension RegisterVC: RegisterPresenterDelegate {
     }
     
     func keyboardFrameChanged(_ frame: CGRect) {
-        let maxY = infoView.frame.maxY + contentView.frame.minY + 16.0
-        let keyboardY = frame.minY
-        
-        if maxY > keyboardY {
-            let diff = maxY - keyboardY
-            infoView.snp.updateConstraints { make in
-                make.centerY.equalToSuperview().offset(-diff)
-            }
-            self.view.layoutIfNeeded()
-        }
+        let paddig = 16 + contentView.frame.minY
+        animate.move(for: self, view: infoView, frame: frame, with: paddig)
     }
 }
-
-

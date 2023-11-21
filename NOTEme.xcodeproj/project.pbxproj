@@ -38,6 +38,8 @@
 		CFD584032B094BE0000949A6 /* InputValidator+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD584022B094BE0000949A6 /* InputValidator+Register.swift */; };
 		CFD584052B09FEE2000949A6 /* KeyboardHelper+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD584042B09FEE2000949A6 /* KeyboardHelper+Register.swift */; };
 		CFD584082B0A77DA000949A6 /* InputValidator+Reset.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD584072B0A77DA000949A6 /* InputValidator+Reset.swift */; };
+		CFD5840C2B0CEEDB000949A6 /* KeyboardAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD5840B2B0CEEDB000949A6 /* KeyboardAnimator.swift */; };
+		CFD5840F2B0CF57D000949A6 /* KeyboardAnimator+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD5840E2B0CF57D000949A6 /* KeyboardAnimator+Register.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +77,8 @@
 		CFD584022B094BE0000949A6 /* InputValidator+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputValidator+Register.swift"; sourceTree = "<group>"; };
 		CFD584042B09FEE2000949A6 /* KeyboardHelper+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardHelper+Register.swift"; sourceTree = "<group>"; };
 		CFD584072B0A77DA000949A6 /* InputValidator+Reset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputValidator+Reset.swift"; sourceTree = "<group>"; };
+		CFD5840B2B0CEEDB000949A6 /* KeyboardAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAnimator.swift; sourceTree = "<group>"; };
+		CFD5840E2B0CF57D000949A6 /* KeyboardAnimator+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardAnimator+Register.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +236,7 @@
 		CFD583EF2AFEA14B000949A6 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CFD5840D2B0CF102000949A6 /* KeyboardAnimator */,
 				CFD583FA2B03E50A000949A6 /* KeyboardHelper */,
 				CFD583F02AFEA161000949A6 /* InputValidator */,
 			);
@@ -267,6 +272,7 @@
 			children = (
 				CFD584022B094BE0000949A6 /* InputValidator+Register.swift */,
 				CFD584042B09FEE2000949A6 /* KeyboardHelper+Register.swift */,
+				CFD5840E2B0CF57D000949A6 /* KeyboardAnimator+Register.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -277,6 +283,14 @@
 				CFD584072B0A77DA000949A6 /* InputValidator+Reset.swift */,
 			);
 			path = UseCases;
+			sourceTree = "<group>";
+		};
+		CFD5840D2B0CF102000949A6 /* KeyboardAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				CFD5840B2B0CEEDB000949A6 /* KeyboardAnimator.swift */,
+			);
+			path = KeyboardAnimator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,12 +374,14 @@
 				CFD583A52AF0195D000949A6 /* AppDelegate.swift in Sources */,
 				CFD583C42AF01A42000949A6 /* UIFont+Consts.swift in Sources */,
 				CFD583F52AFEA816000949A6 /* InputValidator+Login.swift in Sources */,
+				CFD5840F2B0CF57D000949A6 /* KeyboardAnimator+Register.swift in Sources */,
 				CFD583C22AF01A35000949A6 /* UIColor+Consts.swift in Sources */,
 				CFD583CD2AF0672F000949A6 /* UIButton+Styles.swift in Sources */,
 				CFD583EC2AFE977E000949A6 /* LoginVM.swift in Sources */,
 				CFD583F92B03E119000949A6 /* RegisterAssembler.swift in Sources */,
 				CFD583C62AF01A53000949A6 /* UIImage+Consts.swift in Sources */,
 				CFD583EE2AFE97ED000949A6 /* LoginAssembler.swift in Sources */,
+				CFD5840C2B0CEEDB000949A6 /* KeyboardAnimator.swift in Sources */,
 				CFD583D42AF16EC4000949A6 /* LineTextField.swift in Sources */,
 				CFD583A72AF0195D000949A6 /* SceneDelegate.swift in Sources */,
 				CFD584012B083791000949A6 /* ResetAssembler.swift in Sources */,
