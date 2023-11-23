@@ -9,29 +9,26 @@ import UIKit
 import SnapKit
 
 final class KeyboardAnimator {
-    
-    func move(for vc: UIViewController, 
-              view: UIView,
+    func move(for targetView: UIView,
               frame: CGRect,
               with padding: CGFloat) {
-        let maxY = view.frame.maxY + padding
+        let maxY = targetView.frame.maxY + padding
         let keyboardY = frame.minY
         let diff = maxY - keyboardY
         
         if diff > 0 {
-            update(for: vc, view: view, with: -diff)
+            update(for: targetView, with: -diff)
         } else if diff < 0 {
-            update(for: vc, view: view, with: .zero)
+            update(for: targetView, with: .zero)
         }
     }
     
-  private  func update(for vc: UIViewController, 
-                       view: UIView,
-                       with offset: CGFloat) {
-        view.snp.updateConstraints {
+  private func update(for targetView: UIView,
+                      with offset: CGFloat) {
+        targetView.snp.updateConstraints {
             $0.centerY.equalToSuperview().offset(offset)
         }
-        vc.view.layoutIfNeeded()
+      targetView.superview?.layoutIfNeeded()
     }
 }
 

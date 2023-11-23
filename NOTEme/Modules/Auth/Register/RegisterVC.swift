@@ -16,9 +16,9 @@ import SnapKit
 }
 
 protocol RegisterKeyboardAnimatorUseCase {
-    func move (for vc: UIViewController, view: UIView,
-        frame: CGRect,
-        with padding: CGFloat)
+    func move(for targetView: UIView,
+              frame: CGRect,
+              with padding: CGFloat)
 }
 
 final class RegisterVC: UIViewController {
@@ -172,6 +172,11 @@ final class RegisterVC: UIViewController {
                                  password: passwordTextField.text,
                                  repeatPassword: repeatPasswordTextField.text)
     }
+    
+    func keyboardFrameChanged(_ frame: CGRect) {
+        let padding = 16 + contentView.frame.minY
+        animate.move(for: infoView, frame: frame, with: padding)
+    }
 }
 
 extension RegisterVC: RegisterPresenterDelegate {
@@ -186,10 +191,5 @@ extension RegisterVC: RegisterPresenterDelegate {
     
     func setRepeatPasswordError(error: String?) {
         repeatPasswordTextField.errorText = error
-    }
-    
-    func keyboardFrameChanged(_ frame: CGRect) {
-        let padding = 16 + contentView.frame.minY
-        animate.move(for: self, view: infoView, frame: frame, with: padding)
     }
 }
