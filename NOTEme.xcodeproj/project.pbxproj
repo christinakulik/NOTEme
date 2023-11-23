@@ -10,7 +10,6 @@
 		CFD583A52AF0195D000949A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD583A42AF0195D000949A6 /* AppDelegate.swift */; };
 		CFD583A72AF0195D000949A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD583A62AF0195D000949A6 /* SceneDelegate.swift */; };
 		CFD583AE2AF0195E000949A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFD583AD2AF0195E000949A6 /* Assets.xcassets */; };
-		CFD583B12AF0195E000949A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD583AF2AF0195E000949A6 /* LaunchScreen.storyboard */; };
 		CFD583BB2AF019D9000949A6 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD583BA2AF019D9000949A6 /* LoginVC.swift */; };
 		CFD583BE2AF019FC000949A6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CFD583BD2AF019FC000949A6 /* SnapKit */; };
 		CFD583C22AF01A35000949A6 /* UIColor+Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD583C12AF01A35000949A6 /* UIColor+Consts.swift */; };
@@ -40,6 +39,11 @@
 		CFD584082B0A77DA000949A6 /* InputValidator+Reset.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD584072B0A77DA000949A6 /* InputValidator+Reset.swift */; };
 		CFD5840C2B0CEEDB000949A6 /* KeyboardAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD5840B2B0CEEDB000949A6 /* KeyboardAnimator.swift */; };
 		CFD5840F2B0CF57D000949A6 /* KeyboardAnimator+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD5840E2B0CF57D000949A6 /* KeyboardAnimator+Register.swift */; };
+		CFD584112B0D124D000949A6 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD584102B0D124D000949A6 /* AppCoordinator.swift */; };
+		CFD584142B0D129D000949A6 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD584132B0D129D000949A6 /* Coordinator.swift */; };
+		CFD584192B0D1B72000949A6 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD584182B0D1B72000949A6 /* LoginCoordinator.swift */; };
+		CFD5841C2B0D24CA000949A6 /* RegisterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD5841B2B0D24CA000949A6 /* RegisterCoordinator.swift */; };
+		CFD5841D2B0E4592000949A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD5841E2B0E4592000949A6 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +51,6 @@
 		CFD583A42AF0195D000949A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFD583A62AF0195D000949A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CFD583AD2AF0195E000949A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CFD583B02AF0195E000949A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CFD583B22AF0195E000949A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFD583BA2AF019D9000949A6 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		CFD583C12AF01A35000949A6 /* UIColor+Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Consts.swift"; sourceTree = "<group>"; };
@@ -59,7 +62,6 @@
 		CFD583CF2AF06CB0000949A6 /* UILabel+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Styles.swift"; sourceTree = "<group>"; };
 		CFD583D32AF16EC4000949A6 /* LineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTextField.swift; sourceTree = "<group>"; };
 		CFD583D82AF6FB78000949A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		CFD583DA2AF6FC27000949A6 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		CFD583DB2AF6FC27000949A6 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CFD583DC2AF6FEA2000949A6 /* String+Locale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Locale.swift"; sourceTree = "<group>"; };
 		CFD583E22AFAA0D5000949A6 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
@@ -79,6 +81,11 @@
 		CFD584072B0A77DA000949A6 /* InputValidator+Reset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputValidator+Reset.swift"; sourceTree = "<group>"; };
 		CFD5840B2B0CEEDB000949A6 /* KeyboardAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAnimator.swift; sourceTree = "<group>"; };
 		CFD5840E2B0CF57D000949A6 /* KeyboardAnimator+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardAnimator+Register.swift"; sourceTree = "<group>"; };
+		CFD584102B0D124D000949A6 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		CFD584132B0D129D000949A6 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		CFD584182B0D1B72000949A6 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		CFD5841B2B0D24CA000949A6 /* RegisterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCoordinator.swift; sourceTree = "<group>"; };
+		CFD5841E2B0E4592000949A6 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +151,7 @@
 		CFD583BF2AF01A0A000949A6 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				CFD5841E2B0E4592000949A6 /* LaunchScreen.storyboard */,
 				CFD583C02AF01A1E000949A6 /* Consts */,
 				CFD583AD2AF0195E000949A6 /* Assets.xcassets */,
 				CFD583D92AF6FB78000949A6 /* Localizable.strings */,
@@ -165,9 +173,9 @@
 			isa = PBXGroup;
 			children = (
 				CFD583B22AF0195E000949A6 /* Info.plist */,
-				CFD583AF2AF0195E000949A6 /* LaunchScreen.storyboard */,
 				CFD583A42AF0195D000949A6 /* AppDelegate.swift */,
 				CFD583A62AF0195D000949A6 /* SceneDelegate.swift */,
+				CFD584102B0D124D000949A6 /* AppCoordinator.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -203,10 +211,10 @@
 		CFD583E62AFE9002000949A6 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				CFD584172B0D1B58000949A6 /* Coordinator */,
 				CFD583F32AFEA7B2000949A6 /* UseCases */,
 				CFD583BA2AF019D9000949A6 /* LoginVC.swift */,
 				CFD583EB2AFE977E000949A6 /* LoginVM.swift */,
-				CFD583ED2AFE97ED000949A6 /* LoginAssembler.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -214,10 +222,10 @@
 		CFD583E72AFE900B000949A6 /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				CFD5841A2B0D24B4000949A6 /* Coordinator */,
 				CFD583FD2B083391000949A6 /* UseCases */,
 				CFD583E22AFAA0D5000949A6 /* RegisterVC.swift */,
 				CFD583F62B03DB85000949A6 /* RegisterPresenter.swift */,
-				CFD583F82B03E119000949A6 /* RegisterAssembler.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -236,6 +244,7 @@
 		CFD583EF2AFEA14B000949A6 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CFD584122B0D1290000949A6 /* Coordinator */,
 				CFD5840D2B0CF102000949A6 /* KeyboardAnimator */,
 				CFD583FA2B03E50A000949A6 /* KeyboardHelper */,
 				CFD583F02AFEA161000949A6 /* InputValidator */,
@@ -291,6 +300,32 @@
 				CFD5840B2B0CEEDB000949A6 /* KeyboardAnimator.swift */,
 			);
 			path = KeyboardAnimator;
+			sourceTree = "<group>";
+		};
+		CFD584122B0D1290000949A6 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				CFD584132B0D129D000949A6 /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		CFD584172B0D1B58000949A6 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				CFD584182B0D1B72000949A6 /* LoginCoordinator.swift */,
+				CFD583ED2AFE97ED000949A6 /* LoginAssembler.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		CFD5841A2B0D24B4000949A6 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				CFD5841B2B0D24CA000949A6 /* RegisterCoordinator.swift */,
+				CFD583F82B03E119000949A6 /* RegisterAssembler.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,7 +393,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFD583B12AF0195E000949A6 /* LaunchScreen.storyboard in Resources */,
+				CFD5841D2B0E4592000949A6 /* LaunchScreen.storyboard in Resources */,
 				CFD583D72AF6FB78000949A6 /* Localizable.strings in Resources */,
 				CFD583AE2AF0195E000949A6 /* Assets.xcassets in Resources */,
 			);
@@ -383,7 +418,9 @@
 				CFD583EE2AFE97ED000949A6 /* LoginAssembler.swift in Sources */,
 				CFD5840C2B0CEEDB000949A6 /* KeyboardAnimator.swift in Sources */,
 				CFD583D42AF16EC4000949A6 /* LineTextField.swift in Sources */,
+				CFD584112B0D124D000949A6 /* AppCoordinator.swift in Sources */,
 				CFD583A72AF0195D000949A6 /* SceneDelegate.swift in Sources */,
+				CFD584192B0D1B72000949A6 /* LoginCoordinator.swift in Sources */,
 				CFD584012B083791000949A6 /* ResetAssembler.swift in Sources */,
 				CFD583EA2AFE942D000949A6 /* UIButton+Actions.swift in Sources */,
 				CFD584052B09FEE2000949A6 /* KeyboardHelper+Register.swift in Sources */,
@@ -394,8 +431,10 @@
 				CFD583F22AFEA1B7000949A6 /* InputValidator.swift in Sources */,
 				CFD583FC2B03E535000949A6 /* KeyboardHelper.swift in Sources */,
 				CFD583F72B03DB85000949A6 /* RegisterPresenter.swift in Sources */,
+				CFD584142B0D129D000949A6 /* Coordinator.swift in Sources */,
 				CFD583CB2AF01A8A000949A6 /* UIView+Styles.swift in Sources */,
 				CFD583FF2B08377C000949A6 /* ResetVM.swift in Sources */,
+				CFD5841C2B0D24CA000949A6 /* RegisterCoordinator.swift in Sources */,
 				CFD583E52AFAA0E5000949A6 /* ResetVC.swift in Sources */,
 				CFD584082B0A77DA000949A6 /* InputValidator+Reset.swift in Sources */,
 				CFD583C92AF01A7C000949A6 /* UIView+Layer.swift in Sources */,
@@ -406,15 +445,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CFD583AF2AF0195E000949A6 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CFD583B02AF0195E000949A6 /* Base */,
-				CFD583DA2AF6FC27000949A6 /* ru */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 		CFD583D92AF6FB78000949A6 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

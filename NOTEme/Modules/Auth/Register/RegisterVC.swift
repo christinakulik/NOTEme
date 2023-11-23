@@ -189,7 +189,7 @@ extension RegisterVC: RegisterPresenterDelegate {
     }
     
     func keyboardFrameChanged(_ frame: CGRect) {
-        let paddig = 16 + contentView.frame.minY
-        animate.move(for: self, view: infoView, frame: frame, with: paddig)
+        let padding = 16 + contentView.frame.minY
+        animate.move(for: self, view: infoView, frame: frame, with: padding)
     }
 }

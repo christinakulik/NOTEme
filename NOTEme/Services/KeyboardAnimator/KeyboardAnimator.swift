@@ -10,7 +10,8 @@ import SnapKit
 
 final class KeyboardAnimator {
     
-    func move(for vc: UIViewController, view: UIView,
+    func move(for vc: UIViewController, 
+              view: UIView,
               frame: CGRect,
               with padding: CGFloat) {
         let maxY = view.frame.maxY + padding
@@ -24,12 +25,13 @@ final class KeyboardAnimator {
         }
     }
     
-  private  func update(for vc: UIViewController, view: UIView, with offset: CGFloat) {
+  private  func update(for vc: UIViewController, 
+                       view: UIView,
+                       with offset: CGFloat) {
         view.snp.updateConstraints {
             $0.centerY.equalToSuperview().offset(offset)
         }
         vc.view.layoutIfNeeded()
     }
-    
 }
 

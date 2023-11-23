@@ -7,18 +7,21 @@
 
 import UIKit
 
+protocol RegisterCoordinatorProtocol: AnyObject {
+    func finish()
+}
+
 protocol RegisterInputValidatorUseCase {
     func validate(email: String?) -> Bool
     func validate(password: String?) -> Bool
 }
 
 protocol RegisterKeyboardHelperUseCase {
-    typealias KeyboardFrameHandler = (CGRect) -> Void
    
     @discardableResult
-    func onWillShow(_ handler: @escaping KeyboardFrameHandler) -> Self
+    func onWillShow(_ handler: @escaping (CGRect) -> Void) -> Self
     @discardableResult
-    func onWillHide(_ handler: @escaping KeyboardFrameHandler) -> Self
+    func onWillHide(_ handler: @escaping (CGRect) -> Void) -> Self
 }
 
 protocol RegisterAuthServiceUseCase {
@@ -40,14 +43,17 @@ final class RegisterPresenter: RegisterPresenterProtocol {
     
     weak var delegate: RegisterPresenterDelegate?
     
+    private weak var coordinator: RegisterCoordinatorProtocol?
+    
     private let authService: RegisterAuthServiceUseCase
     private let inputValidator: RegisterInputValidatorUseCase
-    
     private let keyboardHelper: RegisterKeyboardHelperUseCase
     
-    init(keyboardHelper: RegisterKeyboardHelperUseCase,
+    init(coordinator: RegisterCoordinatorProtocol,
+         keyboardHelper: RegisterKeyboardHelperUseCase,
          authService: RegisterAuthServiceUseCase,
          inputValidator: RegisterInputValidatorUseCase) {
+        self.coordinator = coordinator
         self.keyboardHelper = keyboardHelper
         self.authService = authService
         self.inputValidator = inputValidator
@@ -66,6 +72,7 @@ final class RegisterPresenter: RegisterPresenterProtocol {
     func registerDidTap(email: String?,
                         password: String?,
                         repeatPassword: String?) {
+        coordinator?.finish()
         guard
             checkValidation(email: email,
                             password: password,
@@ -78,7 +85,9 @@ final class RegisterPresenter: RegisterPresenterProtocol {
         }
     }
     
-    func haveAccountDidTap() { }
+    func haveAccountDidTap() { 
+        coordinator?.finish()
+    }
     
     private func checkValidation(email: String?,
                                  password: String?,

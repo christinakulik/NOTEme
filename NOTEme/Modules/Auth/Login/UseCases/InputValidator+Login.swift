@@ -7,4 +7,4 @@
 
 import Foundation
 
-extension InputValidator: LoginInputValidatorUseCase {  }
+extension InputValidator: LoginInputValidatorUseCase { }

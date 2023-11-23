@@ -9,6 +9,8 @@ import UIKit
 
 final class KeyboardHelper {
     
+    typealias KeyboardFrameHandler = (CGRect) -> Void
+    
     private var willShow: KeyboardFrameHandler?
     private var didShow: KeyboardFrameHandler?
     private var willHide: KeyboardFrameHandler?

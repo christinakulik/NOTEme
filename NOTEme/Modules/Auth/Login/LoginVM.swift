@@ -7,6 +7,12 @@
 
 import UIKit
 
+protocol LoginCoordinatorProtocol: AnyObject {
+    func finish()
+    func openRegisterModule()
+    func openResetModule()
+}
+
 protocol LoginInputValidatorUseCase {
     func validate(email: String?) -> Bool
     func validate(password: String?) -> Bool
@@ -22,11 +28,15 @@ final class LoginVM: LoginViewModelProtocol {
     var catchEmailError: ((String?) -> Void)?
     var catchPasswordError: ((String?) -> Void)?
     
+    private weak var coordinator: LoginCoordinatorProtocol?
+    
     private let authService: LoginAuthServiceUseCase
     private let inputValidator: LoginInputValidatorUseCase
     
-    init(authService: LoginAuthServiceUseCase, 
+    init(coordinator: LoginCoordinatorProtocol,
+         authService: LoginAuthServiceUseCase,
          inputValidator: LoginInputValidatorUseCase) {
+        self.coordinator = coordinator
         self.authService = authService
         self.inputValidator = inputValidator
     }
@@ -37,17 +47,20 @@ final class LoginVM: LoginViewModelProtocol {
             let email, let password
         else { return }
         authService.login(email: email,
-                          password: password) { isSuccess in
+                          password: password) { [weak coordinator] isSuccess in
             print(isSuccess)
+            coordinator?.finish()
         }
     }
     
     func newAccountDidTap() { 
-        
+        print("\(#function)")
+        coordinator?.openRegisterModule()
     }
     
     func forgotPasswordDidTap(email: String?) { 
-        
+        print("\(#function)")
+        coordinator?.openResetModule()
     }
     
     private func checkValidation(email: String?, password: String?) -> Bool {
