@@ -60,19 +60,19 @@ final class RegisterPresenter: RegisterPresenterProtocol {
         
         bind()
     }
-    
-    private func bind() {
-        keyboardHelper.onWillShow { [weak self] frame in
-            self?.delegate?.keyboardFrameChanged(frame)
-        }.onWillHide { [weak self] frame in
-            self?.delegate?.keyboardFrameChanged(frame)
-        }
+
+    func bind() {
+       keyboardHelper
+          .onWillShow { [weak self] in
+              self?.delegate?.keyboardFrameChanged($0)
+          }.onWillHide { [weak self] in
+              self?.delegate?.keyboardFrameChanged($0)
+          }
     }
     
     func registerDidTap(email: String?,
                         password: String?,
                         repeatPassword: String?) {
-        coordinator?.finish()
         guard
             checkValidation(email: email,
                             password: password,
@@ -80,8 +80,10 @@ final class RegisterPresenter: RegisterPresenterProtocol {
             let email, let password
         else { return }
         authService.register(email: email, 
-                             password: password) { isSuccess in
+                             password: password) {
+            [weak coordinator] isSuccess in
             print(isSuccess)
+            coordinator?.finish()
         }
     }
     

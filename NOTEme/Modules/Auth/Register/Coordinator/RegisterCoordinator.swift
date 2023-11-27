@@ -14,4 +14,4 @@ final class RegisterCoordinator: Coordinator {
     }    
 }
 
-extension RegisterCoordinator: RegisterCoordinatorProtocol { }
+extension RegisterCoordinator: RegisterCoordinatorProtocol {}

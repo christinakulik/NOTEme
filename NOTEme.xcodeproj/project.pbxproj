@@ -44,6 +44,8 @@
 		CFD584192B0D1B72000949A6 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD584182B0D1B72000949A6 /* LoginCoordinator.swift */; };
 		CFD5841C2B0D24CA000949A6 /* RegisterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD5841B2B0D24CA000949A6 /* RegisterCoordinator.swift */; };
 		CFD5841D2B0E4592000949A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD5841E2B0E4592000949A6 /* LaunchScreen.storyboard */; };
+		CFD584232B1401A6000949A6 /* ResetCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD584222B1401A6000949A6 /* ResetCoordinator.swift */; };
+		CFD584272B14095E000949A6 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD584262B14095E000949A6 /* Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +88,8 @@
 		CFD584182B0D1B72000949A6 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		CFD5841B2B0D24CA000949A6 /* RegisterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCoordinator.swift; sourceTree = "<group>"; };
 		CFD5841E2B0E4592000949A6 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CFD584222B1401A6000949A6 /* ResetCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetCoordinator.swift; sourceTree = "<group>"; };
+		CFD584262B14095E000949A6 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +197,7 @@
 		CFD583D12AF15EBA000949A6 /* Utills */ = {
 			isa = PBXGroup;
 			children = (
+				CFD584262B14095E000949A6 /* Alert.swift */,
 				CFD583C82AF01A7C000949A6 /* UIView+Layer.swift */,
 				CFD583DC2AF6FEA2000949A6 /* String+Locale.swift */,
 				CFD583E92AFE942D000949A6 /* UIButton+Actions.swift */,
@@ -233,10 +238,10 @@
 		CFD583E82AFE901C000949A6 /* Reset */ = {
 			isa = PBXGroup;
 			children = (
+				CFD584212B140189000949A6 /* Coordinator */,
 				CFD584062B0A77BD000949A6 /* UseCases */,
 				CFD583E42AFAA0E5000949A6 /* ResetVC.swift */,
 				CFD583FE2B08377C000949A6 /* ResetVM.swift */,
-				CFD584002B083791000949A6 /* ResetAssembler.swift */,
 			);
 			path = Reset;
 			sourceTree = "<group>";
@@ -324,6 +329,15 @@
 			children = (
 				CFD5841B2B0D24CA000949A6 /* RegisterCoordinator.swift */,
 				CFD583F82B03E119000949A6 /* RegisterAssembler.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		CFD584212B140189000949A6 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				CFD584222B1401A6000949A6 /* ResetCoordinator.swift */,
+				CFD584002B083791000949A6 /* ResetAssembler.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -419,6 +433,7 @@
 				CFD5840C2B0CEEDB000949A6 /* KeyboardAnimator.swift in Sources */,
 				CFD583D42AF16EC4000949A6 /* LineTextField.swift in Sources */,
 				CFD584112B0D124D000949A6 /* AppCoordinator.swift in Sources */,
+				CFD584272B14095E000949A6 /* Alert.swift in Sources */,
 				CFD583A72AF0195D000949A6 /* SceneDelegate.swift in Sources */,
 				CFD584192B0D1B72000949A6 /* LoginCoordinator.swift in Sources */,
 				CFD584012B083791000949A6 /* ResetAssembler.swift in Sources */,
@@ -438,6 +453,7 @@
 				CFD583E52AFAA0E5000949A6 /* ResetVC.swift in Sources */,
 				CFD584082B0A77DA000949A6 /* InputValidator+Reset.swift in Sources */,
 				CFD583C92AF01A7C000949A6 /* UIView+Layer.swift in Sources */,
+				CFD584232B1401A6000949A6 /* ResetCoordinator.swift in Sources */,
 				CFD583E32AFAA0D5000949A6 /* RegisterVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

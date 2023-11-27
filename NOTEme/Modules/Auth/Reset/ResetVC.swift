@@ -69,7 +69,6 @@ final class ResetVC: UIViewController {
         
         setupUI()
         setupConstraints()
-        view.addSubview(contentView)
     }
     
     private func setupUI() {
@@ -77,8 +76,8 @@ final class ResetVC: UIViewController {
         view.backgroundColor = .appBlack
         view.addSubview(contentView)
         view.addSubview(cancelButton)
-       
-        contentView.addSubview(resetTitleLabel)
+        view.addSubview(resetTitleLabel)
+        
         contentView.addSubview(infoView)
         contentView.addSubview(resetButton)
         contentView.addSubview(logoContainer)
