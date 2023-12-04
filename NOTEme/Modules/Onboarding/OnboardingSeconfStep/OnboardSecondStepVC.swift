@@ -75,26 +75,6 @@ final class OnboardSecondStepVC: UIViewController {
         infoSecondStepLabel.attributedText = "onbordSecondStep_screen_info_label"
             .localized
             .changeFont()
-        
-//        let descriptionString = String(format: "onbordSecondStep_screen_info_label".localized)
-//        let description = NSMutableAttributedString(string: descriptionString)
-//        let rangeCalendar = descriptionString.range(of: "Calendar")
-//        let rangeLocation = descriptionString.range(of: "Location")
-//        let rangeTimer = descriptionString.range(of: "Timer")
-//        let nsrangeCalendar = NSRange(rangeCalendar!, in: descriptionString)
-//        let nsrangeLocation = NSRange(rangeLocation!, in: descriptionString)
-//        let nsrangeTimer = NSRange(rangeTimer!, in: descriptionString)
-//        description.addAttributes([NSAttributedString.Key.font: 
-//                                    UIFont.appBoldFont.withSize(13.0)],
-//                                  range: nsrangeCalendar)
-//        description.addAttributes([NSAttributedString.Key.font: 
-//                                    UIFont.appBoldFont.withSize(13.0)],
-//                                  range: nsrangeLocation)
-//        description.addAttributes([NSAttributedString.Key.font: 
-//                                    UIFont.appBoldFont.withSize(13.0)],
-//                                  range: nsrangeTimer)
-//        
-//        infoSecondStepLabel.attributedText = description
     }
     
     private func setupUI() {

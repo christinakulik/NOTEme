@@ -315,6 +315,7 @@
 		CFD583FD2B083391000949A6 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				CFD5841B2B0D24CA000949A6 /* RegisterCoordinator.swift */,
 				CFD584022B094BE0000949A6 /* InputValidator+Register.swift */,
 				CFD584042B09FEE2000949A6 /* KeyboardHelper+Register.swift */,
 				CFD5840E2B0CF57D000949A6 /* KeyboardAnimator+Register.swift */,
@@ -358,7 +359,6 @@
 		CFD5841A2B0D24B4000949A6 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				CFD5841B2B0D24CA000949A6 /* RegisterCoordinator.swift */,
 				CFD583F82B03E119000949A6 /* RegisterAssembler.swift */,
 			);
 			path = Coordinator;
