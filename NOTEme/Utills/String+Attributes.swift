@@ -11,8 +11,6 @@ extension String {
     func changeFont(with desiredFont: UIFont = .appBoldFont.withSize(13.0))
     -> NSAttributedString {
         
-        let targetFont = desiredFont 
-        
         do {
             let regex = try NSRegularExpression(pattern: "\"([^\"]*)\"")
             
@@ -22,10 +20,9 @@ extension String {
             
             let formattedString = NSMutableAttributedString.init(string: self)
             
-            
             for result in results{
                 formattedString.addAttribute(NSAttributedString.Key.font, 
-                                             value: targetFont,
+                                             value: desiredFont,
                                              range: result.range)
             }
             

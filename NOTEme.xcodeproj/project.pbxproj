@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CF5B89D52B1D3E3B0080EF47 /* String+Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5B89D42B1D3E3B0080EF47 /* String+Attributes.swift */; };
+		CF5B89D82B1E0A790080EF47 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5B89D72B1E0A790080EF47 /* TabBarController.swift */; };
 		CFD583A52AF0195D000949A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD583A42AF0195D000949A6 /* AppDelegate.swift */; };
 		CFD583A72AF0195D000949A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD583A62AF0195D000949A6 /* SceneDelegate.swift */; };
 		CFD583AE2AF0195E000949A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFD583AD2AF0195E000949A6 /* Assets.xcassets */; };
@@ -60,6 +61,7 @@
 
 /* Begin PBXFileReference section */
 		CF5B89D42B1D3E3B0080EF47 /* String+Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Attributes.swift"; sourceTree = "<group>"; };
+		CF5B89D72B1E0A790080EF47 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		CFD583A12AF0195D000949A6 /* NOTEme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NOTEme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFD583A42AF0195D000949A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFD583A62AF0195D000949A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +132,14 @@
 				CFD5842A2B153154000949A6 /* Builder.swift */,
 			);
 			path = Builder;
+			sourceTree = "<group>";
+		};
+		CF5B89D62B1E0A490080EF47 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				CF5B89D72B1E0A790080EF47 /* TabBarController.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		CFD583982AF0195D000949A6 = {
@@ -278,6 +288,7 @@
 		CFD583EF2AFEA14B000949A6 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CF5B89D62B1E0A490080EF47 /* TabBar */,
 				CF5B89D32B1A87610080EF47 /* Builder */,
 				CFD5844E2B164B45000949A6 /* Parameters */,
 				CFD584122B0D1290000949A6 /* Coordinator */,
@@ -511,6 +522,7 @@
 				CFD583F52AFEA816000949A6 /* InputValidator+Login.swift in Sources */,
 				CFD5845C2B1657EE000949A6 /* OnboardFirstStepCoordinator.swift in Sources */,
 				CFD584572B165675000949A6 /* OnboardFirstStepVM.swift in Sources */,
+				CF5B89D82B1E0A790080EF47 /* TabBarController.swift in Sources */,
 				CFD5840F2B0CF57D000949A6 /* KeyboardAnimator+Register.swift in Sources */,
 				CFD584602B165ADA000949A6 /* OnboardSecondStepVC.swift in Sources */,
 				CFD583C22AF01A35000949A6 /* UIColor+Consts.swift in Sources */,

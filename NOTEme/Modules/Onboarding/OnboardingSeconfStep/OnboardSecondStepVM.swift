@@ -27,7 +27,6 @@ final class OnboardSecondStepVM: OnbordSecondStepViewModelProtocol {
         coordinator?.finish()
     }
     
-    
     func dismissedByUser() {
         coordinator?.dismissedByUser()
     }

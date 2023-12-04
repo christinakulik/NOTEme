@@ -14,26 +14,25 @@ final class AppCoordinator: Coordinator {
     init(scene: UIWindowScene) {
         self.window = UIWindow(windowScene: scene)
     }
-
-   func startApp() {
-       
-       if ParametersHelper.get(.authenticated) {
-//            FIXME: - TEST CODE
-//           ParametersHelper.set(.authenticated, value: false)
-//            open onboarding or mainApp
-           openOnboardingModule()
-       } else {
-           openAuthModule()
-       }
-       
-       if ParametersHelper.get(.onboarded) {
-           openTMainModule()
-       }  else {
-           openOnboardingModule()
-           }
-       }
+   
+    func startApp() {
+        
+        if ParametersHelper.get(.authenticated) {
+    //            FIXME: - TEST CODE
+    //           ParametersHelper.set(.authenticated, value: false)
+    //            open onboarding or mainApp
+            openOnboardingModule()
+        } else {
+            openAuthModule()
+        }
+        
+        if ParametersHelper.get(.onboarded) {
+            openTMainModule()
+        }  else {
+            openOnboardingModule()
+        }
+    }
     
- 
     private func openAuthModule() {
        let coordinator = LoginCoordinator()
         children.append(coordinator)
@@ -64,11 +63,8 @@ final class AppCoordinator: Coordinator {
         let tabbar = UITabBarController()
         
         let homeVC =  UIViewController()
-        _ = UINavigationController(rootViewController: homeVC)
-    
         let profileVC = UIViewController()
-        _ = UINavigationController(rootViewController: profileVC)
-        
+
         homeVC.view.backgroundColor = .appYellow
         profileVC.view.backgroundColor = .appGray
         
@@ -81,9 +77,11 @@ final class AppCoordinator: Coordinator {
                      image: .Tabbar.profile,
                      selectedImage: .Tabbar.profileSelected)
         
-        tabbar.viewControllers = [homeVC, profileVC]
+        tabbar.viewControllers = [homeVC, profileVC].map 
+        { UINavigationController(rootViewController: $0) }
         
         window.rootViewController = tabbar
+        window.makeKeyAndVisible()
     }
 }
     
