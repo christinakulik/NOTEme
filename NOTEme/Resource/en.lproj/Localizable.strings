@@ -6,7 +6,7 @@
   
 */
 
-//MARK: - LoginVC
+//MARK: - Login
 "login_screen_welcome_label" =  "Welcome Back!";
 "login_screen_titleEmail_label" =  "E-mail";
 "login_screen_email_placeholder" =  "Enter E-mail";
@@ -18,7 +18,7 @@
 "login_screen_login_button" =  "Login";
 "login_screen_newAccount_button" =  "New Account";
 
-//MARK: - RegisterVC
+//MARK: - Register
 "register_screen_register_label" =  "Nice to meet you!";
 "register_screen_register_button" =  "Register";
 "register_screen_email_label" =  "E-mail";
@@ -32,10 +32,31 @@
 "register_screen_password_errorText" =  "Non-valid password";
 "register_screen_repeatPassword_errorText" =  "Passwords don't match";
 
-//MARK: - ResetPasswordVC
+//MARK: - ResetPassword
 "reset_screen_resetPassword_label" =  "Reset Password";
 "reset_screen_email_placeholder" =  "Enter E-mail";
 "reset_screen_infoReset_label" = "Enter your email address and we will share a link to create a new password.";
 "reset_screen_reset_button" = "Reset";
 "reset_screen_cancel_button" = "Cancel";
 "reset_screen_email_errorText" =  "Wrong e-mail";
+"reset_screen_emailSuccessTitle_alert" =  "Successfully";
+"reset_screen_emailSuccessMessage_alert" =  "Instruction sent to e-mail";
+
+//MARK: - //MARK: - OnbordFirstStep
+"onbordFirstStep_screen_welcome_label" = "Welcome!";
+"onbordFirstStep_info_label" = "NoteMe is an application, which notify you about everything!";
+"onbordFirstStep_screen_next_button" = "Next";
+
+//MARK: - //MARK: - OnbordSecondStep
+"onbordSecondStep_screen_types_label" = "Different types!";
+"onbordSecondStep_screen_info_label" = "You can use 3 types of notifications
+\"Calendar\" - choose the date, when you want to receive notification.
+\"Location\" - choose the region and notification will come after you enter it.
+\"Timer\" - set timer and after selected period you will receive the notification.";
+"onbordSecondStep_screen_calendar_label" = "Calendar";
+"onbordSecondStep_screen_location_label" = "Location";
+"onbordSecondStep_screen_timer_label" = "Timer";
+"onbordSecondStep_screen_done_button" = "Done";
+
+"main_screen_home_tabbarItem" = "Home";
+"main_screen_profile_tabbarItem" = "Profile";

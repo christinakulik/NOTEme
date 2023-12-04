@@ -29,5 +29,16 @@ extension UILabel {
         
         return label
     }
+    
+    static func selectionLabel(_ title: String?) -> UILabel {
+        let label = UILabel()
+        
+        label.text = title
+        label.font = .appFont.withSize(16.0)
+        label.textColor = .appText
+        label.numberOfLines = 0
+        
+        return label
+    }
 
 }

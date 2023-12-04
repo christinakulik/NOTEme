@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF5B89D52B1D3E3B0080EF47 /* String+Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5B89D42B1D3E3B0080EF47 /* String+Attributes.swift */; };
 		CFD583A52AF0195D000949A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD583A42AF0195D000949A6 /* AppDelegate.swift */; };
 		CFD583A72AF0195D000949A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD583A62AF0195D000949A6 /* SceneDelegate.swift */; };
 		CFD583AE2AF0195E000949A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFD583AD2AF0195E000949A6 /* Assets.xcassets */; };
@@ -45,10 +46,20 @@
 		CFD5841C2B0D24CA000949A6 /* RegisterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD5841B2B0D24CA000949A6 /* RegisterCoordinator.swift */; };
 		CFD5841D2B0E4592000949A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD5841E2B0E4592000949A6 /* LaunchScreen.storyboard */; };
 		CFD584232B1401A6000949A6 /* ResetCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD584222B1401A6000949A6 /* ResetCoordinator.swift */; };
-		CFD584272B14095E000949A6 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD584262B14095E000949A6 /* Alert.swift */; };
+		CFD5842B2B153154000949A6 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD5842A2B153154000949A6 /* Builder.swift */; };
+		CFD584502B164B61000949A6 /* ParametersHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD5844F2B164B61000949A6 /* ParametersHelper.swift */; };
+		CFD584552B165479000949A6 /* OnbordFirstStepVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD584542B165479000949A6 /* OnbordFirstStepVC.swift */; };
+		CFD584572B165675000949A6 /* OnboardFirstStepVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD584562B165675000949A6 /* OnboardFirstStepVM.swift */; };
+		CFD584592B16572D000949A6 /* OnboardFirstStepAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD584582B16572D000949A6 /* OnboardFirstStepAssembler.swift */; };
+		CFD5845C2B1657EE000949A6 /* OnboardFirstStepCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD5845B2B1657EE000949A6 /* OnboardFirstStepCoordinator.swift */; };
+		CFD584602B165ADA000949A6 /* OnboardSecondStepVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD5845F2B165ADA000949A6 /* OnboardSecondStepVC.swift */; };
+		CFD584622B165B5A000949A6 /* OnboardSecondStepVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD584612B165B5A000949A6 /* OnboardSecondStepVM.swift */; };
+		CFD584642B165BA5000949A6 /* OnboardSecondStepCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD584632B165BA5000949A6 /* OnboardSecondStepCoordinator.swift */; };
+		CFD584662B165BE5000949A6 /* OnboardSecondStepAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD584652B165BE5000949A6 /* OnboardSecondStepAssembler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CF5B89D42B1D3E3B0080EF47 /* String+Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Attributes.swift"; sourceTree = "<group>"; };
 		CFD583A12AF0195D000949A6 /* NOTEme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NOTEme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFD583A42AF0195D000949A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFD583A62AF0195D000949A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,7 +100,16 @@
 		CFD5841B2B0D24CA000949A6 /* RegisterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCoordinator.swift; sourceTree = "<group>"; };
 		CFD5841E2B0E4592000949A6 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CFD584222B1401A6000949A6 /* ResetCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetCoordinator.swift; sourceTree = "<group>"; };
-		CFD584262B14095E000949A6 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		CFD5842A2B153154000949A6 /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
+		CFD5844F2B164B61000949A6 /* ParametersHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametersHelper.swift; sourceTree = "<group>"; };
+		CFD584542B165479000949A6 /* OnbordFirstStepVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbordFirstStepVC.swift; sourceTree = "<group>"; };
+		CFD584562B165675000949A6 /* OnboardFirstStepVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardFirstStepVM.swift; sourceTree = "<group>"; };
+		CFD584582B16572D000949A6 /* OnboardFirstStepAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardFirstStepAssembler.swift; sourceTree = "<group>"; };
+		CFD5845B2B1657EE000949A6 /* OnboardFirstStepCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardFirstStepCoordinator.swift; sourceTree = "<group>"; };
+		CFD5845F2B165ADA000949A6 /* OnboardSecondStepVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardSecondStepVC.swift; sourceTree = "<group>"; };
+		CFD584612B165B5A000949A6 /* OnboardSecondStepVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardSecondStepVM.swift; sourceTree = "<group>"; };
+		CFD584632B165BA5000949A6 /* OnboardSecondStepCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardSecondStepCoordinator.swift; sourceTree = "<group>"; };
+		CFD584652B165BE5000949A6 /* OnboardSecondStepAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardSecondStepAssembler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +124,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CF5B89D32B1A87610080EF47 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				CFD5842A2B153154000949A6 /* Builder.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
 		CFD583982AF0195D000949A6 = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				CFD583B92AF019CC000949A6 /* Auth */,
+				CFD584512B165417000949A6 /* Onboarding */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -197,10 +226,10 @@
 		CFD583D12AF15EBA000949A6 /* Utills */ = {
 			isa = PBXGroup;
 			children = (
-				CFD584262B14095E000949A6 /* Alert.swift */,
 				CFD583C82AF01A7C000949A6 /* UIView+Layer.swift */,
 				CFD583DC2AF6FEA2000949A6 /* String+Locale.swift */,
 				CFD583E92AFE942D000949A6 /* UIButton+Actions.swift */,
+				CF5B89D42B1D3E3B0080EF47 /* String+Attributes.swift */,
 			);
 			path = Utills;
 			sourceTree = "<group>";
@@ -249,6 +278,8 @@
 		CFD583EF2AFEA14B000949A6 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CF5B89D32B1A87610080EF47 /* Builder */,
+				CFD5844E2B164B45000949A6 /* Parameters */,
 				CFD584122B0D1290000949A6 /* Coordinator */,
 				CFD5840D2B0CF102000949A6 /* KeyboardAnimator */,
 				CFD583FA2B03E50A000949A6 /* KeyboardHelper */,
@@ -342,6 +373,61 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		CFD5844E2B164B45000949A6 /* Parameters */ = {
+			isa = PBXGroup;
+			children = (
+				CFD5844F2B164B61000949A6 /* ParametersHelper.swift */,
+			);
+			path = Parameters;
+			sourceTree = "<group>";
+		};
+		CFD584512B165417000949A6 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				CFD584522B165438000949A6 /* OnboardingFirstStep */,
+				CFD5845D2B165A91000949A6 /* OnboardingSeconfStep */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		CFD584522B165438000949A6 /* OnboardingFirstStep */ = {
+			isa = PBXGroup;
+			children = (
+				CFD584532B165449000949A6 /* Coordinator */,
+				CFD584542B165479000949A6 /* OnbordFirstStepVC.swift */,
+				CFD584562B165675000949A6 /* OnboardFirstStepVM.swift */,
+			);
+			path = OnboardingFirstStep;
+			sourceTree = "<group>";
+		};
+		CFD584532B165449000949A6 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				CFD5845B2B1657EE000949A6 /* OnboardFirstStepCoordinator.swift */,
+				CFD584582B16572D000949A6 /* OnboardFirstStepAssembler.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		CFD5845D2B165A91000949A6 /* OnboardingSeconfStep */ = {
+			isa = PBXGroup;
+			children = (
+				CFD5845E2B165AAB000949A6 /* Coordinator */,
+				CFD5845F2B165ADA000949A6 /* OnboardSecondStepVC.swift */,
+				CFD584612B165B5A000949A6 /* OnboardSecondStepVM.swift */,
+			);
+			path = OnboardingSeconfStep;
+			sourceTree = "<group>";
+		};
+		CFD5845E2B165AAB000949A6 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				CFD584632B165BA5000949A6 /* OnboardSecondStepCoordinator.swift */,
+				CFD584652B165BE5000949A6 /* OnboardSecondStepAssembler.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -423,20 +509,27 @@
 				CFD583A52AF0195D000949A6 /* AppDelegate.swift in Sources */,
 				CFD583C42AF01A42000949A6 /* UIFont+Consts.swift in Sources */,
 				CFD583F52AFEA816000949A6 /* InputValidator+Login.swift in Sources */,
+				CFD5845C2B1657EE000949A6 /* OnboardFirstStepCoordinator.swift in Sources */,
+				CFD584572B165675000949A6 /* OnboardFirstStepVM.swift in Sources */,
 				CFD5840F2B0CF57D000949A6 /* KeyboardAnimator+Register.swift in Sources */,
+				CFD584602B165ADA000949A6 /* OnboardSecondStepVC.swift in Sources */,
 				CFD583C22AF01A35000949A6 /* UIColor+Consts.swift in Sources */,
+				CFD584622B165B5A000949A6 /* OnboardSecondStepVM.swift in Sources */,
+				CFD584502B164B61000949A6 /* ParametersHelper.swift in Sources */,
 				CFD583CD2AF0672F000949A6 /* UIButton+Styles.swift in Sources */,
 				CFD583EC2AFE977E000949A6 /* LoginVM.swift in Sources */,
 				CFD583F92B03E119000949A6 /* RegisterAssembler.swift in Sources */,
 				CFD583C62AF01A53000949A6 /* UIImage+Consts.swift in Sources */,
 				CFD583EE2AFE97ED000949A6 /* LoginAssembler.swift in Sources */,
 				CFD5840C2B0CEEDB000949A6 /* KeyboardAnimator.swift in Sources */,
+				CFD584662B165BE5000949A6 /* OnboardSecondStepAssembler.swift in Sources */,
 				CFD583D42AF16EC4000949A6 /* LineTextField.swift in Sources */,
 				CFD584112B0D124D000949A6 /* AppCoordinator.swift in Sources */,
-				CFD584272B14095E000949A6 /* Alert.swift in Sources */,
+				CFD5842B2B153154000949A6 /* Builder.swift in Sources */,
 				CFD583A72AF0195D000949A6 /* SceneDelegate.swift in Sources */,
 				CFD584192B0D1B72000949A6 /* LoginCoordinator.swift in Sources */,
 				CFD584012B083791000949A6 /* ResetAssembler.swift in Sources */,
+				CFD584592B16572D000949A6 /* OnboardFirstStepAssembler.swift in Sources */,
 				CFD583EA2AFE942D000949A6 /* UIButton+Actions.swift in Sources */,
 				CFD584052B09FEE2000949A6 /* KeyboardHelper+Register.swift in Sources */,
 				CFD583D02AF06CB0000949A6 /* UILabel+Styles.swift in Sources */,
@@ -450,11 +543,14 @@
 				CFD583CB2AF01A8A000949A6 /* UIView+Styles.swift in Sources */,
 				CFD583FF2B08377C000949A6 /* ResetVM.swift in Sources */,
 				CFD5841C2B0D24CA000949A6 /* RegisterCoordinator.swift in Sources */,
+				CF5B89D52B1D3E3B0080EF47 /* String+Attributes.swift in Sources */,
 				CFD583E52AFAA0E5000949A6 /* ResetVC.swift in Sources */,
+				CFD584552B165479000949A6 /* OnbordFirstStepVC.swift in Sources */,
 				CFD584082B0A77DA000949A6 /* InputValidator+Reset.swift in Sources */,
 				CFD583C92AF01A7C000949A6 /* UIView+Layer.swift in Sources */,
 				CFD584232B1401A6000949A6 /* ResetCoordinator.swift in Sources */,
 				CFD583E32AFAA0D5000949A6 /* RegisterVC.swift in Sources */,
+				CFD584642B165BA5000949A6 /* OnboardSecondStepCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

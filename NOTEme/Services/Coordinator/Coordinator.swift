@@ -14,7 +14,7 @@ class Coordinator {
     
     var children: [Coordinator] = []
     
-    func start() -> UIViewController{
+    func start() -> UIViewController {
         fatalError("Should be overriden")
     }
     

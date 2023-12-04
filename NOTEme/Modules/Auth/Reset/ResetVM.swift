@@ -21,6 +21,8 @@ protocol ResetAuthServiceUseCase {
 }
 
 final class ResetVM: ResetViewModelProtocol {
+   
+    var showAlert: ((UIAlertController) -> Void)?
     
     var catchEmailError: ((String?) -> Void)?
     
@@ -36,7 +38,6 @@ final class ResetVM: ResetViewModelProtocol {
         self.coordinator = coordinator
         self.authService = authService
         self.inputValidator = inputValidator
-
     }
     
     func resetDidTap(email: String?) {
@@ -44,14 +45,26 @@ final class ResetVM: ResetViewModelProtocol {
             checkValidation(email: email),
             let email
         else { return }
-        authService.reset(email: email) { [weak coordinator]isSuccess in
+        authService.reset(email: email) { [weak self] isSuccess in
             print(isSuccess)
-            coordinator?.finish()
+            self?.showSuccesAlert()
         }
     }
     
-    func cancelDidTap() { 
+    func cancelDidTap() {
         coordinator?.finish()
+    }
+    
+    
+    private func showSuccesAlert() {
+        let alert = UIAlertController(
+            title: "reset_screen_emailSuccessTitle_alert".localized,
+            message: "reset_screen_emailSuccessMessage_alert".localized,
+            preferredStyle: .alert)
+        alert.addAction(.init(title: "Ok", style: .default, handler: { _ in
+            self.coordinator?.finish()
+        }))
+        showAlert?(alert)
     }
     
     private func checkValidation(email: String?) -> Bool {

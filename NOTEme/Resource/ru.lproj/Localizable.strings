@@ -7,7 +7,7 @@
 */
 
 
-//MARK: - LoginVC
+//MARK: - Login
 "login_screen_welcome_label" =  "С Возвращением!";
 "login_screen_titleEmail_label" =  "Почта";
 "login_screen_email_placeholder" =  "Введите электронную почту";
@@ -19,7 +19,7 @@
 "login_screen_login_button" =  "Логин";
 "login_screen_newAccount_button" =  "Новый аккаунт";
 
-//MARK: - RegisterVC
+//MARK: - Register
 "register_screen_register_label" =  "Приятно познакомиться!";
 "register_screen_register_button" =  "Зарегистрироваться";
 "register_screen_email_label" =  "Почта";
@@ -33,7 +33,7 @@
 "register_screen_password_errorText" =  "Неверно введен пароль";
 "register_screen_repeatPassword_errorText" =  "Пароли не совпадают";
 
-//MARK: - ResetPasswordVC
+//MARK: - ResetPassword
 "reset_screen_resetPassword_label" =  "Восстановление пароля";
 "reset_screen_email_placeholder" = "Введите электронную почту";
 "reset_screen_infoReset_label" = "Введите свой адрес электронной почты,
@@ -41,4 +41,24 @@
 "reset_screen_reset_button" = "Восстановить";
 "reset_screen_cancel_button" = "Отмена";
 "reset_screen_email_errorText" = "Неверно введен адрес почты";
+"reset_screen_emailSuccessTitle_alert" =  "Успешно";
+"reset_screen_emailSuccessMessage_alert" =  "Инстукция отправлена на почту";
 
+//MARK: - //MARK: - OnbordFirstStep
+"onbordFirstStep_screen_welcome_label" = "Добро пожаловать!";
+"onbordFirstStep_info_label" = "NoteMe - это приложение, которое оповещает вас обо всём!";
+"onbordFirstStep_screen_next_button" = "Продолжить";
+
+//MARK: - //MARK: - OnbordSecondStep
+"onbordSecondStep_screen_types_label" = "Разные варианты!";
+"onbordSecondStep_screen_info_label" = "Вы выбрать 3 варианта уведомлений
+\"Календарь\" - выберите дату, когда вы хотите получить уведомление.
+\"Локация\" - выберите регион и уведомление придет после того, как вы его введете.
+\"Таймер\" - установите таймер, и по истечении выбранного периода вы получите уведомление.";
+"onbordSecondStep_screen_calendar_label" = "Календарь";
+"onbordSecondStep_screen_location_label" = "Локация";
+"onbordSecondStep_screen_timer_label" = "Таймер";
+"onbordSecondStep_screen_done_button" = "Завершить";
+
+"main_screen_home_tabbarItem" = "Главная";
+"main_screen_profile_tabbarItem" = "Профиль";

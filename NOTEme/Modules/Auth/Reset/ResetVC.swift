@@ -8,11 +8,14 @@
 import UIKit
 import SnapKit
 
+
 @objc protocol ResetViewModelProtocol: AnyObject {
     var catchEmailError: ((String?) -> Void)? { get set }
-    
+    var showAlert: ((UIAlertController) -> Void)? { get set }
+
     func resetDidTap(email: String?)
     @objc func cancelDidTap()
+    
 }
 
 final class ResetVC: UIViewController {
@@ -57,6 +60,10 @@ final class ResetVC: UIViewController {
     private func bind() {
         viewModel.catchEmailError = { errorText in
             self.emailTextField.errorText = errorText
+        }
+        
+        viewModel.showAlert = { [weak self] alert in
+            self?.present(alert, animated: true)
         }
     }
     
@@ -145,4 +152,5 @@ final class ResetVC: UIViewController {
         viewModel.resetDidTap(email: emailTextField.text)
     }
 }
+
 

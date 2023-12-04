@@ -83,6 +83,8 @@ final class LoginVC: UIViewController {
         viewModel.catchPasswordError = {
             self.passwordTextField.errorText = $0
         }
+        
+        
     }
     
     private func setupUI() {
