@@ -27,7 +27,7 @@ final class AppCoordinator: Coordinator {
         }
         
         if ParametersHelper.get(.onboarded) {
-            openTMainModule()
+            openMainModule()
         }  else {
             openOnboardingModule()
         }
@@ -59,7 +59,7 @@ final class AppCoordinator: Coordinator {
         window.makeKeyAndVisible()
     }
     
-    private func openTMainModule() {
+    private func openMainModule() {
         let tabbar = UITabBarController()
         
         let homeVC =  UIViewController()
