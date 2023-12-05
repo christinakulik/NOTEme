@@ -8,11 +8,11 @@
 import UIKit
 
 extension String {
-    func changeFont(with desiredFont: UIFont = .appBoldFont.withSize(13.0))
+    func setAttributes(with desiredFont: UIFont = .appBoldFont.withSize(13.0))
     -> NSAttributedString {
         
         do {
-            let regex = try NSRegularExpression(pattern: "\"([^\"]*)\"")
+            let regex = try NSRegularExpression(pattern: "(?<=\\•\\s)(\\w+)")
             
             let results = regex.matches(in: self, 
                                         range: NSRange(self.startIndex...,
@@ -20,10 +20,19 @@ extension String {
             
             let formattedString = NSMutableAttributedString.init(string: self)
             
-            for result in results{
-                formattedString.addAttribute(NSAttributedString.Key.font, 
-                                             value: desiredFont,
-                                             range: result.range)
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.alignment = NSTextAlignment.left
+            
+            paragraphStyle.headIndent = 10.0
+            formattedString.addAttribute(NSAttributedString.Key.paragraphStyle,
+                                         value: paragraphStyle,
+                                         range: NSRange(location: 0,
+                                                        length: formattedString.length))
+            
+            for result in results {
+                formattedString.addAttributes([NSAttributedString.Key.font: 
+                                                desiredFont],
+                                              range: result.range)
             }
             
             return formattedString
@@ -33,6 +42,7 @@ extension String {
             return NSAttributedString.init(string: self)
         }
     }
+    
     
     
 }

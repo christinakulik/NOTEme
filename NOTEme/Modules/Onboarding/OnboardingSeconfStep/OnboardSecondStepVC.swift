@@ -32,7 +32,7 @@ final class OnboardSecondStepVC: UIViewController {
     private lazy var infoView: UIView = .plainViewWithShadow()
     
     private lazy var infoSecondStepLabel: UILabel =
-        .infoLabel("onbordSecondStep_screen_info_label".localized)
+        .infoLabelAttributes()
     
     private lazy var calendarLabel: UILabel =
         .selectionLabel("onbordSecondStep_screen_calendar_label".localized)
@@ -60,7 +60,6 @@ final class OnboardSecondStepVC: UIViewController {
     }
     
     override func viewDidLoad() {
-        setupAttrubutes()
         setupUI()
         setupConstaits()
     }
@@ -69,12 +68,6 @@ final class OnboardSecondStepVC: UIViewController {
         super.viewDidDisappear(animated)
         
         viewModel.dismissedByUser()
-    }
-    
-    private func setupAttrubutes() {
-        infoSecondStepLabel.attributedText = "onbordSecondStep_screen_info_label"
-            .localized
-            .changeFont()
     }
     
     private func setupUI() {

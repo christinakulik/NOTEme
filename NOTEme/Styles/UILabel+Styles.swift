@@ -30,6 +30,19 @@ extension UILabel {
         return label
     }
     
+    static func infoLabelAttributes() -> UILabel {
+        let label = UILabel()
+     
+        label.font = .appFont.withSize(13.0)
+        label.textColor = .appText
+        label.attributedText = "onbordSecondStep_screen_info_label"
+            .localized
+            .setAttributes()
+        label.numberOfLines = 0
+        
+        return label
+    }
+    
     static func selectionLabel(_ title: String?) -> UILabel {
         let label = UILabel()
         

@@ -49,10 +49,7 @@
 
 //MARK: - //MARK: - OnbordSecondStep
 "onbordSecondStep_screen_types_label" = "Different types!";
-"onbordSecondStep_screen_info_label" = "You can use 3 types of notifications
-\"Calendar\" - choose the date, when you want to receive notification.
-\"Location\" - choose the region and notification will come after you enter it.
-\"Timer\" - set timer and after selected period you will receive the notification.";
+"onbordSecondStep_screen_info_label" = "You can use 3 types of notifications\n  • Calendar - choose the date, when you want to receive notification.\n  • Location - choose the region and notification will come after you enter it.\n  • Timer - set timer and after selected period you will receive the notification.";
 "onbordSecondStep_screen_calendar_label" = "Calendar";
 "onbordSecondStep_screen_location_label" = "Location";
 "onbordSecondStep_screen_timer_label" = "Timer";
