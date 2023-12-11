@@ -7,7 +7,6 @@
 
 import Foundation
 import FirebaseAuth
-import Firebase
 
 final class AuthService {
     

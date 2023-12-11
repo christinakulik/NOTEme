@@ -32,14 +32,9 @@ extension UILabel {
     
     static func infoLabelAttributes() -> UILabel {
         let label = UILabel()
-     
-        label.font = .appFont.withSize(13.0)
-        label.textColor = .appText
-        label.attributedText = "onbordSecondStep_screen_info_label"
-            .localized
-            .setAttributes()
-        label.numberOfLines = 0
-        
+        let text = "onbordSecondStep_screen_info_label".localized
+        label.attributedText = .parse(html: text, font: .appFont.withSize(13))
+        label.numberOfLines = .zero
         return label
     }
     

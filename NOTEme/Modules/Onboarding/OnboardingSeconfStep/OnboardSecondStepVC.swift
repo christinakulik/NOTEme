@@ -31,9 +31,8 @@ final class OnboardSecondStepVC: UIViewController {
     
     private lazy var infoView: UIView = .plainViewWithShadow()
     
-    private lazy var infoSecondStepLabel: UILabel =
-        .infoLabelAttributes()
-    
+    private var infoSecondStepLabel: UILabel = .infoLabelAttributes()
+        
     private lazy var calendarLabel: UILabel =
         .selectionLabel("onbordSecondStep_screen_calendar_label".localized)
     

@@ -16,11 +16,10 @@ final class AppCoordinator: Coordinator {
     }
    
     func startApp() {
-       
-        ParametersHelper.set(.authenticated, value: false)
-        ParametersHelper.set(.onboarded, value: false)
-        
-      openAuthModule()
+// TODO: FIXME
+//        ParametersHelper.set(.authenticated, value: false)
+//        ParametersHelper.set(.onboarded, value: false)
+
         if ParametersHelper.get(.onboarded) {
             openMainModule()
         } else if ParametersHelper.get(.authenticated) {

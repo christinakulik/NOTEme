@@ -23,6 +23,7 @@
 		CF7379882B25362000E77BF0 /* AuthService+Reset.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7379872B25362000E77BF0 /* AuthService+Reset.swift */; };
 		CF73798B2B260EC900E77BF0 /* FirebaseDynamicLinks in Frameworks */ = {isa = PBXBuildFile; productRef = CF73798A2B260EC900E77BF0 /* FirebaseDynamicLinks */; };
 		CF73798D2B26728E00E77BF0 /* AuthService+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF73798C2B26728E00E77BF0 /* AuthService+Register.swift */; };
+		CF73798F2B274D2C00E77BF0 /* NSAttributedString+HTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF73798E2B274D2C00E77BF0 /* NSAttributedString+HTML.swift */; };
 		CFD583A52AF0195D000949A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD583A42AF0195D000949A6 /* AppDelegate.swift */; };
 		CFD583A72AF0195D000949A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD583A62AF0195D000949A6 /* SceneDelegate.swift */; };
 		CFD583AE2AF0195E000949A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFD583AD2AF0195E000949A6 /* Assets.xcassets */; };
@@ -82,6 +83,7 @@
 		CF7379852B1F98E500E77BF0 /* AlertBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBuilder.swift; sourceTree = "<group>"; };
 		CF7379872B25362000E77BF0 /* AuthService+Reset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthService+Reset.swift"; sourceTree = "<group>"; };
 		CF73798C2B26728E00E77BF0 /* AuthService+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthService+Register.swift"; sourceTree = "<group>"; };
+		CF73798E2B274D2C00E77BF0 /* NSAttributedString+HTML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+HTML.swift"; sourceTree = "<group>"; };
 		CFD583A12AF0195D000949A6 /* NOTEme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NOTEme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFD583A42AF0195D000949A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFD583A62AF0195D000949A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 				CFD583DC2AF6FEA2000949A6 /* String+Locale.swift */,
 				CFD583E92AFE942D000949A6 /* UIButton+Actions.swift */,
 				CF5B89D42B1D3E3B0080EF47 /* String+Attributes.swift */,
+				CF73798E2B274D2C00E77BF0 /* NSAttributedString+HTML.swift */,
 			);
 			path = Utills;
 			sourceTree = "<group>";
@@ -621,6 +624,7 @@
 				CFD583BB2AF019D9000949A6 /* LoginVC.swift in Sources */,
 				CFD584032B094BE0000949A6 /* InputValidator+Register.swift in Sources */,
 				CFD583F22AFEA1B7000949A6 /* InputValidator.swift in Sources */,
+				CF73798F2B274D2C00E77BF0 /* NSAttributedString+HTML.swift in Sources */,
 				CFD583FC2B03E535000949A6 /* KeyboardHelper.swift in Sources */,
 				CFD583F72B03DB85000949A6 /* RegisterPresenter.swift in Sources */,
 				CFD584142B0D129D000949A6 /* Coordinator.swift in Sources */,
