@@ -8,6 +8,7 @@
 import Foundation
 
 extension AuthService: RegisterAuthServiceUseCase {
+    
     func register(email: String,
                   password: String,
                   completion: @escaping (Bool) -> Void) {

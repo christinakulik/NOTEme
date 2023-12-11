@@ -21,13 +21,15 @@ final class AlertBuilder {
                                         message: message,
                                         preferredStyle: .alert)
         if let cancelTitle {
-            let action = UIAlertAction(title: cancelTitle, style: .cancel) { _ in
+            let action = UIAlertAction(title: cancelTitle, 
+                                       style: .cancel) { _ in
                 cancelHandler?()
             }
             alertVC.addAction(action)
         }
         if let okTitle {
-            let action = UIAlertAction(title: okTitle, style: .default) { _ in
+            let action = UIAlertAction(title: okTitle, 
+                                       style: .default) { _ in
                 okHandler?()
             }
             alertVC.addAction(action)

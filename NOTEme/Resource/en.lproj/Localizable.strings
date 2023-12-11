@@ -33,8 +33,8 @@
 "register_screen_email_errorText" =  "Wrong e-mail";
 "register_screen_password_errorText" =  "Non-valid password";
 "register_screen_repeatPassword_errorText" =  "Passwords don't match";
-"register_screen_succsessAlert_title" = "Success";
-"register_screen_succsessAlert_message" = "Password verification sent by email";
+"register_screen_successAlert_title" = "Success";
+"register_screen_successAlert_message" = "Password verification sent by email";
 "register_screen_errorAlert_title" = "Error";
 "register_screen_errorAlert_message" = "Please check your e-mail or password";
 

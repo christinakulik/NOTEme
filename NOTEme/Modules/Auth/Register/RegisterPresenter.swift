@@ -9,7 +9,6 @@ import UIKit
 
 protocol RegisterCoordinatorProtocol: AnyObject {
     func finish()
-    func showAlert(_ alert: UIAlertController)
 }
 
 protocol RegisterInputValidatorUseCase {
@@ -29,7 +28,7 @@ protocol RegisterAuthServiceUseCase {
     func register(email: String,
                password: String,
                completion: @escaping (Bool) -> Void)
-    func sendVerificationMail()
+    func sendEmailVerification()
 }
 
 protocol RegisterPresenterDelegate: AnyObject {
@@ -81,29 +80,16 @@ final class RegisterPresenter: RegisterPresenterProtocol {
                             repeatPassword: repeatPassword),
             let email, let password
         else { return }
-        authService.register(email: email, 
+        authService.register(email: email,
                              password: password) {
-            [weak coordinator] isSuccess in
+            [weak self] isSuccess in
             print(isSuccess)
-            if isSuccess {
-                let alertVC = AlertBuilder
-                    .build(title: "register_screen_succsessAlert_title".localized,
-                     message: "register_screen_succsessAlert_message".localized,
-                     okTitle: "OK")
-                coordinator?.showAlert(alertVC)
-                self.authService.sendVerificationMail()
-            coordinator?.finish()
-            } else {
-                let alertVC = AlertBuilder
-                    .build(title: "register_screen_errorAlert_title".localized,
-                     message: "register_screen_errorAlert_message".localized,
-                     okTitle: "OK")
-                coordinator?.showAlert(alertVC)
-            }
+            self?.authService.sendEmailVerification()
+            self?.coordinator?.finish()
         }
     }
     
-    func haveAccountDidTap() { 
+    func haveAccountDidTap() {
         coordinator?.finish()
     }
     
@@ -120,7 +106,7 @@ final class RegisterPresenter: RegisterPresenterProtocol {
         delegate?.setPasswordError(error: isPasswordValid ? nil : "register_screen_password_errorText".localized)
         delegate?.setRepeatPasswordError(error: isRepeatPasswordValid ? nil : "register_screen_repeatPassword_errorText".localized)
         
-        return isEmailValid  && isPasswordValid && isRepeatPasswordValid
+        return isEmailValid && isPasswordValid && isRepeatPasswordValid
     }
     
 }

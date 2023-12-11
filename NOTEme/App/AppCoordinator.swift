@@ -17,8 +17,8 @@ final class AppCoordinator: Coordinator {
    
     func startApp() {
        
-//        ParametersHelper.set(.authenticated, value: false)
-//        ParametersHelper.set(.onboarded, value: false)
+        ParametersHelper.set(.authenticated, value: false)
+        ParametersHelper.set(.onboarded, value: false)
         
       openAuthModule()
         if ParametersHelper.get(.onboarded) {
