@@ -18,6 +18,8 @@
 "login_screen_forgotPassword_button" =  "Забыли пароль";
 "login_screen_login_button" =  "Логин";
 "login_screen_newAccount_button" =  "Новый аккаунт";
+"login_screen_password_errorText" =  "Неверно введен пароль";
+"login_screen_repeatPassword_errorText" =  "Пароли не совпадают";
 
 //MARK: - Register
 "register_screen_register_label" =  "Приятно познакомиться!";
@@ -32,6 +34,8 @@
 "register_screen_email_errorText" =  "Неверно введен адрес почты";
 "register_screen_password_errorText" =  "Неверно введен пароль";
 "register_screen_repeatPassword_errorText" =  "Пароли не совпадают";
+"register_screen_succsessAlert_title" = "Успешно";
+"register_screen_succsessAlert_message" = "Письмо с верификацией пароля выслано на почту";
 
 //MARK: - ResetPassword
 "reset_screen_resetPassword_label" =  "Восстановление пароля";
@@ -59,3 +63,4 @@
 
 "main_screen_home_tabbarItem" = "Главная";
 "main_screen_profile_tabbarItem" = "Профиль";
+

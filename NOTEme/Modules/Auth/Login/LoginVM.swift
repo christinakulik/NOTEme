@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 protocol LoginCoordinatorProtocol: AnyObject {
     func finish()
     func openRegisterModule()
     func openResetModule()
+    func showAlert(_ alert: UIAlertController)
 }
 
 protocol LoginInputValidatorUseCase {
@@ -22,6 +24,7 @@ protocol LoginAuthServiceUseCase {
     func login(email: String,
                password: String,
                completion: @escaping (Bool) -> Void)
+    
 }
 
 final class LoginVM: LoginViewModelProtocol {
@@ -43,15 +46,23 @@ final class LoginVM: LoginViewModelProtocol {
     
     func loginDidTap(email: String?, password: String?) {
         guard 
-            checkValidation(email: email, password: password),
+            checkValidation(email: email),
             let email, let password
         else { return }
+        
         authService.login(email: email,
                           password: password) { [weak coordinator] isSuccess in
             print(isSuccess)
             if isSuccess {
+                //FIXME: uncomment
                 ParametersHelper.set(.authenticated, value: true)
                 coordinator?.finish()
+            } else {
+                let alertVC = AlertBuilder
+                    .build(title: "login_screen_errorAlert_title".localized,
+                     message: "login_screen_errorAlert_message".localized,
+                     okTitle: "OK")
+                coordinator?.showAlert(alertVC)
             }
         }
     }
@@ -66,15 +77,12 @@ final class LoginVM: LoginViewModelProtocol {
         coordinator?.openResetModule()
     }
     
-    private func checkValidation(email: String?, password: String?) -> Bool {
+    private func checkValidation(email: String?) -> Bool {
         let isEmailValid = inputValidator.validate(email: email)
-        let isPAsswordValid = inputValidator.validate(password: password)
         
         catchEmailError?(isEmailValid ? nil :
                             "login_screen_email_errorText".localized)
-        catchPasswordError?(isPAsswordValid ? nil :
-                                "login_screen_password_errorText".localized)
         
-        return isEmailValid && isPAsswordValid
+        return isEmailValid
     }
 }

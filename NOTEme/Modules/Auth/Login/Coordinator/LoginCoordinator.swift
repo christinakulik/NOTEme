@@ -19,6 +19,7 @@ final class LoginCoordinator: Coordinator {
 }
 
 extension LoginCoordinator: LoginCoordinatorProtocol {
+    
     func openRegisterModule() {
         let coordinator = RegisterCoordinator()
         children.append(coordinator)
@@ -45,5 +46,9 @@ extension LoginCoordinator: LoginCoordinatorProtocol {
             vc.modalPresentationStyle = .fullScreen
                 rootVC?.present(vc, animated: true)
         }
+    
+    func showAlert(_ alert: UIAlertController) {
+        rootVC?.present(alert, animated: true)
+    }
     }
 

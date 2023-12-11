@@ -54,9 +54,16 @@ final class LineTextField: UIView {
     }
     
     var placeholder: String? {
-        get { textField.placeholder }
-        set { textField.placeholder = newValue }
-        
+        get { textField.attributedPlaceholder?.string }
+        set {
+            guard let newValue else {
+                textField.attributedPlaceholder = nil
+                return
+            }
+            textField.attributedPlaceholder = NSAttributedString(
+                string: newValue,
+                attributes: [.foregroundColor: UIColor.appGrayText])
+        }
     }
     
     var text: String? {

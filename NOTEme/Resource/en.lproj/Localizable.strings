@@ -17,6 +17,8 @@
 "login_screen_forgotPassword_button" =  "Forgot Password";
 "login_screen_login_button" =  "Login";
 "login_screen_newAccount_button" =  "New Account";
+"login_screen_errorAlert_title" = "Error";
+"login_screen_errorAlert_message" = "Please check your e-mail or password";
 
 //MARK: - Register
 "register_screen_register_label" =  "Nice to meet you!";
@@ -31,6 +33,10 @@
 "register_screen_email_errorText" =  "Wrong e-mail";
 "register_screen_password_errorText" =  "Non-valid password";
 "register_screen_repeatPassword_errorText" =  "Passwords don't match";
+"register_screen_succsessAlert_title" = "Success";
+"register_screen_succsessAlert_message" = "Password verification sent by email";
+"register_screen_errorAlert_title" = "Error";
+"register_screen_errorAlert_message" = "Please check your e-mail or password";
 
 //MARK: - ResetPassword
 "reset_screen_resetPassword_label" =  "Reset Password";

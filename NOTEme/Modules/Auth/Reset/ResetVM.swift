@@ -17,7 +17,8 @@ protocol ResetInputValidatorUseCase {
 }
 
 protocol ResetAuthServiceUseCase {
-    func reset(email: String, completion: @escaping (Bool) -> Void)
+    func reset(email: String, 
+               completion: @escaping (Bool) -> Void)
 }
 
 final class ResetVM: ResetViewModelProtocol {
