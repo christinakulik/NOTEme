@@ -128,5 +128,4 @@ final class RegisterPresenter: RegisterPresenterProtocol {
         
         return isEmailValid && isPasswordValid && isRepeatPasswordValid
     }
-    
 }

@@ -14,14 +14,6 @@ final class MainTabBarAssembler {
     static func make() -> UITabBarController {
         let tabBar = MainTabBarVC()
         
-//        let homeVC = UIViewController()
-//        homeVC.view.backgroundColor = .cyan
-//        
-//        let profileVC = UIViewController()
-//        profileVC.view.backgroundColor = .red
-//        
-//        tabBar.viewControllers = [homeVC, profileVC]
-        
         return tabBar
     }
 }

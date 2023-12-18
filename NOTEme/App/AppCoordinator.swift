@@ -23,15 +23,13 @@ final class AppCoordinator: Coordinator {
 //        ParametersHelper.set(.authenticated, value: false)
 //        ParametersHelper.set(.onboarded, value: false)
 
-//        openOnboardingModule()
-        
-//        if ParametersHelper.get(.onboarded) {
+        if ParametersHelper.get(.onboarded) {
             openMainModule()
-//        } else if ParametersHelper.get(.authenticated) {
-//            openOnboardingModule()
-//        } else {
-//            openAuthModule()
-//        }
+        } else if ParametersHelper.get(.authenticated) {
+            openOnboardingModule()
+        } else {
+            openAuthModule()
+        }
     }
     
     private func openAuthModule() {
@@ -61,9 +59,6 @@ final class AppCoordinator: Coordinator {
     }
     
     private func openMainModule() {
-//        let tabbar = UITabBarController()
-//        tabbar.viewControllers = [UIViewController(), UIViewController()]
-//        window.rootViewController = tabbar
         
         let coordinator = MainTabBarCoordinator()
             children.append(coordinator)
@@ -75,9 +70,6 @@ final class AppCoordinator: Coordinator {
             
             window.rootViewController = vc
             window.makeKeyAndVisible()
-        
-//        let homeVC =  UIViewController()
-//        let profileVC = UIViewController()
     }
 }
     

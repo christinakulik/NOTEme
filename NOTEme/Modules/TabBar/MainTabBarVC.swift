@@ -16,5 +16,4 @@ final class MainTabBarVC: UITabBarController {
         tabBar.backgroundColor = .appBlack
         tabBar.unselectedItemTintColor = .appGray
     }
-    
 }
