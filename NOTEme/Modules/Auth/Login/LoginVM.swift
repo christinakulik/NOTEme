@@ -12,12 +12,22 @@ protocol LoginCoordinatorProtocol: AnyObject {
     func finish()
     func openRegisterModule()
     func openResetModule()
-    func showAlert(_ alert: UIAlertController)
 }
 
 protocol LoginInputValidatorUseCase {
     func validate(email: String?) -> Bool
     func validate(password: String?) -> Bool
+}
+
+protocol LoginAlertServiceUseCase {
+    func showAlert(title: String, message: String, okTitle: String)
+}
+
+protocol LoginKeyboardHelperUseCase {
+    @discardableResult
+    func onWillShow(_ handler: @escaping (CGRect) -> Void) -> Self
+    @discardableResult
+    func onWillHide(_ handler: @escaping (CGRect) -> Void) -> Self
 }
 
 protocol LoginAuthServiceUseCase {
@@ -28,6 +38,8 @@ protocol LoginAuthServiceUseCase {
 }
 
 final class LoginVM: LoginViewModelProtocol {
+   
+    var changeKeyboardFrame: ((CGRect) -> Void)?
     var catchEmailError: ((String?) -> Void)?
     var catchPasswordError: ((String?) -> Void)?
     
@@ -35,13 +47,30 @@ final class LoginVM: LoginViewModelProtocol {
     
     private let authService: LoginAuthServiceUseCase
     private let inputValidator: LoginInputValidatorUseCase
+    private let keyboardHelper: LoginKeyboardHelperUseCase
+    private let alertService: LoginAlertServiceUseCase
     
     init(coordinator: LoginCoordinatorProtocol,
          authService: LoginAuthServiceUseCase,
-         inputValidator: LoginInputValidatorUseCase) {
+         inputValidator: LoginInputValidatorUseCase,
+         keyboardHelper: LoginKeyboardHelperUseCase,
+         alertService: LoginAlertServiceUseCase) {
         self.coordinator = coordinator
         self.authService = authService
         self.inputValidator = inputValidator
+        self.keyboardHelper = keyboardHelper
+        self.alertService = alertService
+        
+        bind()
+    }
+    
+    func bind() {
+       keyboardHelper
+          .onWillShow { [weak self] in
+              self?.changeKeyboardFrame?($0)
+          }.onWillHide { [weak self] in
+              self?.changeKeyboardFrame?($0)
+          }
     }
     
     func loginDidTap(email: String?, password: String?) {
@@ -51,18 +80,17 @@ final class LoginVM: LoginViewModelProtocol {
         else { return }
         
         authService.login(email: email,
-                          password: password) { [weak coordinator] isSuccess in
+                          password: password) { [weak self] isSuccess in
             print(isSuccess)
             if isSuccess {
-                //FIXME: uncomment
                 ParametersHelper.set(.authenticated, value: true)
-                coordinator?.finish()
+                self?.coordinator?.finish()
             } else {
-                let alertVC = AlertBuilder
-                    .build(title: "login_screen_errorAlert_title".localized,
-                     message: "login_screen_errorAlert_message".localized,
-                     okTitle: "OK")
-                coordinator?.showAlert(alertVC)
+                self?.alertService
+                    .showAlert(
+                    title: "login_screen_errorAlert_title".localized,
+                    message: "login_screen_errorAlert_message".localized,
+                    okTitle: "OK")
             }
         }
     }

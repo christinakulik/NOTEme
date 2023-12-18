@@ -14,7 +14,8 @@ final class RegisterAssembler {
         let presenter = RegisterPresenter(coordinator: coordinator,
                                           keyboardHelper: KeyboardHelper(),
                                           authService: AuthService(),
-                                          inputValidator: InputValidator())
+                                          inputValidator: InputValidator(),
+                                          alertService: AlertService.current)
         let vc = RegisterVC(presenter: presenter, animate: KeyboardAnimator())
         presenter.delegate = vc
         

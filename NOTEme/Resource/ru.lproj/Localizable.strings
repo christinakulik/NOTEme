@@ -47,20 +47,25 @@
 "reset_screen_email_errorText" = "Неверно введен адрес почты";
 "reset_screen_emailSuccessTitle_alert" =  "Успешно";
 "reset_screen_emailSuccessMessage_alert" =  "Инстукция отправлена на почту";
+"reset_screen_errorAlert_title" = "Ошибка";
+"reset_screen_errorAlert_message" = "Повторите попытку позже";
 
-//MARK: - //MARK: - OnbordFirstStep
+//MARK: - OnbordFirstStep
 "onbordFirstStep_screen_welcome_label" = "Добро пожаловать!";
 "onbordFirstStep_info_label" = "NoteMe - это приложение, которое оповещает вас обо всём!";
 "onbordFirstStep_screen_next_button" = "Продолжить";
 
-//MARK: - //MARK: - OnbordSecondStep
+//MARK: - OnbordSecondStep
 "onbordSecondStep_screen_types_label" = "Разные варианты!";
-"onbordSecondStep_screen_info_label" = "Вы можете выбрать 3 варианта уведомлений <p style=\"margin-bottom: 0px;margin-left: 8px;\"><b> • Календарь</b> - выберите дату, когда вы хотите получить уведомление.  <br><b>• Локация</b> - выберите регион и уведомление придет после того, как вы его введете.\n  <br><b>• Таймер</b> - установите таймер, и по истечении выбранного периода вы получите уведомление.";
+"onbordSecondStep_screen_info_label" = "Вы можете выбрать 3 варианта уведомлений <ul>
+<li><b>Календарь</b> - выберите дату, когда вы хотите получить уведомление.</li>
+<li><b>Локация</b> - выберите регион и уведомление придет после того, как вы его введете. <li><b>Таймер</b> - установите таймер, и по истечении выбранного периода вы получите уведомление.</ul>";
 "onbordSecondStep_screen_calendar_label" = "Календарь";
 "onbordSecondStep_screen_location_label" = "Локация";
 "onbordSecondStep_screen_timer_label" = "Таймер";
 "onbordSecondStep_screen_done_button" = "Завершить";
 
+//MARK: - TabBarItems
 "main_screen_home_tabbarItem" = "Главная";
 "main_screen_profile_tabbarItem" = "Профиль";
 

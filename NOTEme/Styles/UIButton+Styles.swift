@@ -7,6 +7,11 @@
 
 import UIKit
 
+private enum L10n {
+    static let cancelButton: String =
+    "reset_screen_cancel_button".localized
+}
+
 extension UIButton {
     
     static func yellowRoundedButton(_ title: String?) -> UIButton {
@@ -31,7 +36,7 @@ extension UIButton {
         button.cornerRadius = 5.0
         button.setBorder(with: 1.0, color: .appYellow)
         
-        button.setTitle("reset_screen_cancel_button".localized, for: .normal)
+        button.setTitle(L10n.cancelButton, for: .normal)
         button.setTitleColor(.appYellow, for: .normal)
         button.setTitleColor(.appYellow.withAlphaComponent(0.75), 
                              for: .highlighted)

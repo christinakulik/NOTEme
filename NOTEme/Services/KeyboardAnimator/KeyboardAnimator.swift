@@ -9,6 +9,14 @@ import UIKit
 import SnapKit
 
 final class KeyboardAnimator {
+    private func update(for targetView: UIView,
+                        with offset: CGFloat) {
+          targetView.snp.updateConstraints {
+              $0.centerY.equalToSuperview().offset(offset)
+          }
+        targetView.superview?.layoutIfNeeded()
+      }
+    
     func move(for targetView: UIView,
               frame: CGRect,
               with padding: CGFloat) {
@@ -21,14 +29,6 @@ final class KeyboardAnimator {
         } else if diff < 0 {
             update(for: targetView, with: .zero)
         }
-    }
-    
-  private func update(for targetView: UIView,
-                      with offset: CGFloat) {
-        targetView.snp.updateConstraints {
-            $0.centerY.equalToSuperview().offset(offset)
-        }
-      targetView.superview?.layoutIfNeeded()
     }
 }
 

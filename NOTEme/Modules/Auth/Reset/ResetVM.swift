@@ -13,17 +13,19 @@ protocol ResetCoordinatorProtocol: AnyObject {
 
 protocol ResetInputValidatorUseCase {
     func validate(email: String?) -> Bool
- 
+    
+}
+
+protocol ResetAlertServiceUseCase {
+    func showAlert(title: String, message: String, okTitle: String)
 }
 
 protocol ResetAuthServiceUseCase {
-    func reset(email: String, 
+    func reset(email: String,
                completion: @escaping (Bool) -> Void)
 }
 
 final class ResetVM: ResetViewModelProtocol {
-   
-    var showAlert: ((UIAlertController) -> Void)?
     
     var catchEmailError: ((String?) -> Void)?
     
@@ -31,14 +33,17 @@ final class ResetVM: ResetViewModelProtocol {
     
     private let authService: ResetAuthServiceUseCase
     private let inputValidator: ResetInputValidatorUseCase
+    private let alertService: ResetAlertServiceUseCase
     
     
     init(coordinator: ResetCoordinatorProtocol,
          authService: ResetAuthServiceUseCase,
-         inputValidator: ResetInputValidatorUseCase) {
+         inputValidator: ResetInputValidatorUseCase,
+         alertService: ResetAlertServiceUseCase) {
         self.coordinator = coordinator
         self.authService = authService
         self.inputValidator = inputValidator
+        self.alertService = alertService
     }
     
     func resetDidTap(email: String?) {
@@ -48,24 +53,25 @@ final class ResetVM: ResetViewModelProtocol {
         else { return }
         authService.reset(email: email) { [weak self] isSuccess in
             print(isSuccess)
-            self?.showSuccesAlert()
+            if isSuccess {
+                self?.alertService
+                    .showAlert(
+                        title: "reset_screen_emailSuccessTitle_alert".localized,
+                        message: "reset_screen_emailSuccessMessage_alert".localized,
+                        okTitle: "OK")
+                self?.coordinator?.finish()
+            } else {
+                self?.alertService
+                    .showAlert(
+                        title: "reset_screen_emailSuccessTitle_alert".localized,
+                        message: "reset_screen_emailSuccessMessage_alert".localized,
+                        okTitle: "OK")
+            }
         }
     }
     
     func cancelDidTap() {
         coordinator?.finish()
-    }
-    
-    
-    private func showSuccesAlert() {
-        let alert = UIAlertController(
-            title: "reset_screen_emailSuccessTitle_alert".localized,
-            message: "reset_screen_emailSuccessMessage_alert".localized,
-            preferredStyle: .alert)
-        alert.addAction(.init(title: "Ok", style: .default, handler: { _ in
-            self.coordinator?.finish()
-        }))
-        showAlert?(alert)
     }
     
     private func checkValidation(email: String?) -> Bool {

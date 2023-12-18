@@ -7,6 +7,11 @@
 
 import UIKit
 
+private enum L10n {
+    static let infoLabelAttributes: String =
+    "onbordSecondStep_screen_info_label".localized
+}
+
 extension UILabel {
     
     static func titleLabel(_ title: String?) -> UILabel {
@@ -32,7 +37,7 @@ extension UILabel {
     
     static func infoLabelAttributes() -> UILabel {
         let label = UILabel()
-        let text = "onbordSecondStep_screen_info_label".localized
+        let text = L10n.infoLabelAttributes
         label.attributedText = .parse(html: text, font: .appFont.withSize(13))
         label.numberOfLines = .zero
         return label
@@ -48,5 +53,4 @@ extension UILabel {
         
         return label
     }
-
 }

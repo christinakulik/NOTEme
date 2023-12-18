@@ -17,11 +17,8 @@ extension UIImage {
     enum Onboarding {
         static let step: UIImage = .init(named: "Step")!
     }
-    enum Tabbar {
+    enum TabBar {
         static let home: UIImage = .init(named: "home")!
-        static let homeSelected: UIImage = .init(named: "homeSelected")!
         static let profile: UIImage = .init(named: "profile")!
-        static let profileSelected: UIImage = .init(named: "profileSelected")!
     }
-    
 }

@@ -24,6 +24,10 @@ protocol RegisterKeyboardHelperUseCase {
     func onWillHide(_ handler: @escaping (CGRect) -> Void) -> Self
 }
 
+protocol RegisterAlertServiceUseCase {
+    func showAlert(title: String, message: String, okTitle: String)
+}
+
 protocol RegisterAuthServiceUseCase {
     func register(email: String,
                password: String,
@@ -49,15 +53,18 @@ final class RegisterPresenter: RegisterPresenterProtocol {
     private let authService: RegisterAuthServiceUseCase
     private let inputValidator: RegisterInputValidatorUseCase
     private let keyboardHelper: RegisterKeyboardHelperUseCase
+    private let alertService: RegisterAlertServiceUseCase
     
     init(coordinator: RegisterCoordinatorProtocol,
          keyboardHelper: RegisterKeyboardHelperUseCase,
          authService: RegisterAuthServiceUseCase,
-         inputValidator: RegisterInputValidatorUseCase) {
+         inputValidator: RegisterInputValidatorUseCase,
+         alertService: RegisterAlertServiceUseCase) {
         self.coordinator = coordinator
         self.keyboardHelper = keyboardHelper
         self.authService = authService
         self.inputValidator = inputValidator
+        self.alertService = alertService
         
         bind()
     }
@@ -84,8 +91,21 @@ final class RegisterPresenter: RegisterPresenterProtocol {
                              password: password) {
             [weak self] isSuccess in
             print(isSuccess)
-            self?.authService.sendEmailVerification()
-            self?.coordinator?.finish()
+            if isSuccess {
+                self?.authService.sendEmailVerification()
+                self?.alertService
+                    .showAlert(
+                        title: "register_screen_successAlert_title".localized,
+                        message: "register_screen_successAlert_message".localized,
+                        okTitle: "OK")
+                self?.coordinator?.finish()
+            } else {
+                self?.alertService
+                    .showAlert(
+                        title: "register_screen_errorAlert_title".localized,
+                        message: "register_screen_errorAlert_message".localized,
+                        okTitle: "OK")
+            }
         }
     }
     

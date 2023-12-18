@@ -9,10 +9,13 @@ import UIKit
 
 final class AppCoordinator: Coordinator {
     
+    static var windowScene: UIWindowScene?
+    
     private var window: UIWindow
     
     init(scene: UIWindowScene) {
         self.window = UIWindow(windowScene: scene)
+        Self.windowScene = scene
     }
    
     func startApp() {
@@ -20,13 +23,15 @@ final class AppCoordinator: Coordinator {
 //        ParametersHelper.set(.authenticated, value: false)
 //        ParametersHelper.set(.onboarded, value: false)
 
-        if ParametersHelper.get(.onboarded) {
+//        openOnboardingModule()
+        
+//        if ParametersHelper.get(.onboarded) {
             openMainModule()
-        } else if ParametersHelper.get(.authenticated) {
-            openOnboardingModule()
-        } else {
-            openAuthModule()
-        }
+//        } else if ParametersHelper.get(.authenticated) {
+//            openOnboardingModule()
+//        } else {
+//            openAuthModule()
+//        }
     }
     
     private func openAuthModule() {
@@ -56,28 +61,23 @@ final class AppCoordinator: Coordinator {
     }
     
     private func openMainModule() {
-        let tabbar = UITabBarController()
+//        let tabbar = UITabBarController()
+//        tabbar.viewControllers = [UIViewController(), UIViewController()]
+//        window.rootViewController = tabbar
         
-        let homeVC =  UIViewController()
-        let profileVC = UIViewController()
-
-        homeVC.view.backgroundColor = .appYellow
-        profileVC.view.backgroundColor = .appGray
+        let coordinator = MainTabBarCoordinator()
+            children.append(coordinator)
+            coordinator.onDidFinish = { [weak self] coordinator in
+                self?.children.removeAll { $0 == coordinator }
+                self?.startApp()
+            }
+            let vc = coordinator.start()
+            
+            window.rootViewController = vc
+            window.makeKeyAndVisible()
         
-        homeVC.tabBarItem =
-        UITabBarItem(title: "main_screen_home_tabbarItem".localized,
-                     image: .Tabbar.home,
-                     selectedImage: .Tabbar.homeSelected)
-        profileVC.tabBarItem =
-        UITabBarItem(title: "main_screen_profile_tabbarItem".localized,
-                     image: .Tabbar.profile,
-                     selectedImage: .Tabbar.profileSelected)
-        
-        tabbar.viewControllers = [homeVC, profileVC].map 
-        { UINavigationController(rootViewController: $0) }
-        
-        window.rootViewController = tabbar
-        window.makeKeyAndVisible()
+//        let homeVC =  UIViewController()
+//        let profileVC = UIViewController()
     }
 }
     

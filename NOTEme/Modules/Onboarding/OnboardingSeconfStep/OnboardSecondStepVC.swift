@@ -16,6 +16,19 @@ import SnapKit
 
 final class OnboardSecondStepVC: UIViewController {
     
+    private enum L10n {
+        static let titleLabel: String =
+        "onbordSecondStep_screen_types_label".localized
+        static let doneButton: String =
+        "onbordSecondStep_screen_done_button".localized
+        static let calendarLabel: String =
+        "onbordFirstStep_info_label".localized
+        static let locationLabel: String =
+        "onbordSecondStep_screen_location_label".localized
+        static let timerLabel: String =
+        "onbordSecondStep_screen_timer_label".localized
+    }
+    
     private lazy var contentView: UIView = .basicView()
     
     private lazy var logoContainer: UIView = UIView()
@@ -27,23 +40,23 @@ final class OnboardSecondStepVC: UIViewController {
     UIImageView(image: .Onboarding.step)
     
     private lazy var typesTitleLabel: UILabel =
-        .titleLabel("onbordSecondStep_screen_types_label".localized)
+        .titleLabel(L10n.titleLabel)
     
     private lazy var infoView: UIView = .plainViewWithShadow()
     
     private var infoSecondStepLabel: UILabel = .infoLabelAttributes()
         
     private lazy var calendarLabel: UILabel =
-        .selectionLabel("onbordSecondStep_screen_calendar_label".localized)
+        .selectionLabel(L10n.calendarLabel)
     
     private lazy var locationLabel: UILabel =
-        .selectionLabel("onbordSecondStep_screen_location_label".localized)
+        .selectionLabel(L10n.locationLabel)
     
     private lazy var timerLabel: UILabel =
-        .selectionLabel("onbordSecondStep_screen_timer_label".localized)
+        .selectionLabel(L10n.timerLabel)
     
     private lazy var doneButton: UIButton = 
-        .yellowRoundedButton("onbordSecondStep_screen_done_button".localized)
+        .yellowRoundedButton(L10n.doneButton)
         .withAction(viewModel, 
                     #selector(OnbordSecondStepViewModelProtocol.doneDidTap))
     

@@ -47,19 +47,22 @@
 "reset_screen_email_errorText" =  "Wrong e-mail";
 "reset_screen_emailSuccessTitle_alert" =  "Successfully";
 "reset_screen_emailSuccessMessage_alert" =  "Instruction sent to e-mail";
+"reset_screen_errorAlert_title" = "Error";
+"reset_screen_errorAlert_message" = "Please check your e-mail";
 
-//MARK: - //MARK: - OnbordFirstStep
+//MARK: - OnbordFirstStep
 "onbordFirstStep_screen_welcome_label" = "Welcome!";
 "onbordFirstStep_info_label" = "NoteMe is an application, which notify you about everything!";
 "onbordFirstStep_screen_next_button" = "Next";
 
-//MARK: - //MARK: - OnbordSecondStep
+//MARK: - OnbordSecondStep
 "onbordSecondStep_screen_types_label" = "Different types!";
-"onbordSecondStep_screen_info_label" = "You can use 3 types of notifications <p style=\"margin-bottom: 0px;margin-left: 8px;\"><b>• Calendar</b> - choose the date, when you want to receive notification. <br><b>• Location</b> - choose the region and notification will come after you enter it. <br><b>• Timer</b> - set timer and after selected period you will receive the notification.";
+"onbordSecondStep_screen_info_label" = "You can use 3 types of notifications <p style=\"margin-bottom: 0px;margin-left: 8px;\"><b>• Calendar</b> - choose the date, when you want to receive notification. <br><b>•  Location</b> - choose the region and notification will come after you enter it. <br><b>•  Timer</b> - set timer and after selected period you will receive the notification.";
 "onbordSecondStep_screen_calendar_label" = "Calendar";
 "onbordSecondStep_screen_location_label" = "Location";
 "onbordSecondStep_screen_timer_label" = "Timer";
 "onbordSecondStep_screen_done_button" = "Done";
 
+//MARK: - TabBarItems
 "main_screen_home_tabbarItem" = "Home";
 "main_screen_profile_tabbarItem" = "Profile";

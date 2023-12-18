@@ -15,6 +15,15 @@ import SnapKit
 
 final class OnbordFirstStepVC: UIViewController {
     
+    private enum L10n {
+        static let titleLabel: String =
+        "onbordFirstStep_screen_welcome_label".localized
+        static let nextButton: String =
+        "onbordFirstStep_screen_next_button".localized
+        static let infoLabel: String =
+        "onbordFirstStep_info_label".localized
+    }
+    
     private lazy var contentView: UIView = .basicView()
     
     private lazy var logoContainer: UIView = UIView()
@@ -23,14 +32,15 @@ final class OnbordFirstStepVC: UIViewController {
     UIImageView(image: .General.logo)
     
     private lazy var welcomeTitleLabel: UILabel =
-        .titleLabel("onbordFirstStep_screen_welcome_label".localized)
+        .titleLabel(L10n.titleLabel)
     
     private lazy var infoView: UIView = .plainViewWithShadow()
     
     private lazy var infoFirstStepLabel: UILabel =
-        .infoLabel("onbordFirstStep_info_label".localized)
+        .infoLabel(L10n.infoLabel)
     
-    private lazy var nextButton: UIButton = .yellowRoundedButton("onbordFirstStep_screen_next_button".localized)
+    private lazy var nextButton: UIButton =
+        .yellowRoundedButton(L10n.nextButton)
         .withAction(viewModel,
                     #selector(OnbordFirstStepViewModelProtocol.nextDidTap))
     

@@ -23,6 +23,27 @@ protocol RegisterKeyboardAnimatorUseCase {
 
 final class RegisterVC: UIViewController {
     
+    private enum L10n {
+        static let titleLabel: String =
+        "register_screen_register_label".localized
+        static let registerButton: String =
+        "register_screen_register_button".localized
+        static let haveAccountButton: String =
+        "register_screen_haveAccount_button".localized
+        static let emailTextFieldTitle: String =
+        "register_screen_email_label".localized
+        static let emailTextFieldPlaceholder: String =
+        "register_screen_email_placeholder".localized
+        static let passwordTextFieldTitle: String =
+        "register_screen_password_label".localized
+        static let passwordTextFieldPlaceholder: String =
+        "register_screen_password_placeholder".localized
+        static let repeatPasswordTextFieldTitle: String =
+        "register_screen_repeatPassword_label".localized
+        static let repeatPasswordTextFieldPlaceholder: String =
+        "register_screen_repeatPassword_placeholder".localized
+    }
+    
     private lazy var contentView: UIView = .basicView()
     
     private lazy var logoContainer: UIView = UIView()
@@ -31,38 +52,36 @@ final class RegisterVC: UIViewController {
     UIImageView(image: .General.logo)
     
     private lazy var registerTitleLabel: UILabel =
-        .titleLabel("register_screen_register_label".localized)
+        .titleLabel(L10n.titleLabel)
     
     private lazy var infoView: UIView = .plainViewWithShadow()
 
     private lazy var registerButton: UIButton =
-        .yellowRoundedButton("register_screen_register_button".localized)
+        .yellowRoundedButton(L10n.registerButton)
         .withAction(self, #selector(registerDidTap))
     private lazy var haveAccountButton: UIButton =
-        .underlineYellowButton("register_screen_haveAccount_button".localized)
+        .underlineYellowButton(L10n.haveAccountButton)
         .withAction(presenter,
                     #selector(RegisterPresenterProtocol.haveAccountDidTap))
     
     private lazy var emailTextField: LineTextField = {
         let textField = LineTextField()
-        textField.title = "register_screen_email_label".localized
-        textField.placeholder = "register_screen_email_placeholder".localized
+        textField.title = L10n.emailTextFieldTitle
+        textField.placeholder = L10n.emailTextFieldPlaceholder
         return textField
     }()
     
     private lazy var passwordTextField: LineTextField = {
         let textField = LineTextField()
-        textField.title = "register_screen_password_label".localized
-        textField.placeholder = 
-        "register_screen_password_placeholder".localized
+        textField.title = L10n.passwordTextFieldTitle
+        textField.placeholder = L10n.passwordTextFieldPlaceholder
         return textField
     }()
     
     private lazy var repeatPasswordTextField: LineTextField = {
         let textField = LineTextField()
-        textField.title = "register_screen_repeatPassword_label".localized
-        textField.placeholder = 
-        "register_screen_repeatPassword_placeholder".localized
+        textField.title = L10n.repeatPasswordTextFieldTitle
+        textField.placeholder = L10n.repeatPasswordTextFieldPlaceholder
         return textField
     }()
     

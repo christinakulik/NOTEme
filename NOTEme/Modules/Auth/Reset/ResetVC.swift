@@ -11,7 +11,6 @@ import SnapKit
 
 @objc protocol ResetViewModelProtocol: AnyObject {
     var catchEmailError: ((String?) -> Void)? { get set }
-    var showAlert: ((UIAlertController) -> Void)? { get set }
 
     func resetDidTap(email: String?)
     @objc func cancelDidTap()
@@ -19,6 +18,17 @@ import SnapKit
 }
 
 final class ResetVC: UIViewController {
+    
+    private enum L10n {
+        static let titleLabel: String =
+        "reset_screen_resetPassword_label".localized
+        static let resetButton: String =
+        "reset_screen_reset_button".localized
+        static let infoLabel: String =
+        "reset_screen_infoReset_label".localized
+        static let emailTextFieldPlaceholder: String =
+        "reset_screen_email_placeholder".localized
+    }
     
     private lazy var contentView: UIView = .basicView()
     
@@ -28,22 +38,22 @@ final class ResetVC: UIViewController {
     UIImageView(image: .General.logo)
     
     private lazy var resetTitleLabel: UILabel =
-        .titleLabel("reset_screen_resetPassword_label".localized)
+        .titleLabel(L10n.titleLabel)
     
     private lazy var infoView: UIView = .plainViewWithShadow()
 
     private lazy var resetButton: UIButton =
-        .yellowRoundedButton("reset_screen_reset_button".localized)
+        .yellowRoundedButton(L10n.resetButton)
         .withAction(self, #selector(resetDidTap))
     private lazy var cancelButton: UIButton = .cancelButton()
         .withAction(viewModel, 
                     #selector(ResetViewModelProtocol.cancelDidTap))
     private lazy var infoResetPasswordLabel: UILabel =
-        .infoLabel("reset_screen_infoReset_label".localized)
+        .infoLabel(L10n.infoLabel)
     
     private lazy var emailTextField: LineTextField = {
         let textField = LineTextField()
-        textField.placeholder = "reset_screen_email_placeholder".localized
+        textField.placeholder = L10n.emailTextFieldPlaceholder
         return textField
     }()
     
@@ -60,10 +70,6 @@ final class ResetVC: UIViewController {
     private func bind() {
         viewModel.catchEmailError = { errorText in
             self.emailTextField.errorText = errorText
-        }
-        
-        viewModel.showAlert = { [weak self] alert in
-            self?.present(alert, animated: true)
         }
     }
     
