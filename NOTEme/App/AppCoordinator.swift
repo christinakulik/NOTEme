@@ -22,7 +22,8 @@ final class AppCoordinator: Coordinator {
 // TODO: FIXME
 //        ParametersHelper.set(.authenticated, value: false)
 //        ParametersHelper.set(.onboarded, value: false)
-
+//        openMainModule()
+        
         if ParametersHelper.get(.onboarded) {
             openMainModule()
         } else if ParametersHelper.get(.authenticated) {
@@ -40,7 +41,7 @@ final class AppCoordinator: Coordinator {
             self?.startApp()
         }
         let vc = coordinator.start()
-        
+
         window.rootViewController = vc
         window.makeKeyAndVisible()
     }
@@ -53,7 +54,7 @@ final class AppCoordinator: Coordinator {
             self?.startApp()
         }
         let vc = coordinator.start()
-        
+         
         window.rootViewController = vc
         window.makeKeyAndVisible()
     }
@@ -67,7 +68,7 @@ final class AppCoordinator: Coordinator {
                 self?.startApp()
             }
             let vc = coordinator.start()
-            
+        
             window.rootViewController = vc
             window.makeKeyAndVisible()
     }

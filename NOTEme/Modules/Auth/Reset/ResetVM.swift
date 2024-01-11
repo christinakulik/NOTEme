@@ -27,6 +27,19 @@ protocol ResetAuthServiceUseCase {
 
 final class ResetVM: ResetViewModelProtocol {
     
+    private enum L10n {
+        static let titleAlert: String =
+        "reset_screen_emailSuccessTitle_alert".localized
+        static let messageAlert: String =
+        "reset_screen_emailSuccessMessage_alert".localized
+        static let errorTitleAlert: String =
+        "reset_screen_emailSuccessTitle_alert".localized
+        static let errorMessageAlert: String =
+        "reset_screen_errorAlert_message".localized
+        static let errorText: String =
+        "reset_screen_email_errorText".localized
+    }
+    
     var catchEmailError: ((String?) -> Void)?
     
     private weak var coordinator: ResetCoordinatorProtocol?
@@ -56,15 +69,15 @@ final class ResetVM: ResetViewModelProtocol {
             if isSuccess {
                 self?.alertService
                     .showAlert(
-                        title: "reset_screen_emailSuccessTitle_alert".localized,
-                        message: "reset_screen_emailSuccessMessage_alert".localized,
+                        title: L10n.titleAlert,
+                        message: L10n.messageAlert,
                         okTitle: "OK")
                 self?.coordinator?.finish()
             } else {
                 self?.alertService
                     .showAlert(
-                        title: "reset_screen_emailSuccessTitle_alert".localized,
-                        message: "reset_screen_emailSuccessMessage_alert".localized,
+                        title: L10n.errorTitleAlert,
+                        message: L10n.errorMessageAlert,
                         okTitle: "OK")
             }
         }
@@ -77,8 +90,7 @@ final class ResetVM: ResetViewModelProtocol {
     private func checkValidation(email: String?) -> Bool {
         let isEmailValid = inputValidator.validate(email: email)
         
-        catchEmailError?(isEmailValid ? nil :
-                            "reset_screen_email_errorText".localized)
+        catchEmailError?(isEmailValid ? nil : L10n.errorText)
         
         return isEmailValid 
     }

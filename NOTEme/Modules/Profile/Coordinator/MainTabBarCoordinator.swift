@@ -12,6 +12,7 @@ final class MainTabBarCoordinator: Coordinator {
     override func start() -> UIViewController {
         let tabBar = MainTabBarAssembler.make()
         tabBar.viewControllers = [makeHomeModule(), makeProfileModule()]
+        
         return tabBar
     }
     
@@ -24,8 +25,15 @@ final class MainTabBarCoordinator: Coordinator {
    
     private func makeProfileModule() -> UIViewController {
         let coordinator = ProfileCoordinator()
+        coordinator.onDidFinish = { [weak self] coordinator in
+            self?.children.removeAll { coordinator == $0 }
+            self?.finish()
+        }
         children.append(coordinator)
         
         return coordinator.start()
     }
+    
 }
+
+

@@ -16,7 +16,7 @@
 "login_screen_email_errorText" =  "Неверно введен адрес почты";
 "login_screen_password_errorText" =  "Неверно введен пароль";
 "login_screen_forgotPassword_button" =  "Забыли пароль";
-"login_screen_login_button" =  "Логин";
+"login_screen_login_button" =  "Войти";
 "login_screen_newAccount_button" =  "Новый аккаунт";
 "login_screen_password_errorText" =  "Неверно введен пароль";
 "login_screen_repeatPassword_errorText" =  "Пароли не совпадают";
@@ -66,6 +66,18 @@
 "onbordSecondStep_screen_done_button" = "Завершить";
 
 //MARK: - TabBarItems
-"main_screen_home_tabbarItem" = "Главная";
-"main_screen_profile_tabbarItem" = "Профиль";
+"home_tabbarItem" = "Главная";
+"profile_tabbarItem" = "Профиль";
 
+//MARK: - Profile
+"profile_section_account" = "Аккаунт";
+"profile_section_settings" = "Настройки";
+"profile_account_email_label" = "Ваш e-mail:";
+"profile_settings_notifications_button" = "  Уведомления";
+"profile_settings_export_button" = "  Экспорт";
+"profile_settings_logout_button" = "  Выйти";
+"profile_alert_title" = "Выйти";
+"profile_alert_message" = "Вы хотите выйти из аккаунта?";
+"profile_alert_cancelTitle" = "Отмена";
+"profile_alert_destTitle" = "Выйти";
+"profile_user_error" = "E-mail не найден";

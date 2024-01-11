@@ -64,5 +64,18 @@
 "onbordSecondStep_screen_done_button" = "Done";
 
 //MARK: - TabBarItems
-"main_screen_home_tabbarItem" = "Home";
-"main_screen_profile_tabbarItem" = "Profile";
+"home_tabbarItem" = "Home";
+"profile_tabbarItem" = "Profile";
+
+//MARK: - Profile
+"profile_section_account" = "Account";
+"profile_section_settings" = "Settings";
+"profile_account_email_label" = "Your e-mail:";
+"profile_settings_notifications_button" = "  Notifications";
+"profile_settings_export_button" = "  Export";
+"profile_settings_logout_button" = "  Logout";
+"profile_alert_title" = "Logout";
+"profile_alert_message" = "Are you want to logout?";
+"profile_alert_cancelTitle" = "Cancel";
+"profile_alert_destTitle" = "Log out";
+"profile_user_error" = "E-mail not found";

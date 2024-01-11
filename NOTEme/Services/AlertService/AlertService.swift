@@ -20,18 +20,23 @@ final class AlertService {
                    cancelTitle: String? = nil,
                    cancelHandler: AlertActionHandler? = nil,
                    okTitle: String? = nil,
-                   okHandler: AlertActionHandler? = nil) {
+                   okHandler: AlertActionHandler? = nil,
+                   destructiveTitle: String? = nil,
+                   destructiveHandler: AlertActionHandler? = nil) {
         // build
         let alertVC = buildAlert(title: title,
                                  message: message, 
                                  cancelTitle: cancelTitle,
                                  cancelHandler: cancelHandler,
                                  okTitle: okTitle,
-                                 okHandler: okHandler)
+                                 okHandler: okHandler,
+                                 destructiveTitle: destructiveTitle,
+                                 destructiveHandler: destructiveHandler)
         buildWindow()
         //show
-        window?.rootViewController!.present(alertVC, animated: true)
         window?.makeKeyAndVisible()
+        window?.rootViewController!.present(alertVC, animated: true)
+        
         
     }
     
@@ -43,6 +48,8 @@ final class AlertService {
         self.window = UIWindow(windowScene: scene)
         self.window?.windowLevel = .alert
         self.window?.rootViewController = UIViewController()
+        
+        self.window?.layer.applyShadow()
     }
     
     func removeWindow() {
@@ -55,7 +62,10 @@ final class AlertService {
                             cancelTitle: String? = nil,
                             cancelHandler: AlertActionHandler? = nil,
                             okTitle: String? = nil,
-                            okHandler: AlertActionHandler? = nil) -> UIAlertController {
+                            okHandler: AlertActionHandler? = nil,
+                            destructiveTitle: String? = nil,
+                            destructiveHandler: AlertActionHandler? = nil)
+    -> UIAlertController {
         let alertVC = UIAlertController(title: title,
                                         message: message,
                                         preferredStyle: .alert)
@@ -76,7 +86,16 @@ final class AlertService {
             }
             alertVC.addAction(action)
         }
+        if let destructiveTitle {
+            let action = UIAlertAction(title: destructiveTitle, 
+                                       style: .destructive) { [weak self] _ in
+                destructiveHandler?()
+                self?.removeWindow()
+            }
+            alertVC.addAction(action)
+        }
         return alertVC
+       
     }
 }
 
@@ -90,4 +109,19 @@ extension UIAlertController {
         alertService.window?.makeKeyAndVisible()
         alertService.window?.rootViewController?.present(self, animated: true)
     }
+    
+    func applyShadow() {
+            
+            DispatchQueue.main.async {
+                self.view.clipsToBounds = false
+                self.view.layer.shadowColor = UIColor(red: 0,
+                                                      green: 0,
+                                                      blue: 0,
+                                                      alpha: 0.04).cgColor
+                self.view.layer.shadowOpacity = 1
+                self.view.layer.shadowOffset = CGSize(width: 0, height: 3)
+                self.view.layer.shadowRadius = 9
+                self.view.cornerRadius = 14.0
+            }
+        }
 }

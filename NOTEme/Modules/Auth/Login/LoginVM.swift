@@ -34,10 +34,18 @@ protocol LoginAuthServiceUseCase {
     func login(email: String,
                password: String,
                completion: @escaping (Bool) -> Void)
-    
 }
 
 final class LoginVM: LoginViewModelProtocol {
+    
+    private enum L10n {
+        static let titleAlert: String =
+        "login_screen_errorAlert_title".localized
+        static let messageAlert: String =
+        "login_screen_errorAlert_message".localized
+        static let errorText: String =
+        "login_screen_email_errorText".localized
+    }
    
     var changeKeyboardFrame: ((CGRect) -> Void)?
     var catchEmailError: ((String?) -> Void)?
@@ -78,7 +86,6 @@ final class LoginVM: LoginViewModelProtocol {
             checkValidation(email: email),
             let email, let password
         else { return }
-        
         authService.login(email: email,
                           password: password) { [weak self] isSuccess in
             print(isSuccess)
@@ -88,9 +95,10 @@ final class LoginVM: LoginViewModelProtocol {
             } else {
                 self?.alertService
                     .showAlert(
-                    title: "login_screen_errorAlert_title".localized,
-                    message: "login_screen_errorAlert_message".localized,
+                        title: L10n.titleAlert,
+                        message: L10n.messageAlert,
                     okTitle: "OK")
+                
             }
         }
     }
@@ -108,8 +116,7 @@ final class LoginVM: LoginViewModelProtocol {
     private func checkValidation(email: String?) -> Bool {
         let isEmailValid = inputValidator.validate(email: email)
         
-        catchEmailError?(isEmailValid ? nil :
-                            "login_screen_email_errorText".localized)
+        catchEmailError?(isEmailValid ? nil : L10n.errorText)
         
         return isEmailValid
     }

@@ -50,6 +50,32 @@ extension UILabel {
         label.font = .appFont.withSize(16.0)
         label.textColor = .appText
         label.numberOfLines = 0
+        return label
+    }
+    
+    static func settingLabel() -> UILabel {
+        let label = UILabel()
+        
+        label.font = .appBoldFont.withSize(14.0)
+        label.textColor = .appBlack
+        return label
+    }
+    
+    static func subTitleLabel(_ title: String?) -> UILabel {
+        let label = UILabel()
+        
+        label.text = title
+        label.font = .appFont.withSize(15.0)
+        label.textColor = .appGraySubTitle
+        return label
+    }
+    
+    static func dataLabel() -> UILabel {
+        let label = UILabel()
+        
+        label.font = .appFont.withSize(17.0)
+        label.textColor = .appText
+        label.numberOfLines = 0
         
         return label
     }

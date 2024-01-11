@@ -22,7 +22,7 @@ final class OnboardSecondStepVC: UIViewController {
         static let doneButton: String =
         "onbordSecondStep_screen_done_button".localized
         static let calendarLabel: String =
-        "onbordFirstStep_info_label".localized
+        "onbordSecondStep_screen_calendar_label".localized
         static let locationLabel: String =
         "onbordSecondStep_screen_location_label".localized
         static let timerLabel: String =

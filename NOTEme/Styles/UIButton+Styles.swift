@@ -14,6 +14,29 @@ private enum L10n {
 
 extension UIButton {
     
+    static func withImageButton(_ title: String?,
+                                image: UIImage,
+                                color: UIColor) -> UIButton {
+        let button = UIButton()
+        button.setImage(image, for: .normal)
+        button.setTitle(title, for: .normal)
+        button.setTitleColor(color, for: .normal)
+        button.setTitleColor(color.withAlphaComponent(0.75),
+                             for: .highlighted)
+        
+        button.titleLabel?.font = .appFont.withSize(12.0)
+        
+        return button
+    }
+    
+    static func addButton() -> UIButton {
+        let button = UIButton()
+        button.setImage(.TabBar.add, for: .normal)
+        button.cornerRadius = 25
+        
+        return button
+    }
+    
     static func yellowRoundedButton(_ title: String?) -> UIButton {
        let button = UIButton()
         

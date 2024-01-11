@@ -46,6 +46,23 @@ protocol RegisterPresenterDelegate: AnyObject {
 
 final class RegisterPresenter: RegisterPresenterProtocol {
     
+    private enum L10n {
+        static let titleAlert: String =
+        "register_screen_successAlert_title".localized
+        static let messageAlert: String =
+        "register_screen_successAlert_message".localized
+        static let errorTitleAlert: String =
+        "register_screen_errorAlert_title".localized
+        static let errorMessageAlert: String =
+        "register_screen_errorAlert_message".localized
+        static let errorText: String =
+        "register_screen_repeatPassword_errorText".localized
+        static let emailErrorText: String =
+        "register_screen_email_errorText".localized
+        static let passwordErrorText: String =
+        "register_screen_password_errorText".localized
+    }
+    
     weak var delegate: RegisterPresenterDelegate?
     
     private weak var coordinator: RegisterCoordinatorProtocol?
@@ -95,15 +112,15 @@ final class RegisterPresenter: RegisterPresenterProtocol {
                 self?.authService.sendEmailVerification()
                 self?.alertService
                     .showAlert(
-                        title: "register_screen_successAlert_title".localized,
-                        message: "register_screen_successAlert_message".localized,
+                        title: L10n.titleAlert,
+                        message: L10n.messageAlert,
                         okTitle: "OK")
                 self?.coordinator?.finish()
             } else {
                 self?.alertService
                     .showAlert(
-                        title: "register_screen_errorAlert_title".localized,
-                        message: "register_screen_errorAlert_message".localized,
+                        title: L10n.errorMessageAlert,
+                        message: L10n.errorMessageAlert,
                         okTitle: "OK")
             }
         }
@@ -122,9 +139,11 @@ final class RegisterPresenter: RegisterPresenterProtocol {
         let isRepeatPasswordValid = repeatPassword == password
         
         delegate?.setEmailError(error: isEmailValid ? nil : 
-                                    "register_screen_email_errorText".localized)
-        delegate?.setPasswordError(error: isPasswordValid ? nil : "register_screen_password_errorText".localized)
-        delegate?.setRepeatPasswordError(error: isRepeatPasswordValid ? nil : "register_screen_repeatPassword_errorText".localized)
+                                    L10n.emailErrorText)
+        delegate?.setPasswordError(error: isPasswordValid ? nil :
+                                    L10n.passwordErrorText)
+        delegate?.setRepeatPasswordError(error: isRepeatPasswordValid ? nil :
+                                            L10n.errorText)
         
         return isEmailValid && isPasswordValid && isRepeatPasswordValid
     }

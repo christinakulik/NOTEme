@@ -10,7 +10,7 @@ import UIKit
 final class HomeVC: UIViewController {
     
     private enum L10n {
-        static let home: String = "main_screen_home_tabbarItem".localized
+        static let home: String = "home_tabbarItem".localized
     }
     
     init() {
@@ -31,6 +31,7 @@ final class HomeVC: UIViewController {
     
     private func setupUI() {
         view.backgroundColor = .appGray
+    
     }
     
     private func setupTabBarItem() {

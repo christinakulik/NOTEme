@@ -21,4 +21,14 @@ extension UIView {
     
 }
 
+extension CALayer {
+    
+  func applyShadow()  {
+      
+        self.shadowColor = UIColor.appBlack.withAlphaComponent(0.4).cgColor
+        self.shadowOpacity = 1
+        self.shadowOffset = CGSize(width: 0, height: 3)
+        self.shadowRadius = 5
+    }
+}
 

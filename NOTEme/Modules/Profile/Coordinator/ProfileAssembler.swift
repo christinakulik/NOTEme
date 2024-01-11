@@ -7,11 +7,14 @@
 
 import UIKit
 
-final class ProfileAseembler {
+final class ProfileAssembler {
     
     private init() {}
     
-    static func make() -> UIViewController {
-        return ProfileVC()
+    static func make(coordinator: ProfileCoordinatorProtocol) -> UIViewController {
+        let vm = ProfileVM(authService: AuthService(),
+                           alertService: AlertService.current,
+                           coordinator: coordinator)
+        return ProfileVC(viewModel: vm)
     }
 }

@@ -18,6 +18,10 @@ final class AuthService {
         return Auth.auth().currentUser
     }
     
+    var currentUserEmail: String? {
+            return user?.email
+        }
+    
     func signIn(email: String,
                 password: String,
                 completion: @escaping (Bool) -> Void) {
@@ -46,6 +50,15 @@ final class AuthService {
     
     func sendEmailVerification() {
             user?.sendEmailVerification()
+    }
+    
+    func signOut(completion: @escaping (Bool) -> Void) {
+        do {
+            try firebase.signOut()
+            completion(true)
+        } catch {
+            completion(false)
+        }
     }
 }
 
