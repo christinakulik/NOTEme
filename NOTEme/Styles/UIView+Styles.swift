@@ -59,18 +59,28 @@ extension UIView {
         return view
     }
 
-    func addShadowWithRadius() {
-        backgroundColor = .white
-        layer.shadowOpacity = 1
-        layer.shadowRadius = 4
-        layer.shadowOffset = CGSize(width: 2, height: 4)
-        layer.shadowColor = UIColor(red: 0,
+    func addShadow() {
+        self.layer.shadowOpacity = 1
+        self.layer.shadowRadius = 4
+        self.layer.shadowOffset = CGSize(width: 2, height: 4)
+        self.layer.shadowColor = UIColor(red: 0,
                                            green: 0,
                                            blue: 0,
                                            alpha: 0.05).cgColor
-        layer.masksToBounds = false
-        cornerRadius = 5.0
-    }
-    
+        self.layer.masksToBounds = false
+        if let tableView = self as? UITableView {
+                 for section in 0..<tableView.numberOfSections {
+                     for row in 0..<tableView.numberOfRows(inSection: section) {
+                         if let cell = tableView.cellForRow(at: IndexPath(row: row, section: section)) {
+                             cell.contentView.layer.masksToBounds = false
+                             cell.contentView.layer.shadowColor = UIColor.black.cgColor
+                             cell.contentView.layer.shadowOpacity = 0.5
+                             cell.contentView.layer.shadowOffset = CGSize(width: 0, height: 2)
+                             cell.contentView.layer.shadowRadius = 4
+                         }
+                     }
+                 }
+             }
+         }
 }
 

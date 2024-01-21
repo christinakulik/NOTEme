@@ -16,7 +16,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let windowScene = (scene as? UIWindowScene)
         else { return }
         
-       appCoordinator = AppCoordinator(scene: windowScene)
+        let container = ContainerRegistrator.makeContainer()
+        container.register({ WindowManager(scene: windowScene) })
+        
+        appCoordinator = AppCoordinator(container: container)
        appCoordinator?.startApp()
     }
 

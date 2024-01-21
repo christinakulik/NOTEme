@@ -14,26 +14,18 @@ private enum L10n {
 
  protocol ProfileViewModelProtocol  {
 
-    func getCurrentEmail() -> ProfileAccountModel
+    func getCurrentEmail() -> String
     func numberOfSections() -> Int
     func numberOfRows(in section: Int) -> Int
     func heightForRowAt(indexPath: IndexPath) -> CGFloat
     func titleForHeaderInSection(_ section: Int) -> String?
+    func dataForCell(at indexPath: IndexPath) -> ProfileSettings?
     func logoutDidTap()
 }
 
 final class ProfileVC: UIViewController {
     
-    private let tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.register(ProfileAccountTableViewCell.self,
-                           forCellReuseIdentifier:
-                            "\(ProfileAccountTableViewCell.self)")
-        tableView.register(ProfileSettingTableViewCell.self,
-                           forCellReuseIdentifier:
-                            "\(ProfileSettingTableViewCell.self)")
-        return tableView
-    }()
+    private let tableView = UITableView(frame: .zero, style: .insetGrouped)
     
     private var viewModel: ProfileViewModelProtocol
     
@@ -52,16 +44,12 @@ final class ProfileVC: UIViewController {
         super.viewDidLoad()
         
         setupUI()
+        setupTableView()
         setupConstraints()
     }
     
     private func setupUI() {
         view.backgroundColor = .appGray
-        
-        tableView.backgroundColor = .appGray
-        tableView.separatorStyle = .none
-        tableView.dataSource = self
-        tableView.delegate = self
         
         view.addSubview(tableView)
     }
@@ -72,9 +60,30 @@ final class ProfileVC: UIViewController {
                                        tag: .zero)
     }
     
+    private func setupTableView() {
+        tableView.register(ProfileAccountTableViewCell.self,
+                           forCellReuseIdentifier:
+                            "\(ProfileAccountTableViewCell.self)")
+        tableView.register(ProfileSettingTableViewCell.self,
+                           forCellReuseIdentifier:
+                            "\(ProfileSettingTableViewCell.self)")
+        
+     
+        tableView.separatorColor = .appGrayContent
+        
+
+        tableView.separatorInset = UIEdgeInsets(top: 0,
+                                                left: 16,
+                                                bottom: 0,
+                                                right: 16)
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+    }
+    
     private func setupConstraints() {
         tableView.snp.makeConstraints { make in
-            make.size.equalToSuperview()
+            make.edges.equalToSuperview()
         }
     }
 }
@@ -96,16 +105,27 @@ extension ProfileVC: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(
                 withIdentifier: "ProfileAccountTableViewCell",
                 for: indexPath) as! ProfileAccountTableViewCell
-            cell.setup(with: viewModel.getCurrentEmail())
+            cell.emailValueLabel.text = viewModel.getCurrentEmail()
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(
                 withIdentifier: "ProfileSettingTableViewCell",
                 for: indexPath) as! ProfileSettingTableViewCell
-            cell.onLogoutTap = { [weak self] in
-                self?.viewModel.logoutDidTap()
+            let cellType = viewModel.dataForCell(at: indexPath)
+            cell.settingsLabel.text = cellType?.label
+            cell.settingsImageView.image = cellType?.image
+            if indexPath.row == 2 {
+                cell.settingsLabel.textColor = .appRed
             }
             return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, 
+                   didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if case .logout = viewModel.dataForCell(at: indexPath) {
+            viewModel.logoutDidTap()
         }
     }
 }
@@ -117,7 +137,8 @@ extension ProfileVC: UITableViewDelegate {
            return viewModel.heightForRowAt(indexPath: indexPath)
        }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) 
+    func tableView(_ tableView: UITableView, 
+                   viewForHeaderInSection section: Int) 
     -> UIView? {
         let headerView = ProfileHeaderView()
         headerView.set(with: viewModel.titleForHeaderInSection(section) ?? "")

@@ -37,5 +37,4 @@ final class ProfileHeaderView: UIView {
     func set(with title: String) {
         titleLabel.text = title
     }
-    
 }

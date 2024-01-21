@@ -1,5 +1,5 @@
 //
-//  WindowMahager.swift
+//  WindowManager.swift
 //  NOTEme
 //
 //  Created by Christina on 16.01.24.
@@ -8,7 +8,7 @@
 import UIKit
 
 
-final class WindowMahager {
+final class WindowManager {
     
     enum WindowType {
         case main

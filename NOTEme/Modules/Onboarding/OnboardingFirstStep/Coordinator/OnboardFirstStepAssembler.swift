@@ -11,7 +11,8 @@ final class OnboardFirstStepAssembler {
     
     private init() {}
     
-    static func make(_ coordinator: OnboardFirstStepCoordinatorProtocol) -> UIViewController {
+    static func make(coordinator: OnboardFirstStepCoordinatorProtocol)
+    -> UIViewController {
         let vm = OnboardFirstStepVM(coordinator: coordinator)
         return OnbordFirstStepVC(viewModel: vm)
     }

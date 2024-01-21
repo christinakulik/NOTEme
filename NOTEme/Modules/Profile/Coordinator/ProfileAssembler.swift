@@ -11,9 +11,15 @@ final class ProfileAssembler {
     
     private init() {}
     
-    static func make(coordinator: ProfileCoordinatorProtocol) -> UIViewController {
-        let vm = ProfileVM(authService: AuthService(),
-                           alertService: AlertService.current,
+    static func make(container: Container,
+                     coordinator: ProfileCoordinatorProtocol)
+    -> UIViewController {
+        
+        let authService: AuthService = container.resolve()
+        let alertService: AlertService = container.resolve()
+        
+        let vm = ProfileVM(authService: authService,
+                           alertService: alertService,
                            coordinator: coordinator)
         return ProfileVC(viewModel: vm)
     }

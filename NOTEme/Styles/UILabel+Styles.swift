@@ -79,4 +79,14 @@ extension UILabel {
         
         return label
     }
+    
+    static func profileLabel() -> UILabel {
+        let label = UILabel()
+        
+        label.font = .appFont.withSize(12.0)
+        label.textColor = .appBlack
+        label.numberOfLines = 0
+        
+        return label
+    }
 }

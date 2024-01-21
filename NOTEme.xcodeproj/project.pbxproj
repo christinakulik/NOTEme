@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		CF5B89D52B1D3E3B0080EF47 /* String+Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5B89D42B1D3E3B0080EF47 /* String+Attributes.swift */; };
+		CF64AA782B56E0EC00F14710 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AA772B56E0EC00F14710 /* Container.swift */; };
+		CF64AA7A2B56E54F00F14710 /* ContainerRegistrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AA792B56E54F00F14710 /* ContainerRegistrator.swift */; };
+		CF64AA7D2B56F00000F14710 /* WindowMahager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AA7C2B56F00000F14710 /* WindowMahager.swift */; };
 		CF7379472B1F846A00E77BF0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF7379462B1F846A00E77BF0 /* GoogleService-Info.plist */; };
 		CF73794A2B1F87F200E77BF0 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = CF7379492B1F87F200E77BF0 /* FirebaseAnalytics */; };
 		CF73794C2B1F87F200E77BF0 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = CF73794B2B1F87F200E77BF0 /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -88,7 +91,6 @@
 		CFF587B82B3B739C00D60712 /* ProfileAccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF587B72B3B739C00D60712 /* ProfileAccountTableViewCell.swift */; };
 		CFF587BA2B44B70F00D60712 /* ProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF587B92B44B70F00D60712 /* ProfileVM.swift */; };
 		CFF587BD2B49F28E00D60712 /* ProfileSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF587BC2B49F28E00D60712 /* ProfileSettingTableViewCell.swift */; };
-		CFF587BF2B49FABD00D60712 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF587BE2B49FABD00D60712 /* ProfileModel.swift */; };
 		CFF587C42B4B3CDC00D60712 /* AlertService+Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF587C32B4B3CDC00D60712 /* AlertService+Profile.swift */; };
 		CFF587C62B4C1B6E00D60712 /* AuthService+Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF587C52B4C1B6E00D60712 /* AuthService+Profile.swift */; };
 		CFF587C82B4DE63300D60712 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF587C72B4DE63300D60712 /* ProfileHeaderView.swift */; };
@@ -96,6 +98,9 @@
 
 /* Begin PBXFileReference section */
 		CF5B89D42B1D3E3B0080EF47 /* String+Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Attributes.swift"; sourceTree = "<group>"; };
+		CF64AA772B56E0EC00F14710 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		CF64AA792B56E54F00F14710 /* ContainerRegistrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerRegistrator.swift; sourceTree = "<group>"; };
+		CF64AA7C2B56F00000F14710 /* WindowMahager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowMahager.swift; sourceTree = "<group>"; };
 		CF7379462B1F846A00E77BF0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CF7379802B1F95CA00E77BF0 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		CF7379822B1F975F00E77BF0 /* AuthService+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthService+Login.swift"; sourceTree = "<group>"; };
@@ -115,7 +120,7 @@
 		CF7379B32B2E606C00E77BF0 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		CF7379B52B2E608100E77BF0 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		CF7379B72B2E608E00E77BF0 /* ProfileAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAssembler.swift; sourceTree = "<group>"; };
-		CF7379B92B2FC3C900E77BF0 /* MainTabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainTabBarCoordinator.swift; path = ../../../Profile/Coordinator/MainTabBarCoordinator.swift; sourceTree = "<group>"; };
+		CF7379B92B2FC3C900E77BF0 /* MainTabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarCoordinator.swift; sourceTree = "<group>"; };
 		CF7379BB2B2FC41D00E77BF0 /* MainTabBarAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarAssembler.swift; sourceTree = "<group>"; };
 		CFD583A12AF0195D000949A6 /* NOTEme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NOTEme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFD583A42AF0195D000949A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -170,7 +175,6 @@
 		CFF587B72B3B739C00D60712 /* ProfileAccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAccountTableViewCell.swift; sourceTree = "<group>"; };
 		CFF587B92B44B70F00D60712 /* ProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVM.swift; sourceTree = "<group>"; };
 		CFF587BC2B49F28E00D60712 /* ProfileSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingTableViewCell.swift; sourceTree = "<group>"; };
-		CFF587BE2B49FABD00D60712 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		CFF587C32B4B3CDC00D60712 /* AlertService+Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertService+Profile.swift"; sourceTree = "<group>"; };
 		CFF587C52B4C1B6E00D60712 /* AuthService+Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthService+Profile.swift"; sourceTree = "<group>"; };
 		CFF587C72B4DE63300D60712 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
@@ -202,6 +206,23 @@
 				CFD5842A2B153154000949A6 /* Builder.swift */,
 			);
 			path = Builder;
+			sourceTree = "<group>";
+		};
+		CF64AA762B56E0B800F14710 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				CF64AA772B56E0EC00F14710 /* Container.swift */,
+				CF64AA792B56E54F00F14710 /* ContainerRegistrator.swift */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
+		CF64AA7B2B56EFF100F14710 /* WindowManager */ = {
+			isa = PBXGroup;
+			children = (
+				CF64AA7C2B56F00000F14710 /* WindowMahager.swift */,
+			);
+			path = WindowManager;
 			sourceTree = "<group>";
 		};
 		CF73797F2B1F95B300E77BF0 /* AuthService */ = {
@@ -260,9 +281,8 @@
 		CF7379B12B2E5FE200E77BF0 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				CFF587C22B4B3CBF00D60712 /* UseCases */,
-				CFF587BB2B476F3B00D60712 /* Model */,
 				CF7379B22B2E605A00E77BF0 /* Coordinator */,
+				CFF587C22B4B3CBF00D60712 /* UseCases */,
 				CFF587B62B3B736500D60712 /* Cells */,
 				CF7379B32B2E606C00E77BF0 /* ProfileVC.swift */,
 				CFF587B92B44B70F00D60712 /* ProfileVM.swift */,
@@ -430,6 +450,8 @@
 		CFD583EF2AFEA14B000949A6 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CF64AA7B2B56EFF100F14710 /* WindowManager */,
+				CF64AA762B56E0B800F14710 /* Container */,
 				CF7379972B28C1D900E77BF0 /* AlertService */,
 				CF73797F2B1F95B300E77BF0 /* AuthService */,
 				CF5B89D32B1A87610080EF47 /* Builder */,
@@ -600,14 +622,6 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		CFF587BB2B476F3B00D60712 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				CFF587BE2B49FABD00D60712 /* ProfileModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		CFF587C22B4B3CBF00D60712 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
@@ -717,9 +731,11 @@
 				CF7379A72B28D2EB00E77BF0 /* HomeVC.swift in Sources */,
 				CFD583A52AF0195D000949A6 /* AppDelegate.swift in Sources */,
 				CFD583C42AF01A42000949A6 /* UIFont+Consts.swift in Sources */,
+				CF64AA7A2B56E54F00F14710 /* ContainerRegistrator.swift in Sources */,
 				CFF587B82B3B739C00D60712 /* ProfileAccountTableViewCell.swift in Sources */,
 				CFD583F52AFEA816000949A6 /* InputValidator+Login.swift in Sources */,
 				CFF587BD2B49F28E00D60712 /* ProfileSettingTableViewCell.swift in Sources */,
+				CF64AA7D2B56F00000F14710 /* WindowMahager.swift in Sources */,
 				CFD5845C2B1657EE000949A6 /* OnboardFirstStepCoordinator.swift in Sources */,
 				CFD584572B165675000949A6 /* OnboardFirstStepVM.swift in Sources */,
 				CF7379A92B28D31700E77BF0 /* HomeAseembler.swift in Sources */,
@@ -752,6 +768,7 @@
 				CFD584012B083791000949A6 /* ResetAssembler.swift in Sources */,
 				CFF587C42B4B3CDC00D60712 /* AlertService+Profile.swift in Sources */,
 				CF7379992B28C1E700E77BF0 /* AlertService.swift in Sources */,
+				CF64AA782B56E0EC00F14710 /* Container.swift in Sources */,
 				CFD584592B16572D000949A6 /* OnboardFirstStepAssembler.swift in Sources */,
 				CFD583EA2AFE942D000949A6 /* UIButton+Actions.swift in Sources */,
 				CFD584052B09FEE2000949A6 /* KeyboardHelper+Register.swift in Sources */,
@@ -767,7 +784,6 @@
 				CF73799B2B28C95900E77BF0 /* AlertService+Login.swift in Sources */,
 				CFD583FC2B03E535000949A6 /* KeyboardHelper.swift in Sources */,
 				CF7379AB2B28D34500E77BF0 /* HomeCoordinator.swift in Sources */,
-				CFF587BF2B49FABD00D60712 /* ProfileModel.swift in Sources */,
 				CFD583F72B03DB85000949A6 /* RegisterPresenter.swift in Sources */,
 				CFD584142B0D129D000949A6 /* Coordinator.swift in Sources */,
 				CFD583CB2AF01A8A000949A6 /* UIView+Styles.swift in Sources */,
