@@ -20,7 +20,7 @@ protocol ResetAlertServiceUseCase {
     func showAlert(title: String, message: String, okTitle: String)
 }
 
-protocol ResetAuthServiceUseCase {
+protocol ResetAuthServiceUseCaseProtocol {
     func reset(email: String,
                completion: @escaping (Bool) -> Void)
 }
@@ -44,13 +44,13 @@ final class ResetVM: ResetViewModelProtocol {
     
     private weak var coordinator: ResetCoordinatorProtocol?
     
-    private let authService: ResetAuthServiceUseCase
+    private let authService: ResetAuthServiceUseCaseProtocol
     private let inputValidator: ResetInputValidatorUseCase
     private let alertService: ResetAlertServiceUseCase
     
     
     init(coordinator: ResetCoordinatorProtocol,
-         authService: ResetAuthServiceUseCase,
+         authService: ResetAuthServiceUseCaseProtocol,
          inputValidator: ResetInputValidatorUseCase,
          alertService: ResetAlertServiceUseCase) {
         self.coordinator = coordinator

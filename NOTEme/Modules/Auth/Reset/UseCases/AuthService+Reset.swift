@@ -7,10 +7,19 @@
 
 import Foundation
 
-extension AuthService: ResetAuthServiceUseCase {
-    func reset(email: String, 
+struct ResetAuthServiceUseCase: ResetAuthServiceUseCaseProtocol {
+    
+    private let authService: AuthService
+    
+    init(authService: AuthService) {
+        self.authService = authService
+    }
+    
+    func reset(email: String,
                completion: @escaping (Bool) -> Void) {
-        self.sendPasswordReset(email: email,
+        authService.sendPasswordReset(email: email,
                                completion: completion)
     }
+    
 }
+

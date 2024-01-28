@@ -29,7 +29,7 @@ final class ProfileHeaderView: UIView {
     }
     private func setupConstraint() {
         titleLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview()
+            make.centerY.equalToSuperview()
             make.leading.equalToSuperview().inset(16.0)
         }
     }

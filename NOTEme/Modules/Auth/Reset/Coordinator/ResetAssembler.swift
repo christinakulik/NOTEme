@@ -15,12 +15,13 @@ final class ResetAssembler {
     
     static func make(container: Container,
                      coordinator: ResetCoordinatorProtocol) -> UIViewController {
-        let authService: AuthService = container.resolve()
+        let authUseCase = ResetAuthServiceUseCase(authService:
+                                                    container.resolve())
         let inputValidator: InputValidator = container.resolve()
         let alertService: AlertService = container.resolve()
         
         let vm = ResetVM(coordinator: coordinator,
-                         authService: authService,
+                         authService: authUseCase,
                          inputValidator: inputValidator,
                          alertService: alertService)
         

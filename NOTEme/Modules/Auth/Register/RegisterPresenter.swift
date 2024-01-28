@@ -28,7 +28,7 @@ protocol RegisterAlertServiceUseCase {
     func showAlert(title: String, message: String, okTitle: String)
 }
 
-protocol RegisterAuthServiceUseCase {
+protocol RegisterAuthServiceUseCaseProtocol {
     func register(email: String,
                password: String,
                completion: @escaping (Bool) -> Void)
@@ -67,14 +67,14 @@ final class RegisterPresenter: RegisterPresenterProtocol {
     
     private weak var coordinator: RegisterCoordinatorProtocol?
     
-    private let authService: RegisterAuthServiceUseCase
+    private let authService: RegisterAuthServiceUseCaseProtocol
     private let inputValidator: RegisterInputValidatorUseCase
     private let keyboardHelper: RegisterKeyboardHelperUseCase
     private let alertService: RegisterAlertServiceUseCase
     
     init(coordinator: RegisterCoordinatorProtocol,
          keyboardHelper: RegisterKeyboardHelperUseCase,
-         authService: RegisterAuthServiceUseCase,
+         authService: RegisterAuthServiceUseCaseProtocol,
          inputValidator: RegisterInputValidatorUseCase,
          alertService: RegisterAlertServiceUseCase) {
         self.coordinator = coordinator

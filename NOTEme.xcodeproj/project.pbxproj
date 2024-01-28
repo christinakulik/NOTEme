@@ -11,6 +11,8 @@
 		CF64AA782B56E0EC00F14710 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AA772B56E0EC00F14710 /* Container.swift */; };
 		CF64AA7A2B56E54F00F14710 /* ContainerRegistrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AA792B56E54F00F14710 /* ContainerRegistrator.swift */; };
 		CF64AA7D2B56F00000F14710 /* WindowMahager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AA7C2B56F00000F14710 /* WindowMahager.swift */; };
+		CF64AA812B61B0B800F14710 /* ProfileSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AA802B61B0B800F14710 /* ProfileSections.swift */; };
+		CF64AA842B62ED0600F14710 /* ProfileAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AA832B62ED0600F14710 /* ProfileAdapter.swift */; };
 		CF7379472B1F846A00E77BF0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF7379462B1F846A00E77BF0 /* GoogleService-Info.plist */; };
 		CF73794A2B1F87F200E77BF0 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = CF7379492B1F87F200E77BF0 /* FirebaseAnalytics */; };
 		CF73794C2B1F87F200E77BF0 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = CF73794B2B1F87F200E77BF0 /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -101,6 +103,8 @@
 		CF64AA772B56E0EC00F14710 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		CF64AA792B56E54F00F14710 /* ContainerRegistrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerRegistrator.swift; sourceTree = "<group>"; };
 		CF64AA7C2B56F00000F14710 /* WindowMahager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowMahager.swift; sourceTree = "<group>"; };
+		CF64AA802B61B0B800F14710 /* ProfileSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSections.swift; sourceTree = "<group>"; };
+		CF64AA832B62ED0600F14710 /* ProfileAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAdapter.swift; sourceTree = "<group>"; };
 		CF7379462B1F846A00E77BF0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CF7379802B1F95CA00E77BF0 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		CF7379822B1F975F00E77BF0 /* AuthService+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthService+Login.swift"; sourceTree = "<group>"; };
@@ -225,6 +229,25 @@
 			path = WindowManager;
 			sourceTree = "<group>";
 		};
+		CF64AA7E2B61B08200F14710 /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				CFF587C92B4EBBDC00D60712 /* Header */,
+				CFF587B62B3B736500D60712 /* Cells */,
+				CF64AA7F2B61B09600F14710 /* Sections */,
+				CF64AA832B62ED0600F14710 /* ProfileAdapter.swift */,
+			);
+			path = Adapter;
+			sourceTree = "<group>";
+		};
+		CF64AA7F2B61B09600F14710 /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				CF64AA802B61B0B800F14710 /* ProfileSections.swift */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
 		CF73797F2B1F95B300E77BF0 /* AuthService */ = {
 			isa = PBXGroup;
 			children = (
@@ -281,9 +304,9 @@
 		CF7379B12B2E5FE200E77BF0 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				CF64AA7E2B61B08200F14710 /* Adapter */,
 				CF7379B22B2E605A00E77BF0 /* Coordinator */,
 				CFF587C22B4B3CBF00D60712 /* UseCases */,
-				CFF587B62B3B736500D60712 /* Cells */,
 				CF7379B32B2E606C00E77BF0 /* ProfileVC.swift */,
 				CFF587B92B44B70F00D60712 /* ProfileVM.swift */,
 			);
@@ -615,7 +638,6 @@
 		CFF587B62B3B736500D60712 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				CFF587C92B4EBBDC00D60712 /* Header */,
 				CFF587B72B3B739C00D60712 /* ProfileAccountTableViewCell.swift */,
 				CFF587BC2B49F28E00D60712 /* ProfileSettingTableViewCell.swift */,
 			);
@@ -736,6 +758,7 @@
 				CFD583F52AFEA816000949A6 /* InputValidator+Login.swift in Sources */,
 				CFF587BD2B49F28E00D60712 /* ProfileSettingTableViewCell.swift in Sources */,
 				CF64AA7D2B56F00000F14710 /* WindowMahager.swift in Sources */,
+				CF64AA842B62ED0600F14710 /* ProfileAdapter.swift in Sources */,
 				CFD5845C2B1657EE000949A6 /* OnboardFirstStepCoordinator.swift in Sources */,
 				CFD584572B165675000949A6 /* OnboardFirstStepVM.swift in Sources */,
 				CF7379A92B28D31700E77BF0 /* HomeAseembler.swift in Sources */,
@@ -784,6 +807,7 @@
 				CF73799B2B28C95900E77BF0 /* AlertService+Login.swift in Sources */,
 				CFD583FC2B03E535000949A6 /* KeyboardHelper.swift in Sources */,
 				CF7379AB2B28D34500E77BF0 /* HomeCoordinator.swift in Sources */,
+				CF64AA812B61B0B800F14710 /* ProfileSections.swift in Sources */,
 				CFD583F72B03DB85000949A6 /* RegisterPresenter.swift in Sources */,
 				CFD584142B0D129D000949A6 /* Coordinator.swift in Sources */,
 				CFD583CB2AF01A8A000949A6 /* UIView+Styles.swift in Sources */,

@@ -13,13 +13,14 @@ final class RegisterAssembler {
     static func make(container: Container,
                      coordinator: RegisterCoordinatorProtocol) -> UIViewController {
         
-        let authService: AuthService = container.resolve()
+        let authUseCase = RegisterAuthServiceUseCase(authService:
+                                                        container.resolve())
         let inputValidator: InputValidator = container.resolve()
         let alertService: AlertService = container.resolve()
         let keyboardHelper: KeyboardHelper = container.resolve()
         let presenter = RegisterPresenter(coordinator: coordinator,
                                           keyboardHelper: keyboardHelper,
-                                          authService: authService,
+                                          authService: authUseCase,
                                           inputValidator: inputValidator,
                                           alertService: alertService)
         let vc = RegisterVC(presenter: presenter, animate: KeyboardAnimator())

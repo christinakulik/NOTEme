@@ -19,9 +19,11 @@ class ProfileSettingTableViewCell: UITableViewCell {
         "profile_settings_logout_button".localized
     }
     
-    lazy var settingsImageView = UIImageView()
+    private lazy var settingsImageView = UIImageView()
     
-    lazy var settingsLabel: UILabel = .profileLabel()
+    private lazy var settingsLabel: UILabel = .profileLabel()
+    
+    private lazy var statusLabel: UILabel = .profileLabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -33,15 +35,22 @@ class ProfileSettingTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func setup(_ type: ProfileSettingsRows) {
+        settingsLabel.text = type.title
+        settingsLabel.textColor = type == .logout ? .appRed : .appBlack
+        settingsImageView.image = type.icon
+        statusLabel.text = type.infoText
+    }
+    
     func setupUI() {
-//        selectionStyle = .none
 
         contentView.addSubview(settingsImageView)
         contentView.addSubview(settingsLabel)
+        contentView.addSubview(statusLabel)
     }
     
     private func setupConstraints() {
-    
+        
         settingsImageView.snp.makeConstraints { make in
             make.size.equalTo(16.0)
             make.leading.equalToSuperview().inset(16.0)
@@ -53,7 +62,10 @@ class ProfileSettingTableViewCell: UITableViewCell {
             make.top.equalToSuperview().inset(16.0)
         }
         
+        statusLabel.snp.makeConstraints { make in
+            make.trailing.equalToSuperview().inset(16.0)
+            make.verticalEdges.equalToSuperview().inset(12.0)
+        }
     }
-    
 }
 

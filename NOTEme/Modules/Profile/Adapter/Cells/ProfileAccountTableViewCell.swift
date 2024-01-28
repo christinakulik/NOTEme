@@ -7,7 +7,6 @@
 
 import UIKit
 import SnapKit
-import FirebaseAuth
 
 class ProfileAccountTableViewCell: UITableViewCell {
     
@@ -17,7 +16,7 @@ class ProfileAccountTableViewCell: UITableViewCell {
     
     private lazy var emailLabel: UILabel = .subTitleLabel(L10n.emailLabel)
     
-    lazy var emailValueLabel: UILabel =
+    private lazy var emailValueLabel: UILabel =
         .dataLabel()
     
     
@@ -34,6 +33,10 @@ class ProfileAccountTableViewCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setup(_ email: String) {
+        emailValueLabel.text = email
     }
     
     func setupUI() {

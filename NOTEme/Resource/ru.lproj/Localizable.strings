@@ -73,9 +73,9 @@
 "profile_section_account" = "Аккаунт";
 "profile_section_settings" = "Настройки";
 "profile_account_email_label" = "Ваш e-mail:";
-"profile_settings_notifications_button" = "  Уведомления";
-"profile_settings_export_button" = "  Экспорт";
-"profile_settings_logout_button" = "  Выйти";
+"profile_notify_label" = "Уведомления";
+"profile_export_label" = "Экспорт";
+"profile_logout_label" = "Выйти";
 "profile_alert_title" = "Выйти";
 "profile_alert_message" = "Вы хотите выйти из аккаунта?";
 "profile_alert_cancelTitle" = "Отмена";

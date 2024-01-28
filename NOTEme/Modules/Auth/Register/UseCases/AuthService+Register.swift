@@ -7,13 +7,26 @@
 
 import Foundation
 
-extension AuthService: RegisterAuthServiceUseCase {
+struct RegisterAuthServiceUseCase: RegisterAuthServiceUseCaseProtocol {
     
-    func register(email: String,
+    private let authService: AuthService
+    
+    init(authService: AuthService) {
+        self.authService = authService
+    }
+    
+    func register(email: String, 
                   password: String,
                   completion: @escaping (Bool) -> Void) {
-        self.createUser(email: email,
-                        password: password,
-                        completion: completion)
+        authService.createUser(email: email,
+                               password: password,
+                               completion: completion)
     }
+    
+    func sendEmailVerification() {
+        authService.sendEmailVerification()
+    }
+    
 }
+
+

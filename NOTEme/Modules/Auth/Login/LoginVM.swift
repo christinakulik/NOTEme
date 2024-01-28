@@ -30,7 +30,7 @@ protocol LoginKeyboardHelperUseCase {
     func onWillHide(_ handler: @escaping (CGRect) -> Void) -> Self
 }
 
-protocol LoginAuthServiceUseCase {
+protocol LoginAuthServiceUseCaseProtocol {
     func login(email: String,
                password: String,
                completion: @escaping (Bool) -> Void)
@@ -53,13 +53,13 @@ final class LoginVM: LoginViewModelProtocol {
     
     private weak var coordinator: LoginCoordinatorProtocol?
     
-    private let authService: LoginAuthServiceUseCase
+    private let authService: LoginAuthServiceUseCaseProtocol
     private let inputValidator: LoginInputValidatorUseCase
     private let keyboardHelper: LoginKeyboardHelperUseCase
     private let alertService: LoginAlertServiceUseCase
     
     init(coordinator: LoginCoordinatorProtocol,
-         authService: LoginAuthServiceUseCase,
+         authService: LoginAuthServiceUseCaseProtocol,
          inputValidator: LoginInputValidatorUseCase,
          keyboardHelper: LoginKeyboardHelperUseCase,
          alertService: LoginAlertServiceUseCase) {

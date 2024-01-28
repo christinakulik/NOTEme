@@ -71,9 +71,9 @@
 "profile_section_account" = "Account";
 "profile_section_settings" = "Settings";
 "profile_account_email_label" = "Your e-mail:";
-"profile_settings_notifications_button" = "  Notifications";
-"profile_settings_export_button" = "  Export";
-"profile_settings_logout_button" = "  Logout";
+"profile_notify_label" = "Notifications";
+"profile_export_label" = "Export";
+"profile_logout_label" = "Logout";
 "profile_alert_title" = "Logout";
 "profile_alert_message" = "Are you want to logout?";
 "profile_alert_cancelTitle" = "Cancel";
