@@ -13,6 +13,50 @@
 		CF64AA7D2B56F00000F14710 /* WindowMahager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AA7C2B56F00000F14710 /* WindowMahager.swift */; };
 		CF64AA812B61B0B800F14710 /* ProfileSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AA802B61B0B800F14710 /* ProfileSections.swift */; };
 		CF64AA842B62ED0600F14710 /* ProfileAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AA832B62ED0600F14710 /* ProfileAdapter.swift */; };
+		CF64AA862B6A63B900F14710 /* Collection+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AA852B6A63B900F14710 /* Collection+Register.swift */; };
+		CF64AA892B6A852100F14710 /* Alert+Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AA882B6A852100F14710 /* Alert+Layer.swift */; };
+		CF64AA922B6B09C900F14710 /* Storage.h in Headers */ = {isa = PBXBuildFile; fileRef = CF64AA912B6B09C900F14710 /* Storage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CF64AA952B6B09C900F14710 /* Storage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF64AA8F2B6B09C900F14710 /* Storage.framework */; };
+		CF64AA962B6B09C900F14710 /* Storage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF64AA8F2B6B09C900F14710 /* Storage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CF64AA9E2B6B0B2800F14710 /* NotificationDataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CF64AA9C2B6B0B2800F14710 /* NotificationDataBase.xcdatamodeld */; };
+		CF64AAA52B6B0E1D00F14710 /* BaseNotificationMo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AAA12B6B0E1D00F14710 /* BaseNotificationMo+CoreDataClass.swift */; };
+		CF64AAA62B6B0E1D00F14710 /* BaseNotificationMo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AAA22B6B0E1D00F14710 /* BaseNotificationMo+CoreDataProperties.swift */; };
+		CF64AAA72B6B0E1D00F14710 /* DateNotificationMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AAA32B6B0E1D00F14710 /* DateNotificationMO+CoreDataClass.swift */; };
+		CF64AAA82B6B0E1D00F14710 /* DateNotificationMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AAA42B6B0E1D00F14710 /* DateNotificationMO+CoreDataProperties.swift */; };
+		CF64AAAB2B6B127D00F14710 /* DateNotificationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AAAA2B6B127D00F14710 /* DateNotificationDTO.swift */; };
+		CF64AAAE2B6BB05600F14710 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AAAD2B6BB05600F14710 /* CoreDataService.swift */; };
+		CF64AAB12B6BB30500F14710 /* DateNotificationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AAB02B6BB30500F14710 /* DateNotificationStorage.swift */; };
+		CF64AAB42B6BC59200F14710 /* NSPredicate+Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AAB32B6BC59200F14710 /* NSPredicate+Consts.swift */; };
+		CF64AAB72B72DBB800F14710 /* LocationNotificationMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AAB52B72DBB800F14710 /* LocationNotificationMO+CoreDataClass.swift */; };
+		CF64AAB82B72DBB800F14710 /* LocationNotificationMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AAB62B72DBB800F14710 /* LocationNotificationMO+CoreDataProperties.swift */; };
+		CF64AABA2B72DC3E00F14710 /* LocationNotificationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AAB92B72DC3E00F14710 /* LocationNotificationDTO.swift */; };
+		CF64AABC2B72DF9500F14710 /* LocationNotificationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AABB2B72DF9500F14710 /* LocationNotificationStorage.swift */; };
+		CF64AABF2B72EF4D00F14710 /* TimerNotificationMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AABD2B72EF4D00F14710 /* TimerNotificationMO+CoreDataClass.swift */; };
+		CF64AAC02B72EF4D00F14710 /* TimerNotificationMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AABE2B72EF4D00F14710 /* TimerNotificationMO+CoreDataProperties.swift */; };
+		CF64AAC22B72EF6600F14710 /* TimerNotificationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AAC12B72EF6600F14710 /* TimerNotificationDTO.swift */; };
+		CF64AAC42B72F0BB00F14710 /* TimerNotificationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AAC32B72F0BB00F14710 /* TimerNotificationStorage.swift */; };
+		CF64AAC62B73AA8500F14710 /* NotificationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AAC52B73AA8500F14710 /* NotificationStorage.swift */; };
+		CF64AAC92B73E34E00F14710 /* DTODescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AAC82B73E34E00F14710 /* DTODescription.swift */; };
+		CF64AACB2B73F56D00F14710 /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AACA2B73F56D00F14710 /* HomeVM.swift */; };
+		CF64AACE2B73F5FE00F14710 /* FRCService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AACD2B73F5FE00F14710 /* FRCService.swift */; };
+		CF64AAD12B74FD5800F14710 /* PopoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AAD02B74FD5800F14710 /* PopoverVC.swift */; };
+		CF64AAD32B74FD6200F14710 /* PopoverVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AAD22B74FD6200F14710 /* PopoverVM.swift */; };
+		CF64AADA2B7568E500F14710 /* MainTabBarVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AAD92B7568E500F14710 /* MainTabBarVM.swift */; };
+		CF64AADC2B756B3100F14710 /* PopoverCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AADB2B756B3100F14710 /* PopoverCoordinator.swift */; };
+		CF64AADE2B756B4400F14710 /* PopoverAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AADD2B756B4400F14710 /* PopoverAssembler.swift */; };
+		CF64AAE22B765F1700F14710 /* PopoverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AAE12B765F1700F14710 /* PopoverTableViewCell.swift */; };
+		CF64AAE52B76872700F14710 /* PopoverRows.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AAE42B76872700F14710 /* PopoverRows.swift */; };
+		CF64AAE72B768D2C00F14710 /* PopoverAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AAE62B768D2C00F14710 /* PopoverAdapter.swift */; };
+		CF64AAE92B76B92300F14710 /* CreateDateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AAE82B76B92300F14710 /* CreateDateVC.swift */; };
+		CF64AAEB2B76B92E00F14710 /* CreateDateVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AAEA2B76B92E00F14710 /* CreateDateVM.swift */; };
+		CF64AAED2B76B94300F14710 /* CreateDateCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AAEC2B76B94300F14710 /* CreateDateCoordinator.swift */; };
+		CF64AAEF2B76B95100F14710 /* CreateDateAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AAEE2B76B95100F14710 /* CreateDateAssembler.swift */; };
+		CF64AAF22B76B98900F14710 /* CreateTimerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AAF12B76B98900F14710 /* CreateTimerCoordinator.swift */; };
+		CF64AAF42B76B99700F14710 /* CreateTimerAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AAF32B76B99700F14710 /* CreateTimerAssembler.swift */; };
+		CF64AAF62B76B9B300F14710 /* CreateTimerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AAF52B76B9B300F14710 /* CreateTimerVC.swift */; };
+		CF64AAF82B76B9C100F14710 /* CreateTimerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AAF72B76B9C100F14710 /* CreateTimerVM.swift */; };
+		CF64AAFA2B76B9CE00F14710 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AAF92B76B9CE00F14710 /* InputView.swift */; };
+		CF64AAFE2B77AA3500F14710 /* LineTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AAFD2B77AA3500F14710 /* LineTextView.swift */; };
 		CF7379472B1F846A00E77BF0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF7379462B1F846A00E77BF0 /* GoogleService-Info.plist */; };
 		CF73794A2B1F87F200E77BF0 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = CF7379492B1F87F200E77BF0 /* FirebaseAnalytics */; };
 		CF73794C2B1F87F200E77BF0 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = CF73794B2B1F87F200E77BF0 /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -98,6 +142,30 @@
 		CFF587C82B4DE63300D60712 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF587C72B4DE63300D60712 /* ProfileHeaderView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		CF64AA932B6B09C900F14710 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFD583992AF0195D000949A6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF64AA8E2B6B09C900F14710;
+			remoteInfo = Storage;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CF64AA9A2B6B09C900F14710 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CF64AA962B6B09C900F14710 /* Storage.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		CF5B89D42B1D3E3B0080EF47 /* String+Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Attributes.swift"; sourceTree = "<group>"; };
 		CF64AA772B56E0EC00F14710 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
@@ -105,6 +173,49 @@
 		CF64AA7C2B56F00000F14710 /* WindowMahager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowMahager.swift; sourceTree = "<group>"; };
 		CF64AA802B61B0B800F14710 /* ProfileSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSections.swift; sourceTree = "<group>"; };
 		CF64AA832B62ED0600F14710 /* ProfileAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAdapter.swift; sourceTree = "<group>"; };
+		CF64AA852B6A63B900F14710 /* Collection+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Register.swift"; sourceTree = "<group>"; };
+		CF64AA882B6A852100F14710 /* Alert+Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+Layer.swift"; sourceTree = "<group>"; };
+		CF64AA8F2B6B09C900F14710 /* Storage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Storage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF64AA912B6B09C900F14710 /* Storage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Storage.h; sourceTree = "<group>"; };
+		CF64AA9D2B6B0B2800F14710 /* NotificationDataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NotificationDataBase.xcdatamodel; sourceTree = "<group>"; };
+		CF64AAA12B6B0E1D00F14710 /* BaseNotificationMo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseNotificationMo+CoreDataClass.swift"; sourceTree = "<group>"; };
+		CF64AAA22B6B0E1D00F14710 /* BaseNotificationMo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseNotificationMo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CF64AAA32B6B0E1D00F14710 /* DateNotificationMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateNotificationMO+CoreDataClass.swift"; sourceTree = "<group>"; };
+		CF64AAA42B6B0E1D00F14710 /* DateNotificationMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateNotificationMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CF64AAAA2B6B127D00F14710 /* DateNotificationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateNotificationDTO.swift; sourceTree = "<group>"; };
+		CF64AAAD2B6BB05600F14710 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		CF64AAB02B6BB30500F14710 /* DateNotificationStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateNotificationStorage.swift; sourceTree = "<group>"; };
+		CF64AAB32B6BC59200F14710 /* NSPredicate+Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSPredicate+Consts.swift"; sourceTree = "<group>"; };
+		CF64AAB52B72DBB800F14710 /* LocationNotificationMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationNotificationMO+CoreDataClass.swift"; sourceTree = "<group>"; };
+		CF64AAB62B72DBB800F14710 /* LocationNotificationMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationNotificationMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CF64AAB92B72DC3E00F14710 /* LocationNotificationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationNotificationDTO.swift; sourceTree = "<group>"; };
+		CF64AABB2B72DF9500F14710 /* LocationNotificationStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationNotificationStorage.swift; sourceTree = "<group>"; };
+		CF64AABD2B72EF4D00F14710 /* TimerNotificationMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimerNotificationMO+CoreDataClass.swift"; sourceTree = "<group>"; };
+		CF64AABE2B72EF4D00F14710 /* TimerNotificationMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimerNotificationMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CF64AAC12B72EF6600F14710 /* TimerNotificationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerNotificationDTO.swift; sourceTree = "<group>"; };
+		CF64AAC32B72F0BB00F14710 /* TimerNotificationStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerNotificationStorage.swift; sourceTree = "<group>"; };
+		CF64AAC52B73AA8500F14710 /* NotificationStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationStorage.swift; sourceTree = "<group>"; };
+		CF64AAC82B73E34E00F14710 /* DTODescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTODescription.swift; sourceTree = "<group>"; };
+		CF64AACA2B73F56D00F14710 /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
+		CF64AACD2B73F5FE00F14710 /* FRCService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FRCService.swift; sourceTree = "<group>"; };
+		CF64AAD02B74FD5800F14710 /* PopoverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverVC.swift; sourceTree = "<group>"; };
+		CF64AAD22B74FD6200F14710 /* PopoverVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverVM.swift; sourceTree = "<group>"; };
+		CF64AAD92B7568E500F14710 /* MainTabBarVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVM.swift; sourceTree = "<group>"; };
+		CF64AADB2B756B3100F14710 /* PopoverCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverCoordinator.swift; sourceTree = "<group>"; };
+		CF64AADD2B756B4400F14710 /* PopoverAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverAssembler.swift; sourceTree = "<group>"; };
+		CF64AAE12B765F1700F14710 /* PopoverTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverTableViewCell.swift; sourceTree = "<group>"; };
+		CF64AAE42B76872700F14710 /* PopoverRows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverRows.swift; sourceTree = "<group>"; };
+		CF64AAE62B768D2C00F14710 /* PopoverAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverAdapter.swift; sourceTree = "<group>"; };
+		CF64AAE82B76B92300F14710 /* CreateDateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDateVC.swift; sourceTree = "<group>"; };
+		CF64AAEA2B76B92E00F14710 /* CreateDateVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDateVM.swift; sourceTree = "<group>"; };
+		CF64AAEC2B76B94300F14710 /* CreateDateCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDateCoordinator.swift; sourceTree = "<group>"; };
+		CF64AAEE2B76B95100F14710 /* CreateDateAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDateAssembler.swift; sourceTree = "<group>"; };
+		CF64AAF12B76B98900F14710 /* CreateTimerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTimerCoordinator.swift; sourceTree = "<group>"; };
+		CF64AAF32B76B99700F14710 /* CreateTimerAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTimerAssembler.swift; sourceTree = "<group>"; };
+		CF64AAF52B76B9B300F14710 /* CreateTimerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTimerVC.swift; sourceTree = "<group>"; };
+		CF64AAF72B76B9C100F14710 /* CreateTimerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTimerVM.swift; sourceTree = "<group>"; };
+		CF64AAF92B76B9CE00F14710 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		CF64AAFD2B77AA3500F14710 /* LineTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTextView.swift; sourceTree = "<group>"; };
 		CF7379462B1F846A00E77BF0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CF7379802B1F95CA00E77BF0 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		CF7379822B1F975F00E77BF0 /* AuthService+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthService+Login.swift"; sourceTree = "<group>"; };
@@ -185,12 +296,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		CF64AA8C2B6B09C900F14710 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CFD5839E2AF0195D000949A6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CF7379582B1F87F200E77BF0 /* FirebaseAuthCombine-Community in Frameworks */,
 				CF73794E2B1F87F200E77BF0 /* FirebaseAnalyticsSwift in Frameworks */,
+				CF64AA952B6B09C900F14710 /* Storage.framework in Frameworks */,
 				CF7379502B1F87F200E77BF0 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				CF73794A2B1F87F200E77BF0 /* FirebaseAnalytics in Frameworks */,
 				CF73794C2B1F87F200E77BF0 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
@@ -248,6 +367,190 @@
 			path = Sections;
 			sourceTree = "<group>";
 		};
+		CF64AA902B6B09C900F14710 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				CF64AACC2B73F5E700F14710 /* FRC */,
+				CF64AAB22B6BC55C00F14710 /* Consts */,
+				CF64AAAC2B6BAFF300F14710 /* CoreData */,
+				CF64AA9B2B6B0AD300F14710 /* DataStorage */,
+				CF64AA9F2B6B0D3D00F14710 /* Models */,
+				CF64AA912B6B09C900F14710 /* Storage.h */,
+				CF64AAAF2B6BB1EB00F14710 /* Storages */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		CF64AA9B2B6B0AD300F14710 /* DataStorage */ = {
+			isa = PBXGroup;
+			children = (
+				CF64AA9C2B6B0B2800F14710 /* NotificationDataBase.xcdatamodeld */,
+			);
+			path = DataStorage;
+			sourceTree = "<group>";
+		};
+		CF64AA9F2B6B0D3D00F14710 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CF64AAC72B73E31E00F14710 /* Protocols */,
+				CF64AAA92B6B124900F14710 /* DTOs */,
+				CF64AAA02B6B0D5200F14710 /* ManagedObjects */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CF64AAA02B6B0D5200F14710 /* ManagedObjects */ = {
+			isa = PBXGroup;
+			children = (
+				CF64AABD2B72EF4D00F14710 /* TimerNotificationMO+CoreDataClass.swift */,
+				CF64AABE2B72EF4D00F14710 /* TimerNotificationMO+CoreDataProperties.swift */,
+				CF64AAB52B72DBB800F14710 /* LocationNotificationMO+CoreDataClass.swift */,
+				CF64AAB62B72DBB800F14710 /* LocationNotificationMO+CoreDataProperties.swift */,
+				CF64AAA12B6B0E1D00F14710 /* BaseNotificationMo+CoreDataClass.swift */,
+				CF64AAA22B6B0E1D00F14710 /* BaseNotificationMo+CoreDataProperties.swift */,
+				CF64AAA32B6B0E1D00F14710 /* DateNotificationMO+CoreDataClass.swift */,
+				CF64AAA42B6B0E1D00F14710 /* DateNotificationMO+CoreDataProperties.swift */,
+			);
+			path = ManagedObjects;
+			sourceTree = "<group>";
+		};
+		CF64AAA92B6B124900F14710 /* DTOs */ = {
+			isa = PBXGroup;
+			children = (
+				CF64AAAA2B6B127D00F14710 /* DateNotificationDTO.swift */,
+				CF64AAB92B72DC3E00F14710 /* LocationNotificationDTO.swift */,
+				CF64AAC12B72EF6600F14710 /* TimerNotificationDTO.swift */,
+			);
+			path = DTOs;
+			sourceTree = "<group>";
+		};
+		CF64AAAC2B6BAFF300F14710 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				CF64AAAD2B6BB05600F14710 /* CoreDataService.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		CF64AAAF2B6BB1EB00F14710 /* Storages */ = {
+			isa = PBXGroup;
+			children = (
+				CF64AAB02B6BB30500F14710 /* DateNotificationStorage.swift */,
+				CF64AABB2B72DF9500F14710 /* LocationNotificationStorage.swift */,
+				CF64AAC32B72F0BB00F14710 /* TimerNotificationStorage.swift */,
+				CF64AAC52B73AA8500F14710 /* NotificationStorage.swift */,
+			);
+			path = Storages;
+			sourceTree = "<group>";
+		};
+		CF64AAB22B6BC55C00F14710 /* Consts */ = {
+			isa = PBXGroup;
+			children = (
+				CF64AAB32B6BC59200F14710 /* NSPredicate+Consts.swift */,
+			);
+			path = Consts;
+			sourceTree = "<group>";
+		};
+		CF64AAC72B73E31E00F14710 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				CF64AAC82B73E34E00F14710 /* DTODescription.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		CF64AACC2B73F5E700F14710 /* FRC */ = {
+			isa = PBXGroup;
+			children = (
+				CF64AACD2B73F5FE00F14710 /* FRCService.swift */,
+			);
+			path = FRC;
+			sourceTree = "<group>";
+		};
+		CF64AACF2B74FD3700F14710 /* Popover */ = {
+			isa = PBXGroup;
+			children = (
+				CF64AADF2B765EEF00F14710 /* Adapter */,
+				CF64AAD42B74FD6900F14710 /* Coordinator */,
+				CF64AAD22B74FD6200F14710 /* PopoverVM.swift */,
+				CF64AAD02B74FD5800F14710 /* PopoverVC.swift */,
+			);
+			path = Popover;
+			sourceTree = "<group>";
+		};
+		CF64AAD42B74FD6900F14710 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				CF64AADB2B756B3100F14710 /* PopoverCoordinator.swift */,
+				CF64AADD2B756B4400F14710 /* PopoverAssembler.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		CF64AAD52B75006300F14710 /* CreateDate */ = {
+			isa = PBXGroup;
+			children = (
+				CF64AAD82B75008B00F14710 /* Coordinator */,
+				CF64AAE82B76B92300F14710 /* CreateDateVC.swift */,
+				CF64AAEA2B76B92E00F14710 /* CreateDateVM.swift */,
+			);
+			path = CreateDate;
+			sourceTree = "<group>";
+		};
+		CF64AAD62B75006F00F14710 /* CreateTimer */ = {
+			isa = PBXGroup;
+			children = (
+				CF64AAF02B76B97300F14710 /* Coordinator */,
+				CF64AAF52B76B9B300F14710 /* CreateTimerVC.swift */,
+				CF64AAF72B76B9C100F14710 /* CreateTimerVM.swift */,
+			);
+			path = CreateTimer;
+			sourceTree = "<group>";
+		};
+		CF64AAD82B75008B00F14710 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				CF64AAEC2B76B94300F14710 /* CreateDateCoordinator.swift */,
+				CF64AAEE2B76B95100F14710 /* CreateDateAssembler.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		CF64AADF2B765EEF00F14710 /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				CF64AAE32B76871100F14710 /* Rows */,
+				CF64AAE02B765F0000F14710 /* Cell */,
+				CF64AAE62B768D2C00F14710 /* PopoverAdapter.swift */,
+			);
+			path = Adapter;
+			sourceTree = "<group>";
+		};
+		CF64AAE02B765F0000F14710 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CF64AAE12B765F1700F14710 /* PopoverTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		CF64AAE32B76871100F14710 /* Rows */ = {
+			isa = PBXGroup;
+			children = (
+				CF64AAE42B76872700F14710 /* PopoverRows.swift */,
+			);
+			path = Rows;
+			sourceTree = "<group>";
+		};
+		CF64AAF02B76B97300F14710 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				CF64AAF12B76B98900F14710 /* CreateTimerCoordinator.swift */,
+				CF64AAF32B76B99700F14710 /* CreateTimerAssembler.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		CF73797F2B1F95B300E77BF0 /* AuthService */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,6 +572,7 @@
 			children = (
 				CF73799D2B28D0A100E77BF0 /* Coordinator */,
 				CF73799E2B28D0D200E77BF0 /* MainTabBarVC.swift */,
+				CF64AAD92B7568E500F14710 /* MainTabBarVM.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -288,6 +592,7 @@
 			children = (
 				CF7379A52B28D2C600E77BF0 /* Coordinator */,
 				CF7379A62B28D2EA00E77BF0 /* HomeVC.swift */,
+				CF64AACA2B73F56D00F14710 /* HomeVM.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -326,6 +631,7 @@
 			isa = PBXGroup;
 			children = (
 				CFD583A32AF0195D000949A6 /* NOTEme */,
+				CF64AA902B6B09C900F14710 /* Storage */,
 				CFD583A22AF0195D000949A6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -334,6 +640,7 @@
 			isa = PBXGroup;
 			children = (
 				CFD583A12AF0195D000949A6 /* NOTEme.app */,
+				CF64AA8F2B6B09C900F14710 /* Storage.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -361,6 +668,9 @@
 				CF73799C2B28D09700E77BF0 /* TabBar */,
 				CF7379A42B28D2BB00E77BF0 /* Home */,
 				CF7379B12B2E5FE200E77BF0 /* Profile */,
+				CF64AACF2B74FD3700F14710 /* Popover */,
+				CF64AAD52B75006300F14710 /* CreateDate */,
+				CF64AAD62B75006F00F14710 /* CreateTimer */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -425,6 +735,8 @@
 				CFD583E92AFE942D000949A6 /* UIButton+Actions.swift */,
 				CF5B89D42B1D3E3B0080EF47 /* String+Attributes.swift */,
 				CF73798E2B274D2C00E77BF0 /* NSAttributedString+HTML.swift */,
+				CF64AA852B6A63B900F14710 /* Collection+Register.swift */,
+				CF64AA882B6A852100F14710 /* Alert+Layer.swift */,
 			);
 			path = Utills;
 			sourceTree = "<group>";
@@ -433,6 +745,8 @@
 			isa = PBXGroup;
 			children = (
 				CFD583D32AF16EC4000949A6 /* LineTextField.swift */,
+				CF64AAF92B76B9CE00F14710 /* InputView.swift */,
+				CF64AAFD2B77AA3500F14710 /* LineTextView.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -663,7 +977,36 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		CF64AA8A2B6B09C900F14710 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF64AA922B6B09C900F14710 /* Storage.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		CF64AA8E2B6B09C900F14710 /* Storage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF64AA972B6B09C900F14710 /* Build configuration list for PBXNativeTarget "Storage" */;
+			buildPhases = (
+				CF64AA8A2B6B09C900F14710 /* Headers */,
+				CF64AA8B2B6B09C900F14710 /* Sources */,
+				CF64AA8C2B6B09C900F14710 /* Frameworks */,
+				CF64AA8D2B6B09C900F14710 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Storage;
+			productName = Storage;
+			productReference = CF64AA8F2B6B09C900F14710 /* Storage.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		CFD583A02AF0195D000949A6 /* NOTEme */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CFD583B52AF0195E000949A6 /* Build configuration list for PBXNativeTarget "NOTEme" */;
@@ -671,10 +1014,12 @@
 				CFD5839D2AF0195D000949A6 /* Sources */,
 				CFD5839E2AF0195D000949A6 /* Frameworks */,
 				CFD5839F2AF0195D000949A6 /* Resources */,
+				CF64AA9A2B6B09C900F14710 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CF64AA942B6B09C900F14710 /* PBXTargetDependency */,
 			);
 			name = NOTEme;
 			packageProductDependencies = (
@@ -702,6 +1047,10 @@
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					CF64AA8E2B6B09C900F14710 = {
+						CreatedOnToolsVersion = 15.2;
+						LastSwiftMigration = 1520;
+					};
 					CFD583A02AF0195D000949A6 = {
 						CreatedOnToolsVersion = 15.0.1;
 					};
@@ -726,11 +1075,19 @@
 			projectRoot = "";
 			targets = (
 				CFD583A02AF0195D000949A6 /* NOTEme */,
+				CF64AA8E2B6B09C900F14710 /* Storage */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		CF64AA8D2B6B09C900F14710 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CFD5839F2AF0195D000949A6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -745,11 +1102,39 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		CF64AA8B2B6B09C900F14710 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF64AAAE2B6BB05600F14710 /* CoreDataService.swift in Sources */,
+				CF64AAB72B72DBB800F14710 /* LocationNotificationMO+CoreDataClass.swift in Sources */,
+				CF64AAC92B73E34E00F14710 /* DTODescription.swift in Sources */,
+				CF64AAAB2B6B127D00F14710 /* DateNotificationDTO.swift in Sources */,
+				CF64AABC2B72DF9500F14710 /* LocationNotificationStorage.swift in Sources */,
+				CF64AAC22B72EF6600F14710 /* TimerNotificationDTO.swift in Sources */,
+				CF64AAB12B6BB30500F14710 /* DateNotificationStorage.swift in Sources */,
+				CF64AAC42B72F0BB00F14710 /* TimerNotificationStorage.swift in Sources */,
+				CF64AAB82B72DBB800F14710 /* LocationNotificationMO+CoreDataProperties.swift in Sources */,
+				CF64AAA62B6B0E1D00F14710 /* BaseNotificationMo+CoreDataProperties.swift in Sources */,
+				CF64AA9E2B6B0B2800F14710 /* NotificationDataBase.xcdatamodeld in Sources */,
+				CF64AABF2B72EF4D00F14710 /* TimerNotificationMO+CoreDataClass.swift in Sources */,
+				CF64AABA2B72DC3E00F14710 /* LocationNotificationDTO.swift in Sources */,
+				CF64AAC02B72EF4D00F14710 /* TimerNotificationMO+CoreDataProperties.swift in Sources */,
+				CF64AAB42B6BC59200F14710 /* NSPredicate+Consts.swift in Sources */,
+				CF64AAC62B73AA8500F14710 /* NotificationStorage.swift in Sources */,
+				CF64AAA72B6B0E1D00F14710 /* DateNotificationMO+CoreDataClass.swift in Sources */,
+				CF64AAA82B6B0E1D00F14710 /* DateNotificationMO+CoreDataProperties.swift in Sources */,
+				CF64AAA52B6B0E1D00F14710 /* BaseNotificationMo+CoreDataClass.swift in Sources */,
+				CF64AACE2B73F5FE00F14710 /* FRCService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CFD5839D2AF0195D000949A6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CFF587BA2B44B70F00D60712 /* ProfileVM.swift in Sources */,
+				CF64AAEB2B76B92E00F14710 /* CreateDateVM.swift in Sources */,
 				CF7379A72B28D2EB00E77BF0 /* HomeVC.swift in Sources */,
 				CFD583A52AF0195D000949A6 /* AppDelegate.swift in Sources */,
 				CFD583C42AF01A42000949A6 /* UIFont+Consts.swift in Sources */,
@@ -759,17 +1144,25 @@
 				CFF587BD2B49F28E00D60712 /* ProfileSettingTableViewCell.swift in Sources */,
 				CF64AA7D2B56F00000F14710 /* WindowMahager.swift in Sources */,
 				CF64AA842B62ED0600F14710 /* ProfileAdapter.swift in Sources */,
+				CF64AADC2B756B3100F14710 /* PopoverCoordinator.swift in Sources */,
 				CFD5845C2B1657EE000949A6 /* OnboardFirstStepCoordinator.swift in Sources */,
 				CFD584572B165675000949A6 /* OnboardFirstStepVM.swift in Sources */,
 				CF7379A92B28D31700E77BF0 /* HomeAseembler.swift in Sources */,
 				CF7379B62B2E608100E77BF0 /* ProfileCoordinator.swift in Sources */,
+				CF64AAD12B74FD5800F14710 /* PopoverVC.swift in Sources */,
+				CF64AAFE2B77AA3500F14710 /* LineTextView.swift in Sources */,
 				CFD5840F2B0CF57D000949A6 /* KeyboardAnimator+Register.swift in Sources */,
 				CFD584602B165ADA000949A6 /* OnboardSecondStepVC.swift in Sources */,
 				CFD583C22AF01A35000949A6 /* UIColor+Consts.swift in Sources */,
 				CFD584622B165B5A000949A6 /* OnboardSecondStepVM.swift in Sources */,
+				CF64AAFA2B76B9CE00F14710 /* InputView.swift in Sources */,
 				CFD584502B164B61000949A6 /* ParametersHelper.swift in Sources */,
+				CF64AAED2B76B94300F14710 /* CreateDateCoordinator.swift in Sources */,
 				CF7379B82B2E608E00E77BF0 /* ProfileAssembler.swift in Sources */,
 				CFD583CD2AF0672F000949A6 /* UIButton+Styles.swift in Sources */,
+				CF64AAF82B76B9C100F14710 /* CreateTimerVM.swift in Sources */,
+				CF64AAE22B765F1700F14710 /* PopoverTableViewCell.swift in Sources */,
+				CF64AAD32B74FD6200F14710 /* PopoverVM.swift in Sources */,
 				CFD583EC2AFE977E000949A6 /* LoginVM.swift in Sources */,
 				CFD583F92B03E119000949A6 /* RegisterAssembler.swift in Sources */,
 				CFF587C82B4DE63300D60712 /* ProfileHeaderView.swift in Sources */,
@@ -777,6 +1170,7 @@
 				CFD583C62AF01A53000949A6 /* UIImage+Consts.swift in Sources */,
 				CFD583EE2AFE97ED000949A6 /* LoginAssembler.swift in Sources */,
 				CFD5840C2B0CEEDB000949A6 /* KeyboardAnimator.swift in Sources */,
+				CF64AAE92B76B92300F14710 /* CreateDateVC.swift in Sources */,
 				CFD584662B165BE5000949A6 /* OnboardSecondStepAssembler.swift in Sources */,
 				CF7379812B1F95CA00E77BF0 /* AuthService.swift in Sources */,
 				CFD583D42AF16EC4000949A6 /* LineTextField.swift in Sources */,
@@ -784,9 +1178,13 @@
 				CFD584112B0D124D000949A6 /* AppCoordinator.swift in Sources */,
 				CF73798D2B26728E00E77BF0 /* AuthService+Register.swift in Sources */,
 				CFD5842B2B153154000949A6 /* Builder.swift in Sources */,
+				CF64AAF62B76B9B300F14710 /* CreateTimerVC.swift in Sources */,
 				CF7379912B27CFB400E77BF0 /* KeyboardHelper+Login.swift in Sources */,
 				CFD583A72AF0195D000949A6 /* SceneDelegate.swift in Sources */,
+				CF64AAF22B76B98900F14710 /* CreateTimerCoordinator.swift in Sources */,
 				CFD584192B0D1B72000949A6 /* LoginCoordinator.swift in Sources */,
+				CF64AAE52B76872700F14710 /* PopoverRows.swift in Sources */,
+				CF64AACB2B73F56D00F14710 /* HomeVM.swift in Sources */,
 				CF7379B42B2E606C00E77BF0 /* ProfileVC.swift in Sources */,
 				CFD584012B083791000949A6 /* ResetAssembler.swift in Sources */,
 				CFF587C42B4B3CDC00D60712 /* AlertService+Profile.swift in Sources */,
@@ -795,10 +1193,12 @@
 				CFD584592B16572D000949A6 /* OnboardFirstStepAssembler.swift in Sources */,
 				CFD583EA2AFE942D000949A6 /* UIButton+Actions.swift in Sources */,
 				CFD584052B09FEE2000949A6 /* KeyboardHelper+Register.swift in Sources */,
+				CF64AAF42B76B99700F14710 /* CreateTimerAssembler.swift in Sources */,
 				CF7379BA2B2FC3C900E77BF0 /* MainTabBarCoordinator.swift in Sources */,
 				CFD583D02AF06CB0000949A6 /* UILabel+Styles.swift in Sources */,
 				CF7379932B27CFD300E77BF0 /* KeyboardAnimator+Login.swift in Sources */,
 				CF7379BC2B2FC41D00E77BF0 /* MainTabBarAssembler.swift in Sources */,
+				CF64AADA2B7568E500F14710 /* MainTabBarVM.swift in Sources */,
 				CFD583DD2AF6FEA2000949A6 /* String+Locale.swift in Sources */,
 				CFD583BB2AF019D9000949A6 /* LoginVC.swift in Sources */,
 				CFD584032B094BE0000949A6 /* InputValidator+Register.swift in Sources */,
@@ -815,20 +1215,33 @@
 				CFD5841C2B0D24CA000949A6 /* RegisterCoordinator.swift in Sources */,
 				CF5B89D52B1D3E3B0080EF47 /* String+Attributes.swift in Sources */,
 				CFD583E52AFAA0E5000949A6 /* ResetVC.swift in Sources */,
+				CF64AA892B6A852100F14710 /* Alert+Layer.swift in Sources */,
+				CF64AAEF2B76B95100F14710 /* CreateDateAssembler.swift in Sources */,
 				CF7379832B1F975F00E77BF0 /* AuthService+Login.swift in Sources */,
 				CF73799F2B28D0D200E77BF0 /* MainTabBarVC.swift in Sources */,
 				CF7379AE2B2E5DFE00E77BF0 /* AlertService+Register.swift in Sources */,
 				CFD584552B165479000949A6 /* OnbordFirstStepVC.swift in Sources */,
 				CFD584082B0A77DA000949A6 /* InputValidator+Reset.swift in Sources */,
 				CFF587C62B4C1B6E00D60712 /* AuthService+Profile.swift in Sources */,
+				CF64AADE2B756B4400F14710 /* PopoverAssembler.swift in Sources */,
 				CFD583C92AF01A7C000949A6 /* UIView+Layer.swift in Sources */,
 				CFD584232B1401A6000949A6 /* ResetCoordinator.swift in Sources */,
+				CF64AA862B6A63B900F14710 /* Collection+Register.swift in Sources */,
 				CFD583E32AFAA0D5000949A6 /* RegisterVC.swift in Sources */,
+				CF64AAE72B768D2C00F14710 /* PopoverAdapter.swift in Sources */,
 				CFD584642B165BA5000949A6 /* OnboardSecondStepCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CF64AA942B6B09C900F14710 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF64AA8E2B6B09C900F14710 /* Storage */;
+			targetProxy = CF64AA932B6B09C900F14710 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CFD583D92AF6FB78000949A6 /* Localizable.strings */ = {
@@ -843,6 +1256,77 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		CF64AA982B6B09C900F14710 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8F9Y94ZZ8K;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = Course.Storage;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CF64AA992B6B09C900F14710 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8F9Y94ZZ8K;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = Course.Storage;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		CFD583B32AF0195E000949A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -967,6 +1451,7 @@
 		CFD583B62AF0195E000949A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -998,6 +1483,7 @@
 		CFD583B72AF0195E000949A6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -1029,6 +1515,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CF64AA972B6B09C900F14710 /* Build configuration list for PBXNativeTarget "Storage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF64AA982B6B09C900F14710 /* Debug */,
+				CF64AA992B6B09C900F14710 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CFD5839C2AF0195D000949A6 /* Build configuration list for PBXProject "NOTEme" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1115,6 +1610,19 @@
 			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		CF64AA9C2B6B0B2800F14710 /* NotificationDataBase.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CF64AA9D2B6B0B2800F14710 /* NotificationDataBase.xcdatamodel */,
+			);
+			currentVersion = CF64AA9D2B6B0B2800F14710 /* NotificationDataBase.xcdatamodel */;
+			path = NotificationDataBase.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CFD583992AF0195D000949A6 /* Project object */;
 }

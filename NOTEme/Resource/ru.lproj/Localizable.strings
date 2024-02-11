@@ -81,3 +81,34 @@
 "profile_alert_cancelTitle" = "Отмена";
 "profile_alert_destTitle" = "Выйти";
 "profile_user_error" = "E-mail не найден";
+
+//MARK: - Popover
+"popover_calendar" = "Календарь";
+"popover_location" = "Локация";
+"popover_timer" = "Таймер";
+
+//MARK: - CreateDate
+"createDate_titleLabel" = "Создать уведомление с датой";
+"createDate_title" = "Название";
+"createDate_titlePlaceholder" = "Введите название";
+"createDate_date" = "Дата";
+"createDate_datePlaceholder" = "Введите дату";
+"createDate_comment" = "Комментарий";
+"createDate_commentPlaceholder" = "Введите комментарий";
+"createDate_createButton" = "Создать";
+"createDate_cancelButton" = "Отменить";
+
+//MARK: - CreateTimer
+"createTimer_titleLabel" = "Создать уведомление с таймером";
+"createTimer_title" = "Название";
+"createTimer_titlePlaceholder" = "Введите название";
+"createTimer_timer" = "Таймер";
+"createTimer_timerPlaceholder" = "Введите таймер";
+"createTimer_comment" = "Комментарий";
+"createTimer_commentPlaceholder" = "Введите комментарий";
+"createTimer_createButton" = "Создать";
+"createTimer_cancelButton" = "Отменить";
+
+//MARK: - InputView
+"inputView_done" = "Отменить";
+"inputView_select" = "Выбрать";

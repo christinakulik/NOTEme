@@ -36,14 +36,9 @@ final class ProfileAdapter: NSObject {
         tableView.dataSource = self
         tableView.delegate = self
         
-        tableView.register(ProfileAccountTableViewCell.self,
-                           forCellReuseIdentifier:
-                            "\(ProfileAccountTableViewCell.self)")
-        tableView.register(ProfileSettingTableViewCell.self,
-                           forCellReuseIdentifier:
-                            "\(ProfileSettingTableViewCell.self)")
+        tableView.register(ProfileAccountTableViewCell.self)
+        tableView.register(ProfileSettingTableViewCell.self)
     }
-    
 }
 
 extension ProfileAdapter: UITableViewDataSource {
@@ -64,15 +59,11 @@ extension ProfileAdapter: UITableViewDataSource {
         
         switch section {
         case .account(let email):
-            let cell = tableView.dequeueReusableCell(
-                withIdentifier: "ProfileAccountTableViewCell",
-                for: indexPath) as! ProfileAccountTableViewCell
+            let cell = tableView.dequeue(at: indexPath) as ProfileAccountTableViewCell
             cell.setup(email)
             return cell
         case .settings(let rows):
-            let cell = tableView.dequeueReusableCell(
-                withIdentifier: "ProfileSettingTableViewCell",
-                for: indexPath) as! ProfileSettingTableViewCell
+            let cell = tableView.dequeue(at: indexPath) as ProfileSettingTableViewCell
             cell.setup(rows[indexPath.row])
             return cell
         }

@@ -7,13 +7,19 @@
 
 import UIKit
 
+protocol HomeViewModelProtocol  {
+
+}
+
 final class HomeVC: UIViewController {
     
     private enum L10n {
         static let home: String = "home_tabbarItem".localized
     }
+    private var viewModel: HomeViewModelProtocol
     
-    init() {
+    init(viewModel: HomeViewModelProtocol) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         setupTabBarItem()
     }

@@ -10,15 +10,6 @@ import SnapKit
 
 class ProfileSettingTableViewCell: UITableViewCell {
     
-    private enum L10n {
-        static let notificationButton: String =
-        "profile_settings_notifications_button".localized
-        static let exportButton: String =
-        "profile_settings_export_button".localized
-        static let logoutButton: String =
-        "profile_settings_logout_button".localized
-    }
-    
     private lazy var settingsImageView = UIImageView()
     
     private lazy var settingsLabel: UILabel = .profileLabel()

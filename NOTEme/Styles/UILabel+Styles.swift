@@ -80,6 +80,17 @@ extension UILabel {
         return label
     }
     
+    static func dataBoldLabel(_ title: String?) -> UILabel {
+        let label = UILabel()
+        
+        label.text = title
+        label.font = .appBoldFont.withSize(17.0)
+        label.textColor = .appText
+        label.numberOfLines = 0
+        
+        return label
+    }
+    
     static func profileLabel() -> UILabel {
         let label = UILabel()
         

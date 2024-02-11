@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 class Coordinator {
     
     var onDidFinish: ((Coordinator) -> Void)?

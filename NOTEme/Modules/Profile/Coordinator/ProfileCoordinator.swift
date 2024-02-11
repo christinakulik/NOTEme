@@ -9,6 +9,7 @@ import UIKit
 
 final class ProfileCoordinator: Coordinator {
     
+    
     private let container: Container
     
     init(container: Container) {
@@ -16,11 +17,9 @@ final class ProfileCoordinator: Coordinator {
     }
     
     override func start() -> UIViewController {
-        return ProfileAssembler.make(container: container, 
+        return ProfileAssembler.make(container: container,
                                      coordinator: self)
     }
 }
 
-extension ProfileCoordinator: ProfileCoordinatorProtocol {
- 
-}
+extension ProfileCoordinator: ProfileCoordinatorProtocol {}

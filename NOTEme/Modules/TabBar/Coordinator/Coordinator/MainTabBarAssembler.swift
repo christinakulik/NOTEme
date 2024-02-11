@@ -1,5 +1,5 @@
 //
-//  MainTabBarAssembler.swift
+//   vAssembler.swift
 //  NOTEme
 //
 //  Created by Christina on 18.12.23.
@@ -11,9 +11,15 @@ final class MainTabBarAssembler {
     
     private init() {}
     
-    static func make() -> UITabBarController {
-        let tabBar = MainTabBarVC()
+    //    static func make() -> UITabBarController {
+    //        let tabBar = MainTabBarVC()
+    //
+    //        return tabBar
+    //    }
+    static func make(coordinator: MainTabBarCoordinatorProtocol)
+    -> UITabBarController {
         
-        return tabBar
+        let vm = MainTabBarVM(coordinator: coordinator)
+        return MainTabBarVC(viewModel: vm)
     }
 }

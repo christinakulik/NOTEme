@@ -14,17 +14,14 @@ private enum L10n {
 
 extension UIButton {
     
-    static func withImageButton(_ title: String?,
-                                image: UIImage,
-                                color: UIColor) -> UIButton {
+    static func inputViewButton(_ title: String?, font: UIFont?) -> UIButton {
         let button = UIButton()
-        button.setImage(image, for: .normal)
         button.setTitle(title, for: .normal)
-        button.setTitleColor(color, for: .normal)
-        button.setTitleColor(color.withAlphaComponent(0.75),
+        button.setTitleColor(.appYellow, for: .normal)
+        button.setTitleColor(.appYellow.withAlphaComponent(0.75),
                              for: .highlighted)
         
-        button.titleLabel?.font = .appFont.withSize(12.0)
+        button.titleLabel?.font = font?.withSize(15.0)
         
         return button
     }

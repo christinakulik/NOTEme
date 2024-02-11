@@ -7,6 +7,8 @@
 
 import UIKit
 import SnapKit
+import Storage
+import CoreData
 
  protocol ProfileViewModelProtocol  {
      func makeTableView() -> UITableView
@@ -38,6 +40,15 @@ final class ProfileVC: UIViewController {
         
         setupUI()
         setupConstraints()
+        
+//        let storage = TimerNotificationStorage()
+//        storage.create(dto: .init(date: <#T##Date#>, identifier: <#T##String#>, title: <#T##String#>, duration: <#T##Int16#>))
+        
+        let service = NotificationStorage<DateNotificationDTO>()
+        let service2 = DateNotificationStorage()
+        print(service.fetch())
+        
+        
     }
     
     private func setupUI() {

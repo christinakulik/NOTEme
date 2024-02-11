@@ -52,6 +52,8 @@ final class AlertService {
         let alertVC = UIAlertController(title: title,
                                         message: message,
                                         preferredStyle: .alert)
+        // Add shadow to alert
+        alertVC.addShadow()
         
         if let cancelTitle {
             let action = UIAlertAction(title: cancelTitle,
@@ -92,19 +94,5 @@ extension UIAlertController {
 //        alertService.window?.makeKeyAndVisible()
 //        alertService.window?.rootViewController?.present(self, animated: true)
 //    }
-    
-    func applyShadow() {
-            
-            DispatchQueue.main.async {
-                self.view.clipsToBounds = false
-                self.view.layer.shadowColor = UIColor(red: 0,
-                                                      green: 0,
-                                                      blue: 0,
-                                                      alpha: 0.04).cgColor
-                self.view.layer.shadowOpacity = 1
-                self.view.layer.shadowOffset = CGSize(width: 0, height: 3)
-                self.view.layer.shadowRadius = 9
-                self.view.cornerRadius = 14.0
-            }
-        }
+
 }

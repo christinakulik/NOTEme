@@ -29,4 +29,10 @@ extension UIImage {
         static let export: UIImage = .init(named: "export")!
         static let logout: UIImage = .init(named: "logout")!
     }
+    
+    enum Popover {
+        static let calendar: UIImage = .init(named: "сalendar")!
+        static let location: UIImage = .init(named: "location")!
+        static let timer: UIImage = .init(named: "timer")!
+    }
 }

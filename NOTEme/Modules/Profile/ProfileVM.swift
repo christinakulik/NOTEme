@@ -32,7 +32,7 @@ protocol ProfileAdapterProtocol {
 }
 
 final class ProfileVM: ProfileViewModelProtocol {
-    
+   
     private enum L10n {
         static let alertTitle: String = "profile_alert_title".localized
         static let alertMessage: String = "profile_alert_message".localized
@@ -80,7 +80,7 @@ final class ProfileVM: ProfileViewModelProtocol {
     func makeTableView() -> UITableView {
         adapter.makeTableView()
     }
-    
+
     private func commonInit() {
         adapter.reloadData(with: sections)
     }

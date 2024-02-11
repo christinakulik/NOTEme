@@ -79,3 +79,34 @@
 "profile_alert_cancelTitle" = "Cancel";
 "profile_alert_destTitle" = "Log out";
 "profile_user_error" = "E-mail not found";
+
+//MARK: - Popover
+"popover_calendar" = "Calendar";
+"popover_location" = "Location";
+"popover_timer" = "Timer";
+
+//MARK: - CreateDate
+"createDate_titleLabel" = "Create Date Notification";
+"createDate_title" = "Title";
+"createDate_titlePlaceholder" = "Enter Title";
+"createDate_date" = "Date";
+"createDate_datePlaceholder" = "Enter Date";
+"createDate_comment" = "Comment";
+"createDate_commentPlaceholder" = "Enter Comment";
+"createDate_createButton" = "Create";
+"createDate_cancelButton" = "Cancel";
+
+//MARK: - CreateTimer
+"createTimer_titleLabel" = "Create Timer Notification";
+"createTimer_title" = "Title";
+"createTimer_titlePlaceholder" = "Enter Title";
+"createTimer_timer" = "Timer";
+"createTimer_timerPlaceholder" = "Enter Timer";
+"createTimer_comment" = "Comment";
+"createTimer_commentPlaceholder" = "Enter Comment";
+"createTimer_createButton" = "Create";
+"createTimer_cancelButton" = "Cancel";
+
+//MARK: - InputView
+"inputView_done" = "Cancel";
+"inputView_select" = "Select";

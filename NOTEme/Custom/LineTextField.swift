@@ -8,6 +8,12 @@
 import UIKit
 import SnapKit
 
+@objc protocol LineTextFieldDelegate: AnyObject {
+    @objc optional func lineTextField(_ textfield: LineTextField,
+                   shouldChangeCharactersIn range: NSRange,
+                   replacementString string: String) -> Bool
+}
+
 final class LineTextField: UIView {
     
     private lazy var titleLabel: UILabel = {
@@ -24,6 +30,7 @@ final class LineTextField: UIView {
         textField.font = .appFont.withSize(15.0)
         textField.textColor = .appText
         textField.textAlignment = .left
+        textField.delegate = self
         return textField
     }()
     
@@ -42,6 +49,11 @@ final class LineTextField: UIView {
         label.textAlignment = .left
         return label
     }()
+    
+    var customInputView: UIView? {
+        get { textField.inputView }
+        set { textField.inputView = newValue }
+    }
     
     var title: String? {
         get { titleLabel.text }
@@ -71,10 +83,12 @@ final class LineTextField: UIView {
             set { textField.text = newValue }
     }
     
-    var delagate: UITextFieldDelegate? {
-        get { textField.delegate }
-        set { textField.delegate = newValue }
-    }
+//    var delegate: UITextFieldDelegate? {
+//        get { textField.delegate }
+//        set { textField.delegate = newValue }
+//    }
+    
+    weak var delegate: LineTextFieldDelegate?
     
     init() {
         super.init(frame: .zero)
@@ -117,5 +131,19 @@ final class LineTextField: UIView {
             make.bottom.horizontalEdges.equalToSuperview()
             make.top.equalTo(separator.snp.bottom).inset(-4.0)
         }
+    }
+}
+
+extension LineTextField: UITextFieldDelegate {
+    func textField(_ textField: UITextField, 
+                   shouldChangeCharactersIn range: NSRange,
+                   replacementString string: String) -> Bool {
+        return delegate?.lineTextField?(self,
+                                        shouldChangeCharactersIn: range,
+                                        replacementString: string) ?? true
+    }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        return true
     }
 }
