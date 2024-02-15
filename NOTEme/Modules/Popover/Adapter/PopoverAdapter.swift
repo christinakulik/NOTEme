@@ -48,6 +48,7 @@ extension PopoverAdapter: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)
     -> UITableViewCell {
+        print("Row \(indexPath.row): \(rows[indexPath.row])")
         let cell = tableView.dequeue(at: indexPath) as PopoverTableViewCell
         cell.setup(rows[indexPath.row])
         return cell

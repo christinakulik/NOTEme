@@ -8,16 +8,13 @@
 import UIKit
 
 final class MainTabBarCoordinator: Coordinator {
-    
-    private let windowManager: WindowManager
-    
+
     private var rootVC: UIViewController?
     private let container: Container
     private var tabBarController: UITabBarController?
     
     init(container: Container) {
         self.container = container
-        self.windowManager = container.resolve()
     }
     
     override func start() -> UIViewController {
@@ -48,7 +45,6 @@ final class MainTabBarCoordinator: Coordinator {
 }
 
 extension MainTabBarCoordinator: MainTabBarCoordinatorProtocol {
-    
     func showPopover() {
         let coordinator = PopoverCoordinator(container: container)
         children.append(coordinator)
@@ -60,17 +56,17 @@ extension MainTabBarCoordinator: MainTabBarCoordinatorProtocol {
         }
         popover.modalPresentationStyle = .popover
         popover.preferredContentSize = CGSize(width: 180, height: 120)
-        
+      
         if let popoverController = popover.popoverPresentationController {
             popoverController.sourceView = tabBarController?.view
             popoverController.sourceRect = CGRect(
-                x: tabBarController!.view.bounds.width - 288,
-                y: tabBarController!.view.bounds.height - 80,
+                x: (tabBarController?.view.bounds.width)! - 288,
+                y: (tabBarController?.view.bounds.height)! - 80,
                 width: 200,
                 height: 200)
-
             tabBarController?.present(popover, animated: true)
         }
-            
     }
+
 }
+

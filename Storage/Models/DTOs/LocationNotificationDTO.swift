@@ -8,6 +8,7 @@
 import Foundation
 
 public struct LocationNotificationDTO: DTODescription {
+ 
     public typealias DTO = Self
     public typealias MO = LocationNotificationMO
     

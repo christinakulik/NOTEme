@@ -10,25 +10,17 @@ import Foundation
 import CoreData
 
 @objc(TimerNotificationMO)
-public class TimerNotificationMO: BaseNotificationMo {
-    public func apply(dto: TimerNotificationDTO) {
+public class TimerNotificationMO: BaseNotificationMo, MODescription {
+    
+    public typealias DTO = TimerNotificationDTO
+    
+    public func apply(dto: DTO) {
         self.identifier = dto.identifier
         self.date = dto.date
         self.title = dto.title
         self.subtitle = dto.subtitle
         self.completedDate = dto.completedDate
-        self.duration = dto.duration
+        self.targetTime = dto.targetTime
     }
 }
 
-extension TimerNotificationMO: MODescription {
-  
-    public typealias MO = TimerNotificationMO
-    
-    public func apply(dto: any DTODescription) {
-        guard let dto = dto as? TimerNotificationDTO else {
-            return
-        }
-        self.apply(dto: dto)
-    }
-}

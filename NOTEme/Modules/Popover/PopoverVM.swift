@@ -40,8 +40,10 @@ final class PopoverVM: PopoverViewModelProtocol {
             switch row {
             case .calendar:
                 self?.dateDidTap()
-            default:
-                break
+            case .location:
+                self?.locationDidTap()
+            case .timer:
+                self?.timerDidTap()
             }
         }
     }

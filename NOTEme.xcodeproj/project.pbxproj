@@ -55,8 +55,10 @@
 		CF64AAF42B76B99700F14710 /* CreateTimerAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AAF32B76B99700F14710 /* CreateTimerAssembler.swift */; };
 		CF64AAF62B76B9B300F14710 /* CreateTimerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AAF52B76B9B300F14710 /* CreateTimerVC.swift */; };
 		CF64AAF82B76B9C100F14710 /* CreateTimerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AAF72B76B9C100F14710 /* CreateTimerVM.swift */; };
-		CF64AAFA2B76B9CE00F14710 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AAF92B76B9CE00F14710 /* InputView.swift */; };
+		CF64AAFA2B76B9CE00F14710 /* CustomInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AAF92B76B9CE00F14710 /* CustomInputView.swift */; };
 		CF64AAFE2B77AA3500F14710 /* LineTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AAFD2B77AA3500F14710 /* LineTextView.swift */; };
+		CF64AB042B7BD42600F14710 /* BaseNotificatiomDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AB032B7BD42600F14710 /* BaseNotificatiomDTO.swift */; };
+		CF64AB072B7D95CE00F14710 /* Storage+CreateDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AB062B7D95CE00F14710 /* Storage+CreateDate.swift */; };
 		CF7379472B1F846A00E77BF0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF7379462B1F846A00E77BF0 /* GoogleService-Info.plist */; };
 		CF73794A2B1F87F200E77BF0 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = CF7379492B1F87F200E77BF0 /* FirebaseAnalytics */; };
 		CF73794C2B1F87F200E77BF0 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = CF73794B2B1F87F200E77BF0 /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -214,8 +216,10 @@
 		CF64AAF32B76B99700F14710 /* CreateTimerAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTimerAssembler.swift; sourceTree = "<group>"; };
 		CF64AAF52B76B9B300F14710 /* CreateTimerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTimerVC.swift; sourceTree = "<group>"; };
 		CF64AAF72B76B9C100F14710 /* CreateTimerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTimerVM.swift; sourceTree = "<group>"; };
-		CF64AAF92B76B9CE00F14710 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		CF64AAF92B76B9CE00F14710 /* CustomInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputView.swift; sourceTree = "<group>"; };
 		CF64AAFD2B77AA3500F14710 /* LineTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTextView.swift; sourceTree = "<group>"; };
+		CF64AB032B7BD42600F14710 /* BaseNotificatiomDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNotificatiomDTO.swift; sourceTree = "<group>"; };
+		CF64AB062B7D95CE00F14710 /* Storage+CreateDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storage+CreateDate.swift"; sourceTree = "<group>"; };
 		CF7379462B1F846A00E77BF0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CF7379802B1F95CA00E77BF0 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		CF7379822B1F975F00E77BF0 /* AuthService+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthService+Login.swift"; sourceTree = "<group>"; };
@@ -420,6 +424,7 @@
 				CF64AAAA2B6B127D00F14710 /* DateNotificationDTO.swift */,
 				CF64AAB92B72DC3E00F14710 /* LocationNotificationDTO.swift */,
 				CF64AAC12B72EF6600F14710 /* TimerNotificationDTO.swift */,
+				CF64AB032B7BD42600F14710 /* BaseNotificatiomDTO.swift */,
 			);
 			path = DTOs;
 			sourceTree = "<group>";
@@ -490,6 +495,7 @@
 		CF64AAD52B75006300F14710 /* CreateDate */ = {
 			isa = PBXGroup;
 			children = (
+				CF64AB052B7D958B00F14710 /* UseCases */,
 				CF64AAD82B75008B00F14710 /* Coordinator */,
 				CF64AAE82B76B92300F14710 /* CreateDateVC.swift */,
 				CF64AAEA2B76B92E00F14710 /* CreateDateVM.swift */,
@@ -549,6 +555,14 @@
 				CF64AAF32B76B99700F14710 /* CreateTimerAssembler.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		CF64AB052B7D958B00F14710 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				CF64AB062B7D95CE00F14710 /* Storage+CreateDate.swift */,
+			);
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 		CF73797F2B1F95B300E77BF0 /* AuthService */ = {
@@ -745,7 +759,7 @@
 			isa = PBXGroup;
 			children = (
 				CFD583D32AF16EC4000949A6 /* LineTextField.swift */,
-				CF64AAF92B76B9CE00F14710 /* InputView.swift */,
+				CF64AAF92B76B9CE00F14710 /* CustomInputView.swift */,
 				CF64AAFD2B77AA3500F14710 /* LineTextView.swift */,
 			);
 			path = Custom;
@@ -1108,6 +1122,7 @@
 			files = (
 				CF64AAAE2B6BB05600F14710 /* CoreDataService.swift in Sources */,
 				CF64AAB72B72DBB800F14710 /* LocationNotificationMO+CoreDataClass.swift in Sources */,
+				CF64AB042B7BD42600F14710 /* BaseNotificatiomDTO.swift in Sources */,
 				CF64AAC92B73E34E00F14710 /* DTODescription.swift in Sources */,
 				CF64AAAB2B6B127D00F14710 /* DateNotificationDTO.swift in Sources */,
 				CF64AABC2B72DF9500F14710 /* LocationNotificationStorage.swift in Sources */,
@@ -1155,7 +1170,7 @@
 				CFD584602B165ADA000949A6 /* OnboardSecondStepVC.swift in Sources */,
 				CFD583C22AF01A35000949A6 /* UIColor+Consts.swift in Sources */,
 				CFD584622B165B5A000949A6 /* OnboardSecondStepVM.swift in Sources */,
-				CF64AAFA2B76B9CE00F14710 /* InputView.swift in Sources */,
+				CF64AAFA2B76B9CE00F14710 /* CustomInputView.swift in Sources */,
 				CFD584502B164B61000949A6 /* ParametersHelper.swift in Sources */,
 				CF64AAED2B76B94300F14710 /* CreateDateCoordinator.swift in Sources */,
 				CF7379B82B2E608E00E77BF0 /* ProfileAssembler.swift in Sources */,
@@ -1176,6 +1191,7 @@
 				CFD583D42AF16EC4000949A6 /* LineTextField.swift in Sources */,
 				CF7379882B25362000E77BF0 /* AuthService+Reset.swift in Sources */,
 				CFD584112B0D124D000949A6 /* AppCoordinator.swift in Sources */,
+				CF64AB072B7D95CE00F14710 /* Storage+CreateDate.swift in Sources */,
 				CF73798D2B26728E00E77BF0 /* AuthService+Register.swift in Sources */,
 				CFD5842B2B153154000949A6 /* Builder.swift in Sources */,
 				CF64AAF62B76B9B300F14710 /* CreateTimerVC.swift in Sources */,
@@ -1271,7 +1287,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1307,7 +1323,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1466,7 +1482,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1498,7 +1514,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -50,6 +50,11 @@ final class LineTextField: UIView {
         return label
     }()
     
+    
+    override var canBecomeFirstResponder: Bool {
+        return true
+    }
+    
     var customInputView: UIView? {
         get { textField.inputView }
         set { textField.inputView = newValue }
@@ -82,11 +87,6 @@ final class LineTextField: UIView {
             get { textField.text }
             set { textField.text = newValue }
     }
-    
-//    var delegate: UITextFieldDelegate? {
-//        get { textField.delegate }
-//        set { textField.delegate = newValue }
-//    }
     
     weak var delegate: LineTextFieldDelegate?
     

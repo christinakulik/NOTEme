@@ -35,7 +35,7 @@ extension PopoverCoordinator: PopoverCoordinatorProtocol {
             self?.finish()
         }
         let vc = coordinator.start()
-        rootNC?.pushViewController(vc, animated: true)
+        rootNC?.present(vc, animated: true)
     }
     
     func openCreateTimer() {
@@ -47,7 +47,7 @@ extension PopoverCoordinator: PopoverCoordinatorProtocol {
                 self?.finish()
             }
             let vc = coordinator.start()
-            rootNC?.pushViewController(vc, animated: true)
+            rootNC?.present(vc, animated: true)
         }
     }
 

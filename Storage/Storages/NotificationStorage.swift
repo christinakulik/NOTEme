@@ -40,6 +40,7 @@ public class NotificationStorage<DTO: DTODescription> {
         context.perform {
             let mo = DTO.MO(context: context)
             mo.apply(dto: dto)
+            print("Creating MO: \(mo)")
             CoreDataService.shared.saveContext(context: context,
                                                completion: completion)
         }
@@ -60,9 +61,9 @@ public class NotificationStorage<DTO: DTODescription> {
                                                completion: completion)
         }
     }
-        
+    
     func updateOrCreate(dto: DTO.MO.DTO,
-                completion: CompletionHandler? = nil) {
+                        completion: CompletionHandler? = nil) {
         if fetchMO(predicate:
                 .Notification.notification(byId: dto.identifier)).isEmpty {
             create(dto: dto, completion: completion)

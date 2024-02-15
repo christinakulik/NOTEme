@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Storage
+import CoreData
 
 protocol HomeViewModelProtocol  {
 
@@ -31,9 +33,10 @@ final class HomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupUI()
-    }
+    
+}
+
     
     private func setupUI() {
         view.backgroundColor = .appGray

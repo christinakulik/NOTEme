@@ -11,7 +11,8 @@ final class PopoverAssembler {
     
     private init() {}
     
-    static func make(coordinator: PopoverCoordinatorProtocol) -> UIViewController {
+    static func make(coordinator: PopoverCoordinatorProtocol) 
+    -> UIViewController {
         let vm = PopoverVM(coordinator: coordinator,
                            adapter: PopoverAdapter())
         let vc = PopoverVC(viewModel: vm)

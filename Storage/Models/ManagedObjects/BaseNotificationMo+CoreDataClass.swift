@@ -13,5 +13,3 @@ import CoreData
 public class BaseNotificationMo: NSManagedObject {
 
 }
-
-

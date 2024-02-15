@@ -12,7 +12,7 @@ import CoreData
 @objc(DateNotificationMO)
 public class DateNotificationMO: BaseNotificationMo, MODescription {
     public typealias DTO = DateNotificationDTO
-    
+
     public func apply(dto: DTO) {
         self.identifier = dto.identifier
         self.date = dto.date

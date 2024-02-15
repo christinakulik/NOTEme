@@ -7,10 +7,18 @@
 
 import UIKit
 import SnapKit
+import Storage
+import CoreData
 
 @objc protocol CreateDateViewModelProtocol: AnyObject {
     
-    func createDidTap(title: String?, comment: String?, date: String?)
+    var catchTitleError: ((String?) -> Void)? { get set }
+    var catchDateError: ((String?) -> Void)? { get set }
+    var title: String? { get set }
+    var comment: String? { get set }
+    var date: Date? { get set }
+    func string(from date: Date?) -> String?
+    func createDidTap()
     @objc func cancelDidTap()
 }
 
@@ -47,6 +55,7 @@ final class CreateDateVC: UIViewController {
     private lazy var createButton: UIButton =
         .yellowRoundedButton(L10n.createButton)
         .withAction(self, #selector(createDidTap))
+   
     private lazy var cancelButton: UIButton =
         .cancelButton()
         .withAction(viewModel,
@@ -55,6 +64,7 @@ final class CreateDateVC: UIViewController {
     private lazy var titleTextField: LineTextField = {
         let textField = LineTextField()
         textField.title = L10n.titleTextField
+        textField.delegate = self
         textField.placeholder = L10n.titlePlaceholderTextField
         return textField
     }()
@@ -62,6 +72,7 @@ final class CreateDateVC: UIViewController {
     private lazy var dateTextField: LineTextField = {
         let textField = LineTextField()
         textField.title = L10n.dateTextFieldTitle
+        textField.delegate = self
         textField.placeholder = L10n.datePlaceholderTextField
         return textField
     }()
@@ -89,9 +100,20 @@ final class CreateDateVC: UIViewController {
         
         setupUI()
         setupConstraints()
+        setupCustomInputView()
         
     }
     
+    private func bind() {
+        viewModel.catchDateError = { [weak self] error in
+            self?.dateTextField.errorText = error
+        }
+        
+        viewModel.catchTitleError = { [weak self] error in
+            self?.titleTextField.errorText = error
+        }
+    }
+    //MARK: - UI
     private func setupUI() {
     
         view.backgroundColor = .appBlack
@@ -105,7 +127,6 @@ final class CreateDateVC: UIViewController {
         infoView.addSubview(titleTextField)
         infoView.addSubview(dateTextField)
         infoView.addSubview(commentTextView)
-        
     }
     
     private func setupConstraints() {
@@ -160,10 +181,51 @@ final class CreateDateVC: UIViewController {
         
     }
     
+    //MARK: - Private Methods
+    private func setupCustomInputView() {
+        let datePicker = CustomInputView(.date)
+        datePicker.delegate = self
+        dateTextField.customInputView = datePicker
+    }
+    
     @objc private func createDidTap() {
-        viewModel.createDidTap(title: titleTextField.text,
-                               comment: commentTextView.text,
-                               date: dateTextField.text)
+        viewModel.createDidTap()
     }
    
+}
+
+//MARK: - Delegates
+extension CreateDateVC: LineTextFieldDelegate {
+    func lineTextField(_ textfield: LineTextField,
+                       shouldChangeCharactersIn range: NSRange,
+                       replacementString string: String) -> Bool {
+        if textfield == titleTextField {
+            viewModel.title = textfield.text
+        } else if textfield == dateTextField {
+            if let dateString = textfield.text {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "dd.MM.yyyy"
+                viewModel.date = dateFormatter.date(from: dateString)
+            } else {
+                viewModel.date = nil
+            }
+        }
+        return true
+    }
+}
+
+extension CreateDateVC: CustomInputViewDelegate {
+    func datePickerValueChanged(date: Date?) {
+        viewModel.date = date
+    }
+    
+    func cancelDidTap() {
+        dateTextField.endEditing(true)
+        viewModel.date = nil
+    }
+    
+    func selectDidTap() {
+        dateTextField.endEditing(true)
+    }
+    
 }

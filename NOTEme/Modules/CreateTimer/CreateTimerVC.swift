@@ -9,9 +9,14 @@ import UIKit
 import SnapKit
 
 @objc protocol CreateTimerViewModelProtocol: AnyObject {
-    
-    func createDidTap(title: String?, comment: String?, date: String?)
-    @objc func cancelDidTap()
+        
+        var catchTitleError: ((String?) -> Void)? { get set }
+        var catchDateError: ((String?) -> Void)? { get set }
+        var title: String? { get set }
+        var comment: String? { get set }
+        var date: Date? { get set }
+        func createDidTap()
+        @objc func cancelDidTap()
 }
 
 final class CreateTimerVC: UIViewController {
@@ -56,6 +61,7 @@ final class CreateTimerVC: UIViewController {
     private lazy var titleTextField: LineTextField = {
         let textField = LineTextField()
         textField.title = L10n.titleTextField
+        textField.delegate = self
         textField.placeholder = L10n.titlePlaceholderTextField
         return textField
     }()
@@ -64,7 +70,6 @@ final class CreateTimerVC: UIViewController {
         let textField = LineTextField()
         textField.title = L10n.timerTextFieldTitle
         textField.placeholder = L10n.timerPlaceholderTextField
-        textField.customInputView = CustomInputView()
         return textField
     }()
     
@@ -92,8 +97,19 @@ final class CreateTimerVC: UIViewController {
         setupUI()
         setupConstraints()
         
+        bind()
     }
     
+    private func bind() {
+        viewModel.catchDateError = { [weak self] error in
+            self?.timerTextField.errorText = error
+        }
+        
+        viewModel.catchTitleError = { [weak self] error in
+            self?.titleTextField.errorText = error
+        }
+    }
+    //MARK: - UI
     private func setupUI() {
         
         view.backgroundColor = .appBlack
@@ -158,31 +174,50 @@ final class CreateTimerVC: UIViewController {
 
     }
     
-    @objc private func createDidTap() {
-        viewModel.createDidTap(title: titleTextField.text,
-                               comment: commentTextView.text,
-                               date: timerTextField.text)
+//MARK: - Private Methods
+    private func setupCustomInputView() {
+        let datePicker = CustomInputView(.time)
+        datePicker.delegate = self
+        timerTextField.customInputView = datePicker
     }
     
-    @objc private func cancelDidTap() {
-        viewModel.createDidTap(title: titleTextField.text,
-                               comment: commentTextView.text,
-                               date: timerTextField.text)
+    @objc private func createDidTap() {
+        viewModel.createDidTap()
     }
+    
    
 }
-
-extension CreateTimerVC: UITextViewDelegate {
-    private func textFieldDidBeginEditing(_ textField: UITextField) {
-                let customInputView = CustomInputView()
-                customInputView.onSelectButtonTapped = { [weak self] in
-                    // Обработка нажатия кнопки "Select"
-                    self?.createDidTap()
-                }
-                customInputView.onCancelButtonTapped = { [weak self] in
-                    // Обработка нажатия кнопки "Cancel"
-                    self?.cancelDidTap()
-                }
-                textField.inputView = customInputView
+//MARK: - Delegates
+extension CreateTimerVC: LineTextFieldDelegate {
+    func lineTextField(_ textfield: LineTextField,
+                       shouldChangeCharactersIn range: NSRange,
+                       replacementString string: String) -> Bool {
+        if textfield == titleTextField {
+            viewModel.title = textfield.text
+        } else if textfield == timerTextField {
+            if let dateString = textfield.text {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "dd.MM.yyyy"
+                viewModel.date = dateFormatter.date(from: dateString)
+            } else {
+                viewModel.date = nil
             }
+        }
+        return true
+    }
+}
+
+extension CreateTimerVC: CustomInputViewDelegate {
+    func cancelDidTap() {
+        timerTextField.resignFirstResponder()
+        viewModel.date = nil
+    }
+    
+    func datePickerValueChanged(date: Date?) {
+        viewModel.date = date
+    }
+    
+    func selectDidTap() {
+        timerTextField.resignFirstResponder()
+    }
 }
