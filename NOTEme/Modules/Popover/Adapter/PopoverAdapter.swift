@@ -35,7 +35,7 @@ final class PopoverAdapter: NSObject {
     private func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
-        
+        tableView.isScrollEnabled = false
         tableView.register(PopoverTableViewCell.self)
     }
 }
@@ -43,14 +43,14 @@ final class PopoverAdapter: NSObject {
 extension PopoverAdapter: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return rows.count
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)
     -> UITableViewCell {
-        print("Row \(indexPath.row): \(rows[indexPath.row])")
+        let row = rows[indexPath.row]
         let cell = tableView.dequeue(at: indexPath) as PopoverTableViewCell
-        cell.setup(rows[indexPath.row])
+        cell.setup(row)
         return cell
     }
     
@@ -60,13 +60,20 @@ extension PopoverAdapter: UITableViewDataSource {
         let selectedRow = rows[indexPath.row]
         didSelectRow?(selectedRow)
     }
+    
 }
+
 
 extension PopoverAdapter: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView,
+                   heightForHeaderInSection section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView,
                    heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 40
+        return 41
     }
 }
 

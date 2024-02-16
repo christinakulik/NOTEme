@@ -14,42 +14,32 @@ protocol CreateTimerCoordinatorProtocol: AnyObject {
 }
 
 final class CreateTimerVM: CreateTimerViewModelProtocol {
-    
+  
     private weak var coordinator: CreateTimerCoordinatorProtocol?
+    private(set) var endTime: Date?
     
-    var catchTitleError: ((String?) -> Void)?
-    var catchDateError: ((String?) -> Void)?
-    
-    var title: String? {
-        didSet { checkValidation() }
+    var title: String?
+    var duration: TimeInterval? {
+        didSet {
+            updateEndTime()
+        }
     }
-    var date: Date? {
-        didSet { checkValidation() }
-    }
-    var comment: String?
+   var comment: String?
     
     init(coordinator: CreateTimerCoordinatorProtocol) {
         self.coordinator = coordinator
+        
+        updateEndTime()
     }
     
     func createDidTap() {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "HH-mm-ss"
-        let testDate = "06-45-10"
-        guard let targetDate = formatter.date(from: testDate) else { return }
-        
-        let testTitle = "Meeting"
-        let testSubTitle = "Meeting in the park"
-        
-        let timeInterval = targetDate.timeIntervalSince(Date()+100)
-        let targetDateTime = Date().addingTimeInterval(timeInterval)
-        
-        
+        guard
+            let title, let endTime else { return }
         let dto = DateNotificationDTO(date: Date(),
                                       identifier: UUID().uuidString,
-                                      title: testTitle,
-                                      subtitle: testSubTitle,
-                                      targetDate: targetDateTime)
+                                      title: title,
+                                      subtitle: comment,
+                                      targetDate: endTime)
         // TODO UseCase
         let service = DateNotificationStorage()
         service.create(dto: dto)
@@ -61,24 +51,22 @@ final class CreateTimerVM: CreateTimerViewModelProtocol {
         coordinator?.finish()
     }
     
-    @discardableResult
-    func checkValidation() -> Bool {
-        catchTitleError?(isValid(title) ? nil : "")
-        catchDateError?(isValid(date) ? nil : "")
-        return isValid(title) && isValid(date)
+    func string(from date: Date) -> String? {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "hh.mm.ss"
+        return formatter.string(from: date)
     }
     
-    func isValid(_ title: String?) -> Bool {
-        if let title {
-            return (!title.isEmpty) && (title != "")
-        } else {
-            return false
-        }
+    func date(from string: String) -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "hh.mm.ss"
+        return dateFormatter.date(from: string)
     }
     
-    func isValid(_ date: Date?) -> Bool {
-        date != nil
-    } 
+    private func updateEndTime() {
+        endTime = duration.map { Date().addingTimeInterval(-$0) }
+    }
+    
 }
 
 

@@ -37,16 +37,16 @@ class PopoverTableViewCell: UITableViewCell {
     }
     
     private func setupConstraints() {
-        
-        selectedLabel.snp.makeConstraints { make in
-            make.leading.equalToSuperview().inset(16.0)
-            make.top.equalToSuperview().inset(8.0)
-        }
-
-        popoverImageView.snp.makeConstraints { make in
-            make.trailing.equalToSuperview().inset(8.0)
-            make.verticalEdges.equalToSuperview().inset(9.0)
-            make.size.equalTo(24.0)
+            
+            selectedLabel.snp.makeConstraints { make in
+                make.leading.equalToSuperview().inset(16.0)
+                make.centerY.equalToSuperview()
+            }
+            
+            popoverImageView.snp.makeConstraints { make in
+                make.trailing.equalToSuperview().inset(8.0)
+                make.top.equalToSuperview().inset(8.0)
+                make.size.equalTo(24.0)
+            }
         }
     }
-}

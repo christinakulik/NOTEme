@@ -10,8 +10,8 @@ import UIKit
 final class PopoverCoordinator: Coordinator{
     
     private let container: Container
-    private var viewController: UIViewController!
-    private var rootNC: UINavigationController?
+    private var rootVC: UIViewController!
+    
     
     init(container: Container) {
         self.container = container
@@ -19,9 +19,8 @@ final class PopoverCoordinator: Coordinator{
     
     override func start() -> UIViewController {
         let popover = PopoverAssembler.make(coordinator: self)
-        let nc = UINavigationController(rootViewController: popover)
-        self.rootNC = nc
-        return nc
+        rootVC = popover
+        return rootVC
     }
 }
 
@@ -35,7 +34,7 @@ extension PopoverCoordinator: PopoverCoordinatorProtocol {
             self?.finish()
         }
         let vc = coordinator.start()
-        rootNC?.present(vc, animated: true)
+        rootVC?.present(vc, animated: true)
     }
     
     func openCreateTimer() {
@@ -47,7 +46,7 @@ extension PopoverCoordinator: PopoverCoordinatorProtocol {
                 self?.finish()
             }
             let vc = coordinator.start()
-            rootNC?.present(vc, animated: true)
+            rootVC?.present(vc, animated: true)
         }
     }
 

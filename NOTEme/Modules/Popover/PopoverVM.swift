@@ -24,7 +24,9 @@ final class PopoverVM: PopoverViewModelProtocol {
     private weak var coordinator: PopoverCoordinatorProtocol?
     private var adapter: PopoverAdapterProtocol
     
-    private var rows = [PopoverRows]()
+    private var rows: [PopoverRows] {
+        return PopoverRows.allCases
+    }
     
     init(coordinator: PopoverCoordinatorProtocol,
          adapter: PopoverAdapterProtocol) {

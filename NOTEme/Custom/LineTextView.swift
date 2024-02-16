@@ -8,7 +8,14 @@
 import UIKit
 import SnapKit
 
-class LineTextView: UIView, UITextViewDelegate {
+@objc protocol LineTextViewDelegate: AnyObject {
+    @objc optional func lineTextView(_ textview: LineTextView,
+                   shouldChangeTextIn range: NSRange,
+                   replacementText text: String) -> Bool
+}
+
+
+class LineTextView: UIView {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -78,18 +85,21 @@ class LineTextView: UIView, UITextViewDelegate {
             }
         }
     }
-    func textViewDidChange(_ textView: UITextView) {
-        if textView.text.isEmpty {
-            let attributes: [NSAttributedString.Key: Any] =
-            [.foregroundColor: UIColor.gray,
-             .font: UIFont.systemFont(ofSize: 14)]
-            textView.attributedText =
-            NSAttributedString(string: placeholder ?? "",
-                               attributes: attributes)
-        } else if textView.attributedText.string == placeholder {
-            textView.attributedText = nil
-        }
-    }
+    
+    weak var delegate: LineTextViewDelegate?
+    
+//    func textViewDidChange(_ textView: UITextView) {
+//        if textView.text.isEmpty {
+//            let attributes: [NSAttributedString.Key: Any] =
+//            [.foregroundColor: UIColor.gray,
+//             .font: UIFont.systemFont(ofSize: 14)]
+//            textView.attributedText =
+//            NSAttributedString(string: placeholder ?? "",
+//                               attributes: attributes)
+//        } else if textView.attributedText.string == placeholder {
+//            textView.attributedText = nil
+//        }
+//    }
     
     init() {
         super.init(frame: .zero)
@@ -157,3 +167,12 @@ class LineTextView: UIView, UITextViewDelegate {
     }
 }
 
+extension LineTextView: UITextViewDelegate {
+    func textView(_ textView: UITextView,
+                   shouldChangeTextIn range: NSRange,
+                   replacementText text: String) -> Bool {
+        return delegate?.lineTextView?(self,
+                                        shouldChangeTextIn: range,
+                                        replacementText: text) ?? true
+    }
+}

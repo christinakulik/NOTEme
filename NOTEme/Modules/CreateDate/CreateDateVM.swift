@@ -19,6 +19,8 @@ protocol CreateDateCoordinatorProtocol: AnyObject {
 final class CreateDateVM: CreateDateViewModelProtocol {
     
     private weak var coordinator: CreateDateCoordinatorProtocol?
+    
+    private var errorHandler: ((String?) -> Void)?
     var catchTitleError: ((String?) -> Void)?
     var catchDateError: ((String?) -> Void)?
     
@@ -36,7 +38,10 @@ final class CreateDateVM: CreateDateViewModelProtocol {
     
     func createDidTap() {
         guard
-            checkValidation() else { return }
+            checkValidation()
+        else { 
+            errorHandler?("Please fill in all required fields")
+            return }
         guard
             let title, let date else { return }
         let dto = DateNotificationDTO(date: Date(),
@@ -51,12 +56,16 @@ final class CreateDateVM: CreateDateViewModelProtocol {
         coordinator?.finish()
     }
     
-    func string(from date: Date?) -> String? {
+    func string(from date: Date) -> String? {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.MM.yyyy"
-        guard
-            let date else { return nil }
         return formatter.string(from: date)
+    }
+    
+    func date(from string: String) -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.yyyy"
+        return dateFormatter.date(from: string)
     }
     
     func cancelDidTap() {
@@ -65,20 +74,19 @@ final class CreateDateVM: CreateDateViewModelProtocol {
     
     @discardableResult
     func checkValidation() -> Bool {
-        catchTitleError?(isValid(title) ? nil : "")
-        catchDateError?(isValid(date) ? nil : "")
-        return isValid(title) && isValid(date)
+        let titleValid = isValid(title)
+        let dateValid = isValid(date)
+        return titleValid && dateValid
     }
     
-    func isValid(_ title: String?) -> Bool {
-        if let title {
-            return (!title.isEmpty) && (title != "")
+    
+    func isValid(_ value: Any?) -> Bool {
+        if let title = value as? String, !title.isEmpty {
+            return true
+        } else if let date = value as? Date {
+            return true
         } else {
             return false
         }
     }
-    func isValid(_ date: Date?) -> Bool {
-        date != nil
-    }
-    
 }

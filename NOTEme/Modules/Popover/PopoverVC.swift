@@ -15,9 +15,10 @@ protocol PopoverViewModelProtocol  {
 }
 
 final class PopoverVC: UIViewController {
+ 
     
     private lazy var tableView: UITableView = viewModel.makeTableView()
-   
+    
     private var viewModel: PopoverViewModelProtocol
     
     init(viewModel: PopoverViewModelProtocol) {
@@ -30,7 +31,9 @@ final class PopoverVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        if let popoverController = self.popoverPresentationController {
+            popoverController.delegate = self
+        }
     }
     
     override func viewDidLoad() {
@@ -38,17 +41,24 @@ final class PopoverVC: UIViewController {
         setupUI()
         setupConstraints()
     }
-   
+    
+    
     private func setupUI() {
         view.addSubview(tableView)
+       
     }
     
     private func setupConstraints() {
         tableView.snp.makeConstraints { make in
-            make.size.equalToSuperview()
+            make.edges.equalToSuperview()
         }
+
+        tableView.contentInset = UIEdgeInsets(top: -36,
+                                              left: 0,
+                                              bottom: 0,
+                                              right: 0)
+        
     }
-    
 }
 
 extension PopoverVC: UIPopoverPresentationControllerDelegate {

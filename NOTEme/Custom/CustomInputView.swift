@@ -9,7 +9,6 @@ import UIKit
 import SnapKit
 
 protocol CustomInputViewDelegate: AnyObject {
-    func datePickerValueChanged(date: Date?)
     func cancelDidTap()
     func selectDidTap()
 }
@@ -42,16 +41,11 @@ class CustomInputView: UIView {
         let datePicker = UIDatePicker()
         datePicker.preferredDatePickerStyle = .wheels
         datePicker.backgroundColor = .white
-        datePicker.addTarget(self, 
-                             action: #selector(datePickerValueChanged),
-                             for: .valueChanged)
+      
         return datePicker
     }()
     
     weak var delegate: CustomInputViewDelegate?
-    
-    var onSelectButtonTapped: (() -> Void)?
-    var onCancelButtonTapped: (() -> Void)?
     
     init(_ datePickerMode: UIDatePicker.Mode) {
         super.init(frame: CGRect(x: 0, y: 0, width: 0, height: 280))
@@ -101,10 +95,6 @@ class CustomInputView: UIView {
     
     @objc private func selectButtonTapped() {
         delegate?.selectDidTap()
-    }
-    
-    @objc private func datePickerValueChanged(sender: UIDatePicker) {
-        delegate?.datePickerValueChanged(date: sender.date)
     }
 }
 

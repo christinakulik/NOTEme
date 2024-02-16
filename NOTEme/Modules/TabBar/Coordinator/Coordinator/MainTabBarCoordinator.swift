@@ -8,8 +8,8 @@
 import UIKit
 
 final class MainTabBarCoordinator: Coordinator {
-
-    private var rootVC: UIViewController?
+    
+    private let popoverDelegate = PopoverDelegate()
     private let container: Container
     private var tabBarController: UITabBarController?
     
@@ -56,17 +56,29 @@ extension MainTabBarCoordinator: MainTabBarCoordinatorProtocol {
         }
         popover.modalPresentationStyle = .popover
         popover.preferredContentSize = CGSize(width: 180, height: 120)
-      
+        
+        if popover.popoverPresentationController?.delegate == nil {
+                  popover.popoverPresentationController?.delegate = popoverDelegate
+              }
+       
         if let popoverController = popover.popoverPresentationController {
             popoverController.sourceView = tabBarController?.view
             popoverController.sourceRect = CGRect(
                 x: (tabBarController?.view.bounds.width)! - 288,
-                y: (tabBarController?.view.bounds.height)! - 80,
+                y: (tabBarController?.view.bounds.height ?? 0) - 80,
                 width: 200,
                 height: 200)
             tabBarController?.present(popover, animated: true)
         }
+            
     }
-
 }
 
+
+final class PopoverDelegate: NSObject, UIPopoverPresentationControllerDelegate {
+    
+    func adaptivePresentationStyle(for controller: UIPresentationController)
+    -> UIModalPresentationStyle {
+        return .none
+    }
+}

@@ -17,7 +17,8 @@ import CoreData
     var title: String? { get set }
     var comment: String? { get set }
     var date: Date? { get set }
-    func string(from date: Date?) -> String?
+    func string(from date: Date) -> String?
+    func date(from string: String) -> Date?
     func createDidTap()
     @objc func cancelDidTap()
 }
@@ -51,11 +52,11 @@ final class CreateDateVC: UIViewController {
         .dataBoldLabel(L10n.titleLabel)
     
     private lazy var infoView: UIView = .plainViewWithShadow()
-
+    
     private lazy var createButton: UIButton =
         .yellowRoundedButton(L10n.createButton)
         .withAction(self, #selector(createDidTap))
-   
+    
     private lazy var cancelButton: UIButton =
         .cancelButton()
         .withAction(viewModel,
@@ -80,6 +81,7 @@ final class CreateDateVC: UIViewController {
     private lazy var commentTextView: LineTextView = {
         let textView = LineTextView()
         textView.title = L10n.commentTextFieldTitle
+        textView.delegate = self
         textView.placeholder = L10n.commentPlaceholderTextField
         return textView
     }()
@@ -113,14 +115,14 @@ final class CreateDateVC: UIViewController {
             self?.titleTextField.errorText = error
         }
     }
-    //MARK: - UI
+//MARK: - UI
     private func setupUI() {
-    
+        
         view.backgroundColor = .appBlack
         view.addSubview(contentView)
         view.addSubview(cancelButton)
         view.addSubview(createButton)
-     
+        
         contentView.addSubview(infoView)
         contentView.addSubview(titleLabel)
         
@@ -181,7 +183,7 @@ final class CreateDateVC: UIViewController {
         
     }
     
-    //MARK: - Private Methods
+//MARK: - Private Methods
     private func setupCustomInputView() {
         let datePicker = CustomInputView(.date)
         datePicker.delegate = self
@@ -191,7 +193,7 @@ final class CreateDateVC: UIViewController {
     @objc private func createDidTap() {
         viewModel.createDidTap()
     }
-   
+    
 }
 
 //MARK: - Delegates
@@ -202,30 +204,43 @@ extension CreateDateVC: LineTextFieldDelegate {
         if textfield == titleTextField {
             viewModel.title = textfield.text
         } else if textfield == dateTextField {
-            if let dateString = textfield.text {
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "dd.MM.yyyy"
-                viewModel.date = dateFormatter.date(from: dateString)
+            let text = (textfield.text ?? "") + string
+            if let date = viewModel.date(from: text) {
+                viewModel.date = date
             } else {
                 viewModel.date = nil
             }
         }
         return true
     }
+    
+}
+
+extension CreateDateVC: LineTextViewDelegate {
+    func lineTextView(_ textview: LineTextView,
+                      shouldChangeTextIn range: NSRange,
+                      replacementText text: String) -> Bool {
+        if textview == commentTextView {
+            viewModel.comment = textview.text
+        } else {
+            viewModel.comment = nil
+        }
+        return true
+    }
 }
 
 extension CreateDateVC: CustomInputViewDelegate {
-    func datePickerValueChanged(date: Date?) {
-        viewModel.date = date
-    }
     
     func cancelDidTap() {
-        dateTextField.endEditing(true)
-        viewModel.date = nil
+        view.endEditing(true)
     }
     
     func selectDidTap() {
-        dateTextField.endEditing(true)
+        if dateTextField.text == "" {
+            let date = viewModel.string(from: Date())
+            dateTextField.text = date
+        }
+        view.endEditing(true)
     }
     
 }
