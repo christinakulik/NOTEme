@@ -11,10 +11,11 @@ import SnapKit
 protocol CustomInputViewDelegate: AnyObject {
     func cancelDidTap()
     func selectDidTap()
+    func dateDidChange(date: Date?)
 }
 
 class CustomInputView: UIView {
-
+    
     private weak var textField: UITextField?
     
     private lazy var selectButton: UIButton = {
@@ -22,7 +23,7 @@ class CustomInputView: UIView {
         button.setTitle("Select", for: .normal)
         button.setTitleColor(.appYellow, for: .normal)
         button.titleLabel?.font = .appBoldFont
-        button.addTarget(self, action: #selector(selectButtonTapped), 
+        button.addTarget(self, action: #selector(selectButtonTapped),
                          for: .touchUpInside)
         return button
     }()
@@ -32,7 +33,7 @@ class CustomInputView: UIView {
         button.setTitleColor(.appYellow, for: .normal)
         button.setTitle("Cancel", for: .normal)
         button.titleLabel?.font = .appBoldFont.withSize(15.0)
-        button.addTarget(self, action: #selector(cancelButtonTapped), 
+        button.addTarget(self, action: #selector(cancelButtonTapped),
                          for: .touchUpInside)
         return button
     }()
@@ -41,7 +42,9 @@ class CustomInputView: UIView {
         let datePicker = UIDatePicker()
         datePicker.preferredDatePickerStyle = .wheels
         datePicker.backgroundColor = .white
-      
+        datePicker.addTarget(self, action: #selector(dateDidChange),
+                             for: .valueChanged)
+        
         return datePicker
     }()
     
@@ -65,16 +68,15 @@ class CustomInputView: UIView {
         addSubview(datePicker)
         addSubview(cancelButton)
         addSubview(selectButton)
-      
     }
     
     private func setupConstraints() {
         datePicker.snp.makeConstraints { make in
-            make.top.equalTo(cancelButton.snp.bottom).inset(45.0)
+            make.top.equalToSuperview().inset(45.0)
             make.leading.trailing.equalToSuperview()
             make.bottom.equalTo(20.0)
         }
-      
+        
         cancelButton.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(14.0)
             make.leading.equalToSuperview().inset(20.0)
@@ -95,6 +97,10 @@ class CustomInputView: UIView {
     
     @objc private func selectButtonTapped() {
         delegate?.selectDidTap()
+    }
+    
+    @objc private func dateDidChange(sender: UIDatePicker) {
+        delegate?.dateDidChange(date: sender.date)
     }
 }
 

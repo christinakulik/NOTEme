@@ -1,5 +1,5 @@
 //
-//  CreateDateVC.swift
+//  DateNotificationVC.swift
 //  NOTEme
 //
 //  Created by Christina on 9.02.24.
@@ -8,9 +8,8 @@
 import UIKit
 import SnapKit
 import Storage
-import CoreData
 
-@objc protocol CreateDateViewModelProtocol: AnyObject {
+@objc protocol DateNotificationViewModelProtocol: AnyObject {
     
     var catchTitleError: ((String?) -> Void)? { get set }
     var catchDateError: ((String?) -> Void)? { get set }
@@ -23,7 +22,7 @@ import CoreData
     @objc func cancelDidTap()
 }
 
-final class CreateDateVC: UIViewController {
+final class DateNotificationVC: UIViewController {
     
     private enum L10n {
         static let titleLabel: String =
@@ -60,7 +59,7 @@ final class CreateDateVC: UIViewController {
     private lazy var cancelButton: UIButton =
         .cancelButton()
         .withAction(viewModel,
-                    #selector(CreateDateViewModelProtocol.cancelDidTap))
+                    #selector(DateNotificationViewModelProtocol.cancelDidTap))
     
     private lazy var titleTextField: LineTextField = {
         let textField = LineTextField()
@@ -86,9 +85,10 @@ final class CreateDateVC: UIViewController {
         return textView
     }()
     
-    private var viewModel: CreateDateViewModelProtocol
+    private var viewModel: DateNotificationViewModelProtocol
     
-    init(viewModel: CreateDateViewModelProtocol) {
+    // MARK: - Initializers
+    init(viewModel: DateNotificationViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -106,6 +106,7 @@ final class CreateDateVC: UIViewController {
         
     }
     
+    // MARK: - Private Methods
     private func bind() {
         viewModel.catchDateError = { [weak self] error in
             self?.dateTextField.errorText = error
@@ -115,7 +116,7 @@ final class CreateDateVC: UIViewController {
             self?.titleTextField.errorText = error
         }
     }
-//MARK: - UI
+
     private func setupUI() {
         
         view.backgroundColor = .appBlack
@@ -183,7 +184,6 @@ final class CreateDateVC: UIViewController {
         
     }
     
-//MARK: - Private Methods
     private func setupCustomInputView() {
         let datePicker = CustomInputView(.date)
         datePicker.delegate = self
@@ -196,51 +196,50 @@ final class CreateDateVC: UIViewController {
     
 }
 
-//MARK: - Delegates
-extension CreateDateVC: LineTextFieldDelegate {
+// MARK: - Extensions
+extension DateNotificationVC: LineTextFieldDelegate {
     func lineTextField(_ textfield: LineTextField,
                        shouldChangeCharactersIn range: NSRange,
                        replacementString string: String) -> Bool {
         if textfield == titleTextField {
             viewModel.title = textfield.text
-        } else if textfield == dateTextField {
-            let text = (textfield.text ?? "") + string
-            if let date = viewModel.date(from: text) {
-                viewModel.date = date
-            } else {
-                viewModel.date = nil
-            }
         }
         return true
     }
-    
 }
 
-extension CreateDateVC: LineTextViewDelegate {
+extension DateNotificationVC: LineTextViewDelegate {
     func lineTextView(_ textview: LineTextView,
                       shouldChangeTextIn range: NSRange,
                       replacementText text: String) -> Bool {
         if textview == commentTextView {
             viewModel.comment = textview.text
-        } else {
-            viewModel.comment = nil
         }
         return true
     }
 }
 
-extension CreateDateVC: CustomInputViewDelegate {
+extension DateNotificationVC: CustomInputViewDelegate {
+    func dateDidChange(date: Date?) {
+        if let date {
+            let dateString = viewModel.string(from: date)
+            dateTextField.text = dateString
+        }
+    }
+    
     
     func cancelDidTap() {
+        dateTextField.text = nil
         view.endEditing(true)
     }
     
     func selectDidTap() {
-        if dateTextField.text == "" {
-            let date = viewModel.string(from: Date())
-            dateTextField.text = date
+        if let dateString = dateTextField.text,
+           let selectedDate = viewModel.date(from: dateString) {
+            viewModel.date = selectedDate
         }
         view.endEditing(true)
     }
-    
 }
+
+

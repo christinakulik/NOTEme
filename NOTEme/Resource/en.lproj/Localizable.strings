@@ -95,6 +95,7 @@
 "createDate_commentPlaceholder" = "Enter Comment";
 "createDate_createButton" = "Create";
 "createDate_cancelButton" = "Cancel";
+"createDate_errorHandler" = "Please fill in all required fields";
 
 //MARK: - CreateTimer
 "createTimer_titleLabel" = "Create Timer Notification";

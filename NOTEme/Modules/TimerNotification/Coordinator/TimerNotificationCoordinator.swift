@@ -1,5 +1,5 @@
 //
-//  CreateTimerCoordinator.swift
+//  TimerNotificationCoordinator.swift
 //  NOTEme
 //
 //  Created by Christina on 9.02.24.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class CreateTimerCoordinator: Coordinator {
+final class TimerNotificationCoordinator: Coordinator {
     
     private let container: Container
     
@@ -16,9 +16,9 @@ final class CreateTimerCoordinator: Coordinator {
     }
     
     override func start() -> UIViewController {
-        return CreateTimerAssembler.make(container: container,
+        return TimerNotificationAssembler.make(container: container,
                                    coordinator: self)
     }
 }
 
-extension CreateTimerCoordinator: CreateTimerCoordinatorProtocol {}
+extension TimerNotificationCoordinator: TimerNotificationCoordinatorProtocol {}

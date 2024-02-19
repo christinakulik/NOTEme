@@ -7,8 +7,6 @@
 
 import UIKit
 import SnapKit
-import Storage
-import CoreData
 
  protocol ProfileViewModelProtocol  {
      func makeTableView() -> UITableView
@@ -28,25 +26,6 @@ final class ProfileVC: UIViewController {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         setupTabBarItem()
-        
-        let formatter = DateFormatter()
-        formatter.dateFormat = "HH-mm-ss"
-        let testDate = "06-45-10"
-        guard let targetDate = formatter.date(from: testDate) else { return }
-        
-        let testTitle = "Meeting"
-        let testSubTitle = "Meeting Fiona and Fritz🦛"
-     
-        let timeInterval = targetDate.timeIntervalSince(Date())
-        let targetDateTime = Date().addingTimeInterval(timeInterval)
-        
-        let dto = TimerNotificationDTO(date: Date(),
-                                      identifier: UUID().uuidString,
-                                      title: testTitle,
-                                      subtitle: testSubTitle,
-                                      targetTime: targetDateTime)
-        let service = TimerNotificationStorage()
-        service.create(dto: dto)
     }
     
     required init?(coder: NSCoder) {

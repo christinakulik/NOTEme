@@ -11,6 +11,7 @@ final class MainTabBarCoordinator: Coordinator {
     
     private let popoverDelegate = PopoverDelegate()
     private let container: Container
+   var currentPopover: UIViewController?
     private var tabBarController: UITabBarController?
     
     init(container: Container) {
@@ -60,7 +61,7 @@ extension MainTabBarCoordinator: MainTabBarCoordinatorProtocol {
         if popover.popoverPresentationController?.delegate == nil {
                   popover.popoverPresentationController?.delegate = popoverDelegate
               }
-       
+        currentPopover = popover
         if let popoverController = popover.popoverPresentationController {
             popoverController.sourceView = tabBarController?.view
             popoverController.sourceRect = CGRect(

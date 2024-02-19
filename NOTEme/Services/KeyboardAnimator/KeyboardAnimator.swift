@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 
 final class KeyboardAnimator {
+    
     private func update(for targetView: UIView,
                         with offset: CGFloat) {
           targetView.snp.updateConstraints {

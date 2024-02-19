@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class CreateDateCoordinator: Coordinator {
+final class DateNotificationCoordinator: Coordinator {
     
     private let container: Container
     
@@ -16,9 +16,9 @@ final class CreateDateCoordinator: Coordinator {
     }
     
     override func start() -> UIViewController {
-        return CreateDateAssembler.make(container: container,
+        return DateNotificationAssembler.make(container: container,
                                    coordinator: self)
     }
 }
 
-extension CreateDateCoordinator: CreateDateCoordinatorProtocol {}
+extension DateNotificationCoordinator: DateNotificationCoordinatorProtocol {}

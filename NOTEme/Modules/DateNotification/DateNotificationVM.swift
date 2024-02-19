@@ -1,5 +1,5 @@
 //
-//  CreateDateVM.swift
+//  DateNotificationVM.swift
 //  NOTEme
 //
 //  Created by Christina on 9.02.24.
@@ -8,17 +8,23 @@
 import UIKit
 import Storage
 
-protocol CreateDateStorageProtocol {
-    func create(dto: DateNotificationDTO)
+protocol DateNotificationStorageProtocol {
+    func createDateNotification(dto: DateNotificationDTO)
 }
 
-protocol CreateDateCoordinatorProtocol: AnyObject {
+protocol DateNotificationCoordinatorProtocol: AnyObject {
     func finish()
 }
 
-final class CreateDateVM: CreateDateViewModelProtocol {
+final class DateNotificationVM: DateNotificationViewModelProtocol {
     
-    private weak var coordinator: CreateDateCoordinatorProtocol?
+    private enum L10n {
+        static let errorHandler: String =
+        "createDate_errorHandler".localized
+    }
+    
+    private weak var coordinator: DateNotificationCoordinatorProtocol?
+    private var storage: DateNotificationStorageProtocol
     
     private var errorHandler: ((String?) -> Void)?
     var catchTitleError: ((String?) -> Void)?
@@ -32,15 +38,19 @@ final class CreateDateVM: CreateDateViewModelProtocol {
     }
     var comment: String?
     
-    init(coordinator: CreateDateCoordinatorProtocol) {
+    // MARK: - Initializer
+    init(coordinator: DateNotificationCoordinatorProtocol,
+         storage: DateNotificationStorageProtocol) {
         self.coordinator = coordinator
+        self.storage = storage
     }
     
+    // MARK: - Public Methods
     func createDidTap() {
         guard
             checkValidation()
         else { 
-            errorHandler?("Please fill in all required fields")
+            errorHandler?(L10n.errorHandler)
             return }
         guard
             let title, let date else { return }
@@ -49,10 +59,7 @@ final class CreateDateVM: CreateDateViewModelProtocol {
                                       title: title,
                                       subtitle: comment,
                                       targetDate: date)
-        // TODO UseCase
-        let service = DateNotificationStorage()
-        service.create(dto: dto)
-        print(service.fetch())
+        storage.createDateNotification(dto: dto)
         coordinator?.finish()
     }
     
@@ -79,11 +86,11 @@ final class CreateDateVM: CreateDateViewModelProtocol {
         return titleValid && dateValid
     }
     
-    
+    // MARK: - Private Methods
     func isValid(_ value: Any?) -> Bool {
         if let title = value as? String, !title.isEmpty {
             return true
-        } else if let date = value as? Date {
+        } else if value is Date {
             return true
         } else {
             return false
