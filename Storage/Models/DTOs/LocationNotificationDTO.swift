@@ -21,7 +21,7 @@ public struct LocationNotificationDTO: DTODescription {
     public var latitude: Double
     
     public init(date: Date,
-                identifier: String,
+                identifier: String = UUID().uuidString,
                 title: String,
                 subtitle: String? = nil,
                 completedDate: Date? = nil,
@@ -35,20 +35,22 @@ public struct LocationNotificationDTO: DTODescription {
         self.longitude = longitude
         self.latitude = latitude
     }
+   
     
-    public init?(mo: LocationNotificationMO) {
+    public static func fromMO(_ mo: LocationNotificationMO)
+    -> LocationNotificationDTO? {
         guard
             let identifier = mo.identifier,
             let title = mo.title,
             let date = mo.date
         else { return nil }
         
-        self.date = date
-        self.identifier = identifier
-        self.title = title
-        self.subtitle = mo.subtitle
-        self.completedDate = mo.completedDate
-        self.longitude = mo.longitude
-        self.latitude = mo.latitude
+        return LocationNotificationDTO(date: date, 
+                                       identifier: identifier,
+                                       title: title,
+                                       subtitle: mo.subtitle,
+                                       completedDate: mo.completedDate,
+                                       longitude: mo.longitude,
+                                       latitude: mo.latitude)
     }
 }

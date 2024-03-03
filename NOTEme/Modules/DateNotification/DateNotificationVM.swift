@@ -72,6 +72,7 @@ final class DateNotificationVM: DateNotificationViewModelProtocol {
     func date(from string: String) -> Date? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd.MM.yyyy"
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
         return dateFormatter.date(from: string)
     }
     

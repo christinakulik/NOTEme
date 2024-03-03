@@ -8,14 +8,14 @@
 import UIKit
 import SnapKit
 
-protocol MainTabBarViewModelProtocol  {
-    func addDidTap()
+@objc protocol MainTabBarViewModelProtocol  {
+    @objc func addDidTap(sender: UIView)
 }
 
 final class MainTabBarVC: UITabBarController {
     
     private lazy var addButton: UIButton = .addButton()
-        .withAction(self, #selector(addDidTap))
+        .withAction(viewModel, #selector(MainTabBarViewModelProtocol.addDidTap))
     
     private var viewModel: MainTabBarViewModelProtocol
     
@@ -41,6 +41,14 @@ final class MainTabBarVC: UITabBarController {
         tabBar.unselectedItemTintColor = .appGray
         
         view.addSubview(addButton)
+        
+        if #available(iOS 15, *) {
+            let tabBarAppearance = UITabBarAppearance()
+                tabBarAppearance.configureWithOpaqueBackground()
+            tabBarAppearance.backgroundColor = UIColor.appBlack
+                UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+                UITabBar.appearance().standardAppearance = tabBarAppearance
+        }
     }
     
     private func setupConstraints() {
@@ -49,8 +57,5 @@ final class MainTabBarVC: UITabBarController {
             make.centerX.equalToSuperview()
             make.bottom.equalTo(tabBar.snp.top).offset(25.0)
         }
-    }
-    @objc private func addDidTap() {
-        viewModel.addDidTap()
     }
 }

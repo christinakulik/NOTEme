@@ -86,6 +86,8 @@
 "popover_calendar" = "Календарь";
 "popover_location" = "Локация";
 "popover_timer" = "Таймер";
+"popover_edit" = "Изменить";
+"popover_delete" = "Удалить";
 
 //MARK: - CreateDate
 "createDate_titleLabel" = "Создать уведомление с датой";

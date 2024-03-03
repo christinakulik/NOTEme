@@ -5,11 +5,14 @@
 //  Created by Christina on 8.02.24.
 //
 
-import Foundation
+import UIKit
 
 
 protocol MainTabBarCoordinatorProtocol: AnyObject {
-    func showPopover()
+    func showMenu(sender: UIView, delegate: MenuPopoverDelegate)
+    func openDateNotification()
+    func openTimerNotification()
+    func openLicationNotification()
 }
 
 final class MainTabBarVM: MainTabBarViewModelProtocol {
@@ -21,8 +24,24 @@ final class MainTabBarVM: MainTabBarViewModelProtocol {
         self.coordinator = coordinator
     }
     
-    func addDidTap() {
-        coordinator?.showPopover()
+    
+    
+    func addDidTap(sender: UIView) {
+        coordinator?.showMenu(sender: sender, delegate: self)
     }
     
+}
+
+extension MainTabBarVM: MenuPopoverDelegate {
+    func didSelect(action: MenuPopoverVC.Action) {
+        switch action {
+        case .calendar:
+            coordinator?.openDateNotification()
+        case .timer:
+            coordinator?.openTimerNotification()
+        case .location:
+            coordinator?.openLicationNotification()
+        default: break
+        }
+    }
 }

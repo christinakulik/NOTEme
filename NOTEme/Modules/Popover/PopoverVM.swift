@@ -46,6 +46,7 @@ final class PopoverVM: PopoverViewModelProtocol {
                 self?.locationDidTap()
             case .timer:
                 self?.timerDidTap()
+            default: break 
             }
         }
     }

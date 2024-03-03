@@ -17,9 +17,9 @@ public struct TimerNotificationDTO: DTODescription {
     public var subtitle: String?
     public var completedDate: Date?
     public var targetTime: Date
-    
+  
     public init(date: Date,
-                identifier: String,
+                identifier: String = UUID().uuidString,
                 title: String,
                 subtitle: String? = nil,
                 completedDate: Date? = nil,
@@ -32,19 +32,19 @@ public struct TimerNotificationDTO: DTODescription {
         self.targetTime = targetTime
     }
     
-    public init?(mo: TimerNotificationMO) {
+    public static func fromMO(_ mo: TimerNotificationMO) -> TimerNotificationDTO? {
         guard
             let identifier = mo.identifier,
             let title = mo.title,
             let date = mo.date,
             let targetTime = mo.targetTime
         else { return nil }
-        
-        self.date = date
-        self.identifier = identifier
-        self.title = title
-        self.subtitle = mo.subtitle
-        self.completedDate = mo.completedDate
-        self.targetTime = targetTime
+       
+        return TimerNotificationDTO(date: date, 
+                                    identifier: identifier,
+                                    title: title,
+                                    subtitle: mo.subtitle,
+                                    completedDate: mo.completedDate,
+                                    targetTime: targetTime)
     }
 }

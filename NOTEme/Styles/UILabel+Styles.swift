@@ -100,4 +100,54 @@ extension UILabel {
         
         return label
     }
+    
+    static func titleCellLable() -> UILabel {
+        let label = UILabel()
+        
+        label.font = .appBoldFont.withSize(15.0)
+        label.textColor = .appBlack
+        label.numberOfLines = 0
+        
+        return label
+    }
+    
+    static func subTitleCellLabel() -> UILabel {
+        let label = UILabel()
+        
+        label.font = .appFont.withSize(13.0)
+        label.textColor = .appDarkGray
+        label.numberOfLines = 0
+        
+        return label
+    }
+    
+    static func dayLabel() -> UILabel {
+        let label = UILabel()
+        
+        label.font = .appBoldFont.withSize(24.0)
+        label.textColor = .appYellow
+        label.numberOfLines = 0
+        
+        return label
+    }
+    
+    static func monthLabel() -> UILabel {
+        let label = UILabel()
+        
+        label.font = .appBoldFont.withSize(14.0)
+        label.textColor = .white
+        label.numberOfLines = 0
+        
+        return label
+    }
+    
+    static func largeLabel() -> UILabel {
+        let label = UILabel()
+        
+        label.font = .appBoldFont.withSize(25.0)
+        label.textColor = .appBlack
+        label.numberOfLines = 0
+        
+        return label
+    }
 }

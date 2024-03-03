@@ -57,10 +57,20 @@
 		CF64AAF82B76B9C100F14710 /* TimerNotificationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AAF72B76B9C100F14710 /* TimerNotificationVM.swift */; };
 		CF64AAFA2B76B9CE00F14710 /* CustomInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AAF92B76B9CE00F14710 /* CustomInputView.swift */; };
 		CF64AAFE2B77AA3500F14710 /* LineTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AAFD2B77AA3500F14710 /* LineTextView.swift */; };
-		CF64AB042B7BD42600F14710 /* BaseNotificatiomDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AB032B7BD42600F14710 /* BaseNotificatiomDTO.swift */; };
+		CF64AB042B7BD42600F14710 /* BaseNotificationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AB032B7BD42600F14710 /* BaseNotificationDTO.swift */; };
 		CF64AB072B7D95CE00F14710 /* Storage+DateNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AB062B7D95CE00F14710 /* Storage+DateNotification.swift */; };
 		CF64AB092B82705C00F14710 /* TimerInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AB082B82705C00F14710 /* TimerInputView.swift */; };
 		CF64AB0D2B82CAA700F14710 /* Storage+TimerNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AB0C2B82CAA700F14710 /* Storage+TimerNotification.swift */; };
+		CF64AB0F2B8514CF00F14710 /* AllNotificationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AB0E2B8514CF00F14710 /* AllNotificationStorage.swift */; };
+		CF64AB112B851DC600F14710 /* NSSordDescroptor+Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AB102B851DC600F14710 /* NSSordDescroptor+Const.swift */; };
+		CF64AB152B893D3600F14710 /* DateNotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AB142B893D3600F14710 /* DateNotificationCell.swift */; };
+		CF64AB172B893D4500F14710 /* TimerNotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AB162B893D4500F14710 /* TimerNotificationCell.swift */; };
+		CF64AB192B893D5300F14710 /* LocationNotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AB182B893D5300F14710 /* LocationNotificationCell.swift */; };
+		CF64AB1B2B893DD600F14710 /* HomeAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AB1A2B893DD600F14710 /* HomeAdapter.swift */; };
+		CF64AB1F2B8E406800F14710 /* MenuPopoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AB1E2B8E406800F14710 /* MenuPopoverVC.swift */; };
+		CF64AB212B8E437300F14710 /* MenuPopoverBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AB202B8E437300F14710 /* MenuPopoverBuilder.swift */; };
+		CF64AB232B8E44F600F14710 /* MenuPopoverAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AB222B8E44F600F14710 /* MenuPopoverAdapter.swift */; };
+		CF64AB262B8E465700F14710 /* MenuActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AB252B8E465700F14710 /* MenuActionCell.swift */; };
 		CF7379472B1F846A00E77BF0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF7379462B1F846A00E77BF0 /* GoogleService-Info.plist */; };
 		CF73794A2B1F87F200E77BF0 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = CF7379492B1F87F200E77BF0 /* FirebaseAnalytics */; };
 		CF73794C2B1F87F200E77BF0 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = CF73794B2B1F87F200E77BF0 /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -220,10 +230,20 @@
 		CF64AAF72B76B9C100F14710 /* TimerNotificationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerNotificationVM.swift; sourceTree = "<group>"; };
 		CF64AAF92B76B9CE00F14710 /* CustomInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputView.swift; sourceTree = "<group>"; };
 		CF64AAFD2B77AA3500F14710 /* LineTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTextView.swift; sourceTree = "<group>"; };
-		CF64AB032B7BD42600F14710 /* BaseNotificatiomDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNotificatiomDTO.swift; sourceTree = "<group>"; };
+		CF64AB032B7BD42600F14710 /* BaseNotificationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNotificationDTO.swift; sourceTree = "<group>"; };
 		CF64AB062B7D95CE00F14710 /* Storage+DateNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storage+DateNotification.swift"; sourceTree = "<group>"; };
 		CF64AB082B82705C00F14710 /* TimerInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerInputView.swift; sourceTree = "<group>"; };
 		CF64AB0C2B82CAA700F14710 /* Storage+TimerNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storage+TimerNotification.swift"; sourceTree = "<group>"; };
+		CF64AB0E2B8514CF00F14710 /* AllNotificationStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNotificationStorage.swift; sourceTree = "<group>"; };
+		CF64AB102B851DC600F14710 /* NSSordDescroptor+Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSSordDescroptor+Const.swift"; sourceTree = "<group>"; };
+		CF64AB142B893D3600F14710 /* DateNotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateNotificationCell.swift; sourceTree = "<group>"; };
+		CF64AB162B893D4500F14710 /* TimerNotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerNotificationCell.swift; sourceTree = "<group>"; };
+		CF64AB182B893D5300F14710 /* LocationNotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationNotificationCell.swift; sourceTree = "<group>"; };
+		CF64AB1A2B893DD600F14710 /* HomeAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAdapter.swift; sourceTree = "<group>"; };
+		CF64AB1E2B8E406800F14710 /* MenuPopoverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPopoverVC.swift; sourceTree = "<group>"; };
+		CF64AB202B8E437300F14710 /* MenuPopoverBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPopoverBuilder.swift; sourceTree = "<group>"; };
+		CF64AB222B8E44F600F14710 /* MenuPopoverAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPopoverAdapter.swift; sourceTree = "<group>"; };
+		CF64AB252B8E465700F14710 /* MenuActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuActionCell.swift; sourceTree = "<group>"; };
 		CF7379462B1F846A00E77BF0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CF7379802B1F95CA00E77BF0 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		CF7379822B1F975F00E77BF0 /* AuthService+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthService+Login.swift"; sourceTree = "<group>"; };
@@ -428,7 +448,7 @@
 				CF64AAAA2B6B127D00F14710 /* DateNotificationDTO.swift */,
 				CF64AAB92B72DC3E00F14710 /* LocationNotificationDTO.swift */,
 				CF64AAC12B72EF6600F14710 /* TimerNotificationDTO.swift */,
-				CF64AB032B7BD42600F14710 /* BaseNotificatiomDTO.swift */,
+				CF64AB032B7BD42600F14710 /* BaseNotificationDTO.swift */,
 			);
 			path = DTOs;
 			sourceTree = "<group>";
@@ -448,6 +468,7 @@
 				CF64AABB2B72DF9500F14710 /* LocationNotificationStorage.swift */,
 				CF64AAC32B72F0BB00F14710 /* TimerNotificationStorage.swift */,
 				CF64AAC52B73AA8500F14710 /* NotificationStorage.swift */,
+				CF64AB0E2B8514CF00F14710 /* AllNotificationStorage.swift */,
 			);
 			path = Storages;
 			sourceTree = "<group>";
@@ -456,6 +477,7 @@
 			isa = PBXGroup;
 			children = (
 				CF64AAB32B6BC59200F14710 /* NSPredicate+Consts.swift */,
+				CF64AB102B851DC600F14710 /* NSSordDescroptor+Const.swift */,
 			);
 			path = Consts;
 			sourceTree = "<group>";
@@ -578,6 +600,44 @@
 			path = UseCases;
 			sourceTree = "<group>";
 		};
+		CF64AB122B893D0800F14710 /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				CF64AB132B893D2400F14710 /* Cells */,
+				CF64AB1A2B893DD600F14710 /* HomeAdapter.swift */,
+			);
+			path = Adapter;
+			sourceTree = "<group>";
+		};
+		CF64AB132B893D2400F14710 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CF64AB142B893D3600F14710 /* DateNotificationCell.swift */,
+				CF64AB162B893D4500F14710 /* TimerNotificationCell.swift */,
+				CF64AB182B893D5300F14710 /* LocationNotificationCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		CF64AB1D2B8E405300F14710 /* MenuPopover */ = {
+			isa = PBXGroup;
+			children = (
+				CF64AB242B8E464600F14710 /* Cell */,
+				CF64AB1E2B8E406800F14710 /* MenuPopoverVC.swift */,
+				CF64AB202B8E437300F14710 /* MenuPopoverBuilder.swift */,
+				CF64AB222B8E44F600F14710 /* MenuPopoverAdapter.swift */,
+			);
+			path = MenuPopover;
+			sourceTree = "<group>";
+		};
+		CF64AB242B8E464600F14710 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CF64AB252B8E465700F14710 /* MenuActionCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		CF73797F2B1F95B300E77BF0 /* AuthService */ = {
 			isa = PBXGroup;
 			children = (
@@ -617,6 +677,7 @@
 		CF7379A42B28D2BB00E77BF0 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				CF64AB122B893D0800F14710 /* Adapter */,
 				CF7379A52B28D2C600E77BF0 /* Coordinator */,
 				CF7379A62B28D2EA00E77BF0 /* HomeVC.swift */,
 				CF64AACA2B73F56D00F14710 /* HomeVM.swift */,
@@ -690,6 +751,7 @@
 		CFD583B82AF019C6000949A6 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				CF64AB1D2B8E405300F14710 /* MenuPopover */,
 				CFD583B92AF019CC000949A6 /* Auth */,
 				CFD584512B165417000949A6 /* Onboarding */,
 				CF73799C2B28D09700E77BF0 /* TabBar */,
@@ -1136,7 +1198,7 @@
 			files = (
 				CF64AAAE2B6BB05600F14710 /* CoreDataService.swift in Sources */,
 				CF64AAB72B72DBB800F14710 /* LocationNotificationMO+CoreDataClass.swift in Sources */,
-				CF64AB042B7BD42600F14710 /* BaseNotificatiomDTO.swift in Sources */,
+				CF64AB042B7BD42600F14710 /* BaseNotificationDTO.swift in Sources */,
 				CF64AAC92B73E34E00F14710 /* DTODescription.swift in Sources */,
 				CF64AAAB2B6B127D00F14710 /* DateNotificationDTO.swift in Sources */,
 				CF64AABC2B72DF9500F14710 /* LocationNotificationStorage.swift in Sources */,
@@ -1152,8 +1214,10 @@
 				CF64AAB42B6BC59200F14710 /* NSPredicate+Consts.swift in Sources */,
 				CF64AAC62B73AA8500F14710 /* NotificationStorage.swift in Sources */,
 				CF64AAA72B6B0E1D00F14710 /* DateNotificationMO+CoreDataClass.swift in Sources */,
+				CF64AB112B851DC600F14710 /* NSSordDescroptor+Const.swift in Sources */,
 				CF64AAA82B6B0E1D00F14710 /* DateNotificationMO+CoreDataProperties.swift in Sources */,
 				CF64AAA52B6B0E1D00F14710 /* BaseNotificationMo+CoreDataClass.swift in Sources */,
+				CF64AB0F2B8514CF00F14710 /* AllNotificationStorage.swift in Sources */,
 				CF64AACE2B73F5FE00F14710 /* FRCService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1198,8 +1262,10 @@
 				CFD583F92B03E119000949A6 /* RegisterAssembler.swift in Sources */,
 				CFF587C82B4DE63300D60712 /* ProfileHeaderView.swift in Sources */,
 				CF7379B02B2E5F2E00E77BF0 /* AlertService+Reset.swift in Sources */,
+				CF64AB152B893D3600F14710 /* DateNotificationCell.swift in Sources */,
 				CFD583C62AF01A53000949A6 /* UIImage+Consts.swift in Sources */,
 				CFD583EE2AFE97ED000949A6 /* LoginAssembler.swift in Sources */,
+				CF64AB192B893D5300F14710 /* LocationNotificationCell.swift in Sources */,
 				CFD5840C2B0CEEDB000949A6 /* KeyboardAnimator.swift in Sources */,
 				CF64AAE92B76B92300F14710 /* DateNotificationVC.swift in Sources */,
 				CFD584662B165BE5000949A6 /* OnboardSecondStepAssembler.swift in Sources */,
@@ -1214,12 +1280,15 @@
 				CF7379912B27CFB400E77BF0 /* KeyboardHelper+Login.swift in Sources */,
 				CFD583A72AF0195D000949A6 /* SceneDelegate.swift in Sources */,
 				CF64AAF22B76B98900F14710 /* TimerNotificationCoordinator.swift in Sources */,
+				CF64AB262B8E465700F14710 /* MenuActionCell.swift in Sources */,
 				CFD584192B0D1B72000949A6 /* LoginCoordinator.swift in Sources */,
+				CF64AB1F2B8E406800F14710 /* MenuPopoverVC.swift in Sources */,
 				CF64AAE52B76872700F14710 /* PopoverRows.swift in Sources */,
 				CF64AACB2B73F56D00F14710 /* HomeVM.swift in Sources */,
 				CF7379B42B2E606C00E77BF0 /* ProfileVC.swift in Sources */,
 				CFD584012B083791000949A6 /* ResetAssembler.swift in Sources */,
 				CFF587C42B4B3CDC00D60712 /* AlertService+Profile.swift in Sources */,
+				CF64AB212B8E437300F14710 /* MenuPopoverBuilder.swift in Sources */,
 				CF7379992B28C1E700E77BF0 /* AlertService.swift in Sources */,
 				CF64AA782B56E0EC00F14710 /* Container.swift in Sources */,
 				CFD584592B16572D000949A6 /* OnboardFirstStepAssembler.swift in Sources */,
@@ -1227,8 +1296,10 @@
 				CFD584052B09FEE2000949A6 /* KeyboardHelper+Register.swift in Sources */,
 				CF64AAF42B76B99700F14710 /* TimerNotificationAssembler.swift in Sources */,
 				CF7379BA2B2FC3C900E77BF0 /* MainTabBarCoordinator.swift in Sources */,
+				CF64AB172B893D4500F14710 /* TimerNotificationCell.swift in Sources */,
 				CFD583D02AF06CB0000949A6 /* UILabel+Styles.swift in Sources */,
 				CF7379932B27CFD300E77BF0 /* KeyboardAnimator+Login.swift in Sources */,
+				CF64AB1B2B893DD600F14710 /* HomeAdapter.swift in Sources */,
 				CF7379BC2B2FC41D00E77BF0 /* MainTabBarAssembler.swift in Sources */,
 				CF64AADA2B7568E500F14710 /* MainTabBarVM.swift in Sources */,
 				CFD583DD2AF6FEA2000949A6 /* String+Locale.swift in Sources */,
@@ -1257,6 +1328,7 @@
 				CFF587C62B4C1B6E00D60712 /* AuthService+Profile.swift in Sources */,
 				CF64AADE2B756B4400F14710 /* PopoverAssembler.swift in Sources */,
 				CFD583C92AF01A7C000949A6 /* UIView+Layer.swift in Sources */,
+				CF64AB232B8E44F600F14710 /* MenuPopoverAdapter.swift in Sources */,
 				CFD584232B1401A6000949A6 /* ResetCoordinator.swift in Sources */,
 				CF64AA862B6A63B900F14710 /* Collection+Register.swift in Sources */,
 				CFD583E32AFAA0D5000949A6 /* RegisterVC.swift in Sources */,

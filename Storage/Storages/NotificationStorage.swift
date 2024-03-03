@@ -13,29 +13,30 @@ public class NotificationStorage<DTO: DTODescription> {
     public typealias CompletionHandler = (Bool) -> Void
     
     public init() {}
-   
+    
+    public func fetch(
+        predicate: NSPredicate? = nil,
+        sortDescriptors: [NSSortDescriptor] = []) -> [any DTODescription] {
+        return fetchMO(predicate: predicate, sortDescriptors: sortDescriptors)
+            .compactMap { $0.toDTO() }
+    }
+    
     private func fetchMO(
         predicate: NSPredicate? = nil,
         sortDescriptors: [NSSortDescriptor] = []
     ) -> [DTO.MO] {
         let request = NSFetchRequest<DTO.MO>(entityName: "\(DTO.MO.self)")
+        request.predicate = predicate
+        request.sortDescriptors = sortDescriptors
         let context = CoreDataService.shared.mainContext
         
         let results = try? context.fetch(request)
         return results ?? []
     }
     
-    public func fetch(
-        predicate: NSPredicate? = nil,
-        sortDescriptors: [NSSortDescriptor] = []
-    ) -> [DTO] {
-        return fetchMO(predicate: predicate, sortDescriptors: sortDescriptors)
-            .compactMap { DTO(mo: $0) }
-    }
-    
     //Create
-    public func create(dto: DTO.MO.DTO,
-                completion: CompletionHandler? = nil) {
+    public func create(dto: DTO,
+                       completion: CompletionHandler? = nil) {
         let context = CoreDataService.shared.backgroundContext
         context.perform {
             let mo = DTO.MO(context: context)
@@ -46,7 +47,7 @@ public class NotificationStorage<DTO: DTODescription> {
         }
     }
     
-    func update(dto: DTO.MO.DTO,
+    func update(dto: DTO,
                 completion: CompletionHandler? = nil) {
         let context = CoreDataService.shared.backgroundContext
         context.perform { [weak self] in
@@ -62,7 +63,7 @@ public class NotificationStorage<DTO: DTODescription> {
         }
     }
     
-    func updateOrCreate(dto: DTO.MO.DTO,
+    func updateOrCreate(dto: DTO,
                         completion: CompletionHandler? = nil) {
         if fetchMO(predicate:
                 .Notification.notification(byId: dto.identifier)).isEmpty {

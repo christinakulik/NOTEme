@@ -8,11 +8,9 @@
 import UIKit
 
 final class MainTabBarCoordinator: Coordinator {
-    
-    private let popoverDelegate = PopoverDelegate()
+
     private let container: Container
-   var currentPopover: UIViewController?
-    private var tabBarController: UITabBarController?
+    private var rootVC: UIViewController?
     
     init(container: Container) {
         self.container = container
@@ -21,7 +19,7 @@ final class MainTabBarCoordinator: Coordinator {
     override func start() -> UIViewController {
         let tabBar = MainTabBarAssembler.make(coordinator: self)
         tabBar.viewControllers = [makeHomeModule(), makeProfileModule()]
-        tabBarController = tabBar
+        rootVC = tabBar
         return tabBar
     }
     
@@ -46,40 +44,41 @@ final class MainTabBarCoordinator: Coordinator {
 }
 
 extension MainTabBarCoordinator: MainTabBarCoordinatorProtocol {
-    func showPopover() {
-        let coordinator = PopoverCoordinator(container: container)
+    func showMenu(sender: UIView, delegate: MenuPopoverDelegate) {
+        let menu = MenuPopoverBuilder.buildAddMenu(delegate: delegate,
+                                                   sourceView: sender)
+        rootVC?.present(menu, animated: true)
+    }
+    
+    
+    func openDateNotification() {
+        let coordinator = DateNotificationCoordinator(container: Container())
         children.append(coordinator)
+        let vc = coordinator.start()
         
-        let popover = coordinator.start()
         coordinator.onDidFinish = { [weak self] coordinator in
             self?.children.removeAll { coordinator == $0 }
-            popover.dismiss(animated: true)
+            vc.dismiss(animated: true)
         }
-        popover.modalPresentationStyle = .popover
-        popover.preferredContentSize = CGSize(width: 180, height: 120)
-        
-        if popover.popoverPresentationController?.delegate == nil {
-                  popover.popoverPresentationController?.delegate = popoverDelegate
-              }
-        currentPopover = popover
-        if let popoverController = popover.popoverPresentationController {
-            popoverController.sourceView = tabBarController?.view
-            popoverController.sourceRect = CGRect(
-                x: (tabBarController?.view.bounds.width)! - 288,
-                y: (tabBarController?.view.bounds.height ?? 0) - 80,
-                width: 200,
-                height: 200)
-            tabBarController?.present(popover, animated: true)
-        }
-            
+       
+        rootVC?.present(vc, animated: true)
     }
-}
-
-
-final class PopoverDelegate: NSObject, UIPopoverPresentationControllerDelegate {
     
-    func adaptivePresentationStyle(for controller: UIPresentationController)
-    -> UIModalPresentationStyle {
-        return .none
+    func openTimerNotification() {
+        let coordinator = TimerNotificationCoordinator(container: Container())
+        children.append(coordinator)
+        let vc = coordinator.start()
+        
+        coordinator.onDidFinish = { [weak self] coordinator in
+            self?.children.removeAll { coordinator == $0 }
+            vc.dismiss(animated: true)
+        }
+        rootVC?.present(vc, animated: true)
+    }
+    
+    func openLicationNotification() {
+        
     }
 }
+
+

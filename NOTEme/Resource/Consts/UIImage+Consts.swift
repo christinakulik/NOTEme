@@ -34,5 +34,14 @@ extension UIImage {
         static let calendar: UIImage = .init(named: "сalendar")!
         static let location: UIImage = .init(named: "location")!
         static let timer: UIImage = .init(named: "timer")!
+        static let edit: UIImage = .init(named: "edit")!
+        static let delete: UIImage = .init(named: "delete")!
+    }
+    //MARK: - Home
+    enum Home {
+        static let editor: UIImage = .init(named: "editor")!
+        static let imagePath: UIImage = .init(named: "imagePath")!
+        static let location: UIImage = .init(named: "locationInCell")!
+        static let timer: UIImage = .init(named: "timerInCell")!
     }
 }

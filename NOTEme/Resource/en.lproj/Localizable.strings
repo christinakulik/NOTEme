@@ -84,6 +84,8 @@
 "popover_calendar" = "Calendar";
 "popover_location" = "Location";
 "popover_timer" = "Timer";
+"popover_edit" = "Edit";
+"popover_delete" = "Delete";
 
 //MARK: - CreateDate
 "createDate_titleLabel" = "Create Date Notification";

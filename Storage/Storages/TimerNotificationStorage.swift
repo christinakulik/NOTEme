@@ -8,14 +8,15 @@
 import CoreData
 
 public final class TimerNotificationStorage:
-    NotificationStorage<TimerNotificationDTO> {}
+    NotificationStorage<TimerNotificationDTO> {
+    
+    public func fetch(predicate: NSPredicate? = nil,
+                      sortDescriptors: [NSSortDescriptor] = [])
+    -> [TimerNotificationDTO] {
+        return super.fetch(predicate: predicate,
+                           sortDescriptors: sortDescriptors)
+        .compactMap { $0 as? TimerNotificationDTO }
+    }
+}
 
-//    //Fetch
-//    public func fetch(
-//        predicate: NSPredicate? = nil,
-//        sortDescriptors: [NSSortDescriptor] = []
-//    ) -> [TimerNotificationDTO] {
-//        return fetchMO(predicate: predicate, sortDescriptors: sortDescriptors)
-//            .compactMap { TimerNotificationDTO(mo: $0) }
-//    }
-//    
+

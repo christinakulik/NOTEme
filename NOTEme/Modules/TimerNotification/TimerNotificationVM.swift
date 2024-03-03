@@ -27,9 +27,7 @@ final class TimerNotificationVM: TimerNotificationViewModelProtocol {
     private weak var coordinator: TimerNotificationCoordinatorProtocol?
     private var storage: TimerNotificationStorageProtocol
     
-    private(set) var endTime: Date? {
-        didSet { checkValidation() }
-    }
+    private(set) var endTime: Date?
     
     private var errorHandler: ((String?) -> Void)?
     var catchTitleError: ((String?) -> Void)?
@@ -39,7 +37,9 @@ final class TimerNotificationVM: TimerNotificationViewModelProtocol {
     var title: String? {
         didSet { checkValidation() }
     }
-    var timer: Date?
+    var timer: Date? {
+        didSet { checkValidation() }
+    }
     var comment: String?
     
     init(coordinator: TimerNotificationCoordinatorProtocol,
@@ -49,23 +49,48 @@ final class TimerNotificationVM: TimerNotificationViewModelProtocol {
         
     }
     
-    private func update () {
-        guard  let timerInterval = timer?.timeIntervalSinceReferenceDate
-        else { return  }
-        let now = Date ()
-        endTime = Calendar.current.date (byAdding: .second,
-                                         value: Int (timerInterval),
-                                         to: now)!
+    @discardableResult
+    private  func checkValidation() -> Bool {
+        let titleValid = isValid(title)
+        let dateValid = isValid(timer)
+        return titleValid && dateValid
     }
     
+    private  func isValid(_ value: Any?) -> Bool {
+        if let title = value as? String, !title.isEmpty {
+            return true
+        } else if value is Date {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    private func update() {
+        guard let timerInterval = timer?.timeIntervalSinceReferenceDate else { return }
+        
+        let calendar = Calendar.current
+        let now = Date()
+        
+        if let newDate = calendar.date(byAdding: .second, 
+                                       value: Int(timerInterval),
+                                       to: now) {
+        endTime = newDate
+        }
+    }
+
+    
+    
     func createDidTap() {
-        guard
-            checkValidation()
-        else {
+        guard checkValidation() else {
             errorHandler?(L10n.errorHandler)
-            return }
-        guard
-            let title, let endTime else { return }
+            return
+        }
+        
+        update()
+        
+        guard let title, let endTime else { return }
+        
         let dto = TimerNotificationDTO(date: Date(),
                                        identifier: UUID().uuidString,
                                        title: title,
@@ -88,24 +113,8 @@ final class TimerNotificationVM: TimerNotificationViewModelProtocol {
     func date(from string: String) -> Date? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm:ss"
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
         return dateFormatter.date(from: string)
-    }
-    
-    @discardableResult
-    func checkValidation() -> Bool {
-        let titleValid = isValid(title)
-        let dateValid = isValid(endTime)
-        return titleValid && dateValid
-    }
-    
-    func isValid(_ value: Any?) -> Bool {
-        if let title = value as? String, !title.isEmpty {
-            return true
-        } else if value is Date {
-            return true
-        } else {
-            return false
-        }
     }
     
 }

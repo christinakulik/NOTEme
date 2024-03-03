@@ -34,6 +34,13 @@ extension UIButton {
         return button
     }
     
+    static func editButton() -> UIButton {
+        let button = UIButton()
+        button.setImage(.Home.editor, for: .normal)
+        
+        return button
+    }
+    
     static func yellowRoundedButton(_ title: String?) -> UIButton {
        let button = UIButton()
         

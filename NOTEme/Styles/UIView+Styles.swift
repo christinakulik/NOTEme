@@ -58,6 +58,13 @@ extension UIView {
         
         return view
     }
+    
+    static func blackView() -> UIView {
+        let view = UIView()
+        view.backgroundColor = .appBlack
+        view.cornerRadius = 5.0
+        return view
+    }
 
     func addShadow() {
         self.layer.shadowOpacity = 1

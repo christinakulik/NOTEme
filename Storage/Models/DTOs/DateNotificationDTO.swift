@@ -9,10 +9,9 @@ import Foundation
 import CoreData
 
 public struct DateNotificationDTO: DTODescription {
-    
-    public typealias DTO = Self
+
     public typealias MO = DateNotificationMO
-    
+
     public var date: Date
     public var identifier: String
     public var title: String
@@ -21,7 +20,7 @@ public struct DateNotificationDTO: DTODescription {
     public var targetDate: Date
     
     public init(date: Date,
-                identifier: String,
+                identifier: String = UUID().uuidString,
                 title: String,
                 subtitle: String? = nil,
                 completedDate: Date? = nil,
@@ -33,20 +32,20 @@ public struct DateNotificationDTO: DTODescription {
         self.completedDate = completedDate
         self.targetDate = targetDate
     }
-    
-    public init?(mo: DateNotificationMO) {
-        guard
-            let identifier = mo.identifier,
-            let title = mo.title,
-            let date = mo.date,
-            let targetDate = mo.targetDate
-        else { return nil }
-        
-        self.date = date
-        self.identifier = identifier
-        self.title = title
-        self.subtitle = mo.subtitle
-        self.completedDate = mo.completedDate
-        self.targetDate = targetDate
-    }
+
+    public static func fromMO(_ mo: DateNotificationMO) -> DateNotificationDTO? {
+            guard
+                let identifier = mo.identifier,
+                let title = mo.title,
+                let date = mo.date,
+                let targetDate = mo.targetDate
+            else { return nil }
+            
+            return DateNotificationDTO(date: date, 
+                                       identifier: identifier,
+                                       title: title,
+                                       subtitle: mo.subtitle,
+                                       completedDate: mo.completedDate,
+                                       targetDate: targetDate)
+          }
 }
