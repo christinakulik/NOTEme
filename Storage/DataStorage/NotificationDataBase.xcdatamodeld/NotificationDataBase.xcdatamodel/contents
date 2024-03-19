@@ -11,6 +11,9 @@
         <attribute name="targetDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <entity name="LocationNotificationMO" representedClassName="LocationNotificationMO" parentEntity="BaseNotificationMo" syncable="YES">
+        <attribute name="deltaLatitutde" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="deltalLongitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="imagePath" optional="YES" attributeType="String"/>
         <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
     </entity>

@@ -12,7 +12,7 @@ protocol MainTabBarCoordinatorProtocol: AnyObject {
     func showMenu(sender: UIView, delegate: MenuPopoverDelegate)
     func openDateNotification()
     func openTimerNotification()
-    func openLicationNotification()
+    func openLocationNotification()
 }
 
 final class MainTabBarVM: MainTabBarViewModelProtocol {
@@ -23,8 +23,6 @@ final class MainTabBarVM: MainTabBarViewModelProtocol {
     init(coordinator: MainTabBarCoordinatorProtocol) {
         self.coordinator = coordinator
     }
-    
-    
     
     func addDidTap(sender: UIView) {
         coordinator?.showMenu(sender: sender, delegate: self)
@@ -40,7 +38,7 @@ extension MainTabBarVM: MenuPopoverDelegate {
         case .timer:
             coordinator?.openTimerNotification()
         case .location:
-            coordinator?.openLicationNotification()
+            coordinator?.openLocationNotification()
         default: break
         }
     }

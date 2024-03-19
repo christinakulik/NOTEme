@@ -10,10 +10,11 @@ import CoreData
 import Storage
 
 protocol HomeAdapterProtocol: AnyObject {
-    func reloadData(_ dtoList: [any DTODescription])
-    func makeTableView() -> UITableView
     var buttonDTODidTap: ((_ sender: UIButton,
                            _ dto: any DTODescription) -> Void)? { get set }
+    var filterDidSelect: ((NotificationFilterType) -> Void)? { get set }
+    func reloadData(_ dtoList: [any DTODescription])
+    func makeTableView() -> UITableView
 }
 
 protocol HomeCoordinatorProtocol: AnyObject {
@@ -23,18 +24,21 @@ protocol HomeCoordinatorProtocol: AnyObject {
 
 final class HomeVM: HomeViewModelProtocol {
     
-    private let frcService: FRCService<BaseNotificationDTO>
-    
-    private let adapter: HomeAdapterProtocol
-    
-    private weak var coordinator: HomeCoordinatorProtocol?
-    
     var tableView: UITableView?
     
     var showPopover: ((_ sender: UIButton) -> Void)?
-    
-    private var newDTO: (any DTODescription)?
+   
+    private let frcService: FRCService<BaseNotificationDTO>
+    private let adapter: HomeAdapterProtocol
+    private weak var coordinator: HomeCoordinatorProtocol?
     private let storage: AllNotificationStorage
+    private var newDTO: (any DTODescription)?
+    
+    private var selectedFilter: NotificationFilterType = .all {
+        didSet {
+            adapter.reloadData(filterResults())
+        }
+    }
     
     init(frcService: FRCService<BaseNotificationDTO>,
          adapter: HomeAdapterProtocol,
@@ -59,15 +63,33 @@ final class HomeVM: HomeViewModelProtocol {
         adapter.makeTableView()
     }
     
+    private func filterResults() -> [any DTODescription] {
+        return frcService.fetchedDTOs.filter { dto in
+            switch selectedFilter {
+            case .date:
+                return dto is DateNotificationDTO
+            case .timer:
+                return dto is TimerNotificationDTO
+            case .location:
+                return dto is LocationNotificationDTO
+            default:
+                return true
+            }
+        }
+    }
+    
     // MARK: - Private Methods
     private func bind() {
-        frcService.didChangeContent = { [weak adapter] dtoList in
-            adapter?.reloadData(dtoList)
+        frcService.didChangeContent = { [weak self] _ in
+            self?.adapter.reloadData(self?.filterResults() ?? [])
         }
         adapter.buttonDTODidTap = { [weak self] sender, dto in
             guard let self else { return }
             self.newDTO = dto
             self.coordinator?.showMenu(sender: sender, delegate: self)
+        }
+        adapter.filterDidSelect = { [weak self] type in
+            self?.selectedFilter = type
         }
     }
 }
@@ -77,9 +99,15 @@ extension HomeVM: MenuPopoverDelegate {
         guard let dto = newDTO else { return }
         switch action {
         case .edit:
-            coordinator?.startEdit(dto: dto)
+            switch dto {
+            case is DateNotificationDTO:
+                coordinator?.startEdit(dto: dto as! DateNotificationDTO)
+            case is TimerNotificationDTO:
+                coordinator?.startEdit(dto: dto as! TimerNotificationDTO)
+            default: break
+            }
         case .delete:
-            break;
+            storage.delete(dto: dto)
         default: break
         }
     }

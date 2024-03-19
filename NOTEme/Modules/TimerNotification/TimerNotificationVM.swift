@@ -27,20 +27,17 @@ final class TimerNotificationVM: TimerNotificationViewModelProtocol {
     private weak var coordinator: TimerNotificationCoordinatorProtocol?
     private var storage: TimerNotificationStorageProtocol
     
-    private(set) var endTime: Date?
-    
-    private var errorHandler: ((String?) -> Void)?
-    var catchTitleError: ((String?) -> Void)?
-    var catchTimerError: ((String?) -> Void)?
-    
-    
+    var timerString: String?
     var title: String? {
         didSet { checkValidation() }
     }
-    var timer: Date? {
-        didSet { checkValidation() }
-    }
     var comment: String?
+
+    var catchTitleError: ((String?) -> Void)?
+    var catchTimerError: ((String?) -> Void)?
+   
+    private(set) var endTime: Date?
+    private var errorHandler: ((String?) -> Void)?
     
     init(coordinator: TimerNotificationCoordinatorProtocol,
          storage: TimerNotificationStorageProtocol) {
@@ -52,8 +49,7 @@ final class TimerNotificationVM: TimerNotificationViewModelProtocol {
     @discardableResult
     private  func checkValidation() -> Bool {
         let titleValid = isValid(title)
-        let dateValid = isValid(timer)
-        return titleValid && dateValid
+        return titleValid 
     }
     
     private  func isValid(_ value: Any?) -> Bool {
@@ -66,20 +62,27 @@ final class TimerNotificationVM: TimerNotificationViewModelProtocol {
         }
     }
     
-    private func update() {
-        guard let timerInterval = timer?.timeIntervalSinceReferenceDate else { return }
+    func update() {
+        guard let timerString = timerString,
+              let timerDuration = date(from: timerString),
+              let timeZone = TimeZone(abbreviation: "UTC")
+        else { return }
         
-        let calendar = Calendar.current
-        let now = Date()
+        var calendar = Calendar.current
+        calendar.timeZone = timeZone
         
-        if let newDate = calendar.date(byAdding: .second, 
-                                       value: Int(timerInterval),
-                                       to: now) {
-        endTime = newDate
-        }
+        let timeComponents = calendar.dateComponents([.hour, .minute, .second], 
+                                                     from: timerDuration)
+        let hoursInSeconds = (timeComponents.hour ?? 0) * 3600
+            let minutesInSeconds = (timeComponents.minute ?? 0) * 60
+            let seconds = timeComponents.second ?? 0
+            let totalSeconds = hoursInSeconds + minutesInSeconds + seconds
+            
+            endTime = calendar.date(byAdding: .second,
+                                    value: totalSeconds,
+                                    to: Date())
     }
 
-    
     
     func createDidTap() {
         guard checkValidation() else {

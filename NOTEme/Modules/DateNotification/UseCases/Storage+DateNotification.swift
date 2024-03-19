@@ -13,4 +13,8 @@ extension DateNotificationStorage: DateNotificationStorageProtocol {
     func createDateNotification(dto: Storage.DateNotificationDTO) {
         create(dto: dto)
     }
+    
+    func updateDateNotification(dto: Storage.DateNotificationDTO) {
+        update(dto: dto)
+    }
 }

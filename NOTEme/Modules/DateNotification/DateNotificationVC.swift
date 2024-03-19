@@ -20,6 +20,7 @@ import Storage
     func date(from string: String) -> Date?
     func createDidTap()
     @objc func cancelDidTap()
+    func loadDTOToEdit()
 }
 
 final class DateNotificationVC: UIViewController {
@@ -104,6 +105,16 @@ final class DateNotificationVC: UIViewController {
         setupConstraints()
         setupCustomInputView()
         
+        bind()
+        viewModel.loadDTOToEdit()
+        
+        titleTextField.text = viewModel.title
+        if let date = viewModel.date {
+            dateTextField.text = viewModel.string(from: date)
+        } else {
+            dateTextField.text = nil
+        }
+        commentTextView.text = viewModel.comment
     }
     
     // MARK: - Private Methods
@@ -161,25 +172,24 @@ final class DateNotificationVC: UIViewController {
         infoView.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(10.0)
             make.leading.trailing.equalToSuperview().inset(16.0)
-            make.height.equalTo(250.0)
+            make.bottom.equalTo(commentTextView.snp.bottom).offset(16.0)
+           
         }
-        
         
         titleTextField.snp.makeConstraints { make in
             make.horizontalEdges.top.equalToSuperview().inset(16.0)
-            make.bottom.equalTo(dateTextField.snp.top).inset(-16.0)
         }
         
         dateTextField.snp.makeConstraints { make in
-            make.top.equalTo(titleTextField.snp.bottom).inset(16.0)
+            make.top.equalTo(titleTextField.snp.bottom).inset(-16.0)
             make.horizontalEdges.equalToSuperview().inset(16.0)
-            make.bottom.equalTo(commentTextView.snp.top).inset(-16.0)
         }
         
         commentTextView.snp.makeConstraints { make in
-            make.top.equalTo(dateTextField.snp.bottom).offset(16.0)
+            make.top.equalTo(dateTextField.snp.bottom).inset(-16.0)
             make.leading.trailing.equalToSuperview().inset(16.0)
-            make.bottom.lessThanOrEqualToSuperview().inset(16.0)
+            make.bottom.equalTo(infoView.snp.bottom).inset(16.0)
+            
         }
         
     }

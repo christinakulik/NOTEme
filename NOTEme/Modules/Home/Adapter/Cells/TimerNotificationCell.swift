@@ -11,17 +11,18 @@ import Storage
 
 final class TimerNotificationCell: UITableViewCell {
     
+    var buttonDidTap: ((_ sender: UIButton) -> Void)?
+    
+    private var timer: Timer?
+    private lazy var containerView: UIView = .plainViewWithShadow()
     private lazy var titleLabel: UILabel = .titleCellLable()
     private lazy var subTitleLabel: UILabel = .subTitleCellLabel()
     private lazy var timerLabel: UILabel = .largeLabel()
-    
     private lazy var timerImageView: UIImageView = 
     UIImageView(image: .Home.timer)
 
     private lazy var button: UIButton = .editButton()
-    
-    private lazy var containerView: UIView = .plainViewWithShadow()
-    
+        .withAction(self, #selector(editDidTap))
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -33,38 +34,46 @@ final class TimerNotificationCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        timer?.invalidate()
+        timerLabel.text = "00:00:00"
+    }
+    
     func setup(_ type: any DTODescription) {
         guard let timerNotificationDTO = type as? TimerNotificationDTO else {
             return
         }
-        
         titleLabel.text = timerNotificationDTO.title
         subTitleLabel.text = timerNotificationDTO.subtitle
-        
-        let currentTime = timerNotificationDTO.date
+        let currentTime = Date()
         let targetTime = timerNotificationDTO.targetTime
+        updateTimerLabel(currentTime: currentTime, targetTime: targetTime)
 
-        let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { 
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) {
             [weak self] timer in
-        
-            let timeDifference = Int(targetTime.timeIntervalSince(currentTime))
-            
-            if timeDifference > 0 {
-                let formatter = DateFormatter()
-                formatter.dateFormat = "hh:mm:ss"
-                formatter.timeZone = TimeZone(secondsFromGMT: 0)
-                
-                let timeString = 
-                formatter.string(from: Date(timeIntervalSinceReferenceDate:
-                                                TimeInterval(timeDifference)))
-
-                self?.timerLabel.text = timeString
-            } else {
-                timer.invalidate()
-                self?.timerLabel.text = "00:00:00"
-            }
+            self?.updateTimerLabel(currentTime: Date(), targetTime: targetTime)
         }
+    }
 
+    private func updateTimerLabel(currentTime: Date, targetTime: Date) {
+        let timeDifference = Int(targetTime.timeIntervalSince(currentTime))
+        if timeDifference >= 0 {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "HH:mm:ss"
+            formatter.timeZone = TimeZone(secondsFromGMT: 0)
+            let timeString = 
+            formatter.string(from: Date(timeIntervalSinceReferenceDate: TimeInterval(timeDifference)))
+            self.timerLabel.text = timeString
+        } else {
+            timer?.invalidate()
+            self.timerLabel.text = "00:00:00"
+        }
+    }
+
+    
+    @objc private func editDidTap(sender: UIButton) {
+        buttonDidTap?(sender)
     }
     
     func setupUI() {
@@ -81,8 +90,8 @@ final class TimerNotificationCell: UITableViewCell {
         
         containerView.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview().inset(20.0)
-            make.top.equalToSuperview()
-            make.bottom.equalToSuperview().inset(10.0)
+            make.top.equalToSuperview().inset(5.0)
+            make.bottom.equalToSuperview().inset(5.0)
         }
     
         timerImageView.snp.makeConstraints { make in

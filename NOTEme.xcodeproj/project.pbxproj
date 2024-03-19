@@ -3,11 +3,24 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF205BF32BA2F6990065FF68 /* NotificationFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF205BF22BA2F6990065FF68 /* NotificationFilterView.swift */; };
+		CF205BF62BA3ABD40065FF68 /* NotificationFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF205BF52BA3ABD40065FF68 /* NotificationFilterCell.swift */; };
+		CF205BF82BA3B5240065FF68 /* String+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF205BF72BA3B5240065FF68 /* String+Size.swift */; };
+		CF205BFB2BA9A0ED0065FF68 /* ImageStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF205BFA2BA9A0ED0065FF68 /* ImageStorageService.swift */; };
 		CF5B89D52B1D3E3B0080EF47 /* String+Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5B89D42B1D3E3B0080EF47 /* String+Attributes.swift */; };
+		CF5CF20F2B9E0AF600DBE981 /* RouteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5CF20E2B9E0AF600DBE981 /* RouteVC.swift */; };
+		CF5CF2112B9E0B0400DBE981 /* RouteVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5CF2102B9E0B0400DBE981 /* RouteVM.swift */; };
+		CF5CF2142B9E0B1E00DBE981 /* RouteCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5CF2132B9E0B1E00DBE981 /* RouteCoordinator.swift */; };
+		CF5CF2162B9E0B2A00DBE981 /* RouteAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5CF2152B9E0B2A00DBE981 /* RouteAssembler.swift */; };
+		CF5CF2192B9FBC8900DBE981 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5CF2182B9FBC8900DBE981 /* SearchBarView.swift */; };
+		CF5CF21D2BA064C300DBE981 /* RouteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5CF21C2BA064C300DBE981 /* RouteTableViewCell.swift */; };
+		CF5CF21F2BA0761500DBE981 /* RouteAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5CF21E2BA0761500DBE981 /* RouteAdapter.swift */; };
+		CF5CF2222BA09DBC00DBE981 /* LocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5CF2212BA09DBC00DBE981 /* LocationData.swift */; };
+		CF5CF2252BA1AF2700DBE981 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5CF2242BA1AF2700DBE981 /* NotificationService.swift */; };
 		CF64AA782B56E0EC00F14710 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AA772B56E0EC00F14710 /* Container.swift */; };
 		CF64AA7A2B56E54F00F14710 /* ContainerRegistrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AA792B56E54F00F14710 /* ContainerRegistrator.swift */; };
 		CF64AA7D2B56F00000F14710 /* WindowMahager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AA7C2B56F00000F14710 /* WindowMahager.swift */; };
@@ -71,6 +84,11 @@
 		CF64AB212B8E437300F14710 /* MenuPopoverBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AB202B8E437300F14710 /* MenuPopoverBuilder.swift */; };
 		CF64AB232B8E44F600F14710 /* MenuPopoverAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AB222B8E44F600F14710 /* MenuPopoverAdapter.swift */; };
 		CF64AB262B8E465700F14710 /* MenuActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AB252B8E465700F14710 /* MenuActionCell.swift */; };
+		CF64AB2B2B9740FD00F14710 /* LocationNotificationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AB2A2B9740FD00F14710 /* LocationNotificationCoordinator.swift */; };
+		CF64AB2D2B97411200F14710 /* LocationNotificationAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AB2C2B97411200F14710 /* LocationNotificationAssembler.swift */; };
+		CF64AB2F2B97411C00F14710 /* LocationNotificationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AB2E2B97411C00F14710 /* LocationNotificationVM.swift */; };
+		CF64AB312B97412400F14710 /* LocationNotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AB302B97412400F14710 /* LocationNotificationVC.swift */; };
+		CF64AB332B97446700F14710 /* Storage+LocationNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64AB322B97446700F14710 /* Storage+LocationNotification.swift */; };
 		CF7379472B1F846A00E77BF0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF7379462B1F846A00E77BF0 /* GoogleService-Info.plist */; };
 		CF73794A2B1F87F200E77BF0 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = CF7379492B1F87F200E77BF0 /* FirebaseAnalytics */; };
 		CF73794C2B1F87F200E77BF0 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = CF73794B2B1F87F200E77BF0 /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -181,7 +199,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CF205BF22BA2F6990065FF68 /* NotificationFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationFilterView.swift; sourceTree = "<group>"; };
+		CF205BF52BA3ABD40065FF68 /* NotificationFilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationFilterCell.swift; sourceTree = "<group>"; };
+		CF205BF72BA3B5240065FF68 /* String+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Size.swift"; sourceTree = "<group>"; };
+		CF205BFA2BA9A0ED0065FF68 /* ImageStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStorageService.swift; sourceTree = "<group>"; };
 		CF5B89D42B1D3E3B0080EF47 /* String+Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Attributes.swift"; sourceTree = "<group>"; };
+		CF5CF20E2B9E0AF600DBE981 /* RouteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteVC.swift; sourceTree = "<group>"; };
+		CF5CF2102B9E0B0400DBE981 /* RouteVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteVM.swift; sourceTree = "<group>"; };
+		CF5CF2132B9E0B1E00DBE981 /* RouteCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteCoordinator.swift; sourceTree = "<group>"; };
+		CF5CF2152B9E0B2A00DBE981 /* RouteAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteAssembler.swift; sourceTree = "<group>"; };
+		CF5CF2182B9FBC8900DBE981 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		CF5CF21C2BA064C300DBE981 /* RouteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTableViewCell.swift; sourceTree = "<group>"; };
+		CF5CF21E2BA0761500DBE981 /* RouteAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteAdapter.swift; sourceTree = "<group>"; };
+		CF5CF2212BA09DBC00DBE981 /* LocationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationData.swift; sourceTree = "<group>"; };
+		CF5CF2242BA1AF2700DBE981 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		CF64AA772B56E0EC00F14710 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		CF64AA792B56E54F00F14710 /* ContainerRegistrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerRegistrator.swift; sourceTree = "<group>"; };
 		CF64AA7C2B56F00000F14710 /* WindowMahager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowMahager.swift; sourceTree = "<group>"; };
@@ -244,6 +275,11 @@
 		CF64AB202B8E437300F14710 /* MenuPopoverBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPopoverBuilder.swift; sourceTree = "<group>"; };
 		CF64AB222B8E44F600F14710 /* MenuPopoverAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPopoverAdapter.swift; sourceTree = "<group>"; };
 		CF64AB252B8E465700F14710 /* MenuActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuActionCell.swift; sourceTree = "<group>"; };
+		CF64AB2A2B9740FD00F14710 /* LocationNotificationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationNotificationCoordinator.swift; sourceTree = "<group>"; };
+		CF64AB2C2B97411200F14710 /* LocationNotificationAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationNotificationAssembler.swift; sourceTree = "<group>"; };
+		CF64AB2E2B97411C00F14710 /* LocationNotificationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationNotificationVM.swift; sourceTree = "<group>"; };
+		CF64AB302B97412400F14710 /* LocationNotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationNotificationVC.swift; sourceTree = "<group>"; };
+		CF64AB322B97446700F14710 /* Storage+LocationNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storage+LocationNotification.swift"; sourceTree = "<group>"; };
 		CF7379462B1F846A00E77BF0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CF7379802B1F95CA00E77BF0 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		CF7379822B1F975F00E77BF0 /* AuthService+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthService+Login.swift"; sourceTree = "<group>"; };
@@ -351,12 +387,91 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CF205BF42BA3ABB80065FF68 /* NotificationFilterView */ = {
+			isa = PBXGroup;
+			children = (
+				CF205BF22BA2F6990065FF68 /* NotificationFilterView.swift */,
+				CF205BF52BA3ABD40065FF68 /* NotificationFilterCell.swift */,
+			);
+			path = NotificationFilterView;
+			sourceTree = "<group>";
+		};
+		CF205BF92BA9A0D20065FF68 /* ImageStorageService */ = {
+			isa = PBXGroup;
+			children = (
+				CF205BFA2BA9A0ED0065FF68 /* ImageStorageService.swift */,
+			);
+			path = ImageStorageService;
+			sourceTree = "<group>";
+		};
 		CF5B89D32B1A87610080EF47 /* Builder */ = {
 			isa = PBXGroup;
 			children = (
 				CFD5842A2B153154000949A6 /* Builder.swift */,
 			);
 			path = Builder;
+			sourceTree = "<group>";
+		};
+		CF5CF20D2B9E09C900DBE981 /* Route */ = {
+			isa = PBXGroup;
+			children = (
+				CF5CF2202BA09DA600DBE981 /* Model */,
+				CF5CF21A2BA064A900DBE981 /* Adapter */,
+				CF5CF2172B9E0B3000DBE981 /* UseCases */,
+				CF5CF2122B9E0B0900DBE981 /* Coordinator */,
+				CF5CF20E2B9E0AF600DBE981 /* RouteVC.swift */,
+				CF5CF2102B9E0B0400DBE981 /* RouteVM.swift */,
+			);
+			path = Route;
+			sourceTree = "<group>";
+		};
+		CF5CF2122B9E0B0900DBE981 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				CF5CF2132B9E0B1E00DBE981 /* RouteCoordinator.swift */,
+				CF5CF2152B9E0B2A00DBE981 /* RouteAssembler.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		CF5CF2172B9E0B3000DBE981 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		CF5CF21A2BA064A900DBE981 /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				CF5CF21B2BA064B000DBE981 /* Cell */,
+				CF5CF21E2BA0761500DBE981 /* RouteAdapter.swift */,
+			);
+			path = Adapter;
+			sourceTree = "<group>";
+		};
+		CF5CF21B2BA064B000DBE981 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CF5CF21C2BA064C300DBE981 /* RouteTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		CF5CF2202BA09DA600DBE981 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CF5CF2212BA09DBC00DBE981 /* LocationData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CF5CF2232BA1AF1000DBE981 /* NotificationService */ = {
+			isa = PBXGroup;
+			children = (
+				CF5CF2242BA1AF2700DBE981 /* NotificationService.swift */,
+			);
+			path = NotificationService;
 			sourceTree = "<group>";
 		};
 		CF64AA762B56E0B800F14710 /* Container */ = {
@@ -552,7 +667,6 @@
 		CF64AADF2B765EEF00F14710 /* Adapter */ = {
 			isa = PBXGroup;
 			children = (
-				CF64AAE32B76871100F14710 /* Rows */,
 				CF64AAE02B765F0000F14710 /* Cell */,
 				CF64AAE62B768D2C00F14710 /* PopoverAdapter.swift */,
 			);
@@ -622,6 +736,7 @@
 		CF64AB1D2B8E405300F14710 /* MenuPopover */ = {
 			isa = PBXGroup;
 			children = (
+				CF64AAE32B76871100F14710 /* Rows */,
 				CF64AB242B8E464600F14710 /* Cell */,
 				CF64AB1E2B8E406800F14710 /* MenuPopoverVC.swift */,
 				CF64AB202B8E437300F14710 /* MenuPopoverBuilder.swift */,
@@ -636,6 +751,34 @@
 				CF64AB252B8E465700F14710 /* MenuActionCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		CF64AB272B9740BF00F14710 /* LocationNotification */ = {
+			isa = PBXGroup;
+			children = (
+				CF64AB292B9740D500F14710 /* UseCases */,
+				CF64AB282B9740CC00F14710 /* Coordinator */,
+				CF64AB2E2B97411C00F14710 /* LocationNotificationVM.swift */,
+				CF64AB302B97412400F14710 /* LocationNotificationVC.swift */,
+			);
+			path = LocationNotification;
+			sourceTree = "<group>";
+		};
+		CF64AB282B9740CC00F14710 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				CF64AB2A2B9740FD00F14710 /* LocationNotificationCoordinator.swift */,
+				CF64AB2C2B97411200F14710 /* LocationNotificationAssembler.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		CF64AB292B9740D500F14710 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				CF64AB322B97446700F14710 /* Storage+LocationNotification.swift */,
+			);
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 		CF73797F2B1F95B300E77BF0 /* AuthService */ = {
@@ -751,6 +894,7 @@
 		CFD583B82AF019C6000949A6 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				CF5CF20D2B9E09C900DBE981 /* Route */,
 				CF64AB1D2B8E405300F14710 /* MenuPopover */,
 				CFD583B92AF019CC000949A6 /* Auth */,
 				CFD584512B165417000949A6 /* Onboarding */,
@@ -760,6 +904,7 @@
 				CF64AACF2B74FD3700F14710 /* Popover */,
 				CF64AAD52B75006300F14710 /* DateNotification */,
 				CF64AAD62B75006F00F14710 /* TimerNotification */,
+				CF64AB272B9740BF00F14710 /* LocationNotification */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -826,6 +971,7 @@
 				CF73798E2B274D2C00E77BF0 /* NSAttributedString+HTML.swift */,
 				CF64AA852B6A63B900F14710 /* Collection+Register.swift */,
 				CF64AA882B6A852100F14710 /* Alert+Layer.swift */,
+				CF205BF72BA3B5240065FF68 /* String+Size.swift */,
 			);
 			path = Utills;
 			sourceTree = "<group>";
@@ -833,10 +979,12 @@
 		CFD583D22AF16E92000949A6 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				CF205BF42BA3ABB80065FF68 /* NotificationFilterView */,
 				CFD583D32AF16EC4000949A6 /* LineTextField.swift */,
 				CF64AAF92B76B9CE00F14710 /* CustomInputView.swift */,
 				CF64AAFD2B77AA3500F14710 /* LineTextView.swift */,
 				CF64AB082B82705C00F14710 /* TimerInputView.swift */,
+				CF5CF2182B9FBC8900DBE981 /* SearchBarView.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -877,6 +1025,8 @@
 		CFD583EF2AFEA14B000949A6 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CF205BF92BA9A0D20065FF68 /* ImageStorageService */,
+				CF5CF2232BA1AF1000DBE981 /* NotificationService */,
 				CF64AA7B2B56EFF100F14710 /* WindowManager */,
 				CF64AA762B56E0B800F14710 /* Container */,
 				CF7379972B28C1D900E77BF0 /* AlertService */,
@@ -1147,7 +1297,7 @@
 				};
 			};
 			buildConfigurationList = CFD5839C2AF0195D000949A6 /* Build configuration list for PBXProject "NOTEme" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 15.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -1226,40 +1376,50 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF64AB2D2B97411200F14710 /* LocationNotificationAssembler.swift in Sources */,
 				CFF587BA2B44B70F00D60712 /* ProfileVM.swift in Sources */,
 				CF64AAEB2B76B92E00F14710 /* DateNotificationVM.swift in Sources */,
 				CF7379A72B28D2EB00E77BF0 /* HomeVC.swift in Sources */,
+				CF5CF21D2BA064C300DBE981 /* RouteTableViewCell.swift in Sources */,
 				CFD583A52AF0195D000949A6 /* AppDelegate.swift in Sources */,
 				CFD583C42AF01A42000949A6 /* UIFont+Consts.swift in Sources */,
 				CF64AA7A2B56E54F00F14710 /* ContainerRegistrator.swift in Sources */,
 				CFF587B82B3B739C00D60712 /* ProfileAccountTableViewCell.swift in Sources */,
 				CFD583F52AFEA816000949A6 /* InputValidator+Login.swift in Sources */,
+				CF64AB2B2B9740FD00F14710 /* LocationNotificationCoordinator.swift in Sources */,
 				CFF587BD2B49F28E00D60712 /* ProfileSettingTableViewCell.swift in Sources */,
 				CF64AA7D2B56F00000F14710 /* WindowMahager.swift in Sources */,
 				CF64AB092B82705C00F14710 /* TimerInputView.swift in Sources */,
+				CF5CF2252BA1AF2700DBE981 /* NotificationService.swift in Sources */,
 				CF64AA842B62ED0600F14710 /* ProfileAdapter.swift in Sources */,
 				CF64AADC2B756B3100F14710 /* PopoverCoordinator.swift in Sources */,
 				CFD5845C2B1657EE000949A6 /* OnboardFirstStepCoordinator.swift in Sources */,
+				CF5CF2112B9E0B0400DBE981 /* RouteVM.swift in Sources */,
 				CFD584572B165675000949A6 /* OnboardFirstStepVM.swift in Sources */,
 				CF7379A92B28D31700E77BF0 /* HomeAseembler.swift in Sources */,
 				CF7379B62B2E608100E77BF0 /* ProfileCoordinator.swift in Sources */,
+				CF5CF2192B9FBC8900DBE981 /* SearchBarView.swift in Sources */,
 				CF64AAD12B74FD5800F14710 /* PopoverVC.swift in Sources */,
 				CF64AAFE2B77AA3500F14710 /* LineTextView.swift in Sources */,
 				CFD5840F2B0CF57D000949A6 /* KeyboardAnimator+Register.swift in Sources */,
 				CFD584602B165ADA000949A6 /* OnboardSecondStepVC.swift in Sources */,
+				CF5CF2142B9E0B1E00DBE981 /* RouteCoordinator.swift in Sources */,
 				CFD583C22AF01A35000949A6 /* UIColor+Consts.swift in Sources */,
 				CF64AB0D2B82CAA700F14710 /* Storage+TimerNotification.swift in Sources */,
 				CFD584622B165B5A000949A6 /* OnboardSecondStepVM.swift in Sources */,
 				CF64AAFA2B76B9CE00F14710 /* CustomInputView.swift in Sources */,
 				CFD584502B164B61000949A6 /* ParametersHelper.swift in Sources */,
+				CF205BFB2BA9A0ED0065FF68 /* ImageStorageService.swift in Sources */,
 				CF64AAED2B76B94300F14710 /* DateNotificationCoordinator.swift in Sources */,
 				CF7379B82B2E608E00E77BF0 /* ProfileAssembler.swift in Sources */,
 				CFD583CD2AF0672F000949A6 /* UIButton+Styles.swift in Sources */,
 				CF64AAF82B76B9C100F14710 /* TimerNotificationVM.swift in Sources */,
 				CF64AAE22B765F1700F14710 /* PopoverTableViewCell.swift in Sources */,
 				CF64AAD32B74FD6200F14710 /* PopoverVM.swift in Sources */,
+				CF5CF20F2B9E0AF600DBE981 /* RouteVC.swift in Sources */,
 				CFD583EC2AFE977E000949A6 /* LoginVM.swift in Sources */,
 				CFD583F92B03E119000949A6 /* RegisterAssembler.swift in Sources */,
+				CF5CF2162B9E0B2A00DBE981 /* RouteAssembler.swift in Sources */,
 				CFF587C82B4DE63300D60712 /* ProfileHeaderView.swift in Sources */,
 				CF7379B02B2E5F2E00E77BF0 /* AlertService+Reset.swift in Sources */,
 				CF64AB152B893D3600F14710 /* DateNotificationCell.swift in Sources */,
@@ -1269,9 +1429,11 @@
 				CFD5840C2B0CEEDB000949A6 /* KeyboardAnimator.swift in Sources */,
 				CF64AAE92B76B92300F14710 /* DateNotificationVC.swift in Sources */,
 				CFD584662B165BE5000949A6 /* OnboardSecondStepAssembler.swift in Sources */,
+				CF205BF82BA3B5240065FF68 /* String+Size.swift in Sources */,
 				CF7379812B1F95CA00E77BF0 /* AuthService.swift in Sources */,
 				CFD583D42AF16EC4000949A6 /* LineTextField.swift in Sources */,
 				CF7379882B25362000E77BF0 /* AuthService+Reset.swift in Sources */,
+				CF205BF32BA2F6990065FF68 /* NotificationFilterView.swift in Sources */,
 				CFD584112B0D124D000949A6 /* AppCoordinator.swift in Sources */,
 				CF64AB072B7D95CE00F14710 /* Storage+DateNotification.swift in Sources */,
 				CF73798D2B26728E00E77BF0 /* AuthService+Register.swift in Sources */,
@@ -1302,13 +1464,17 @@
 				CF64AB1B2B893DD600F14710 /* HomeAdapter.swift in Sources */,
 				CF7379BC2B2FC41D00E77BF0 /* MainTabBarAssembler.swift in Sources */,
 				CF64AADA2B7568E500F14710 /* MainTabBarVM.swift in Sources */,
+				CF64AB332B97446700F14710 /* Storage+LocationNotification.swift in Sources */,
 				CFD583DD2AF6FEA2000949A6 /* String+Locale.swift in Sources */,
+				CF5CF2222BA09DBC00DBE981 /* LocationData.swift in Sources */,
 				CFD583BB2AF019D9000949A6 /* LoginVC.swift in Sources */,
 				CFD584032B094BE0000949A6 /* InputValidator+Register.swift in Sources */,
 				CFD583F22AFEA1B7000949A6 /* InputValidator.swift in Sources */,
 				CF73798F2B274D2C00E77BF0 /* NSAttributedString+HTML.swift in Sources */,
+				CF64AB2F2B97411C00F14710 /* LocationNotificationVM.swift in Sources */,
 				CF73799B2B28C95900E77BF0 /* AlertService+Login.swift in Sources */,
 				CFD583FC2B03E535000949A6 /* KeyboardHelper.swift in Sources */,
+				CF5CF21F2BA0761500DBE981 /* RouteAdapter.swift in Sources */,
 				CF7379AB2B28D34500E77BF0 /* HomeCoordinator.swift in Sources */,
 				CF64AA812B61B0B800F14710 /* ProfileSections.swift in Sources */,
 				CFD583F72B03DB85000949A6 /* RegisterPresenter.swift in Sources */,
@@ -1319,10 +1485,12 @@
 				CF5B89D52B1D3E3B0080EF47 /* String+Attributes.swift in Sources */,
 				CFD583E52AFAA0E5000949A6 /* ResetVC.swift in Sources */,
 				CF64AA892B6A852100F14710 /* Alert+Layer.swift in Sources */,
+				CF64AB312B97412400F14710 /* LocationNotificationVC.swift in Sources */,
 				CF64AAEF2B76B95100F14710 /* DateNotificationAssembler.swift in Sources */,
 				CF7379832B1F975F00E77BF0 /* AuthService+Login.swift in Sources */,
 				CF73799F2B28D0D200E77BF0 /* MainTabBarVC.swift in Sources */,
 				CF7379AE2B2E5DFE00E77BF0 /* AlertService+Register.swift in Sources */,
+				CF205BF62BA3ABD40065FF68 /* NotificationFilterCell.swift in Sources */,
 				CFD584552B165479000949A6 /* OnbordFirstStepVC.swift in Sources */,
 				CFD584082B0A77DA000949A6 /* InputValidator+Reset.swift in Sources */,
 				CFF587C62B4C1B6E00D60712 /* AuthService+Profile.swift in Sources */,
@@ -1484,7 +1652,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -1542,7 +1710,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -1565,6 +1733,8 @@
 				INFOPLIST_FILE = NOTEme/App/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NOTEme;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "For notification";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "For notification";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -1597,6 +1767,8 @@
 				INFOPLIST_FILE = NOTEme/App/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NOTEme;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "For notification";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "For notification";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";

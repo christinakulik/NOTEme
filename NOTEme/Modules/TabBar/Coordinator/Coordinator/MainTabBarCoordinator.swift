@@ -76,8 +76,17 @@ extension MainTabBarCoordinator: MainTabBarCoordinatorProtocol {
         rootVC?.present(vc, animated: true)
     }
     
-    func openLicationNotification() {
+    func openLocationNotification() {
+        let coordinator = LocationNotificationCoordinator(container: Container(),
+                                                          dto: nil)
+        children.append(coordinator)
+        let vc = coordinator.start()
         
+        coordinator.onDidFinish = { [weak self] coordinator in
+            self?.children.removeAll { coordinator == $0 }
+            vc.dismiss(animated: true)
+        }
+        rootVC?.present(vc, animated: true)
     }
 }
 

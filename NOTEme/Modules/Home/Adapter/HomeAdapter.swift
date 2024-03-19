@@ -11,22 +11,31 @@ import CoreData
 
 final class HomeAdapter: NSObject {
     
+    var filterDidSelect: ((NotificationFilterType) -> Void)?
+    
     var buttonDTODidTap: ((_ sender: UIButton,
                            _ dto: any DTODescription) -> Void)?
-    
-    private lazy var tableView: UITableView = {
-        let tableView =  UITableView()
-        tableView.backgroundColor = .clear
-        tableView.separatorStyle = .none
-        return tableView
-    }()
-    
     
     var dtoList: [any DTODescription] = [] {
         didSet {
             tableView.reloadData()
         }
     }
+    
+    private lazy var tableHeaderView: NotificationFilterView = {
+        let frame = CGRect(x: .zero, y: .zero, width: .zero, height: 32.0)
+        let headerView = NotificationFilterView(frame: frame)
+        headerView.delegate = self
+        return headerView
+    }()
+    
+    private lazy var tableView: UITableView = {
+        let tableView =  UITableView()
+        tableView.backgroundColor = .clear
+        tableView.separatorStyle = .none
+        tableView.tableHeaderView = tableHeaderView
+        return tableView
+    }()
     
     override init() {
         super.init()
@@ -39,6 +48,7 @@ final class HomeAdapter: NSObject {
         
         tableView.register(DateNotificationCell.self)
         tableView.register(TimerNotificationCell.self)
+        tableView.register(LocationNotificationCell.self)
     }
 }
 // MARK: - TableViewDataSource
@@ -61,16 +71,26 @@ extension HomeAdapter: UITableViewDataSource {
         if let dateDTO = dto as? DateNotificationDTO {
             let cell = tableView.dequeue(at: indexPath) as DateNotificationCell
             cell.setup(dateDTO)
+            cell.backgroundColor = .clear
             cell.buttonDidTap = { [weak self] sender in
                 self?.buttonDTODidTap?(sender, dto)
-                
             }
-            cell.backgroundColor = .clear
             return cell
         } else if let timerDTO = dto as? TimerNotificationDTO {
             let cell = tableView.dequeue(at: indexPath) as TimerNotificationCell
             cell.setup(timerDTO)
             cell.backgroundColor = .clear
+            cell.buttonDidTap = { [weak self] sender in
+                self?.buttonDTODidTap?(sender, dto)
+            }
+            return cell
+        } else if let locationDTO = dto as? LocationNotificationDTO {
+            let cell = tableView.dequeue(at: indexPath) as LocationNotificationCell
+            cell.setup(locationDTO)
+            cell.backgroundColor = .clear
+            cell.buttonDidTap = { [weak self] sender in
+                self?.buttonDTODidTap?(sender, dto)
+            }
             return cell
         }
         
@@ -85,20 +105,28 @@ extension HomeAdapter: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    func tableView(_ tableView: UITableView, 
+                   willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        return nil
+    }
+
     func tableView(_ tableView: UITableView,
                    heightForRowAt indexPath: IndexPath) -> CGFloat {
         let dto = dtoList[indexPath.section]
         
         if dto is DateNotificationDTO {
-            return 92.0 
+            return 87.0
         } else if dto is TimerNotificationDTO {
             return 130.0
+        } else if dto is LocationNotificationDTO {
+            return 247.0
         }
         return 0
     }
 }
 
 extension HomeAdapter: HomeAdapterProtocol {
+    
     func reloadData(_ dtoList: [any DTODescription]) {
         self.dtoList = dtoList
         tableView.reloadData()
@@ -110,7 +138,12 @@ extension HomeAdapter: HomeAdapterProtocol {
     
 }
     
-
+extension HomeAdapter: NotificationFilterViewDelegate {
+    func notificationFilterView(_ filterView: NotificationFilterView,
+                                didSelect type: NotificationFilterType) {
+        filterDidSelect?(type)
+    }
+}
     
     
 

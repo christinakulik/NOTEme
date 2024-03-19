@@ -131,11 +131,12 @@ final class OnboardSecondStepVC: UIViewController {
         infoView.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview().inset(16.0)
             make.centerY.equalToSuperview()
+            make.bottom.equalTo(infoSecondStepLabel.snp.bottom)
            
         }
         
         infoSecondStepLabel.snp.makeConstraints { make in
-            make.horizontalEdges.top.bottom.equalToSuperview().inset(16.0)
+            make.horizontalEdges.top.equalToSuperview().inset(16.0)
         }
         
         typesImageView.snp.makeConstraints { make in

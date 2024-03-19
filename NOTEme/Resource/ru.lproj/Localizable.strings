@@ -111,6 +111,19 @@
 "createTimer_createButton" = "Создать";
 "createTimer_cancelButton" = "Отменить";
 
+//MARK: - CreateLocation
+"createLocation_titleLabel" = "Создать уведомление с локацией";
+"createLocation_title" = "Название";
+"createLocation_titlePlaceholder" = "Введите название";
+"createLocation_comment" = "Комментарий";
+"createLocation_commentPlaceholder" = "Введите комментарий";
+"createLocation_location" = "Локация";
+"createLocation_createButton" = "Создать";
+"createLocation_cancelButton" = "Отменить";
+"createLocation_selectButton" = "Выбраит";
+"createLocation_search" = "Поиск";
+"createLocation_notFoundLabel" = "Места не найдены";
+
 //MARK: - InputView
 "inputView_done" = "Отменить";
 "inputView_select" = "Выбрать";

@@ -45,11 +45,13 @@ final class MenuPopoverAdapter: NSObject, MenuPopoverAdapterProtocol {
     
 }
 extension MenuPopoverAdapter: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) 
+    -> Int {
         return actions.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)
+    -> UITableViewCell {
         let cell: MenuActionCell = tableView.dequeue(at: indexPath)
         cell.setup(actions[indexPath.row])
         return cell

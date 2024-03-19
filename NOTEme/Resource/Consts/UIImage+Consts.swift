@@ -13,16 +13,19 @@ extension UIImage {
     enum General {
         static let logo: UIImage = .init(named: "logo")!
     }
+    
     //MARK: - Onboarding
     enum Onboarding {
         static let step: UIImage = .init(named: "Step")!
     }
+    
     //MARK: - TabBar
     enum TabBar {
         static let home: UIImage = .init(named: "home")!
         static let profile: UIImage = .init(named: "profile")!
-        static let add: UIImage = .init(named: "add")!
+        static let add: UIImage = .init(named: "addNotifications")!
     }
+    
     //MARK: - Profile
     enum Profile {
         static let notifications: UIImage = .init(named: "notifications")!
@@ -30,6 +33,7 @@ extension UIImage {
         static let logout: UIImage = .init(named: "logout")!
     }
     
+    //MARK: - Popover
     enum Popover {
         static let calendar: UIImage = .init(named: "сalendar")!
         static let location: UIImage = .init(named: "location")!
@@ -37,11 +41,20 @@ extension UIImage {
         static let edit: UIImage = .init(named: "edit")!
         static let delete: UIImage = .init(named: "delete")!
     }
+    
     //MARK: - Home
     enum Home {
         static let editor: UIImage = .init(named: "editor")!
         static let imagePath: UIImage = .init(named: "imagePath")!
         static let location: UIImage = .init(named: "locationInCell")!
         static let timer: UIImage = .init(named: "timerInCell")!
+    }
+    
+    //MARK: - Location
+    enum Location {
+        static let defaultLocationImage: UIImage = .init(named: "defaultImage")!
+        static let locationIcon: UIImage = .init(named: "locationIconForCell")!
+        static let notPlaceFound: UIImage = .init(named: "NoPlace")!
+        static let region: UIImage = .init(named: "circleRegion")!
     }
 }

@@ -19,6 +19,9 @@ public struct LocationNotificationDTO: DTODescription {
     public var completedDate: Date?
     public var longitude: Double
     public var latitude: Double
+    public var deltalLongitude: Double
+    public var deltaLatitutde: Double
+    public var imagePath: String
     
     public init(date: Date,
                 identifier: String = UUID().uuidString,
@@ -26,7 +29,10 @@ public struct LocationNotificationDTO: DTODescription {
                 subtitle: String? = nil,
                 completedDate: Date? = nil,
                 longitude: Double,
-                latitude: Double) {
+                latitude: Double,
+                deltalLongitude: Double,
+                deltaLatitutde: Double,
+                imagePath: String) {
         self.date = date
         self.identifier = identifier
         self.title = title
@@ -34,6 +40,9 @@ public struct LocationNotificationDTO: DTODescription {
         self.completedDate = completedDate
         self.longitude = longitude
         self.latitude = latitude
+        self.deltalLongitude = deltalLongitude
+        self.deltaLatitutde = deltaLatitutde
+        self.imagePath = imagePath
     }
    
     
@@ -42,7 +51,8 @@ public struct LocationNotificationDTO: DTODescription {
         guard
             let identifier = mo.identifier,
             let title = mo.title,
-            let date = mo.date
+            let date = mo.date,
+            let imagePath = mo.imagePath
         else { return nil }
         
         return LocationNotificationDTO(date: date, 
@@ -51,6 +61,9 @@ public struct LocationNotificationDTO: DTODescription {
                                        subtitle: mo.subtitle,
                                        completedDate: mo.completedDate,
                                        longitude: mo.longitude,
-                                       latitude: mo.latitude)
+                                       latitude: mo.latitude,
+                                       deltalLongitude: mo.deltalLongitude,
+                                       deltaLatitutde: mo.deltaLatitutde,
+                                       imagePath: imagePath)
     }
 }

@@ -26,6 +26,9 @@ public class LocationNotificationMO: BaseNotificationMo {
         super.apply(dto: locationDTO)
         self.longitude = locationDTO.longitude
         self.latitude = locationDTO.latitude
+        self.deltalLongitude = locationDTO.deltalLongitude
+        self.deltaLatitutde = locationDTO.deltaLatitutde
+        self.imagePath = locationDTO.imagePath
     }
 }
 

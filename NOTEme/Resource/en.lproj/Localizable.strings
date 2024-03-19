@@ -57,7 +57,22 @@
 
 //MARK: - OnbordSecondStep
 "onbordSecondStep_screen_types_label" = "Different types!";
-"onbordSecondStep_screen_info_label" = "You can use 3 types of notifications <p style=\"margin-bottom: 0px;margin-left: 8px;\"><b>• Calendar</b> - choose the date, when you want to receive notification. <br><b>•  Location</b> - choose the region and notification will come after you enter it. <br><b>•  Timer</b> - set timer and after selected period you will receive the notification.";
+"onbordSecondStep_screen_info_label" = "<style>
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    margin: 0;
+    padding: 0;
+  }
+</style>
+You can use 3 types of notifications:
+<ul>
+    <li><strong>Calendar</strong> - choose the date, when you want to receive notification.</li>
+    <li><strong>Location</strong> - choose the region and notification will come after you enter it.</li>
+    <li><strong>Timer</strong> - set timer and after selected period you will receive the notification.</li>
+</ul>";
 "onbordSecondStep_screen_calendar_label" = "Calendar";
 "onbordSecondStep_screen_location_label" = "Location";
 "onbordSecondStep_screen_timer_label" = "Timer";
@@ -109,6 +124,20 @@
 "createTimer_commentPlaceholder" = "Enter Comment";
 "createTimer_createButton" = "Create";
 "createTimer_cancelButton" = "Cancel";
+
+
+//MARK: - CreateLocation
+"createLocation_titleLabel" = "Create Location Notification";
+"createLocation_title" = "Title";
+"createLocation_titlePlaceholder" = "Enter Title";
+"createLocation_comment" = "Comment";
+"createLocation_commentPlaceholder" = "Enter Comment";
+"createLocation_location" = "Location";
+"createLocation_createButton" = "Create";
+"createLocation_cancelButton" = "Cancel";
+"createLocation_selectButton" = "Select";
+"createLocation_search" = "Search";
+"createLocation_notFoundLabel" = "No places found";
 
 //MARK: - InputView
 "inputView_done" = "Cancel";

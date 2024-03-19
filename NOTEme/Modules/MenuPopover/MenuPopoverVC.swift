@@ -113,7 +113,6 @@ final class MenuPopoverVC: UIViewController {
             make.horizontalEdges.equalToSuperview()
             make.verticalEdges.equalTo(
                 self.view.safeAreaLayoutGuide.snp.verticalEdges)
-            make.height.equalTo(adapter.contentHeight)
         }
     }
     
@@ -122,10 +121,11 @@ final class MenuPopoverVC: UIViewController {
                                       height: adapter.contentHeight)
         popoverPresentationController?.sourceView = sourceView
         popoverPresentationController?.delegate = self
-        popoverPresentationController?.sourceRect = CGRect(x: sourceView.bounds.midX,
-                                                           y: sourceView.bounds.midY,
-                                                           width: .zero,
-                                                           height: .zero)
+        popoverPresentationController?.sourceRect = 
+        CGRect(x: sourceView.bounds.midX,
+               y: sourceView.bounds.midY,
+               width: .zero,
+               height: .zero)
     }
 }
 

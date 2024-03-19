@@ -54,7 +54,6 @@ final class CoreDataService {
             do {
                 try context.save()
                 completion?(true)
-                print("Entity created successfully.")
             } catch {
                 let nserror = error as NSError
                 completion?(false)

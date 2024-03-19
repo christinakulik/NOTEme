@@ -68,38 +68,20 @@ class LineTextView: UIView {
         set { textView.text = newValue }
     }
     
-    
     var placeholder: String? {
         didSet {
-            if let placeholder = placeholder {
-                if textView.text.isEmpty {
-                    let attributes: [NSAttributedString.Key: Any] =
-                    [.foregroundColor: UIColor.appGrayText,
-                     .font: UIFont.appFont.withSize(15.0)]
-                    textView.attributedText =
-                    NSAttributedString(string: placeholder,
-                                       attributes: attributes)
-                }
+            // Обновите текст и цвет textView в соответствии с placeholder
+            if let placeholder = placeholder, textView.text.isEmpty {
+                textView.text = placeholder
+                textView.textColor = .lightGray
             } else {
-                textView.attributedText = nil
+                textView.text = nil
+                textView.textColor = .appText
             }
         }
     }
     
     weak var delegate: LineTextViewDelegate?
-    
-//    func textViewDidChange(_ textView: UITextView) {
-//        if textView.text.isEmpty {
-//            let attributes: [NSAttributedString.Key: Any] =
-//            [.foregroundColor: UIColor.gray,
-//             .font: UIFont.systemFont(ofSize: 14)]
-//            textView.attributedText =
-//            NSAttributedString(string: placeholder ?? "",
-//                               attributes: attributes)
-//        } else if textView.attributedText.string == placeholder {
-//            textView.attributedText = nil
-//        }
-//    }
     
     init() {
         super.init(frame: .zero)
@@ -114,9 +96,6 @@ class LineTextView: UIView {
     private func commonInit() {
         setupUI()
         setupConstraints()
-        let attributes: [NSAttributedString.Key: Any] =
-        [.foregroundColor: UIColor.appText]
-        textView.typingAttributes = attributes
     }
     
     private func setupUI() {
@@ -137,42 +116,64 @@ class LineTextView: UIView {
             make.top.equalTo(titleLabel.snp.bottom).inset(-4.0)
             make.horizontalEdges.equalToSuperview()
             make.height.equalTo(68.0)
+ 
         }
         
         bottomSeparator.snp.makeConstraints { make in
-            make.top.equalTo(textView.snp.bottom).inset(-4.0)
+            make.top.equalTo(textView.snp.bottom)
             make.horizontalEdges.equalToSuperview()
             make.height.equalTo(1.0)
+            make.bottom.equalToSuperview()
         }
         
         topSeparator.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).inset(-4.0)
+            make.top.equalTo(textView.snp.top)
             make.horizontalEdges.equalToSuperview()
             make.height.equalTo(1.0)
         }
         
         rightSeparator.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).inset(-4.0)
-            make.bottom.equalTo(textView.snp.bottom).inset(-4.0)
+            make.bottom.equalTo(textView.snp.bottom)
             make.width.equalTo(1.0)
             make.trailing.equalToSuperview()
         }
         
         leftSeparator.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).inset(-4.0)
-            make.bottom.equalTo(textView.snp.bottom).inset(-4.0)
+            make.bottom.equalTo(textView.snp.bottom)
             make.width.equalTo(1.0)
             make.leading.equalToSuperview()
+        }
+    }
+    
+    // В методе textViewDidBeginEditing проверьте, содержит ли textView текст-заполнитель, и очистите его, если да
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.text == placeholder {
+            textView.text = nil
+            textView.textColor = .appText
+        }
+    }
+
+    // В методе textViewDidEndEditing проверьте, пустой ли textView, и добавьте текст-заполнитель, если да
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = placeholder
+            textView.textColor = .lightGray
         }
     }
 }
 
 extension LineTextView: UITextViewDelegate {
     func textView(_ textView: UITextView,
-                   shouldChangeTextIn range: NSRange,
-                   replacementText text: String) -> Bool {
-        return delegate?.lineTextView?(self,
-                                        shouldChangeTextIn: range,
-                                        replacementText: text) ?? true
+                       shouldChangeTextIn range: NSRange,
+                       replacementText text: String) -> Bool {
+        if textView.text == placeholder && !text.isEmpty {
+            return false
+        } else {
+            return delegate?.lineTextView?(self,
+                                            shouldChangeTextIn: range,
+                                            replacementText: text) ?? true
+        }
     }
 }

@@ -12,9 +12,9 @@ protocol TimerNotificationViewModelProtocol: AnyObject {
     
     var title: String? { get set }
     var comment: String? { get set }
-    var timer: Date? { get set }
     var catchTitleError: ((String?) -> Void)? { get set }
     var catchTimerError: ((String?) -> Void)? { get set }
+    var timerString: String? { get set }
     func createDidTap()
     func cancelDidTap()
     func string(from date: Date) -> String?
@@ -130,7 +130,6 @@ final class TimerNotificationVC: UIViewController {
         infoView.addSubview(titleTextField)
         infoView.addSubview(timerTextField)
         infoView.addSubview(commentTextView)
-        
     }
     
     private func setupConstraints() {
@@ -178,7 +177,6 @@ final class TimerNotificationVC: UIViewController {
             make.leading.trailing.equalToSuperview().inset(16.0)
             make.bottom.lessThanOrEqualToSuperview().inset(16.0)
         }
-
     }
     
 
@@ -194,7 +192,6 @@ final class TimerNotificationVC: UIViewController {
     @objc private func revokeDidTap() {
         viewModel.cancelDidTap()
     }
-   
 }
 
 extension TimerNotificationVC: LineTextFieldDelegate {
@@ -228,18 +225,14 @@ extension TimerNotificationVC: CustomInputViewDelegate {
             timerTextField.text = dateString
         }
     }
-
+    
     func cancelDidTap() {
         timerTextField.text = nil
         view.endEditing(true)
-        
     }
     
     func selectDidTap() {
-        if let dateString = timerTextField.text,
-           let selectedDate = viewModel.date(from: dateString) {
-            viewModel.timer = selectedDate
-        }
+        viewModel.timerString = timerTextField.text
         view.endEditing(true)
     }
 }

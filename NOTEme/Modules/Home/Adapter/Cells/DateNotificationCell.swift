@@ -17,7 +17,6 @@ final class DateNotificationCell: UITableViewCell {
     private lazy var subTitleLabel: UILabel = .subTitleCellLabel()
     private lazy var dayLabel: UILabel = .dayLabel()
     private lazy var monthLabel: UILabel = .monthLabel()
-    
     private lazy var view: UIView = .blackView()
     private lazy var containerView: UIView = .plainViewWithShadow()
     
@@ -32,16 +31,6 @@ final class DateNotificationCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-       setupCell()
-   }
-
-    private func setupCell() {
-        backgroundColor = .clear
-      
     }
     
     @objc private func editDidTap(sender: UIButton) {
@@ -76,16 +65,21 @@ final class DateNotificationCell: UITableViewCell {
         
         view.addSubview(dayLabel)
         view.addSubview(monthLabel)
-        
-   
     }
+    
+    func highlightContainerView(_ highlight: Bool) {
+            UIView.animate(withDuration: 0.3, animations: {
+                self.containerView.backgroundColor =
+                highlight ? .gray : .white
+            })
+        }
     
     private func setupConstraints() {
         
         containerView.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview().inset(20.0)
-            make.top.equalToSuperview()
-            make.bottom.equalToSuperview().inset(10.0)
+            make.top.equalToSuperview().inset(5.0)
+            make.bottom.equalToSuperview().inset(5.0)
         }
         
         view.snp.makeConstraints { make in

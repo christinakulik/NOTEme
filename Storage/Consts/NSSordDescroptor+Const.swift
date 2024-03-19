@@ -15,5 +15,10 @@ public extension NSSortDescriptor {
             let dateKeyPath = #keyPath(BaseNotificationMo.date)
             return .init(key: dateKeyPath, ascending: false)
         }
+        
+        public static var byCompleted: NSSortDescriptor {
+            let completedKeyPath = #keyPath(BaseNotificationMo.completedDate)
+            return .init(key: completedKeyPath, ascending: true)
+        }
     }
 }
