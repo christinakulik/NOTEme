@@ -14,6 +14,8 @@ class RouteTableViewCell: UITableViewCell {
     private lazy var iconImageView: UIImageView =
     UIImageView(image: .Location.locationIcon)
     
+    private lazy var titleLabel: UILabel = .profileLabel()
+    private lazy var distanceLabel: UILabel = .profileLabel()
     private lazy var locationLabel: UILabel = .profileLabel()
     
     
@@ -28,11 +30,15 @@ class RouteTableViewCell: UITableViewCell {
     }
     
     func setup(_ place: Place) {
-            locationLabel.text = place.name
-        }
+        titleLabel.text = place.name
+        distanceLabel.text = "\(place.distance)"
+        locationLabel.text = place.address
+    }
     
     func setupUI() {
         contentView.addSubview(iconImageView)
+        contentView.addSubview(titleLabel)
+        contentView.addSubview(distanceLabel)
         contentView.addSubview(locationLabel)
      
     }
@@ -45,9 +51,13 @@ class RouteTableViewCell: UITableViewCell {
             make.centerY.equalToSuperview()
         }
     
-        locationLabel.snp.makeConstraints { make in
+        titleLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().inset(-2.0)
             make.top.equalToSuperview().inset(16.0)
+        }
+        
+        distanceLabel.snp.makeConstraints { make in
+            make.leading.equalTo( titleLabel.snp.trailing).inset(-2)
         }
         
     }

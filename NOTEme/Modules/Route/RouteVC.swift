@@ -10,16 +10,18 @@ import SnapKit
 import MapKit
 
 @objc protocol RouteViewModelProtocol: AnyObject {
-    func selectDidTap(mapView: MKMapView, captureView: UIView)
+    var locationDidSelect: ((CLLocationCoordinate2D) -> Void)? { get set }
+    var screenshotDidChanged: ((UIImage?) -> Void)? { get set }
+    var isSelected: Bool { get }
+    func selectDidTap(mapView: MKMapView, regionView: UIView)
     @objc func cancelDidTap()
     func setDefaultMapPosition(for mapView: MKMapView)
     func makeScreenshot(_ view: UIView,
                         mapView: MKMapView,
-                        captureView: UIView)
-    func searchForNearbyPlaces(coordinate: CLLocationCoordinate2D)
-    var screenshotDidChanged: ((UIImage?) -> Void)? { get set }
-    var isSelected: Bool { get }
+                        regionView: UIView)
+    func makeTableView() -> UITableView
     
+    func searchPlaces(query: String)
 }
 
 final class RouteVC: UIViewController {
@@ -42,6 +44,14 @@ final class RouteVC: UIViewController {
         return mapView
     }()
     
+    private lazy var searchBar: UISearchBar = {
+           let searchBar = UISearchBar()
+           searchBar.placeholder = "Search"
+           searchBar.delegate = self
+           searchBar.showsCancelButton = true
+           return searchBar
+       }()
+    
     private lazy var regionImageView: UIImageView =
     UIImageView(image: .Location.region)
     
@@ -52,11 +62,11 @@ final class RouteVC: UIViewController {
         return imageView
     }()
     
-    private lazy var searchBarView: SearchBarView = {
-        let view = SearchBarView()
-        view.delegate = self
-        return view
-    }()
+//    private lazy var searchBarView: SearchBarView = {
+//        let view = SearchBarView()
+//        view.delegate = self
+//        return view
+//    }()
     
     private lazy var selectButton: UIButton =
         .yellowRoundedButton(L10n.selectButton)
@@ -67,6 +77,7 @@ final class RouteVC: UIViewController {
         .withAction(viewModel,
                     #selector(RouteViewModelProtocol.cancelDidTap))
     
+    private lazy var tableView: UITableView = viewModel.makeTableView()
     
     private var viewModel: RouteViewModelProtocol
     
@@ -93,6 +104,7 @@ final class RouteVC: UIViewController {
     private func setupUI() {
         
         view.backgroundColor = .appBlack
+        view.addSubview(searchBar)
         view.addSubview(contentView)
         view.addSubview(cancelButton)
         view.addSubview(selectButton)
@@ -100,7 +112,7 @@ final class RouteVC: UIViewController {
         contentView.addSubview(mapView)
         contentView.addSubview(regionImageView)
         contentView.addSubview(screenshotImageView)
-        view.addSubview(searchBarView)
+//        view.addSubview(searchBarView)
     }
     
     private func setupConstraints() {
@@ -109,6 +121,12 @@ final class RouteVC: UIViewController {
             make.horizontalEdges.equalToSuperview()
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
             make.bottom.equalTo(selectButton.snp.centerY)
+        }
+        
+        searchBar.snp.makeConstraints { make in
+            make.height.equalTo(56)
+            make.bottom.equalToSuperview()
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
         }
         
         cancelButton.snp.makeConstraints { make in
@@ -139,11 +157,11 @@ final class RouteVC: UIViewController {
             make.centerY.equalToSuperview()
         }
         
-        searchBarView.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-            make.leading.trailing.equalToSuperview()
-            make.height.equalTo(55.0)
-        }
+//        searchBarView.snp.makeConstraints { make in
+//            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+//            make.leading.trailing.equalToSuperview()
+//            make.height.equalTo(55.0)
+//        }
     }
     
     private func askPermission() {
@@ -153,7 +171,7 @@ final class RouteVC: UIViewController {
     @objc private func createDidTap() {
         if viewModel.isSelected  {
                     viewModel.selectDidTap(mapView: mapView,
-                                            captureView: regionImageView)
+                                            regionView: regionImageView)
                 } else {
                     makeScreenshot()
                 }
@@ -161,7 +179,7 @@ final class RouteVC: UIViewController {
     
     private func makeScreenshot() {
            viewModel.makeScreenshot(view, mapView: mapView,
-                                  captureView: regionImageView)
+                                  regionView: regionImageView)
        }
     
     private func bind() {
@@ -174,52 +192,19 @@ final class RouteVC: UIViewController {
         }
 }
 
-extension RouteVC: SearchBarViewDelegate {
-    func didSelectPlace(_ mapItem: Place) {
-        
+extension RouteVC: UISearchBarDelegate {
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        tableView.isHidden = true
     }
     
-    func searchForNearbyPlaces(coordinate: CLLocationCoordinate2D) {
-        viewModel.searchForNearbyPlaces(coordinate: coordinate)
-    }
-
     
-    func didBeginEditing() {
-        searchBarView.snp.updateConstraints { make in
-            make.leading.trailing.equalToSuperview()
-            make.height.equalTo(650.0)
-        }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        tableView.isHidden = false
+        viewModel.searchPlaces(searchText)
     }
     
-    func didCancel() {
-        // Handle cancel button tap
-    }
-    
-    func didSelectPlace(_ mapItem: MKMapItem) {
-        viewModel.searchForNearbyPlaces(coordinate: mapItem.placemark.coordinate)
-            if let coordinate = mapItem.placemark.location?.coordinate {
-                let region = MKCoordinateRegion(center: coordinate, 
-                                                latitudinalMeters: 1000,
-                                                longitudinalMeters: 1000)
-                mapView.setRegion(region, animated: true)
-            }
-        }
-}
-extension RouteVC: RouteModuleDelegate {
-    var locationDidSet: ((LocationData) -> Void)? {
-        get {
-            return nil
-        }
-        set {
-            
-        }
-    }
-    
- 
-    
-    func didFindNearbyPlaces(_ results: [NearByResponseModel.Result]) {
-        let places = results.map { Place(name: $0.name, coordinate: CLLocationCoordinate2D(latitude: $0.geocodes.main.latitude, longitude: $0.geocodes.main.longitude)) }
-        searchBarView.places = places
-        searchBarView.tableView.reloadData()
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        tableView.isHidden = false
     }
 }
