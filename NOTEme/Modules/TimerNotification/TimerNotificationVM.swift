@@ -17,6 +17,10 @@ protocol TimerNotificationStorageProtocol {
     func createTimerNotification(dto: TimerNotificationDTO)
 }
 
+protocol TimerNotificationServiceUseCase {
+    func makeTimerNotification(dto: TimerNotificationDTO)
+}
+
 final class TimerNotificationVM: TimerNotificationViewModelProtocol {
     
     private enum L10n {
@@ -26,6 +30,7 @@ final class TimerNotificationVM: TimerNotificationViewModelProtocol {
     
     private weak var coordinator: TimerNotificationCoordinatorProtocol?
     private var storage: TimerNotificationStorageProtocol
+    private let notificationService: TimerNotificationServiceUseCase
     
     var timerString: String?
     var title: String? {
@@ -40,9 +45,11 @@ final class TimerNotificationVM: TimerNotificationViewModelProtocol {
     private var errorHandler: ((String?) -> Void)?
     
     init(coordinator: TimerNotificationCoordinatorProtocol,
-         storage: TimerNotificationStorageProtocol) {
+         storage: TimerNotificationStorageProtocol,
+         notificationService: TimerNotificationServiceUseCase) {
         self.coordinator = coordinator
         self.storage = storage
+        self.notificationService = notificationService
         
     }
     
@@ -100,6 +107,7 @@ final class TimerNotificationVM: TimerNotificationViewModelProtocol {
                                        subtitle: comment,
                                        targetTime: endTime)
         storage.createTimerNotification(dto: dto)
+        notificationService.makeTimerNotification(dto: dto)
         coordinator?.finish()
     }
     

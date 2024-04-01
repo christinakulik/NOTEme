@@ -57,7 +57,6 @@ public class NotificationStorage<DTO: DTODescription> {
                     .first
             else { return }
             mo.apply(dto: dto)
-            
             CoreDataService.shared.saveContext(context: context,
                                                completion: completion)
         }
@@ -79,17 +78,12 @@ public class NotificationStorage<DTO: DTODescription> {
         context.perform { [weak self] in
             guard let mo = self?.fetchMO(predicate:
                     .Notification.notification(byId: dto.identifier)).first
-            else {
-                completion?(false)
-                return
-            }
+            else { return }
             context.delete(mo)
-            
             CoreDataService.shared.saveContext(context: context,
                                                completion: completion)
         }
     }
-    
 }
 
 

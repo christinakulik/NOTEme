@@ -9,6 +9,7 @@ import UIKit
 import Storage
 import CoreData
 import SnapKit
+import CoreLocation
 
 protocol HomeViewModelProtocol: AnyObject  {
     func viewDidLoad()
@@ -42,8 +43,13 @@ final class HomeVC: UIViewController {
         
         setupUI()
         setupConstraints()
-
-}
+        
+        let service =  LocationNetworkService()
+        service.getNearBy(coordinates: .init(latitude: 53.925900,
+                                             longitude: 27.592706)) { array in
+            print(array.map { $0.name })
+        }
+    }
     // MARK: - Private Methods
     private func setupUI() {
         view.backgroundColor = .appGray

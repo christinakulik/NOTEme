@@ -22,16 +22,26 @@ protocol HomeCoordinatorProtocol: AnyObject {
     func startEdit(dto: any DTODescription)
 }
 
+protocol HomeStorageUseCase {
+    func delete(dto: any DTODescription)
+}
+
+protocol HomeFRCSrviceUseCase {
+    var fetchedDTOs: [any DTODescription] { get }
+    var didChangeContent: (([any DTODescription]) -> Void)? { get set }
+    func startHandle()
+}
+
 final class HomeVM: HomeViewModelProtocol {
     
     var tableView: UITableView?
     
     var showPopover: ((_ sender: UIButton) -> Void)?
    
-    private let frcService: FRCService<BaseNotificationDTO>
+    private var frcService: HomeFRCSrviceUseCase
     private let adapter: HomeAdapterProtocol
     private weak var coordinator: HomeCoordinatorProtocol?
-    private let storage: AllNotificationStorage
+    private let storage: HomeStorageUseCase
     private var newDTO: (any DTODescription)?
     
     private var selectedFilter: NotificationFilterType = .all {
@@ -40,10 +50,10 @@ final class HomeVM: HomeViewModelProtocol {
         }
     }
     
-    init(frcService: FRCService<BaseNotificationDTO>,
+    init(frcService: HomeFRCSrviceUseCase,
          adapter: HomeAdapterProtocol,
          coordinator: HomeCoordinatorProtocol,
-         storage: AllNotificationStorage) {
+         storage: HomeStorageUseCase ) {
         self.frcService = frcService
         self.adapter = adapter
         self.coordinator = coordinator
@@ -51,18 +61,19 @@ final class HomeVM: HomeViewModelProtocol {
         
         bind()
         
-        frcService.startHandle()
-        adapter.reloadData(frcService.fetchedDTOs)
+//        frcService.startHandle()
     }
     
     func viewDidLoad() {
         frcService.startHandle()
+        adapter.reloadData(frcService.fetchedDTOs)
     }
     
     func makeTableView() -> UITableView {
         adapter.makeTableView()
     }
     
+    // MARK: - Private Methods
     private func filterResults() -> [any DTODescription] {
         return frcService.fetchedDTOs.filter { dto in
             switch selectedFilter {
@@ -78,7 +89,6 @@ final class HomeVM: HomeViewModelProtocol {
         }
     }
     
-    // MARK: - Private Methods
     private func bind() {
         frcService.didChangeContent = { [weak self] _ in
             self?.adapter.reloadData(self?.filterResults() ?? [])

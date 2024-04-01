@@ -17,6 +17,7 @@ final class DateNotificationAssembler {
         
         let vm = DateNotificationVM(coordinator: coordinator,
                                     storage: DateNotificationStorage(),
+                                    notificationCenter: NotificationService(),
                                     dtoToEdit: dtoToEdit)
         
         return DateNotificationVC(viewModel: vm)

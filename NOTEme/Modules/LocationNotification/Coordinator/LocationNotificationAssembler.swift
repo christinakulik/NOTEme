@@ -18,7 +18,7 @@ final class LocationNotificationAssembler {
         
         let vm = LocationNotificationVM(coordinator: coordinator,
                                         storage: LocationNotificationStorage(),
-                                        dtoToEdit: dtoToEdit)
+                                        dtoToEdit: dtoToEdit, notificationService: NotificationService())
         
         return LocationNotificationVC(viewModel: vm)
     }

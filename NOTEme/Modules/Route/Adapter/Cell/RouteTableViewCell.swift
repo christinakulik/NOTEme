@@ -27,9 +27,9 @@ class RouteTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setup(_ type: MKMapItem) {
-        locationLabel.text = type.name
-    }
+    func setup(_ place: Place) {
+            locationLabel.text = place.name
+        }
     
     func setupUI() {
         contentView.addSubview(iconImageView)
@@ -52,3 +52,4 @@ class RouteTableViewCell: UITableViewCell {
         
     }
 }
+

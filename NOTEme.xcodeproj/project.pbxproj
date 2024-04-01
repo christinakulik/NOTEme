@@ -11,6 +11,24 @@
 		CF205BF62BA3ABD40065FF68 /* NotificationFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF205BF52BA3ABD40065FF68 /* NotificationFilterCell.swift */; };
 		CF205BF82BA3B5240065FF68 /* String+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF205BF72BA3B5240065FF68 /* String+Size.swift */; };
 		CF205BFB2BA9A0ED0065FF68 /* ImageStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF205BFA2BA9A0ED0065FF68 /* ImageStorageService.swift */; };
+		CF205BFE2BA9F4410065FF68 /* ApiPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF205BFD2BA9F4410065FF68 /* ApiPaths.swift */; };
+		CF205C012BA9F4D30065FF68 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF205C002BA9F4D30065FF68 /* NetworkRequest.swift */; };
+		CF205C032BA9F5AF0065FF68 /* NetworkSessionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF205C022BA9F5AF0065FF68 /* NetworkSessionProvider.swift */; };
+		CF205C052BA9F8C90065FF68 /* NearByRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF205C042BA9F8C90065FF68 /* NearByRequest.swift */; };
+		CF205C082BAA08E70065FF68 /* LocationNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF205C072BAA08E70065FF68 /* LocationNetworkService.swift */; };
+		CF205C142BB2BD260065FF68 /* SearchPlaceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF205C132BB2BD260065FF68 /* SearchPlaceRequest.swift */; };
+		CF205C162BB2E2FE0065FF68 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF205C152BB2E2FE0065FF68 /* Place.swift */; };
+		CF205C182BB2F68E0065FF68 /* NotificationService+DateNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF205C172BB2F68E0065FF68 /* NotificationService+DateNotification.swift */; };
+		CF205C1A2BB2F7200065FF68 /* NotificationService+TimerNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF205C192BB2F7200065FF68 /* NotificationService+TimerNotification.swift */; };
+		CF205C292BB32BCE0065FF68 /* InputValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF205C282BB32BCE0065FF68 /* InputValidatorTests.swift */; };
+		CF205C2B2BB331D10065FF68 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF205C2A2BB331D10065FF68 /* HomeViewModelTests.swift */; };
+		CF205C2F2BB3330A0065FF68 /* HomeAdapterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF205C2E2BB3330A0065FF68 /* HomeAdapterSpy.swift */; };
+		CF205C312BB333BD0065FF68 /* HomeCoordinatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF205C302BB333BD0065FF68 /* HomeCoordinatorSpy.swift */; };
+		CF205C332BB334110065FF68 /* HomeStorageSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF205C322BB334110065FF68 /* HomeStorageSpy.swift */; };
+		CF205C362BB334DF0065FF68 /* AllNotificationStorage+Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF205C352BB334DF0065FF68 /* AllNotificationStorage+Home.swift */; };
+		CF205C382BB336040065FF68 /* FRCService+Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF205C372BB336040065FF68 /* FRCService+Home.swift */; };
+		CF205C3A2BB336D30065FF68 /* HomeFRCServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF205C392BB336D30065FF68 /* HomeFRCServiceSpy.swift */; };
+		CF205C3D2BB33DF90065FF68 /* HomeDTOMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF205C3C2BB33DF90065FF68 /* HomeDTOMock.swift */; };
 		CF5B89D52B1D3E3B0080EF47 /* String+Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5B89D42B1D3E3B0080EF47 /* String+Attributes.swift */; };
 		CF5CF20F2B9E0AF600DBE981 /* RouteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5CF20E2B9E0AF600DBE981 /* RouteVC.swift */; };
 		CF5CF2112B9E0B0400DBE981 /* RouteVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5CF2102B9E0B0400DBE981 /* RouteVM.swift */; };
@@ -175,6 +193,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		CF205C232BB32B2F0065FF68 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFD583992AF0195D000949A6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CFD583A02AF0195D000949A6;
+			remoteInfo = NOTEme;
+		};
 		CF64AA932B6B09C900F14710 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CFD583992AF0195D000949A6 /* Project object */;
@@ -203,6 +228,25 @@
 		CF205BF52BA3ABD40065FF68 /* NotificationFilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationFilterCell.swift; sourceTree = "<group>"; };
 		CF205BF72BA3B5240065FF68 /* String+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Size.swift"; sourceTree = "<group>"; };
 		CF205BFA2BA9A0ED0065FF68 /* ImageStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStorageService.swift; sourceTree = "<group>"; };
+		CF205BFD2BA9F4410065FF68 /* ApiPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiPaths.swift; sourceTree = "<group>"; };
+		CF205C002BA9F4D30065FF68 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		CF205C022BA9F5AF0065FF68 /* NetworkSessionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSessionProvider.swift; sourceTree = "<group>"; };
+		CF205C042BA9F8C90065FF68 /* NearByRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearByRequest.swift; sourceTree = "<group>"; };
+		CF205C072BAA08E70065FF68 /* LocationNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationNetworkService.swift; sourceTree = "<group>"; };
+		CF205C132BB2BD260065FF68 /* SearchPlaceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceRequest.swift; sourceTree = "<group>"; };
+		CF205C152BB2E2FE0065FF68 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		CF205C172BB2F68E0065FF68 /* NotificationService+DateNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationService+DateNotification.swift"; sourceTree = "<group>"; };
+		CF205C192BB2F7200065FF68 /* NotificationService+TimerNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationService+TimerNotification.swift"; sourceTree = "<group>"; };
+		CF205C1F2BB32B2E0065FF68 /* NOTEmeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NOTEmeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF205C282BB32BCE0065FF68 /* InputValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputValidatorTests.swift; sourceTree = "<group>"; };
+		CF205C2A2BB331D10065FF68 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
+		CF205C2E2BB3330A0065FF68 /* HomeAdapterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAdapterSpy.swift; sourceTree = "<group>"; };
+		CF205C302BB333BD0065FF68 /* HomeCoordinatorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinatorSpy.swift; sourceTree = "<group>"; };
+		CF205C322BB334110065FF68 /* HomeStorageSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStorageSpy.swift; sourceTree = "<group>"; };
+		CF205C352BB334DF0065FF68 /* AllNotificationStorage+Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AllNotificationStorage+Home.swift"; sourceTree = "<group>"; };
+		CF205C372BB336040065FF68 /* FRCService+Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FRCService+Home.swift"; sourceTree = "<group>"; };
+		CF205C392BB336D30065FF68 /* HomeFRCServiceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFRCServiceSpy.swift; sourceTree = "<group>"; };
+		CF205C3C2BB33DF90065FF68 /* HomeDTOMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDTOMock.swift; sourceTree = "<group>"; };
 		CF5B89D42B1D3E3B0080EF47 /* String+Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Attributes.swift"; sourceTree = "<group>"; };
 		CF5CF20E2B9E0AF600DBE981 /* RouteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteVC.swift; sourceTree = "<group>"; };
 		CF5CF2102B9E0B0400DBE981 /* RouteVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteVM.swift; sourceTree = "<group>"; };
@@ -360,6 +404,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		CF205C1C2BB32B2E0065FF68 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CF64AA8C2B6B09C900F14710 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -402,6 +453,82 @@
 				CF205BFA2BA9A0ED0065FF68 /* ImageStorageService.swift */,
 			);
 			path = ImageStorageService;
+			sourceTree = "<group>";
+		};
+		CF205BFC2BA9F41E0065FF68 /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				CF205C062BAA08C60065FF68 /* NetworkServices */,
+				CF205BFF2BA9F4B80065FF68 /* Requests */,
+				CF205BFD2BA9F4410065FF68 /* ApiPaths.swift */,
+				CF205C002BA9F4D30065FF68 /* NetworkRequest.swift */,
+				CF205C022BA9F5AF0065FF68 /* NetworkSessionProvider.swift */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		CF205BFF2BA9F4B80065FF68 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				CF205C042BA9F8C90065FF68 /* NearByRequest.swift */,
+				CF205C132BB2BD260065FF68 /* SearchPlaceRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		CF205C062BAA08C60065FF68 /* NetworkServices */ = {
+			isa = PBXGroup;
+			children = (
+				CF205C072BAA08E70065FF68 /* LocationNetworkService.swift */,
+			);
+			path = NetworkServices;
+			sourceTree = "<group>";
+		};
+		CF205C202BB32B2E0065FF68 /* NOTEmeTests */ = {
+			isa = PBXGroup;
+			children = (
+				CF205C2C2BB332AF0065FF68 /* HomeViewModel */,
+				CF205C282BB32BCE0065FF68 /* InputValidatorTests.swift */,
+			);
+			path = NOTEmeTests;
+			sourceTree = "<group>";
+		};
+		CF205C2C2BB332AF0065FF68 /* HomeViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CF205C2D2BB332BE0065FF68 /* Spies */,
+				CF205C2A2BB331D10065FF68 /* HomeViewModelTests.swift */,
+			);
+			path = HomeViewModel;
+			sourceTree = "<group>";
+		};
+		CF205C2D2BB332BE0065FF68 /* Spies */ = {
+			isa = PBXGroup;
+			children = (
+				CF205C3B2BB33DD60065FF68 /* Mocks */,
+				CF205C2E2BB3330A0065FF68 /* HomeAdapterSpy.swift */,
+				CF205C302BB333BD0065FF68 /* HomeCoordinatorSpy.swift */,
+				CF205C322BB334110065FF68 /* HomeStorageSpy.swift */,
+				CF205C392BB336D30065FF68 /* HomeFRCServiceSpy.swift */,
+			);
+			path = Spies;
+			sourceTree = "<group>";
+		};
+		CF205C342BB334C50065FF68 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				CF205C352BB334DF0065FF68 /* AllNotificationStorage+Home.swift */,
+				CF205C372BB336040065FF68 /* FRCService+Home.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		CF205C3B2BB33DD60065FF68 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				CF205C3C2BB33DF90065FF68 /* HomeDTOMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		CF5B89D32B1A87610080EF47 /* Builder */ = {
@@ -462,6 +589,7 @@
 			isa = PBXGroup;
 			children = (
 				CF5CF2212BA09DBC00DBE981 /* LocationData.swift */,
+				CF205C152BB2E2FE0065FF68 /* Place.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -702,6 +830,7 @@
 			isa = PBXGroup;
 			children = (
 				CF64AB062B7D95CE00F14710 /* Storage+DateNotification.swift */,
+				CF205C172BB2F68E0065FF68 /* NotificationService+DateNotification.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -710,6 +839,7 @@
 			isa = PBXGroup;
 			children = (
 				CF64AB0C2B82CAA700F14710 /* Storage+TimerNotification.swift */,
+				CF205C192BB2F7200065FF68 /* NotificationService+TimerNotification.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -820,6 +950,7 @@
 		CF7379A42B28D2BB00E77BF0 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				CF205C342BB334C50065FF68 /* UseCases */,
 				CF64AB122B893D0800F14710 /* Adapter */,
 				CF7379A52B28D2C600E77BF0 /* Coordinator */,
 				CF7379A62B28D2EA00E77BF0 /* HomeVC.swift */,
@@ -863,6 +994,7 @@
 			children = (
 				CFD583A32AF0195D000949A6 /* NOTEme */,
 				CF64AA902B6B09C900F14710 /* Storage */,
+				CF205C202BB32B2E0065FF68 /* NOTEmeTests */,
 				CFD583A22AF0195D000949A6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -872,6 +1004,7 @@
 			children = (
 				CFD583A12AF0195D000949A6 /* NOTEme.app */,
 				CF64AA8F2B6B09C900F14710 /* Storage.framework */,
+				CF205C1F2BB32B2E0065FF68 /* NOTEmeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -894,7 +1027,6 @@
 		CFD583B82AF019C6000949A6 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				CF5CF20D2B9E09C900DBE981 /* Route */,
 				CF64AB1D2B8E405300F14710 /* MenuPopover */,
 				CFD583B92AF019CC000949A6 /* Auth */,
 				CFD584512B165417000949A6 /* Onboarding */,
@@ -905,6 +1037,7 @@
 				CF64AAD52B75006300F14710 /* DateNotification */,
 				CF64AAD62B75006F00F14710 /* TimerNotification */,
 				CF64AB272B9740BF00F14710 /* LocationNotification */,
+				CF5CF20D2B9E09C900DBE981 /* Route */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -1025,6 +1158,7 @@
 		CFD583EF2AFEA14B000949A6 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CF205BFC2BA9F41E0065FF68 /* NetworkLayer */,
 				CF205BF92BA9A0D20065FF68 /* ImageStorageService */,
 				CF5CF2232BA1AF1000DBE981 /* NotificationService */,
 				CF64AA7B2B56EFF100F14710 /* WindowManager */,
@@ -1229,6 +1363,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		CF205C1E2BB32B2E0065FF68 /* NOTEmeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF205C252BB32B2F0065FF68 /* Build configuration list for PBXNativeTarget "NOTEmeTests" */;
+			buildPhases = (
+				CF205C1B2BB32B2E0065FF68 /* Sources */,
+				CF205C1C2BB32B2E0065FF68 /* Frameworks */,
+				CF205C1D2BB32B2E0065FF68 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CF205C242BB32B2F0065FF68 /* PBXTargetDependency */,
+			);
+			name = NOTEmeTests;
+			productName = NOTEmeTests;
+			productReference = CF205C1F2BB32B2E0065FF68 /* NOTEmeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		CF64AA8E2B6B09C900F14710 /* Storage */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF64AA972B6B09C900F14710 /* Build configuration list for PBXNativeTarget "Storage" */;
@@ -1284,9 +1436,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1500;
+				LastSwiftUpdateCheck = 1520;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					CF205C1E2BB32B2E0065FF68 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = CFD583A02AF0195D000949A6;
+					};
 					CF64AA8E2B6B09C900F14710 = {
 						CreatedOnToolsVersion = 15.2;
 						LastSwiftMigration = 1520;
@@ -1316,11 +1472,19 @@
 			targets = (
 				CFD583A02AF0195D000949A6 /* NOTEme */,
 				CF64AA8E2B6B09C900F14710 /* Storage */,
+				CF205C1E2BB32B2E0065FF68 /* NOTEmeTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		CF205C1D2BB32B2E0065FF68 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CF64AA8D2B6B09C900F14710 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1342,6 +1506,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		CF205C1B2BB32B2E0065FF68 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF205C312BB333BD0065FF68 /* HomeCoordinatorSpy.swift in Sources */,
+				CF205C2F2BB3330A0065FF68 /* HomeAdapterSpy.swift in Sources */,
+				CF205C292BB32BCE0065FF68 /* InputValidatorTests.swift in Sources */,
+				CF205C3D2BB33DF90065FF68 /* HomeDTOMock.swift in Sources */,
+				CF205C3A2BB336D30065FF68 /* HomeFRCServiceSpy.swift in Sources */,
+				CF205C2B2BB331D10065FF68 /* HomeViewModelTests.swift in Sources */,
+				CF205C332BB334110065FF68 /* HomeStorageSpy.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CF64AA8B2B6B09C900F14710 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1398,6 +1576,7 @@
 				CFD584572B165675000949A6 /* OnboardFirstStepVM.swift in Sources */,
 				CF7379A92B28D31700E77BF0 /* HomeAseembler.swift in Sources */,
 				CF7379B62B2E608100E77BF0 /* ProfileCoordinator.swift in Sources */,
+				CF205C382BB336040065FF68 /* FRCService+Home.swift in Sources */,
 				CF5CF2192B9FBC8900DBE981 /* SearchBarView.swift in Sources */,
 				CF64AAD12B74FD5800F14710 /* PopoverVC.swift in Sources */,
 				CF64AAFE2B77AA3500F14710 /* LineTextView.swift in Sources */,
@@ -1413,6 +1592,7 @@
 				CF64AAED2B76B94300F14710 /* DateNotificationCoordinator.swift in Sources */,
 				CF7379B82B2E608E00E77BF0 /* ProfileAssembler.swift in Sources */,
 				CFD583CD2AF0672F000949A6 /* UIButton+Styles.swift in Sources */,
+				CF205BFE2BA9F4410065FF68 /* ApiPaths.swift in Sources */,
 				CF64AAF82B76B9C100F14710 /* TimerNotificationVM.swift in Sources */,
 				CF64AAE22B765F1700F14710 /* PopoverTableViewCell.swift in Sources */,
 				CF64AAD32B74FD6200F14710 /* PopoverVM.swift in Sources */,
@@ -1435,19 +1615,25 @@
 				CF7379882B25362000E77BF0 /* AuthService+Reset.swift in Sources */,
 				CF205BF32BA2F6990065FF68 /* NotificationFilterView.swift in Sources */,
 				CFD584112B0D124D000949A6 /* AppCoordinator.swift in Sources */,
+				CF205C012BA9F4D30065FF68 /* NetworkRequest.swift in Sources */,
+				CF205C082BAA08E70065FF68 /* LocationNetworkService.swift in Sources */,
 				CF64AB072B7D95CE00F14710 /* Storage+DateNotification.swift in Sources */,
+				CF205C362BB334DF0065FF68 /* AllNotificationStorage+Home.swift in Sources */,
 				CF73798D2B26728E00E77BF0 /* AuthService+Register.swift in Sources */,
 				CFD5842B2B153154000949A6 /* Builder.swift in Sources */,
 				CF64AAF62B76B9B300F14710 /* TimerNotificationVC.swift in Sources */,
+				CF205C1A2BB2F7200065FF68 /* NotificationService+TimerNotification.swift in Sources */,
 				CF7379912B27CFB400E77BF0 /* KeyboardHelper+Login.swift in Sources */,
 				CFD583A72AF0195D000949A6 /* SceneDelegate.swift in Sources */,
 				CF64AAF22B76B98900F14710 /* TimerNotificationCoordinator.swift in Sources */,
 				CF64AB262B8E465700F14710 /* MenuActionCell.swift in Sources */,
+				CF205C142BB2BD260065FF68 /* SearchPlaceRequest.swift in Sources */,
 				CFD584192B0D1B72000949A6 /* LoginCoordinator.swift in Sources */,
 				CF64AB1F2B8E406800F14710 /* MenuPopoverVC.swift in Sources */,
 				CF64AAE52B76872700F14710 /* PopoverRows.swift in Sources */,
 				CF64AACB2B73F56D00F14710 /* HomeVM.swift in Sources */,
 				CF7379B42B2E606C00E77BF0 /* ProfileVC.swift in Sources */,
+				CF205C032BA9F5AF0065FF68 /* NetworkSessionProvider.swift in Sources */,
 				CFD584012B083791000949A6 /* ResetAssembler.swift in Sources */,
 				CFF587C42B4B3CDC00D60712 /* AlertService+Profile.swift in Sources */,
 				CF64AB212B8E437300F14710 /* MenuPopoverBuilder.swift in Sources */,
@@ -1467,6 +1653,7 @@
 				CF64AB332B97446700F14710 /* Storage+LocationNotification.swift in Sources */,
 				CFD583DD2AF6FEA2000949A6 /* String+Locale.swift in Sources */,
 				CF5CF2222BA09DBC00DBE981 /* LocationData.swift in Sources */,
+				CF205C162BB2E2FE0065FF68 /* Place.swift in Sources */,
 				CFD583BB2AF019D9000949A6 /* LoginVC.swift in Sources */,
 				CFD584032B094BE0000949A6 /* InputValidator+Register.swift in Sources */,
 				CFD583F22AFEA1B7000949A6 /* InputValidator.swift in Sources */,
@@ -1481,6 +1668,8 @@
 				CFD584142B0D129D000949A6 /* Coordinator.swift in Sources */,
 				CFD583CB2AF01A8A000949A6 /* UIView+Styles.swift in Sources */,
 				CFD583FF2B08377C000949A6 /* ResetVM.swift in Sources */,
+				CF205C182BB2F68E0065FF68 /* NotificationService+DateNotification.swift in Sources */,
+				CF205C052BA9F8C90065FF68 /* NearByRequest.swift in Sources */,
 				CFD5841C2B0D24CA000949A6 /* RegisterCoordinator.swift in Sources */,
 				CF5B89D52B1D3E3B0080EF47 /* String+Attributes.swift in Sources */,
 				CFD583E52AFAA0E5000949A6 /* ResetVC.swift in Sources */,
@@ -1508,6 +1697,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		CF205C242BB32B2F0065FF68 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CFD583A02AF0195D000949A6 /* NOTEme */;
+			targetProxy = CF205C232BB32B2F0065FF68 /* PBXContainerItemProxy */;
+		};
 		CF64AA942B6B09C900F14710 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CF64AA8E2B6B09C900F14710 /* Storage */;
@@ -1528,6 +1722,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		CF205C262BB32B2F0065FF68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8F9Y94ZZ8K;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Course.NOTEmeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NOTEme.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NOTEme";
+			};
+			name = Debug;
+		};
+		CF205C272BB32B2F0065FF68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8F9Y94ZZ8K;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Course.NOTEmeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NOTEme.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NOTEme";
+			};
+			name = Release;
+		};
 		CF64AA982B6B09C900F14710 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1791,6 +2023,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CF205C252BB32B2F0065FF68 /* Build configuration list for PBXNativeTarget "NOTEmeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF205C262BB32B2F0065FF68 /* Debug */,
+				CF205C272BB32B2F0065FF68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CF64AA972B6B09C900F14710 /* Build configuration list for PBXNativeTarget "Storage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

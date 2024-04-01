@@ -11,13 +11,15 @@ import MapKit
 protocol SearchBarViewDelegate: AnyObject {
     func didBeginEditing()
     func didCancel()
-    func didSelectPlace(_ mapItem: MKMapItem)
+    func didSelectPlace(_ mapItem: Place)
+    func searchForNearbyPlaces(coordinate: CLLocationCoordinate2D)
 }
 
 class SearchBarView: UIView, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
     
     weak var delegate: SearchBarViewDelegate?
     private let searchBar = UISearchBar()
+    private lazy var locationManager: CLLocationManager = .init()
    
     private(set)  var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
@@ -25,7 +27,7 @@ class SearchBarView: UIView, UISearchBarDelegate, UITableViewDelegate, UITableVi
         return tableView
     }()
    
-    private var places: [MKMapItem] = []
+    var places: [Place] = []
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -63,6 +65,9 @@ class SearchBarView: UIView, UISearchBarDelegate, UITableViewDelegate, UITableVi
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchBar.showsCancelButton = true
         tableView.isHidden = false
+        if let userLocation = locationManager.location?.coordinate {
+                    delegate?.searchForNearbyPlaces(coordinate: userLocation)
+                }
         delegate?.didBeginEditing()
        
         tableView.reloadData()
@@ -82,7 +87,7 @@ class SearchBarView: UIView, UISearchBarDelegate, UITableViewDelegate, UITableVi
                     return
                 }
                 
-                self.places = response.mapItems
+//                self.places = response.mapItems
                 self.tableView.reloadData()
             }
         }
@@ -119,7 +124,5 @@ class SearchBarView: UIView, UISearchBarDelegate, UITableViewDelegate, UITableVi
             searchBar.text = ""
             searchBar.resignFirstResponder()
             tableView.isHidden = true
-         
         }
-   
 }

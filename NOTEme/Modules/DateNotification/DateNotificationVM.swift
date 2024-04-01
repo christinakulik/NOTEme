@@ -13,6 +13,10 @@ protocol DateNotificationStorageProtocol {
     func updateDateNotification(dto: DateNotificationDTO)
 }
 
+protocol DateNotificationServiceUseCase {
+    func makeDateNotification(dto: DateNotificationDTO)
+}
+
 protocol DateNotificationCoordinatorProtocol: AnyObject {
     func finish()
 }
@@ -27,6 +31,7 @@ final class DateNotificationVM: DateNotificationViewModelProtocol {
     private weak var coordinator: DateNotificationCoordinatorProtocol?
     private var storage: DateNotificationStorageProtocol
     private var dtoToEdit: DateNotificationDTO?
+    private var notificationCenter: DateNotificationServiceUseCase
     
     private var errorHandler: ((String?) -> Void)?
     var catchTitleError: ((String?) -> Void)?
@@ -43,9 +48,11 @@ final class DateNotificationVM: DateNotificationViewModelProtocol {
     // MARK: - Initializer
     init(coordinator: DateNotificationCoordinatorProtocol,
          storage: DateNotificationStorageProtocol,
+         notificationCenter: DateNotificationServiceUseCase,
          dtoToEdit: DateNotificationDTO? = nil) {
         self.coordinator = coordinator
         self.storage = storage
+        self.notificationCenter = notificationCenter
         self.dtoToEdit = dtoToEdit
         
         loadDTOToEdit()
@@ -61,32 +68,33 @@ final class DateNotificationVM: DateNotificationViewModelProtocol {
         }
     
     func createDidTap() {
-            guard checkValidation() else {
-                errorHandler?(L10n.errorHandler)
-                return
-            }
-            guard let title, let date else { return }
-            
-            let dto: DateNotificationDTO
-            if let dtoToEdit = dtoToEdit {
-                // Update the existing DTO
-                dto = DateNotificationDTO(date: dtoToEdit.date,
-                                          identifier: dtoToEdit.identifier,
-                                          title: title,
-                                          subtitle: comment,
-                                          targetDate: date)
-                storage.updateDateNotification(dto: dto)
-            } else {
-                // Create a new DTO
-                dto = DateNotificationDTO(date: Date(),
-                                          identifier: UUID().uuidString,
-                                          title: title,
-                                          subtitle: comment,
-                                          targetDate: date)
-                storage.createDateNotification(dto: dto)
-            }
-            coordinator?.finish()
+        guard checkValidation() else {
+            errorHandler?(L10n.errorHandler)
+            return
         }
+        guard let title, let date else { return }
+        
+        let dto: DateNotificationDTO
+        if let dtoToEdit = dtoToEdit {
+            // Update the existing DTO
+            dto = DateNotificationDTO(date: dtoToEdit.date,
+                                      identifier: dtoToEdit.identifier,
+                                      title: title,
+                                      subtitle: comment,
+                                      targetDate: date)
+            storage.updateDateNotification(dto: dto)
+        } else {
+            // Create a new DTO
+            dto = DateNotificationDTO(date: Date(),
+                                      identifier: UUID().uuidString,
+                                      title: title,
+                                      subtitle: comment,
+                                      targetDate: date)
+            storage.createDateNotification(dto: dto)
+        }
+        notificationCenter.makeDateNotification(dto: dto)
+        coordinator?.finish()
+    }
     
     func string(from date: Date) -> String? {
         let formatter = DateFormatter()

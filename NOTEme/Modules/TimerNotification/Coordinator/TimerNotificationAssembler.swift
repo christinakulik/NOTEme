@@ -16,7 +16,8 @@ final class TimerNotificationAssembler {
     -> UIViewController {
         
         let vm = TimerNotificationVM(coordinator: coordinator,
-                               storage: TimerNotificationStorage())
+                                     storage: TimerNotificationStorage(),
+                                     notificationService: NotificationService())
         
         return TimerNotificationVC(viewModel: vm)
     }

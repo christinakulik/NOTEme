@@ -13,4 +13,5 @@ struct LocationData {
     let region: MKCoordinateRegion
     let center: CLLocationCoordinate2D
     let radius: CLLocationDistance
+    var circularRegion: CLCircularRegion
 }

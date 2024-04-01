@@ -21,6 +21,10 @@ protocol LocationNotificationCoordinatorProtocol: AnyObject {
 
 final class LocationNotificationVM: LocationNotificationViewModelProtocol, 
                                         RouteModuleDelegate {
+    func didFindNearbyPlaces(_ results: [NearByResponseModel.Result]) {
+        
+    }
+    
     var locationDidSet: ((LocationData) -> Void)?
     
     private enum L10n {
@@ -35,6 +39,7 @@ final class LocationNotificationVM: LocationNotificationViewModelProtocol,
     var imageDidSet: ((UIImage?) -> Void)?
     var shouldEditDTO: ((LocationNotificationDTO) -> Void)?
     
+    private var notificationService: NotificationService
     private weak var coordinator: LocationNotificationCoordinatorProtocol?
     private var storage: LocationNotificationStorageProtocol
     private var dtoToEdit: LocationNotificationDTO?
@@ -43,21 +48,25 @@ final class LocationNotificationVM: LocationNotificationViewModelProtocol,
         { imageDidSet?(image) }
     }
     private var region: MKCoordinateRegion?
+    private var circleRegion: CLCircularRegion?
     private var errorHandler: ((String?) -> Void)?
     
     // MARK: - Initializer
     init(coordinator: LocationNotificationCoordinatorProtocol,
          storage: LocationNotificationStorageProtocol,
-         dtoToEdit: LocationNotificationDTO? = nil) {
+         dtoToEdit: LocationNotificationDTO? = nil,
+         notificationService: NotificationService) {
         self.coordinator = coordinator
         self.storage = storage
         self.dtoToEdit = dtoToEdit
+        self.notificationService = notificationService
        
         loadDTOToEdit()
         
         locationDidSet = { [weak self] locationData in
                     self?.image = locationData.image
                     self?.region = locationData.region
+                    self?.circleRegion  = locationData.circularRegion
                 }
     }
     
@@ -95,6 +104,9 @@ final class LocationNotificationVM: LocationNotificationViewModelProtocol,
                                               deltaLatitutde: region.span.latitudeDelta,
                                               imagePath: imagePath)
             self?.storage.createLocationNotification(dto: dto)
+            if let circleRegion = self?.circleRegion {
+                       self?.notificationService.makeLocationNotification(circleRegion: circleRegion, dto: dto)
+                   }
             self?.coordinator?.finish()
         }
     }
@@ -107,7 +119,11 @@ final class LocationNotificationVM: LocationNotificationViewModelProtocol,
         coordinator?.openRoute(delegate: self, region: region)
     }
     
-    func saveImageAndGetPath(image: UIImage, completion: @escaping (String?) -> Void) {
+    func createNotification(with circularRegion: CLCircularRegion) {
+    }
+    
+    func saveImageAndGetPath(image: UIImage, 
+                             completion: @escaping (String?) -> Void) {
         let localStorageService = LocalStorageService()
         localStorageService.saveImageToDocumentsDirectory(image: image) {
             result in

@@ -13,12 +13,13 @@ import MapKit
     func selectDidTap(mapView: MKMapView, captureView: UIView)
     @objc func cancelDidTap()
     func setDefaultMapPosition(for mapView: MKMapView)
-        func makeScreenshot(_ view: UIView,
-                          mapView: MKMapView,
-                          captureView: UIView)
-        var screenshotDidChanged: ((UIImage?) -> Void)? { get set }
-        var isSelected: Bool { get }
-
+    func makeScreenshot(_ view: UIView,
+                        mapView: MKMapView,
+                        captureView: UIView)
+    func searchForNearbyPlaces(coordinate: CLLocationCoordinate2D)
+    var screenshotDidChanged: ((UIImage?) -> Void)? { get set }
+    var isSelected: Bool { get }
+    
 }
 
 final class RouteVC: UIViewController {
@@ -99,7 +100,7 @@ final class RouteVC: UIViewController {
         contentView.addSubview(mapView)
         contentView.addSubview(regionImageView)
         contentView.addSubview(screenshotImageView)
-        contentView.addSubview(searchBarView)
+        view.addSubview(searchBarView)
     }
     
     private func setupConstraints() {
@@ -139,6 +140,7 @@ final class RouteVC: UIViewController {
         }
         
         searchBarView.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
             make.leading.trailing.equalToSuperview()
             make.height.equalTo(55.0)
         }
@@ -173,10 +175,19 @@ final class RouteVC: UIViewController {
 }
 
 extension RouteVC: SearchBarViewDelegate {
+    func didSelectPlace(_ mapItem: Place) {
+        
+    }
+    
+    func searchForNearbyPlaces(coordinate: CLLocationCoordinate2D) {
+        viewModel.searchForNearbyPlaces(coordinate: coordinate)
+    }
+
+    
     func didBeginEditing() {
         searchBarView.snp.updateConstraints { make in
             make.leading.trailing.equalToSuperview()
-            make.height.equalTo(500.0)
+            make.height.equalTo(650.0)
         }
     }
     
@@ -185,6 +196,7 @@ extension RouteVC: SearchBarViewDelegate {
     }
     
     func didSelectPlace(_ mapItem: MKMapItem) {
+        viewModel.searchForNearbyPlaces(coordinate: mapItem.placemark.coordinate)
             if let coordinate = mapItem.placemark.location?.coordinate {
                 let region = MKCoordinateRegion(center: coordinate, 
                                                 latitudinalMeters: 1000,
@@ -192,4 +204,22 @@ extension RouteVC: SearchBarViewDelegate {
                 mapView.setRegion(region, animated: true)
             }
         }
+}
+extension RouteVC: RouteModuleDelegate {
+    var locationDidSet: ((LocationData) -> Void)? {
+        get {
+            return nil
+        }
+        set {
+            
+        }
+    }
+    
+ 
+    
+    func didFindNearbyPlaces(_ results: [NearByResponseModel.Result]) {
+        let places = results.map { Place(name: $0.name, coordinate: CLLocationCoordinate2D(latitude: $0.geocodes.main.latitude, longitude: $0.geocodes.main.longitude)) }
+        searchBarView.places = places
+        searchBarView.tableView.reloadData()
+    }
 }

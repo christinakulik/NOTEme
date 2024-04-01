@@ -20,6 +20,7 @@ final class RouteAssembler {
         let vm = RouteVM(coordinator: coordinator,
                          adapter: RouteAdapter(),
                          delegate: delegate,
+                         locationNetworkService: LocationNetworkService(),
                          region: region)
         let vc = RouteVC(viewModel: vm)
         return vc

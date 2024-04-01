@@ -12,7 +12,7 @@ enum StorageError: Error {
     case failedToSaveImage
 }
 
-class LocalStorageService {
+final class LocalStorageService {
     
     func saveImageToDocumentsDirectory(image: UIImage, 
                                        completion: @escaping (Result<URL, Error>) -> Void) {

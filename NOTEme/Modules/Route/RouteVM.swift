@@ -19,6 +19,7 @@ protocol RouteAdapterProtocol {
 
 protocol RouteModuleDelegate: AnyObject {
     var locationDidSet: ((LocationData) -> Void)? { get set }
+    func didFindNearbyPlaces(_ results: [NearByResponseModel.Result])
 }
 
 final class RouteVM: RouteViewModelProtocol {
@@ -31,6 +32,8 @@ final class RouteVM: RouteViewModelProtocol {
     private var adapter: RouteAdapterProtocol
     private lazy var locationManager: CLLocationManager = .init()
     
+    private var locationNetworkService: LocationNetworkService
+    
     private var screenshot: UIImage? {
             didSet
             { screenshotDidChanged?(screenshot) } }
@@ -39,22 +42,36 @@ final class RouteVM: RouteViewModelProtocol {
     init(coordinator: RouteCoordinatorProtocol,
          adapter: RouteAdapterProtocol,
          delegate: RouteModuleDelegate?,
+         locationNetworkService: LocationNetworkService,
          region: MKCoordinateRegion?) {
         self.coordinator = coordinator
         self.adapter = adapter
         self.delegate = delegate
+        self.locationNetworkService = locationNetworkService
         self.region = region
         locationManager.requestWhenInUseAuthorization()
     }
+    
+    func searchForNearbyPlaces(coordinate: CLLocationCoordinate2D) {
+            locationNetworkService.getNearBy(coordinates: coordinate) { 
+                [weak self] (results: [NearByResponseModel.Result]) in
+                DispatchQueue.main.async {
+                    self?.delegate?.didFindNearbyPlaces(results)
+                }
+            }
+        }
     
     func selectDidTap(mapView: MKMapView, captureView: UIView) {
         let center = calculateCenter(for: captureView, in: mapView)
         let radius = calculateRadius(for: captureView, in: mapView)
         let region = mapView.region
+        let circleRegion = makeCircularRegion(for: captureView, in: mapView,
+                                              with: UUID().uuidString)
         let locationData = LocationData(image: screenshot,
                                         region: region,
                                         center: center,
-                                        radius: radius)
+                                        radius: radius,
+                                        circularRegion: circleRegion)
        delegate?.locationDidSet?(locationData)
        coordinator?.finish()
     }
