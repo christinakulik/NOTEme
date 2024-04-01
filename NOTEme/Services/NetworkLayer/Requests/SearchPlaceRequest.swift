@@ -19,6 +19,14 @@ struct SearchPlacesResponseModel: Decodable {
             let main: Main
         }
         
+        struct Location: Decodable {
+            let address: String
+            
+            enum CodingKeys: String, CodingKey {
+                case address = "formatted_address"
+            }
+        }
+        
         let distance: Int
         let geocodes: Geocodes
         let location: Location

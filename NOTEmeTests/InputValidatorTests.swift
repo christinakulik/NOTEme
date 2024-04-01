@@ -44,4 +44,23 @@ final class InputValidatorTests: XCTestCase {
         
         XCTAssertFalse(result)
     }
+    
+    func test_validPassword() {
+        let sut = InputValidator()
+        let validPassword = "Ww4#9"
+        
+        let result = sut.validate(password: validPassword)
+        
+        XCTAssert(result)
+        
+    }
+    
+    func test_withoutSymbolPassword() {
+        let sut = InputValidator()
+        let validPassword = "Ww49"
+        
+        let result = sut.validate(password: validPassword)
+        
+        XCTAssertFalse(result)
+    }
 }
