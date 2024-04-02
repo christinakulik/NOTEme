@@ -19,6 +19,7 @@ import MapKit
     func makeScreenshot(_ view: UIView,
                         mapView: MKMapView,
                         regionView: UIView)
+    func viewDidLoad()
     func makeTableView() -> UITableView
     
     func searchPlaces(query: String)
@@ -98,6 +99,7 @@ final class RouteVC: UIViewController {
         
         setupUI()
         setupConstraints()
+        viewModel.viewDidLoad()
         viewModel.setDefaultMapPosition(for: mapView)
     }
     
@@ -178,18 +180,18 @@ final class RouteVC: UIViewController {
     }
     
     private func makeScreenshot() {
-           viewModel.makeScreenshot(view, mapView: mapView,
-                                  regionView: regionImageView)
-       }
+        viewModel.makeScreenshot(view, mapView: mapView,
+                                 regionView: regionImageView)
+    }
     
     private func bind() {
-            viewModel.screenshotDidChanged = { [weak self] image in
-                self?.screenshotImageView.image = image
-                self?.screenshotImageView.isHidden = image == nil
-                self?.selectButton.setTitle(image == nil ? "Select" : "Confirm",
-                                            for: .normal)
-            }
+        viewModel.screenshotDidChanged = { [weak self] image in
+            self?.screenshotImageView.image = image
+            self?.screenshotImageView.isHidden = image == nil
+            self?.selectButton.setTitle(image == nil ? "Select" : "Confirm",
+                                        for: .normal)
         }
+    }
 }
 
 extension RouteVC: UISearchBarDelegate {
@@ -201,7 +203,7 @@ extension RouteVC: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         tableView.isHidden = false
-        viewModel.searchPlaces(searchText)
+        viewModel.searchPlaces(query: searchText)
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {

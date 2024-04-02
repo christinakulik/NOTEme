@@ -10,7 +10,6 @@ import CoreLocation
 
 struct SearchPlacesResponseModel: Decodable {
     struct Result: Decodable {
-        
         struct Geocodes: Decodable {
             struct Main: Decodable {
                 let latitude: Double
@@ -21,17 +20,13 @@ struct SearchPlacesResponseModel: Decodable {
         
         struct Location: Decodable {
             let address: String
-            
-            enum CodingKeys: String, CodingKey {
-                case address = "formatted_address"
-            }
         }
-        
         let distance: Int
-        let geocodes: Geocodes
-        let location: Location
         let name: String
+        let location: Location
+        let geocodes: Geocodes
     }
+    
     let results: [Result]
 }
 
@@ -53,6 +48,7 @@ struct SearchPlacesRequest: NetworkRequest {
     var headers: [String : String] {
         ["Authorization": ApiToken.fourSquareToken]
     }
-    let model: SearchPlacesRequestModel
     var body: Data? { nil }
+    let model: SearchPlacesRequestModel
+   
 }

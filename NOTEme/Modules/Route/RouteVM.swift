@@ -55,6 +55,11 @@ final class RouteVM: RouteViewModelProtocol {
         locationManager.requestWhenInUseAuthorization()
     }
     
+    func viewDidLoad() {
+            getNearBy()
+        }
+        
+    
     func makeTableView() -> UITableView {
            adapter.makeTableView()
        }
@@ -155,29 +160,37 @@ final class RouteVM: RouteViewModelProtocol {
     ->  CLLocationCoordinate2D {
             let mapRegion = mapView.convert(regionView.bounds,
                                             toRegionFrom: regionView)
-            return mapRegion.center
-        }
+        return mapRegion.center
+    }
     
     private func getNearBy() {
-            guard let userLocation = locationManager.location?.coordinate else { return }
-            locationNetworkService.getNearBy(coordinates: userLocation) { [weak self] result in
+        guard let userLocation = locationManager.location?.coordinate
+        else { return }
+        locationNetworkService.getNearBy(coordinates: userLocation) { 
+            [weak self] result in
+            DispatchQueue.main.async {
+                self?.places =  result.compactMap { Place(result: $0) }
+                self?.adapter.reloadData(with: self?.places ?? [])
+            }
+        }
+    }
+    
+    func searchPlaces(query: String) {
+        if query.isEmpty {
+            getNearBy()
+        } else {
+            guard let userLocation = locationManager.location?.coordinate
+            else { return }
+            locationNetworkService.searchPlaces(coordinates: userLocation,
+                                                query: query) {
+                [weak self] result in
                 DispatchQueue.main.async {
-                    self?.places =  result.compactMap { Place(result: $0) }
+                    self?.places = result
+                        .compactMap { Place(result: $0) }
+                        .sorted { $0.distance < $1.distance }
                     self?.adapter.reloadData(with: self?.places ?? [])
                 }
             }
         }
-    
-    func searchPlaces(for query: String) {
-                guard let userLocation = locationManager.location?.coordinate else { return }
-                locationNetworkService.searchPlaces(for: query, with: userLocation) { [weak self] result in
-                    DispatchQueue.main.async {
-                        self?.places = result
-                            .compactMap { Place(result: $0) }
-                            .sorted { $0.distance < $1.distance }
-                        self?.adapter.reloadData(with: self?.places ?? [])
-                    }
-                }
-            }
-        
+    }
 }

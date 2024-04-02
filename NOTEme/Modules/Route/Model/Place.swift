@@ -13,4 +13,24 @@ struct Place {
     let coordinate: CLLocationCoordinate2D
     let distance: Int
     let address: String?
+    
+    init(result: NearByResponseModel.Result) {
+            self.name = result.name
+            self.distance = result.distance
+            self.coordinate = .init(
+                latitude: result.geocodes.main.latitude,
+                longitude: result.geocodes.main.longitude
+            )
+            self.address = nil
+        }
+        
+        init(result: SearchPlacesResponseModel.Result) {
+            self.name = result.name
+            self.distance = result.distance
+            self.coordinate = .init(
+                latitude: result.geocodes.main.latitude,
+                longitude: result.geocodes.main.longitude
+            )
+            self.address = result.location.address
+        }
 }

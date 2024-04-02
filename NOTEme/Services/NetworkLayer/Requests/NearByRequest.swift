@@ -60,6 +60,5 @@ struct NearByRequest: NetworkRequest {
         ["Authorization" : ApiToken.fourSquareToken]
     }
     var body: Data? { nil }
-    
     let model: NearByRequestModel
 }
