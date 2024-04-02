@@ -175,14 +175,14 @@ final class RouteVM: RouteViewModelProtocol {
         }
     }
     
-    func searchPlaces(query: String) {
+    func getSearchPlaces(query: String) {
         if query.isEmpty {
             getNearBy()
         } else {
             guard let userLocation = locationManager.location?.coordinate
             else { return }
-            locationNetworkService.searchPlaces(coordinates: userLocation,
-                                                query: query) {
+            locationNetworkService.getSearchPlaces(coordinates: userLocation,
+                                                   query: query) {
                 [weak self] result in
                 DispatchQueue.main.async {
                     self?.places = result

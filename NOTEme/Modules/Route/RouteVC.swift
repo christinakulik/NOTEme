@@ -14,15 +14,14 @@ import MapKit
     var screenshotDidChanged: ((UIImage?) -> Void)? { get set }
     var isSelected: Bool { get }
     func selectDidTap(mapView: MKMapView, regionView: UIView)
-    @objc func cancelDidTap()
     func setDefaultMapPosition(for mapView: MKMapView)
     func makeScreenshot(_ view: UIView,
                         mapView: MKMapView,
                         regionView: UIView)
     func viewDidLoad()
     func makeTableView() -> UITableView
-    
-    func searchPlaces(query: String)
+    func getSearchPlaces(query: String)
+    @objc func cancelDidTap()
 }
 
 final class RouteVC: UIViewController {
@@ -106,11 +105,10 @@ final class RouteVC: UIViewController {
     private func setupUI() {
         
         view.backgroundColor = .appBlack
-        view.addSubview(searchBar)
         view.addSubview(contentView)
         view.addSubview(cancelButton)
         view.addSubview(selectButton)
-        
+        contentView.addSubview(searchBar)
         contentView.addSubview(mapView)
         contentView.addSubview(regionImageView)
         contentView.addSubview(screenshotImageView)
@@ -119,16 +117,16 @@ final class RouteVC: UIViewController {
     
     private func setupConstraints() {
         
+        searchBar.snp.makeConstraints { make in
+               make.height.equalTo(56)
+               make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+               make.horizontalEdges.equalToSuperview()
+           }
+        
         contentView.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview()
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
             make.bottom.equalTo(selectButton.snp.centerY)
-        }
-        
-        searchBar.snp.makeConstraints { make in
-            make.height.equalTo(56)
-            make.bottom.equalToSuperview()
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
         }
         
         cancelButton.snp.makeConstraints { make in
@@ -203,7 +201,7 @@ extension RouteVC: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         tableView.isHidden = false
-        viewModel.searchPlaces(query: searchText)
+        viewModel.getSearchPlaces(query: searchText)
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {

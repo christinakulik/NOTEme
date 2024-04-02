@@ -21,7 +21,7 @@ final class LocationNetworkService {
         }
     }
     
-    func searchPlaces(coordinates: CLLocationCoordinate2D,
+    func getSearchPlaces(coordinates: CLLocationCoordinate2D,
                       query: String,
                       completion: @escaping ([SearchPlacesResponseModel.Result]) 
                       -> Void) {
