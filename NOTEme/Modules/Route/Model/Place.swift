@@ -12,7 +12,6 @@ struct Place {
     let name: String
     let coordinate: CLLocationCoordinate2D
     let distance: Int
-    let address: String?
     
     init(result: NearByResponseModel.Result) {
             self.name = result.name
@@ -21,7 +20,6 @@ struct Place {
                 latitude: result.geocodes.main.latitude,
                 longitude: result.geocodes.main.longitude
             )
-            self.address = nil
         }
         
         init(result: SearchPlacesResponseModel.Result) {
@@ -31,6 +29,5 @@ struct Place {
                 latitude: result.geocodes.main.latitude,
                 longitude: result.geocodes.main.longitude
             )
-            self.address = result.location.address
         }
 }

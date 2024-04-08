@@ -15,11 +15,16 @@ public extension NSPredicate {
             return .init(format: "\(completedDateKeyPath) == NULL")
         }
         
-       public static func notification(byId id: String) -> NSPredicate {
+        public static func notification(byId id: String) -> NSPredicate {
             let idKeyPath = #keyPath(BaseNotificationMo.identifier)
             return .init(format: "\(idKeyPath) CONTAINS[cd] %@", id)
         }
         
+        public static func notifications(in ids: [String]) -> NSPredicate {
+            let idKeyPath = #keyPath(BaseNotificationMo.identifier)
+            return NSCompoundPredicate(andPredicateWithSubpredicates: [
+                .init(format: "\(idKeyPath) IN %@", ids),
+                allNotCompleted])
+        }
     }
-    
 }

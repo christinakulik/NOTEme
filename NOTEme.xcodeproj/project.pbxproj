@@ -29,6 +29,7 @@
 		CF205C382BB336040065FF68 /* FRCService+Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF205C372BB336040065FF68 /* FRCService+Home.swift */; };
 		CF205C3A2BB336D30065FF68 /* HomeFRCServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF205C392BB336D30065FF68 /* HomeFRCServiceSpy.swift */; };
 		CF205C3D2BB33DF90065FF68 /* HomeDTOMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF205C3C2BB33DF90065FF68 /* HomeDTOMock.swift */; };
+		CF205C402BBC73490065FF68 /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF205C3F2BBC73490065FF68 /* NotificationHandler.swift */; };
 		CF5B89D52B1D3E3B0080EF47 /* String+Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5B89D42B1D3E3B0080EF47 /* String+Attributes.swift */; };
 		CF5CF20F2B9E0AF600DBE981 /* RouteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5CF20E2B9E0AF600DBE981 /* RouteVC.swift */; };
 		CF5CF2112B9E0B0400DBE981 /* RouteVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5CF2102B9E0B0400DBE981 /* RouteVM.swift */; };
@@ -247,6 +248,7 @@
 		CF205C372BB336040065FF68 /* FRCService+Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FRCService+Home.swift"; sourceTree = "<group>"; };
 		CF205C392BB336D30065FF68 /* HomeFRCServiceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFRCServiceSpy.swift; sourceTree = "<group>"; };
 		CF205C3C2BB33DF90065FF68 /* HomeDTOMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDTOMock.swift; sourceTree = "<group>"; };
+		CF205C3F2BBC73490065FF68 /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
 		CF5B89D42B1D3E3B0080EF47 /* String+Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Attributes.swift"; sourceTree = "<group>"; };
 		CF5CF20E2B9E0AF600DBE981 /* RouteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteVC.swift; sourceTree = "<group>"; };
 		CF5CF2102B9E0B0400DBE981 /* RouteVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteVM.swift; sourceTree = "<group>"; };
@@ -459,6 +461,7 @@
 			isa = PBXGroup;
 			children = (
 				CF205C062BAA08C60065FF68 /* NetworkServices */,
+				CF205C072BAA08E70065FF68 /* LocationNetworkService.swift */,
 				CF205BFF2BA9F4B80065FF68 /* Requests */,
 				CF205BFD2BA9F4410065FF68 /* ApiPaths.swift */,
 				CF205C002BA9F4D30065FF68 /* NetworkRequest.swift */,
@@ -479,7 +482,6 @@
 		CF205C062BAA08C60065FF68 /* NetworkServices */ = {
 			isa = PBXGroup;
 			children = (
-				CF205C072BAA08E70065FF68 /* LocationNetworkService.swift */,
 			);
 			path = NetworkServices;
 			sourceTree = "<group>";
@@ -529,6 +531,14 @@
 				CF205C3C2BB33DF90065FF68 /* HomeDTOMock.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		CF205C3E2BBC73340065FF68 /* NotificationHandler */ = {
+			isa = PBXGroup;
+			children = (
+				CF205C3F2BBC73490065FF68 /* NotificationHandler.swift */,
+			);
+			path = NotificationHandler;
 			sourceTree = "<group>";
 		};
 		CF5B89D32B1A87610080EF47 /* Builder */ = {
@@ -1158,6 +1168,7 @@
 		CFD583EF2AFEA14B000949A6 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CF205C3E2BBC73340065FF68 /* NotificationHandler */,
 				CF205BFC2BA9F41E0065FF68 /* NetworkLayer */,
 				CF205BF92BA9A0D20065FF68 /* ImageStorageService */,
 				CF5CF2232BA1AF1000DBE981 /* NotificationService */,
@@ -1603,6 +1614,7 @@
 				CFF587C82B4DE63300D60712 /* ProfileHeaderView.swift in Sources */,
 				CF7379B02B2E5F2E00E77BF0 /* AlertService+Reset.swift in Sources */,
 				CF64AB152B893D3600F14710 /* DateNotificationCell.swift in Sources */,
+				CF205C402BBC73490065FF68 /* NotificationHandler.swift in Sources */,
 				CFD583C62AF01A53000949A6 /* UIImage+Consts.swift in Sources */,
 				CFD583EE2AFE97ED000949A6 /* LoginAssembler.swift in Sources */,
 				CF64AB192B893D5300F14710 /* LocationNotificationCell.swift in Sources */,

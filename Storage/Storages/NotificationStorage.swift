@@ -17,13 +17,14 @@ public class NotificationStorage<DTO: DTODescription> {
     public func fetch(
         predicate: NSPredicate? = nil,
         sortDescriptors: [NSSortDescriptor] = []) -> [any DTODescription] {
-            return fetchMO(predicate: predicate, sortDescriptors: sortDescriptors)
+            return fetchMO(predicate: predicate, sortDescriptors: sortDescriptors, context: <#NSManagedObjectContext#>)
                 .compactMap { $0.toDTO() }
         }
     
     private func fetchMO(
         predicate: NSPredicate? = nil,
-        sortDescriptors: [NSSortDescriptor] = []
+        sortDescriptors: [NSSortDescriptor] = [],
+        context: NSManagedObjectContext
     ) -> [DTO.MO] {
         let request = NSFetchRequest<DTO.MO>(entityName: "\(DTO.MO.self)")
         request.predicate = predicate
@@ -35,9 +36,9 @@ public class NotificationStorage<DTO: DTODescription> {
     }
     
     //Create
-    public func create(dto: DTO,
-                       completion: CompletionHandler? = nil) {
-        let context = CoreDataService.shared.backgroundContext
+    public func create(dto: any DTODescription,
+                       completion: CompletionHandler? = nil,
+                       context: NSManagedObjectContext) {
         context.perform {
             let mo = DTO.MO(context: context)
             mo.apply(dto: dto)
@@ -47,13 +48,14 @@ public class NotificationStorage<DTO: DTODescription> {
         }
     }
     
-    public func update(dto: DTO,
-                completion: CompletionHandler? = nil) {
-        let context = CoreDataService.shared.backgroundContext
+    public func update(dto: any DTODescription,
+                       completion: CompletionHandler? = nil,
+                       context: NSManagedObjectContext) {
         context.perform { [weak self] in
             guard
                 let mo = self?.fetchMO(predicate:
-                        .Notification.notification(byId: dto.identifier))
+                        .Notification.notification(byId: dto.identifier),
+                                       context: context)
                     .first
             else { return }
             mo.apply(dto: dto)
@@ -62,13 +64,33 @@ public class NotificationStorage<DTO: DTODescription> {
         }
     }
     
-    func updateOrCreate(dto: DTO,
+    public func updateOrCreate(dto: any DTODescription,
                         completion: CompletionHandler? = nil) {
+        let context = CoreDataService.shared.backgroundContext
         if fetchMO(predicate:
-                .Notification.notification(byId: dto.identifier)).isEmpty {
-            create(dto: dto, completion: completion)
+                .Notification.notification(byId: dto.identifier),
+                   context: context)).isEmpty {
+            create(dto: dto, completion: completion, context: context)
         } else {
-            update(dto: dto, completion: completion)
+            update(dto: dto, completion: completion, context: context)
+        }
+    }
+    
+    public func updateDTOs(dtos: [any DTODescription],
+                           completionHandler: CompletionHandler? = nil) {
+        let context = CoreDataService.shared.backgroundContext
+        let ids = dtos.map { $0.identifier }
+        
+        context.perform { [weak self] in
+            guard let mos = self?.fetchMO(predicate: .Notification.notifications(in: ids), context: context)
+            else { return }
+            mos.forEach { model in
+                guard
+                    let dto = dtos.first(where: { $0.identifier == model.identifier })
+                else { return }
+                model.apply(dto: dto)
+            }
+            CoreDataService.shared.saveMainContext()
         }
     }
     
@@ -77,7 +99,8 @@ public class NotificationStorage<DTO: DTODescription> {
         let context = CoreDataService.shared.mainContext
         context.perform { [weak self] in
             guard let mo = self?.fetchMO(predicate:
-                    .Notification.notification(byId: dto.identifier)).first
+                    .Notification.notification(byId: dto.identifier), 
+                                         context: context).first
             else { return }
             context.delete(mo)
             CoreDataService.shared.saveContext(context: context,

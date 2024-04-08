@@ -10,8 +10,9 @@ import CoreData
 
 public protocol MODescription: NSManagedObject, NSFetchRequestResult {
 
-    func apply(dto: any DTODescription)
+    var identifier: String? { get }
     
+    func apply(dto: any DTODescription)
     func toDTO() -> (any DTODescription)?
 
 }

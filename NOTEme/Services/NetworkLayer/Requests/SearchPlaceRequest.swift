@@ -17,16 +17,10 @@ struct SearchPlacesResponseModel: Decodable {
             }
             let main: Main
         }
-        
-        struct Location: Decodable {
-            let address: String
-        }
         let distance: Int
-        let name: String
-        let location: Location
         let geocodes: Geocodes
+        let name: String
     }
-    
     let results: [Result]
 }
 
@@ -50,5 +44,4 @@ struct SearchPlacesRequest: NetworkRequest {
     }
     var body: Data? { nil }
     let model: SearchPlacesRequestModel
-   
 }
