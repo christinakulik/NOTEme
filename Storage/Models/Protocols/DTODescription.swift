@@ -17,7 +17,6 @@ public protocol MODescription: NSManagedObject, NSFetchRequestResult {
 
 }
 
-
 public protocol DTODescription {
 
     associatedtype MO: MODescription

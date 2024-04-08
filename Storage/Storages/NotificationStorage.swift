@@ -16,9 +16,11 @@ public class NotificationStorage<DTO: DTODescription> {
     
     public func fetch(
         predicate: NSPredicate? = nil,
-        sortDescriptors: [NSSortDescriptor] = []) -> [any DTODescription] {
-            return fetchMO(predicate: predicate, sortDescriptors: sortDescriptors, context: <#NSManagedObjectContext#>)
-                .compactMap { $0.toDTO() }
+        sortDescriptors: [NSSortDescriptor] = [] ) -> [any DTODescription] {
+            let context = CoreDataService.shared.mainContext
+            return fetchMO(predicate: predicate,
+                           sortDescriptors: sortDescriptors, context: context)
+            .compactMap { $0.toDTO() }
         }
     
     private func fetchMO(
@@ -29,8 +31,6 @@ public class NotificationStorage<DTO: DTODescription> {
         let request = NSFetchRequest<DTO.MO>(entityName: "\(DTO.MO.self)")
         request.predicate = predicate
         request.sortDescriptors = sortDescriptors
-        let context = CoreDataService.shared.mainContext
-        
         let results = try? context.fetch(request)
         return results ?? []
     }
@@ -69,7 +69,7 @@ public class NotificationStorage<DTO: DTODescription> {
         let context = CoreDataService.shared.backgroundContext
         if fetchMO(predicate:
                 .Notification.notification(byId: dto.identifier),
-                   context: context)).isEmpty {
+                   context: context).isEmpty {
             create(dto: dto, completion: completion, context: context)
         } else {
             update(dto: dto, completion: completion, context: context)
@@ -82,7 +82,9 @@ public class NotificationStorage<DTO: DTODescription> {
         let ids = dtos.map { $0.identifier }
         
         context.perform { [weak self] in
-            guard let mos = self?.fetchMO(predicate: .Notification.notifications(in: ids), context: context)
+            guard 
+                let mos = self?.fetchMO(predicate: .Notification.notifications(in: ids),
+                                        context: context)
             else { return }
             mos.forEach { model in
                 guard
