@@ -32,7 +32,6 @@ class RouteTableViewCell: UITableViewCell {
     func setup(_ place: Place) {
         titleLabel.text = place.name
         distanceLabel.text = "\(place.distance)"
-        locationLabel.text = place.address
     }
     
     func setupUI() {

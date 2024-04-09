@@ -154,7 +154,7 @@ final class RouteVC: UIViewController {
   
         screenshotImageView.snp.makeConstraints { make in
             make.centerX.equalTo(mapView.snp.centerX)
-            make.centerY.equalToSuperview()
+            make.centerY.equalTo(mapView.snp.centerY)
         }
         
 //        searchBarView.snp.makeConstraints { make in

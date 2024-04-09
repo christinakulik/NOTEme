@@ -30,6 +30,10 @@
 		CF205C3A2BB336D30065FF68 /* HomeFRCServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF205C392BB336D30065FF68 /* HomeFRCServiceSpy.swift */; };
 		CF205C3D2BB33DF90065FF68 /* HomeDTOMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF205C3C2BB33DF90065FF68 /* HomeDTOMock.swift */; };
 		CF205C402BBC73490065FF68 /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF205C3F2BBC73490065FF68 /* NotificationHandler.swift */; };
+		CF205C442BC489540065FF68 /* AnnotationsMapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF205C432BC489540065FF68 /* AnnotationsMapCoordinator.swift */; };
+		CF205C462BC489600065FF68 /* AnnotationsMapAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF205C452BC489600065FF68 /* AnnotationsMapAssembler.swift */; };
+		CF205C482BC4896D0065FF68 /* AnnotationsMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF205C472BC4896D0065FF68 /* AnnotationsMapVC.swift */; };
+		CF205C4A2BC489770065FF68 /* AnnotationsMapVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF205C492BC489770065FF68 /* AnnotationsMapVM.swift */; };
 		CF5B89D52B1D3E3B0080EF47 /* String+Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5B89D42B1D3E3B0080EF47 /* String+Attributes.swift */; };
 		CF5CF20F2B9E0AF600DBE981 /* RouteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5CF20E2B9E0AF600DBE981 /* RouteVC.swift */; };
 		CF5CF2112B9E0B0400DBE981 /* RouteVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5CF2102B9E0B0400DBE981 /* RouteVM.swift */; };
@@ -249,6 +253,10 @@
 		CF205C392BB336D30065FF68 /* HomeFRCServiceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFRCServiceSpy.swift; sourceTree = "<group>"; };
 		CF205C3C2BB33DF90065FF68 /* HomeDTOMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDTOMock.swift; sourceTree = "<group>"; };
 		CF205C3F2BBC73490065FF68 /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
+		CF205C432BC489540065FF68 /* AnnotationsMapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationsMapCoordinator.swift; sourceTree = "<group>"; };
+		CF205C452BC489600065FF68 /* AnnotationsMapAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationsMapAssembler.swift; sourceTree = "<group>"; };
+		CF205C472BC4896D0065FF68 /* AnnotationsMapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationsMapVC.swift; sourceTree = "<group>"; };
+		CF205C492BC489770065FF68 /* AnnotationsMapVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationsMapVM.swift; sourceTree = "<group>"; };
 		CF5B89D42B1D3E3B0080EF47 /* String+Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Attributes.swift"; sourceTree = "<group>"; };
 		CF5CF20E2B9E0AF600DBE981 /* RouteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteVC.swift; sourceTree = "<group>"; };
 		CF5CF2102B9E0B0400DBE981 /* RouteVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteVM.swift; sourceTree = "<group>"; };
@@ -539,6 +547,25 @@
 				CF205C3F2BBC73490065FF68 /* NotificationHandler.swift */,
 			);
 			path = NotificationHandler;
+			sourceTree = "<group>";
+		};
+		CF205C412BC489080065FF68 /* AnnotationsMap */ = {
+			isa = PBXGroup;
+			children = (
+				CF205C422BC4892C0065FF68 /* Coordinator */,
+				CF205C472BC4896D0065FF68 /* AnnotationsMapVC.swift */,
+			);
+			path = AnnotationsMap;
+			sourceTree = "<group>";
+		};
+		CF205C422BC4892C0065FF68 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				CF205C432BC489540065FF68 /* AnnotationsMapCoordinator.swift */,
+				CF205C452BC489600065FF68 /* AnnotationsMapAssembler.swift */,
+				CF205C492BC489770065FF68 /* AnnotationsMapVM.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		CF5B89D32B1A87610080EF47 /* Builder */ = {
@@ -1048,6 +1075,7 @@
 				CF64AAD62B75006F00F14710 /* TimerNotification */,
 				CF64AB272B9740BF00F14710 /* LocationNotification */,
 				CF5CF20D2B9E09C900DBE981 /* Route */,
+				CF205C412BC489080065FF68 /* AnnotationsMap */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -1565,6 +1593,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF205C482BC4896D0065FF68 /* AnnotationsMapVC.swift in Sources */,
 				CF64AB2D2B97411200F14710 /* LocationNotificationAssembler.swift in Sources */,
 				CFF587BA2B44B70F00D60712 /* ProfileVM.swift in Sources */,
 				CF64AAEB2B76B92E00F14710 /* DateNotificationVM.swift in Sources */,
@@ -1586,6 +1615,7 @@
 				CF5CF2112B9E0B0400DBE981 /* RouteVM.swift in Sources */,
 				CFD584572B165675000949A6 /* OnboardFirstStepVM.swift in Sources */,
 				CF7379A92B28D31700E77BF0 /* HomeAseembler.swift in Sources */,
+				CF205C442BC489540065FF68 /* AnnotationsMapCoordinator.swift in Sources */,
 				CF7379B62B2E608100E77BF0 /* ProfileCoordinator.swift in Sources */,
 				CF205C382BB336040065FF68 /* FRCService+Home.swift in Sources */,
 				CF5CF2192B9FBC8900DBE981 /* SearchBarView.swift in Sources */,
@@ -1599,6 +1629,7 @@
 				CFD584622B165B5A000949A6 /* OnboardSecondStepVM.swift in Sources */,
 				CF64AAFA2B76B9CE00F14710 /* CustomInputView.swift in Sources */,
 				CFD584502B164B61000949A6 /* ParametersHelper.swift in Sources */,
+				CF205C4A2BC489770065FF68 /* AnnotationsMapVM.swift in Sources */,
 				CF205BFB2BA9A0ED0065FF68 /* ImageStorageService.swift in Sources */,
 				CF64AAED2B76B94300F14710 /* DateNotificationCoordinator.swift in Sources */,
 				CF7379B82B2E608E00E77BF0 /* ProfileAssembler.swift in Sources */,
@@ -1610,6 +1641,7 @@
 				CF5CF20F2B9E0AF600DBE981 /* RouteVC.swift in Sources */,
 				CFD583EC2AFE977E000949A6 /* LoginVM.swift in Sources */,
 				CFD583F92B03E119000949A6 /* RegisterAssembler.swift in Sources */,
+				CF205C462BC489600065FF68 /* AnnotationsMapAssembler.swift in Sources */,
 				CF5CF2162B9E0B2A00DBE981 /* RouteAssembler.swift in Sources */,
 				CFF587C82B4DE63300D60712 /* ProfileHeaderView.swift in Sources */,
 				CF7379B02B2E5F2E00E77BF0 /* AlertService+Reset.swift in Sources */,

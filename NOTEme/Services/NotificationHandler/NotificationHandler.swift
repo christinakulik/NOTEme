@@ -31,7 +31,7 @@ final class NotificationHandler {
         dto?.completedDate = date
         
         guard let dto else { return }
-        storage.create(dto: dto)
+        storage.updateOrCreate(dto: dto)
     }
     
     private func setIsCompleted(notifications: [UNNotification]) {
@@ -48,5 +48,4 @@ final class NotificationHandler {
             }
         storage.updateDTOs(dtos: dtos)
     }
-    
 }

@@ -117,7 +117,7 @@ final class RouteVM: RouteViewModelProtocol {
                                      height: regionView.frame.height * 2)
            let origin = CGPoint(x: .zero,
                                 y: -(regionView.center.y
-                                     - screenshotSize.height / 2))
+                                     - screenshotSize.height / 4.2))
            let contentRect = CGRect(origin: origin, size: view.bounds.size)
            
            UIGraphicsBeginImageContextWithOptions(screenshotSize,

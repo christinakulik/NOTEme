@@ -9,8 +9,4 @@ import Foundation
 import Storage
 
 
-extension LocationNotificationStorage: LocationNotificationStorageProtocol {
-    func createLocationNotification(dto: Storage.LocationNotificationDTO) {
-        create(dto: dto)
-    }
-}
+extension LocationNotificationStorage: LocationNotificationStorageProtocol {}

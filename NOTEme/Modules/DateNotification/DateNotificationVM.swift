@@ -9,8 +9,8 @@ import UIKit
 import Storage
 
 protocol DateNotificationStorageProtocol {
-    func createDateNotification(dto: DateNotificationDTO)
-    func updateDateNotification(dto: DateNotificationDTO)
+    func updateOrCreate(dto: any DTODescription,
+                        completion: ((Bool) -> Void)?)
 }
 
 protocol DateNotificationServiceUseCase {
@@ -82,7 +82,7 @@ final class DateNotificationVM: DateNotificationViewModelProtocol {
                                       title: title,
                                       subtitle: comment,
                                       targetDate: date)
-            storage.updateDateNotification(dto: dto)
+            storage.updateOrCreate(dto: dto, completion: nil)
         } else {
             // Create a new DTO
             dto = DateNotificationDTO(date: Date(),
@@ -90,7 +90,7 @@ final class DateNotificationVM: DateNotificationViewModelProtocol {
                                       title: title,
                                       subtitle: comment,
                                       targetDate: date)
-            storage.createDateNotification(dto: dto)
+            storage.updateOrCreate(dto: dto, completion: nil)
         }
         notificationCenter.makeDateNotification(dto: dto)
         coordinator?.finish()

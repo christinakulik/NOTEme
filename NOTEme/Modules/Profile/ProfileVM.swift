@@ -9,6 +9,7 @@ import UIKit
 
 protocol ProfileCoordinatorProtocol: AnyObject {
     func finish()
+    func openAnnotationsMap()
 }
 
 protocol ProfileAuthServiceUseCaseProtocol {
@@ -71,6 +72,7 @@ final class ProfileVM: ProfileViewModelProtocol {
             switch row {
             case .logout:
                 self?.logoutDidTap()
+            case.map: self?.openAnnotationsMap()
             default:
                 break
             }
@@ -104,6 +106,11 @@ final class ProfileVM: ProfileViewModelProtocol {
             }
         })
     }
+    
+    private func openAnnotationsMap() {
+        coordinator?.openAnnotationsMap()
+    }
+    
 }
 
 

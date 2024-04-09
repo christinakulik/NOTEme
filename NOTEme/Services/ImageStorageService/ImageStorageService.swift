@@ -15,7 +15,8 @@ enum StorageError: Error {
 final class LocalStorageService {
     
     func saveImageToDocumentsDirectory(image: UIImage, 
-                                       completion: @escaping (Result<URL, Error>) -> Void) {
+                                       completion: @escaping (Result<URL, Error>) 
+                                       -> Void) {
         let fileManager = FileManager.default
         let documentDirectory = fileManager.urls(for: .documentDirectory, 
                                                  in: .userDomainMask).first
@@ -36,7 +37,9 @@ final class LocalStorageService {
         }
     }
     
-    func loadImageFromDocumentsDirectory(imagePath: String, completion: @escaping (UIImage?) -> Void) {
+    func loadImageFromDocumentsDirectory(imagePath: String, 
+                                         completion: @escaping (UIImage?)
+                                         -> Void) {
             let fileManager = FileManager.default
             let documentDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
             let imageUrl = documentDirectory.appendingPathComponent(imagePath)
@@ -48,6 +51,22 @@ final class LocalStorageService {
                 completion(nil)
             }
         }
+    
+    func deleteImageFromDocumentsDirectory(imagePath: String, 
+                                           completion: @escaping (Result<Void, Error>)
+                                           -> Void) {
+        let fileManager = FileManager.default
+        let documentDirectory = fileManager.urls(for: .documentDirectory, 
+                                                 in: .userDomainMask).first!
+        let imageUrl = documentDirectory.appendingPathComponent(imagePath)
+        
+        do {
+            try fileManager.removeItem(at: imageUrl)
+            completion(.success(()))
+        } catch {
+            completion(.failure(error))
+        }
+    }
 }
 
 

@@ -10,7 +10,8 @@ import Storage
 import MapKit
 
 protocol LocationNotificationStorageProtocol {
-    func createLocationNotification(dto: LocationNotificationDTO)
+    func updateOrCreate(dto: any DTODescription,
+                        completion: ((Bool) -> Void)?)
 }
 
 protocol LocationNotificationCoordinatorProtocol: AnyObject {
@@ -103,7 +104,7 @@ final class LocationNotificationVM: LocationNotificationViewModelProtocol,
                                               deltalLongitude: region.span.longitudeDelta,
                                               deltaLatitutde: region.span.latitudeDelta,
                                               imagePath: imagePath)
-            self?.storage.createLocationNotification(dto: dto)
+            self?.storage.updateOrCreate(dto: dto, completion: nil)
             if let circleRegion = self?.circleRegion {
                        self?.notificationService.makeLocationNotification(circleRegion: circleRegion, dto: dto)
                    }

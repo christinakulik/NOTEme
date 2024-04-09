@@ -9,9 +9,5 @@ import Foundation
 import Storage
 
 
-extension TimerNotificationStorage: TimerNotificationStorageProtocol {
-    func createTimerNotification(dto: Storage.TimerNotificationDTO) {
-        create(dto: dto)
-    }
-}
+extension TimerNotificationStorage: TimerNotificationStorageProtocol {}
 

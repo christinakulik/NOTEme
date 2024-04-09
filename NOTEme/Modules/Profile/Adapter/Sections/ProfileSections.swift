@@ -39,12 +39,14 @@ enum ProfileSettingsRows: CaseIterable {
     
     case notifications
     case export
+    case map
     case logout
     
     var icon: UIImage {
         switch self {
         case .notifications: return .Profile.notifications
         case .export: return .Profile.export
+        case .map: return .Location.locationIcon
         case .logout: return .Profile.logout
         }
     }
@@ -54,6 +56,7 @@ enum ProfileSettingsRows: CaseIterable {
         case .notifications: return L10n.notificationLabel
         case .export: return L10n.exportLabel
         case .logout: return L10n.logoutLabel
+        case .map: return "Map"
         }
     }
     

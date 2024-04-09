@@ -24,7 +24,12 @@ final class LocationNotificationCell: UITableViewCell {
     private lazy var button: UIButton = .editButton()
         .withAction(self, #selector(editDidTap))
     
-    private lazy var locationImageView = UIImageView()
+    private lazy var locationImageView: UIImageView = {
+       let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        return imageView
+    }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

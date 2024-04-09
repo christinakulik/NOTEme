@@ -14,7 +14,8 @@ protocol TimerNotificationCoordinatorProtocol: AnyObject {
 }
 
 protocol TimerNotificationStorageProtocol {
-    func createTimerNotification(dto: TimerNotificationDTO)
+    func updateOrCreate(dto: any DTODescription,
+                        completion: ((Bool) -> Void)?)
 }
 
 protocol TimerNotificationServiceUseCase {
@@ -106,7 +107,7 @@ final class TimerNotificationVM: TimerNotificationViewModelProtocol {
                                        title: title,
                                        subtitle: comment,
                                        targetTime: endTime)
-        storage.createTimerNotification(dto: dto)
+        storage.updateOrCreate(dto: dto, completion: nil)
         notificationService.makeTimerNotification(dto: dto)
         coordinator?.finish()
     }
