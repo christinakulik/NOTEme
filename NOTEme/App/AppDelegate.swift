@@ -19,19 +19,20 @@ private let notificationHandler = NotificationHandler()
         FirebaseApp.configure()
         notificationHandler.checkIsCompleted()
         
-        UNUserNotificationCenter.current()
-            .requestAuthorization(options: [.badge, .alert, .sound])
-        { granted, error in
-            guard error == nil
-            else {
-                print("[Notification:]", error?.localizedDescription ?? "nil")
-                return
-            }
-        }
-        UNUserNotificationCenter.current().delegate = self
+        requestNotificationAuthorization()
         
         return true
     }
+    
+    private func requestNotificationAuthorization() {
+            UNUserNotificationCenter.current().requestAuthorization(options: [.badge, .alert, .sound]) { granted, error in
+                guard error == nil else {
+                    print("[Notification:]", error?.localizedDescription ?? "nil")
+                    return
+                }
+                UNUserNotificationCenter.current().delegate = self
+            }
+        }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, 
                                 willPresent notification: UNNotification,

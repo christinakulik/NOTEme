@@ -92,10 +92,7 @@ final class LocationNotificationVM: LocationNotificationViewModelProtocol,
         guard let title, let region, let image else { return }
         
         saveImageAndGetPath(image: image) { [weak self] imagePath in
-            guard let imagePath = imagePath else {
-                print("Не удалось получить путь к изображению")
-                return
-            }
+            guard let imagePath = imagePath else { return }
             
             let dto = LocationNotificationDTO(date: Date(),
                                               title: title,
