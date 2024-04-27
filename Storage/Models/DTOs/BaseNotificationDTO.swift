@@ -43,4 +43,10 @@ public struct BaseNotificationDTO: DTODescription {
                                    subtitle:  mo.subtitle,
                                    completedDate: mo.completedDate)
     }
+    
+    public func createMO(context: NSManagedObjectContext) -> BaseNotificationMo? {
+        let mo = BaseNotificationMo(context: context)
+        mo.apply(dto: self)
+        return mo
+    }
 }

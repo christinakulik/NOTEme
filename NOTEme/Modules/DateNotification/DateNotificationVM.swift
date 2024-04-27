@@ -93,6 +93,10 @@ final class DateNotificationVM: DateNotificationViewModelProtocol {
             storage.updateOrCreate(dto: dto, completion: nil)
         }
         notificationCenter.makeDateNotification(dto: dto)
+        
+        let backupService = FirebaseBackupService()
+        backupService.backup(dto: dto)
+        
         coordinator?.finish()
     }
     

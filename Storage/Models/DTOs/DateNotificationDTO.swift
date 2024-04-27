@@ -48,4 +48,10 @@ public struct DateNotificationDTO: DTODescription {
                                        completedDate: mo.completedDate,
                                        targetDate: targetDate)
           }
+    
+    public func createMO(context: NSManagedObjectContext) -> DateNotificationMO? {
+        let mo = DateNotificationMO(context: context)
+        mo.apply(dto: self)
+        return mo
+    }
 }

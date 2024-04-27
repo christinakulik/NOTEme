@@ -32,7 +32,7 @@ protocol RegisterAuthServiceUseCaseProtocol {
     func register(email: String,
                password: String,
                completion: @escaping (Bool) -> Void)
-    func sendEmailVerification()
+//    func sendEmailVerification()
 }
 
 protocol RegisterPresenterDelegate: AnyObject {
@@ -109,7 +109,7 @@ final class RegisterPresenter: RegisterPresenterProtocol {
             [weak self] isSuccess in
             print(isSuccess)
             if isSuccess {
-                self?.authService.sendEmailVerification()
+//                self?.authService.sendEmailVerification()
                 self?.alertService
                     .showAlert(
                         title: L10n.titleAlert,

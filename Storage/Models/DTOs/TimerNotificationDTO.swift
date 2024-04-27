@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 
 public struct TimerNotificationDTO: DTODescription {
     public typealias DTO = Self
@@ -46,5 +47,11 @@ public struct TimerNotificationDTO: DTODescription {
                                     subtitle: mo.subtitle,
                                     completedDate: mo.completedDate,
                                     targetTime: targetTime)
+    }
+    
+    public func createMO(context: NSManagedObjectContext) -> TimerNotificationMO? {
+        let mo = TimerNotificationMO(context: context)
+        mo.apply(dto: self)
+        return mo
     }
 }

@@ -10,7 +10,6 @@ import SnapKit
 import Storage
 
 @objc protocol DateNotificationViewModelProtocol: AnyObject {
-    
     var catchTitleError: ((String?) -> Void)? { get set }
     var catchDateError: ((String?) -> Void)? { get set }
     var title: String? { get set }
@@ -189,9 +188,7 @@ final class DateNotificationVC: UIViewController {
             make.top.equalTo(dateTextField.snp.bottom).inset(-16.0)
             make.leading.trailing.equalToSuperview().inset(16.0)
             make.bottom.equalTo(infoView.snp.bottom).inset(16.0)
-            
         }
-        
     }
     
     private func setupCustomInputView() {
@@ -203,7 +200,6 @@ final class DateNotificationVC: UIViewController {
     @objc private func createDidTap() {
         viewModel.createDidTap()
     }
-    
 }
 
 // MARK: - Extensions
@@ -236,7 +232,6 @@ extension DateNotificationVC: CustomInputViewDelegate {
             dateTextField.text = dateString
         }
     }
-    
     
     func cancelDidTap() {
         dateTextField.text = nil

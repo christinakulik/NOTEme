@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 
 public struct LocationNotificationDTO: DTODescription {
  
@@ -65,5 +66,11 @@ public struct LocationNotificationDTO: DTODescription {
                                        deltalLongitude: mo.deltalLongitude,
                                        deltaLatitutde: mo.deltaLatitutde,
                                        imagePath: imagePath)
+    }
+    
+    public func createMO(context: NSManagedObjectContext) -> LocationNotificationMO? {
+        let mo = LocationNotificationMO(context: context)
+        mo.apply(dto: self)
+        return mo
     }
 }

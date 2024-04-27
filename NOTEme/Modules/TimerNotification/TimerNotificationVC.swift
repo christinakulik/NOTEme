@@ -9,7 +9,6 @@ import UIKit
 import SnapKit
 
 protocol TimerNotificationViewModelProtocol: AnyObject {
-    
     var title: String? { get set }
     var comment: String? { get set }
     var catchTitleError: ((String?) -> Void)? { get set }

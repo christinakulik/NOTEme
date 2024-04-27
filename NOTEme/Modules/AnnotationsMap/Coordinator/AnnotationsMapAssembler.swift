@@ -10,7 +10,8 @@ import UIKit
 final class AnnotationsMapAssembler {
     private init() {}
     
-    static func make(_ coordinator: AnnotationsMapCoordinatorProtocol) -> UIViewController {
+    static func make(_ coordinator: AnnotationsMapCoordinatorProtocol) 
+    -> UIViewController {
         let vm = AnnotationsMapVM(coordinator: coordinator)
         let vc = AnnotationsMapVC(viewmodel: vm)
         return vc

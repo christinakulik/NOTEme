@@ -34,6 +34,12 @@
 		CF205C462BC489600065FF68 /* AnnotationsMapAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF205C452BC489600065FF68 /* AnnotationsMapAssembler.swift */; };
 		CF205C482BC4896D0065FF68 /* AnnotationsMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF205C472BC4896D0065FF68 /* AnnotationsMapVC.swift */; };
 		CF205C4A2BC489770065FF68 /* AnnotationsMapVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF205C492BC489770065FF68 /* AnnotationsMapVM.swift */; };
+		CF205C4C2BC5A1910065FF68 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = CF205C4B2BC5A1910065FF68 /* FirebaseDatabase */; };
+		CF205C4E2BC5A1910065FF68 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CF205C4D2BC5A1910065FF68 /* FirebaseDatabaseSwift */; };
+		CF205C512BC5A2F00065FF68 /* FirebaseBackupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF205C502BC5A2F00065FF68 /* FirebaseBackupService.swift */; };
+		CF205C562BC5A6590065FF68 /* BackupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF205C552BC5A6590065FF68 /* BackupModel.swift */; };
+		CF205C582BC5ABB30065FF68 /* Date+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF205C572BC5ABB30065FF68 /* Date+Optional.swift */; };
+		CF3E6F3A2BD81BDA00BAED2F /* NotificationDataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3E6F392BD81BDA00BAED2F /* NotificationDataWorker.swift */; };
 		CF5B89D52B1D3E3B0080EF47 /* String+Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5B89D42B1D3E3B0080EF47 /* String+Attributes.swift */; };
 		CF5CF20F2B9E0AF600DBE981 /* RouteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5CF20E2B9E0AF600DBE981 /* RouteVC.swift */; };
 		CF5CF2112B9E0B0400DBE981 /* RouteVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5CF2102B9E0B0400DBE981 /* RouteVM.swift */; };
@@ -257,6 +263,10 @@
 		CF205C452BC489600065FF68 /* AnnotationsMapAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationsMapAssembler.swift; sourceTree = "<group>"; };
 		CF205C472BC4896D0065FF68 /* AnnotationsMapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationsMapVC.swift; sourceTree = "<group>"; };
 		CF205C492BC489770065FF68 /* AnnotationsMapVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationsMapVM.swift; sourceTree = "<group>"; };
+		CF205C502BC5A2F00065FF68 /* FirebaseBackupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseBackupService.swift; sourceTree = "<group>"; };
+		CF205C552BC5A6590065FF68 /* BackupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupModel.swift; sourceTree = "<group>"; };
+		CF205C572BC5ABB30065FF68 /* Date+Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Optional.swift"; sourceTree = "<group>"; };
+		CF3E6F392BD81BDA00BAED2F /* NotificationDataWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDataWorker.swift; sourceTree = "<group>"; };
 		CF5B89D42B1D3E3B0080EF47 /* String+Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Attributes.swift"; sourceTree = "<group>"; };
 		CF5CF20E2B9E0AF600DBE981 /* RouteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteVC.swift; sourceTree = "<group>"; };
 		CF5CF2102B9E0B0400DBE981 /* RouteVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteVM.swift; sourceTree = "<group>"; };
@@ -432,6 +442,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF205C4E2BC5A1910065FF68 /* FirebaseDatabaseSwift in Frameworks */,
 				CF7379582B1F87F200E77BF0 /* FirebaseAuthCombine-Community in Frameworks */,
 				CF73794E2B1F87F200E77BF0 /* FirebaseAnalyticsSwift in Frameworks */,
 				CF64AA952B6B09C900F14710 /* Storage.framework in Frameworks */,
@@ -440,6 +451,7 @@
 				CF73794C2B1F87F200E77BF0 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
 				CF73798B2B260EC900E77BF0 /* FirebaseDynamicLinks in Frameworks */,
 				CF73795A2B1F87F200E77BF0 /* FirebaseCrashlytics in Frameworks */,
+				CF205C4C2BC5A1910065FF68 /* FirebaseDatabase in Frameworks */,
 				CFD583BE2AF019FC000949A6 /* SnapKit in Frameworks */,
 				CF7379562B1F87F200E77BF0 /* FirebaseAuth in Frameworks */,
 			);
@@ -566,6 +578,31 @@
 				CF205C492BC489770065FF68 /* AnnotationsMapVM.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		CF205C4F2BC5A2C90065FF68 /* FireBase */ = {
+			isa = PBXGroup;
+			children = (
+				CF205C542BC5A64A0065FF68 /* Models */,
+				CF205C502BC5A2F00065FF68 /* FirebaseBackupService.swift */,
+			);
+			path = FireBase;
+			sourceTree = "<group>";
+		};
+		CF205C542BC5A64A0065FF68 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CF205C552BC5A6590065FF68 /* BackupModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CF3E6F382BD81BA400BAED2F /* NotificationDataWorker */ = {
+			isa = PBXGroup;
+			children = (
+				CF3E6F392BD81BDA00BAED2F /* NotificationDataWorker.swift */,
+			);
+			path = NotificationDataWorker;
 			sourceTree = "<group>";
 		};
 		CF5B89D32B1A87610080EF47 /* Builder */ = {
@@ -1143,6 +1180,7 @@
 				CF64AA852B6A63B900F14710 /* Collection+Register.swift */,
 				CF64AA882B6A852100F14710 /* Alert+Layer.swift */,
 				CF205BF72BA3B5240065FF68 /* String+Size.swift */,
+				CF205C572BC5ABB30065FF68 /* Date+Optional.swift */,
 			);
 			path = Utills;
 			sourceTree = "<group>";
@@ -1196,6 +1234,8 @@
 		CFD583EF2AFEA14B000949A6 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CF3E6F382BD81BA400BAED2F /* NotificationDataWorker */,
+				CF205C4F2BC5A2C90065FF68 /* FireBase */,
 				CF205C3E2BBC73340065FF68 /* NotificationHandler */,
 				CF205BFC2BA9F41E0065FF68 /* NetworkLayer */,
 				CF205BF92BA9A0D20065FF68 /* ImageStorageService */,
@@ -1463,6 +1503,8 @@
 				CF7379572B1F87F200E77BF0 /* FirebaseAuthCombine-Community */,
 				CF7379592B1F87F200E77BF0 /* FirebaseCrashlytics */,
 				CF73798A2B260EC900E77BF0 /* FirebaseDynamicLinks */,
+				CF205C4B2BC5A1910065FF68 /* FirebaseDatabase */,
+				CF205C4D2BC5A1910065FF68 /* FirebaseDatabaseSwift */,
 			);
 			productName = NOTEme;
 			productReference = CFD583A12AF0195D000949A6 /* NOTEme.app */;
@@ -1690,6 +1732,7 @@
 				CF7379BA2B2FC3C900E77BF0 /* MainTabBarCoordinator.swift in Sources */,
 				CF64AB172B893D4500F14710 /* TimerNotificationCell.swift in Sources */,
 				CFD583D02AF06CB0000949A6 /* UILabel+Styles.swift in Sources */,
+				CF205C582BC5ABB30065FF68 /* Date+Optional.swift in Sources */,
 				CF7379932B27CFD300E77BF0 /* KeyboardAnimator+Login.swift in Sources */,
 				CF64AB1B2B893DD600F14710 /* HomeAdapter.swift in Sources */,
 				CF7379BC2B2FC41D00E77BF0 /* MainTabBarAssembler.swift in Sources */,
@@ -1708,6 +1751,7 @@
 				CF5CF21F2BA0761500DBE981 /* RouteAdapter.swift in Sources */,
 				CF7379AB2B28D34500E77BF0 /* HomeCoordinator.swift in Sources */,
 				CF64AA812B61B0B800F14710 /* ProfileSections.swift in Sources */,
+				CF205C562BC5A6590065FF68 /* BackupModel.swift in Sources */,
 				CFD583F72B03DB85000949A6 /* RegisterPresenter.swift in Sources */,
 				CFD584142B0D129D000949A6 /* Coordinator.swift in Sources */,
 				CFD583CB2AF01A8A000949A6 /* UIView+Styles.swift in Sources */,
@@ -1725,7 +1769,9 @@
 				CF7379AE2B2E5DFE00E77BF0 /* AlertService+Register.swift in Sources */,
 				CF205BF62BA3ABD40065FF68 /* NotificationFilterCell.swift in Sources */,
 				CFD584552B165479000949A6 /* OnbordFirstStepVC.swift in Sources */,
+				CF205C512BC5A2F00065FF68 /* FirebaseBackupService.swift in Sources */,
 				CFD584082B0A77DA000949A6 /* InputValidator+Reset.swift in Sources */,
+				CF3E6F3A2BD81BDA00BAED2F /* NotificationDataWorker.swift in Sources */,
 				CFF587C62B4C1B6E00D60712 /* AuthService+Profile.swift in Sources */,
 				CF64AADE2B756B4400F14710 /* PopoverAssembler.swift in Sources */,
 				CFD583C92AF01A7C000949A6 /* UIView+Layer.swift in Sources */,
@@ -2125,6 +2171,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		CF205C4B2BC5A1910065FF68 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF7379482B1F87F200E77BF0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		CF205C4D2BC5A1910065FF68 /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF7379482B1F87F200E77BF0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
 		CF7379492B1F87F200E77BF0 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CF7379482B1F87F200E77BF0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
