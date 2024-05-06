@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class ProfileSettingTableViewCell: UITableViewCell {
+final class ProfileSettingTableViewCell: UITableViewCell {
     
     private lazy var settingsImageView = UIImageView()
     

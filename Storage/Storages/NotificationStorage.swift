@@ -40,7 +40,7 @@ public class NotificationStorage<DTO: DTODescription> {
                        completion: CompletionHandler? = nil,
                        context: NSManagedObjectContext) {
         context.perform {
-            let mo = dto.createMO(context: context)
+            _ = dto.createMO(context: context)
             CoreDataService.shared.saveContext(context: context,
                                                completion: completion)
         }
@@ -50,7 +50,7 @@ public class NotificationStorage<DTO: DTODescription> {
                            completion: CompletionHandler? = nil) {
         let context = CoreDataService.shared.backgroundContext
         context.perform {
-            let mos = dtos.map {
+            _ = dtos.map {
                 $0
                     .createMO(context: context)
             }
@@ -94,12 +94,14 @@ public class NotificationStorage<DTO: DTODescription> {
         
         context.perform { [weak self] in
             guard
-                let mos = self?.fetchMO(predicate: .Notification.notifications(in: ids),
-                                        context: context)
+                let mos =
+                    self?.fetchMO(predicate: .Notification.notifications(in: ids),
+                                  context: context)
             else { return }
             mos.forEach { model in
                 guard
-                    let dto = dtos.first(where: { $0.identifier == model.identifier })
+                    let dto =
+                        dtos.first(where: { $0.identifier == model.identifier })
                 else { return }
                 model.apply(dto: dto)
             }
@@ -126,8 +128,9 @@ public class NotificationStorage<DTO: DTODescription> {
         let context = CoreDataService.shared.backgroundContext
         context.perform { [weak self] in
             let ids = dtos.map { $0.identifier }
-            let mos = self?.fetchMO(predicate: .Notification.notifications(in: ids),
-                                    context: context)
+            let mos =
+            self?.fetchMO(predicate: .Notification.notifications(in: ids),
+                          context: context)
             mos?.forEach(context.delete)
             CoreDataService.shared.saveContext(context: context,
                                                completion: completion)

@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class ProfileAccountTableViewCell: UITableViewCell {
+final class ProfileAccountTableViewCell: UITableViewCell {
     
     private enum L10n {
         static let emailLabel: String = "profile_account_email_label".localized

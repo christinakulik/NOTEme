@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import FirebaseDynamicLinks
+import FirebaseDatabaseInternal
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
@@ -17,6 +18,8 @@ private let notificationHandler = NotificationHandler()
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     
         FirebaseApp.configure()
+        Database.database()
+        
         notificationHandler.checkIsCompleted()
         
         requestNotificationAuthorization()

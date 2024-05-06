@@ -9,7 +9,6 @@ import UIKit
 
 final class AppCoordinator: Coordinator {
     
-    
     private let container: Container
     private let windowManager: WindowManager
     

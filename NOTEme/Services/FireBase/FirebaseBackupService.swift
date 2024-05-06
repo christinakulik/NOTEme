@@ -67,7 +67,8 @@ final class FirebaseBackupService {
                     }
                     let value = snapshotDict.map { _, value in value }
                     guard
-                        let data = try? JSONSerialization.data(withJSONObject: value),
+                        let data =
+                            try? JSONSerialization.data(withJSONObject: value),
                         let backupModels = try? JSONDecoder().decode(
                             [BackupModel].self,
                             from: data
